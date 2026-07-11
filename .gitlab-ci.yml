@@ -1,0 +1,92 @@
+##
+## CAO_CRM (Corpus Author Ontology CRM)
+## Copyright (c) 2026 Andres Echavarria Pelaez
+## Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+## Encoding carried out under the scientific direction and support of Fatiha Idmhand
+##
+## This file is part of the CAO_CRM publication package, licensed under the
+## Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+## License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+## https://creativecommons.org/licenses/by-nc-sa/4.0/
+##
+
+# GitLab CI/CD for CAO_CRM's publication package. This is the pipeline that
+# actually runs once this repository lives on GitLab (the .github/workflows/
+# validate.yml in this same folder is a GitHub Actions equivalent, kept for a
+# possible GitHub mirror, but GitHub Actions never executes on GitLab pushes).
+#
+# Two stages:
+#   - validate: runs `make validate`, which already chains all 8 validation
+#     categories plus cq (syntax, imports, reason, metrics, conformance,
+#     metadata, quality, shacl, cq, fair) -- see README.md section 4 for what
+#     each one checks and its current pass/fail state.
+#   - pages: publishes the already-built, already-committed docs/site/
+#     (Widoco output, 3 languages + landing page) as GitLab Pages. It does
+#     NOT rebuild via Widoco/Java in CI -- docs/site/ is intentionally
+#     tracked in git as a ready-to-view artifact (see .gitignore and
+#     docs/README.md); regenerate locally with `make docs` and commit the
+#     result whenever ontology/CAO_CRM-1.0.rdf changes, same discipline as
+#     today. This keeps the pages job fast and dependency-free (no JDK).
+#
+#     www.cao-crm.eu is CNAME'd to this GitLab Pages site (configured in
+#     GitLab project Settings -> Pages, not in this file). GitLab Pages has
+#     no server-side content negotiation (no .htaccess, static files only),
+#     so the ontology's own namespace IRI (https://www.cao-crm.eu/ontology/,
+#     see ontology/CAO_CRM-1.0.rdf's owl:Ontology declaration) can't do a real
+#     303-redirect-by-Accept-header the way https://www.w3.org/TR/swbp-vocab-pub/
+#     recommends -- it always just serves the same static HTML landing page.
+#     That page links out to every serialization, which is the documented,
+#     accepted fallback for vocabularies without dedicated server infra. The
+#     job below therefore places a full copy of the site at both the domain
+#     root and at /ontology/ (and /ontology/1.0/, matching owl:versionIRI),
+#     plus the serializations themselves under /ontology/, so every URI the
+#     RDF file declares resolves to *something* real.
+
+stages:
+  - validate
+  - pages
+
+validate:
+  stage: validate
+  image: eclipse-temurin:21-jdk
+  variables:
+    DEBIAN_FRONTEND: noninteractive
+  before_script:
+    - apt-get update && apt-get install -y --no-install-recommends make python3 python3-venv python3-pip raptor2-utils curl
+    - python3 -m venv .venv
+    - source .venv/bin/activate
+    - pip install -r requirements.txt
+    - bash scripts/install-tools.sh
+  script:
+    - source .venv/bin/activate
+    - export PATH="$CI_PROJECT_DIR/.tools/jena/bin:$PATH"
+    - make validate
+  artifacts:
+    when: always
+    paths:
+      - validation/*/out/
+    expire_in: 30 days
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+pages:
+  stage: pages
+  image: alpine:latest
+  script:
+    - mkdir -p public
+    - cp -r docs/site/. public/
+    # Ontology namespace IRI (https://www.cao-crm.eu/ontology/) and versionIRI
+    # (.../ontology/1.0) each need a real, direct copy of the site -- GitLab
+    # Pages can't redirect based on the request path to the root copy above.
+    - mkdir -p public/ontology/1.0
+    - cp -r docs/site/. public/ontology/
+    - cp -r docs/site/. public/ontology/1.0/
+    # Serializations, self-hosted on the same domain the namespace lives on
+    # (alongside the docs copy at /ontology/), not just on GitLab's raw URLs.
+    - cp -f ontology/CAO_CRM-1.0.rdf ontology/CAO_CRM-1.0.ttl ontology/CAO_CRM-1.0.nt ontology/CAO_CRM-1.0.jsonld public/ontology/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
