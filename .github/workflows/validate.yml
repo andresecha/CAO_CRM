@@ -1,0 +1,65 @@
+##
+## CAO_CRM (Corpus Author Ontology CRM)
+## Copyright (c) 2026 Andres Echavarria Pelaez
+## Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+## Encoding carried out under the scientific direction and support of Fatiha Idmhand
+##
+## This file is part of the CAO_CRM publication package, licensed under the
+## Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+## License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+## https://creativecommons.org/licenses/by-nc-sa/4.0/
+##
+name: Validate CAO_CRM ontology
+
+on:
+  push:
+    paths:
+      - "ontology/**"
+      - "imports/**"
+      - "validation/**"
+      - "docs/**"
+      - "scripts/**"
+      - "Makefile"
+      - "requirements.txt"
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update && sudo apt-get install -y raptor2-utils
+          pip install -r requirements.txt
+          bash scripts/install-tools.sh
+
+      # Mirrors the Makefile's own `validate` target exactly -- it already
+      # chains all 8 validation categories plus cq (syntax, imports, reason,
+      # metrics, conformance, metadata, quality, shacl, cq, fair) against the
+      # real test-data/*.ttl graph and a local FOOPS! run; see README.md
+      # section 4 for what each one checks. `docs` stays a separate step
+      # below since it needs network access for Widoco/Chrome, per README.md.
+      - name: make validate (all 8 categories + cq)
+        run: make validate
+
+      - name: Build documentation (Widoco, all 3 languages)
+        run: make docs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-reports
+          path: |
+            validation/*/out/
+            docs/site/

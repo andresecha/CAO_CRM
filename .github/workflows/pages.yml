@@ -1,0 +1,80 @@
+##
+## CAO_CRM (Corpus Author Ontology CRM)
+## Copyright (c) 2026 Andres Echavarria Pelaez
+## Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+## Encoding carried out under the scientific direction and support of Fatiha Idmhand
+##
+## This file is part of the CAO_CRM publication package, licensed under the
+## Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+## License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+## https://creativecommons.org/licenses/by-nc-sa/4.0/
+##
+
+# GitHub Pages deployment, replacing the "pages" stage that used to run on
+# GitLab CI (see .gitlab-ci.yml, kept for reference but inactive on GitHub).
+# Does NOT rebuild via Widoco/Java here -- docs/site/ is committed as a
+# ready-to-view artifact (see docs/README.md); regenerate locally with
+# `make docs` and commit the result whenever ontology/CAO_CRM-1.0.rdf changes.
+#
+# www.cao-crm.eu is the ontology's own namespace IRI (see
+# ontology/CAO_CRM-1.0.rdf's owl:Ontology declaration). GitHub Pages, like
+# GitLab Pages, does no server-side content negotiation (static files only),
+# so this job places a full copy of the site at the domain root, at
+# /ontology/, and at /ontology/1.0/ (matching owl:versionIRI), plus the RDF
+# serializations under /ontology/ -- same layout as before, just served from
+# a different host. The `public/CNAME` file is what tells GitHub Pages to
+# answer on www.cao-crm.eu instead of andresecha.github.io/CAO_CRM; the
+# matching DNS record (CNAME www -> andresecha.github.io) has to be set at
+# the domain registrar/DNS provider, outside this repository's control.
+#
+# One-time setup required in the GitHub UI (Settings -> Pages): set "Source"
+# to "GitHub Actions" (not "Deploy from a branch") for this workflow to be
+# able to publish anything.
+
+name: Deploy CAO_CRM Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/site/**"
+      - "ontology/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble public/ (root + /ontology/ + /ontology/1.0/, matching the previous GitLab Pages layout)
+        run: |
+          mkdir -p public/ontology/1.0
+          cp -r docs/site/. public/
+          cp -r docs/site/. public/ontology/
+          cp -r docs/site/. public/ontology/1.0/
+          cp -f ontology/CAO_CRM-1.0.rdf ontology/CAO_CRM-1.0.ttl ontology/CAO_CRM-1.0.nt ontology/CAO_CRM-1.0.jsonld public/ontology/
+          echo "www.cao-crm.eu" > public/CNAME
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
