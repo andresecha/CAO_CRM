@@ -1,0 +1,299 @@
+# Lote 5: las clases "eje" de CIDOC-CRM que sirven de raíz o de conector estructural a decenas de
+# otras clases del módulo (Entity, Temporal Entity, Period, Activity, Thing, Actor, Person,
+# Physical Thing, Human-Made Object, Legal Object). Todas ya tienen label oficial en fr (verificado
+# en term_inventory.json); solo falta comment fr + label/comment es.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"
+    local_name: E1_CRM_Entity
+    label: {es: "Entidad CRM"}
+    comment:
+      fr: >-
+        Cette classe comprend toutes les choses relevant de l'univers de discours du CIDOC
+        Conceptual Reference Model. C'est un concept abstrait qui fournit trois propriétés
+        générales : l'identification par un nom ou une appellation, et en particulier par un
+        identifiant privilégié ; la classification par type, permettant d'affiner la sous-classe
+        spécifique à laquelle appartient une instance ; l'attachement de texte libre et d'autres
+        données non structurées pour exprimer tout ce que les propriétés formelles ne permettent
+        pas de saisir. Toutes les autres classes du CIDOC CRM sont, directement ou indirectement,
+        des spécialisations d'Entité CRM.
+      es: >-
+        Esta clase comprende todas las cosas del universo de discurso del CIDOC Conceptual
+        Reference Model. Es un concepto abstracto que proporciona tres propiedades generales: la
+        identificación por nombre o apelativo, y en particular por un identificador preferente; la
+        clasificación por tipo, que permite refinar la subclase específica a la que pertenece una
+        instancia; y la incorporación de texto libre y otros datos no estructurados para expresar
+        cualquier cosa que las propiedades formales no capturen. Todas las demás clases del CIDOC
+        CRM son, directa o indirectamente, especializaciones de Entidad CRM.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"
+    local_name: E2_Temporal_Entity
+    label: {es: "Entidad temporal"}
+    comment:
+      fr: >-
+        Cette classe comprend tous les phénomènes, tels que les périodes et les événements, qui se
+        produisent sur une étendue temporelle limitée. Cette étendue temporelle doit être contiguë,
+        c'est-à-dire sans discontinuité. Si les types de phénomènes définissant une entité
+        temporelle donnée cessent de se produire, puis se reproduisent plus tard à un autre moment,
+        on considère que l'instance antérieure d'entité temporelle a pris fin et qu'une nouvelle
+        instance est apparue. En termes plus intuitifs, un même événement ne peut se produire deux
+        fois. Dans certains contextes, de tels phénomènes sont également appelés « perdurants ».
+        Cette classe est disjointe d'Élément persistant et constitue une classe abstraite qui n'a
+        généralement pas d'instances directes. Entité temporelle se spécialise en Période, qui
+        s'applique à une zone géographique particulière (définie avec un degré de précision plus ou
+        moins grand), et en État matériel, qui s'applique aux choses matérielles.
+      es: >-
+        Esta clase comprende todos los fenómenos, tales como los periodos y los eventos, que
+        ocurren durante una extensión temporal limitada. Esta extensión temporal debe ser contigua,
+        es decir, sin discontinuidades. Si los tipos de fenómenos que definen una entidad temporal
+        determinada dejan de producirse y vuelven a ocurrir más tarde en otro momento, se considera
+        que la instancia anterior de entidad temporal ha finalizado y que ha surgido una nueva
+        instancia. En términos más intuitivos, un mismo evento no puede ocurrir dos veces. En
+        algunos contextos, tales fenómenos también se denominan «perdurantes». Esta clase es
+        disjunta de Elemento persistente y constituye una clase abstracta que normalmente no tiene
+        instancias directas. Entidad temporal se especializa en Periodo, que se aplica a un área
+        geográfica concreta (definida con mayor o menor grado de precisión), y en Estado de
+        conservación, que se aplica a cosas físicas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E4_Period"
+    local_name: E4_Period
+    label: {es: "Periodo"}
+    comment:
+      fr: >-
+        Cette classe comprend des ensembles de phénomènes cohérents ou de manifestations
+        culturelles se produisant dans le temps et dans l'espace. C'est la cohérence sociale ou
+        physique de ces phénomènes qui identifie une période, et non l'étendue spatio-temporelle
+        qui lui est associée. Cette étendue n'est que le « terrain » ou l'espace, au sens physique
+        abstrait, que le processus effectif de croissance, d'expansion et de retrait a couvert. Par
+        conséquent, des périodes différentes peuvent se chevaucher et coexister dans le temps et
+        dans l'espace, comme lorsqu'une culture nomade existe dans la même zone et au même moment
+        qu'une culture sédentaire. Cela signifie également que des droits d'usage du sol qui se
+        chevauchent, courants chez les premières nations, équivalent à des périodes qui se
+        chevauchent. L'usage typique de cette classe dans la documentation du patrimoine culturel
+        consiste à documenter des périodes culturelles et artistiques. Il existe deux
+        conceptualisations différentes du « style artistique », définies soit par des
+        caractéristiques physiques, soit par un contexte historique. Par exemple, l'« impressionnisme »
+        peut être considéré comme une période, dans la sphère d'influence européenne, s'étendant
+        d'environ 1870 à 1905, durant laquelle des peintures présentant des caractéristiques
+        particulières ont été produites par un groupe d'artistes comprenant, entre autres, Monet,
+        Renoir, Pissarro, Sisley et Degas. Il peut aussi être considéré comme un style applicable à
+        toutes les peintures partageant les caractéristiques des œuvres produites par les peintres
+        impressionnistes, indépendamment du contexte historique. La première interprétation
+        constitue une instance de Période, tandis que la seconde définit des types morphologiques
+        d'objets relevant de Type. Période est une sous-classe à la fois d'Entité temporelle et de
+        Volume spatio-temporel. Ce dernier est conçu comme un volume spatio-temporel phénoménal, tel
+        que défini dans CIDOC CRMgeo (Doerr & Hiebel, 2013). Grâce à cet héritage multiple, il est
+        possible de traiter de l'étendue physique d'une période sans devoir représenter chacune de
+        ses instances avec une instance de son volume spatio-temporel associé. Ce modèle combine
+        deux natures de substance assez différentes : une période est un phénomène, tandis qu'un
+        volume spatio-temporel est une agrégation de points dans l'espace-temps. Cependant,
+        l'étendue spatio-temporelle réelle d'une période est considérée comme lui étant propre, du
+        fait de tous ses détails et de son imprécision ; son identité et son existence dépendent
+        uniquement de l'identité de l'instance de Période. Cet héritage multiple est donc non
+        ambigu et opérant, et correspond en outre aux intuitions du langage naturel. Une unité
+        géopolitique, en tant que cas particulier d'une instance de Période, correspond à l'ensemble
+        des activités et des phénomènes liés à la revendication du pouvoir, aux conséquences de
+        l'appartenance à une zone de juridiction, et à un système administratif qui établit une
+        unité géopolitique. Des exemples issus de la période moderne sont les pays ou les
+        subdivisions administratives de pays, telles que les districts, dont les actions et les
+        structures définissent les activités et les phénomènes dans la zone qu'ils entendent
+        gouverner. Les frontières des unités géopolitiques sont souvent définies par des contrats ou
+        des traités, bien qu'elles puissent s'écarter de la pratique effective. Les propriétés
+        spatio-temporelles des unités géopolitiques peuvent être modélisées au moyen des propriétés
+        héritées de Volume spatio-temporel. Un autre cas particulier d'une instance de Période est
+        l'étendue réelle de l'ensemble des activités et des phénomènes, attestée par leurs traces
+        matérielles, qui définit un établissement humain, comme la période de peuplement de Ninive.
+      es: >-
+        Esta clase comprende conjuntos de fenómenos coherentes o de manifestaciones culturales que
+        ocurren en el tiempo y en el espacio. Es la coherencia social o física de estos fenómenos lo
+        que identifica un periodo, y no la extensión espaciotemporal asociada a él. Esta extensión
+        es solo el «terreno» o espacio, en un sentido físico abstracto, que ha cubierto el proceso
+        real de crecimiento, expansión y retroceso. En consecuencia, distintos periodos pueden
+        solaparse y coexistir en el tiempo y en el espacio, como cuando una cultura nómada existe en
+        la misma zona y al mismo tiempo que una cultura sedentaria. Esto también significa que los
+        derechos de uso de la tierra que se solapan, habituales entre las primeras naciones,
+        equivalen a periodos que se solapan. El uso típico de esta clase en la documentación del
+        patrimonio cultural consiste en documentar periodos culturales y artísticos. Existen dos
+        conceptualizaciones distintas de «estilo artístico», definidas ya sea por características
+        físicas o por el contexto histórico. Por ejemplo, el «impresionismo» puede considerarse un
+        periodo, dentro de la esfera de influencia europea, que se extiende aproximadamente de 1870
+        a 1905, durante el cual un grupo de artistas —entre otros, Monet, Renoir, Pissarro, Sisley y
+        Degas— produjo pinturas con características particulares. Alternativamente, puede
+        considerarse un estilo aplicable a todas las pinturas que comparten las características de
+        las obras producidas por los pintores impresionistas, con independencia del contexto
+        histórico. La primera interpretación constituye una instancia de Periodo, mientras que la
+        segunda define tipos morfológicos de objeto que corresponden a Tipo. Periodo es una
+        subclase tanto de Entidad temporal como de Volumen espaciotemporal. Este último se concibe
+        como un volumen espaciotemporal fenoménico, tal como se define en CIDOC CRMgeo (Doerr &
+        Hiebel, 2013). Gracias a esta herencia múltiple, es posible tratar la extensión física de un
+        periodo sin necesidad de representar cada una de sus instancias junto con una instancia de
+        su volumen espaciotemporal asociado. Este modelo combina dos naturalezas de sustancia
+        bastante distintas: un periodo es un fenómeno, mientras que un volumen espaciotemporal es
+        una agregación de puntos en el espacio-tiempo. Sin embargo, la extensión espaciotemporal
+        real de un periodo se considera propia y única, debido a todos sus detalles e imprecisión;
+        su identidad y existencia dependen únicamente de la identidad de la instancia de Periodo.
+        Por ello, esta herencia múltiple es inequívoca y eficaz, y además se corresponde con las
+        intuiciones del lenguaje natural. Una unidad geopolítica, como caso particular de una
+        instancia de Periodo, es el conjunto de actividades y fenómenos relacionados con la
+        reivindicación del poder, las consecuencias de pertenecer a un área jurisdiccional y un
+        sistema administrativo que establece una unidad geopolítica. Ejemplos del periodo moderno
+        son los países o las áreas administrativas de países, como los distritos, cuyas acciones y
+        estructuras definen actividades y fenómenos en el área que pretenden gobernar. Las fronteras
+        de las unidades geopolíticas suelen definirse en contratos o tratados, aunque pueden
+        desviarse de la práctica real. Las propiedades espaciotemporales de las unidades
+        geopolíticas pueden modelarse mediante las propiedades heredadas de Volumen espaciotemporal.
+        Otro caso particular de una instancia de Periodo es la extensión real del conjunto de
+        actividades y fenómenos, evidenciada por sus huellas físicas, que define un asentamiento,
+        como el periodo de poblamiento de Nínive.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E7_Activity"
+    local_name: E7_Activity
+    label: {es: "Actividad"}
+    comment:
+      fr: >-
+        Cette classe comprend les actions menées intentionnellement par des actants et qui
+        entraînent des changements d'état dans les systèmes culturels, sociaux ou physiques
+        documentés. Cette notion englobe des actions complexes, composites et de longue durée,
+        telles que la construction d'un établissement humain ou une guerre, ainsi que des actions
+        simples et brèves, telles que l'ouverture d'une porte.
+      es: >-
+        Esta clase comprende las acciones llevadas a cabo intencionadamente por actores y que dan
+        lugar a cambios de estado en los sistemas culturales, sociales o físicos documentados. Esta
+        noción incluye acciones complejas, compuestas y de larga duración, como la construcción de
+        un asentamiento o una guerra, así como acciones simples y breves, como la apertura de una
+        puerta.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E70_Thing"
+    local_name: E70_Thing
+    label: {es: "Cosa"}
+    comment:
+      fr: >-
+        Cette classe générale comprend les instances discrètes et identifiables d'Élément
+        persistant, documentées comme des unités uniques, qui soit sont constituées de matière,
+        soit dépendent d'être portées par de la matière, et se caractérisent par une stabilité
+        relative. Elles peuvent être des produits intellectuels ou des choses matérielles. Elles
+        peuvent, par exemple, avoir une forme physique solide, un encodage électronique, ou être un
+        concept ou une structure logique.
+      es: >-
+        Esta clase general comprende instancias discretas e identificables de Elemento persistente,
+        documentadas como unidades únicas, que están constituidas por materia o dependen de ser
+        portadas por materia, y se caracterizan por una estabilidad relativa. Pueden ser productos
+        intelectuales o cosas físicas. Pueden, por ejemplo, tener una forma física sólida, una
+        codificación electrónica, o ser un concepto o una estructura lógica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
+    local_name: E39_Actor
+    label: {es: "Actor"}
+    comment:
+      fr: >-
+        Cette classe comprend les personnes, individuellement ou en groupes, qui ont la capacité
+        d'accomplir des actions intentionnelles dont elles peuvent être tenues responsables.
+      es: >-
+        Esta clase comprende a las personas, individualmente o en grupos, que tienen la capacidad
+        de realizar acciones intencionadas de las que pueden ser consideradas responsables.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E21_Person"
+    local_name: E21_Person
+    label: {es: "Persona"}
+    comment:
+      fr: >-
+        Cette classe comprend les personnes réelles qui vivent ou dont on suppose qu'elles ont
+        vécu. Les figures légendaires ayant pu exister, telles qu'Ulysse ou le roi Arthur, relèvent
+        de cette classe si la documentation les mentionne comme des personnages historiques.
+        Lorsqu'un doute existe quant à savoir si plusieurs personnes sont en réalité identiques,
+        plusieurs instances peuvent être créées et reliées entre elles pour indiquer leur relation.
+        Le CIDOC CRM ne propose pas de forme spécifique pour raisonner sur une identité possible.
+        Dans un contexte bibliographique, un nom présenté selon les conventions habituellement
+        employées pour les noms de personnes sera supposé correspondre à une personne réelle
+        effective (une instance de Personne), sauf si des éléments indiquent le contraire. Le fait
+        qu'un personnage (persona) puisse être classé par erreur comme une instance de Personne
+        n'implique pas que le concept comprenne les personae.
+      es: >-
+        Esta clase comprende a las personas reales que viven o de las que se supone que han vivido.
+        Las figuras legendarias que pudieron haber existido, como Ulises o el rey Arturo, pertenecen
+        a esta clase si la documentación las presenta como personajes históricos. En los casos en
+        que exista duda sobre si varias personas son en realidad la misma, pueden crearse varias
+        instancias y vincularse entre sí para indicar su relación. El CIDOC CRM no propone una
+        forma específica para razonar sobre una posible identidad. En un contexto bibliográfico, se
+        asumirá que un nombre presentado según las convenciones habitualmente empleadas para los
+        nombres de persona corresponde a una persona real efectiva (una instancia de Persona), salvo
+        que existan indicios de lo contrario. El hecho de que un personaje (persona) pueda
+        clasificarse erróneamente como una instancia de Persona no implica que el concepto comprenda
+        las personae.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"
+    local_name: E18_Physical_Thing
+    label: {es: "Cosa física"}
+    comment:
+      fr: >-
+        Cette classe comprend toutes les choses matérielles persistantes, d'origine humaine ou
+        naturelle, dotées d'une forme relativement stable. Selon l'existence ou non de limites
+        naturelles de ces choses, le CIDOC CRM distingue les instances d'Objet physique de celles de
+        Caractéristique physique, telles que des trous, des rivières, des parcelles de terrain, etc.
+        La plupart des instances d'Objet physique peuvent être déplacées (si elles ne sont pas trop
+        lourdes), tandis que les caractéristiques font partie intégrante de la matière environnante.
+        Une chose matérielle occupe non seulement un espace géométrique particulier à chaque instant
+        de son existence, mais forme également, au cours de son existence, une trajectoire à travers
+        l'espace-temps, qui occupe un volume réel, c'est-à-dire phénoménal, dans l'espace-temps. On
+        inclut dans l'espace occupé l'espace rempli par la matière de la chose matérielle ainsi que
+        tous ses espaces intérieurs, tel l'intérieur d'une boîte. Pour permettre une description plus
+        détaillée de la présence dans l'espace et le temps d'une chose matérielle, celle-ci peut être
+        associée à son instance spécifique de Volume spatio-temporel au moyen de la propriété P196
+        définit (est défini par). Le CIDOC CRM ne se préoccupe généralement pas des quantités de
+        matière à l'état fluide ou gazeux, tant qu'elles ne sont pas confinées de façon identifiable
+        pendant une durée minimale identifiable.
+      es: >-
+        Esta clase comprende todas las cosas físicas persistentes, de origen humano o natural, con
+        una forma relativamente estable. Según la existencia o no de límites naturales de dichas
+        cosas, el CIDOC CRM distingue las instancias de Objeto físico de las de Rasgo físico, tales
+        como agujeros, ríos, parcelas de terreno, etc. La mayoría de las instancias de Objeto físico
+        pueden desplazarse (si no son demasiado pesadas), mientras que los rasgos son parte
+        integrante de la materia circundante. Una cosa física ocupa no solo un espacio geométrico
+        concreto en cada instante de su existencia, sino que además forma, a lo largo de su
+        existencia, una trayectoria a través del espacio-tiempo, que ocupa un volumen real, es
+        decir, fenoménico, en el espacio-tiempo. Se incluye en el espacio ocupado el espacio
+        ocupado por la materia de la cosa física, así como todos sus espacios interiores, como el
+        interior de una caja. Para permitir descripciones más detalladas de la presencia en el
+        espacio y en el tiempo de una cosa física, esta puede asociarse con su instancia específica
+        de Volumen espaciotemporal mediante la propiedad P196 define (es definido por). El CIDOC
+        CRM, por lo general, no se ocupa de cantidades de materia en estado fluido o gaseoso, salvo
+        que estén confinadas de forma identificable durante un intervalo mínimo de tiempo
+        identificable.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"
+    local_name: E22_Human-Made_Object
+    label: {es: "Objeto elaborado por el ser humano"}
+    comment:
+      fr: >-
+        Cette classe comprend tous les objets physiques persistants, de quelque taille que ce soit,
+        créés intentionnellement par une activité humaine et présentant des limites physiques qui
+        les séparent complètement, de façon objective, des autres objets. Cette classe comprend
+        également tous les regroupements d'objets réalisés à des fins fonctionnelles, quelles
+        qu'elles soient, indépendamment de leur cohérence physique, comme un jeu d'échecs.
+      es: >-
+        Esta clase comprende todos los objetos físicos persistentes, de cualquier tamaño, creados
+        intencionadamente mediante actividad humana y que presentan límites físicos que los separan
+        por completo, de forma objetiva, de otros objetos. Esta clase incluye también todas las
+        agrupaciones de objetos realizadas con fines funcionales de cualquier tipo, con
+        independencia de su coherencia física, como un juego de ajedrez.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"
+    local_name: E72_Legal_Object
+    label: {es: "Objeto jurídico"}
+    comment:
+      fr: >-
+        Cette classe comprend les éléments matériels ou immatériels auxquels peuvent s'appliquer
+        des instances de Droit, tel le droit de propriété ou d'usage. Cela vaut généralement pour
+        toutes les choses matérielles. Dans le cas des objets conceptuels, en revanche, l'identité
+        d'un objet conceptuel ou la manière dont il est utilisé peut être trop ambiguë pour établir
+        de façon fiable des instances de Droit, comme dans le cas des taxons ou des sources
+        d'inspiration. La propriété des personnes morales est actuellement considérée comme hors du
+        champ d'application du CIDOC CRM.
+      es: >-
+        Esta clase comprende los elementos materiales o inmateriales a los que pueden aplicarse
+        instancias de Derecho, como el derecho de propiedad o de uso. Esto es válido, en general,
+        para todas las cosas físicas. En el caso de los objetos conceptuales, sin embargo, la
+        identidad de un objeto conceptual o la manera en que se utiliza puede ser demasiado ambigua
+        para establecer de forma fiable instancias de Derecho, como ocurre con los taxones o las
+        fuentes de inspiración. La propiedad de las personas jurídicas se considera actualmente
+        fuera del alcance del CIDOC CRM.

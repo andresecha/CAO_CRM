@@ -1,0 +1,86 @@
+# Lote 3: las 5 subpropiedades de rol P14_has_* -- la única excepción al principio de composición
+# pura de CAO_CRM (creadas por el propio proyecto, ver docs/intro.html "Justificación del diseño").
+# Ya tienen label Y comment oficiales en fr (añadidos en trabajo previo del proyecto, no son
+# huecos reales -- confirmado por term_inventory.json: needs_comment_fr=False para las 5). Solo
+# falta es (label + comment). Nombres propios (Stendhal, Le Divan, Henri Martineau), títulos de
+# obra y códigos MARC Relator se dejan sin traducir, igual que en la versión fr ya existente.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_original_author"
+    local_name: P14_has_original_author
+    label: {es: "tiene como autor original"}
+    comment:
+      es: >-
+        Subpropiedad de P14_carried_out_by, restringida al rol de autor del texto original (MARC
+        Relator «aut» — http://id.loc.gov/vocabulary/relators/aut). Declarada siguiendo el propio
+        método oficial de CIDOC-CRM para las propiedades «.1» (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Por ejemplo, la instancia de F27_Work_Creation
+        correspondiente a la concepción de la novela «Le Rouge et le Noir» tiene como autor
+        original a Stendhal — una responsabilidad que permanece única y no se repite para cada
+        Expresión o Manifestación posterior de la obra.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_translator"
+    local_name: P14_has_translator
+    label: {es: "tiene como traductor"}
+    comment:
+      es: >-
+        Subpropiedad de P14_carried_out_by, restringida al rol de traducción (MARC Relator «trl» —
+        http://id.loc.gov/vocabulary/relators/trl). Declarada siguiendo el propio método oficial de
+        CIDOC-CRM para las propiedades «.1» (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Por ejemplo, la instancia de F28_Expression_Creation
+        que produce la versión alemana «Mord im Orientexpress» de una novela de Agatha Christie
+        (ejemplo oficial del propio LRMoo) tiene como traductor a la persona que realizó dicha
+        traducción — distinta del autor original del texto en inglés.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_abridger"
+    local_name: P14_has_abridger
+    label: {es: "tiene como abreviador"}
+    comment:
+      es: >-
+        Subpropiedad de P14_carried_out_by, restringida al rol de abreviar un texto (MARC Relator
+        «abr» — http://id.loc.gov/vocabulary/relators/abr). Declarada siguiendo el propio método
+        oficial de CIDOC-CRM para las propiedades «.1» (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Por ejemplo, la instancia de F28_Expression_Creation
+        que produce la versión abreviada en inglés de «Murder on the Orient Express» (tal como la
+        publicó HarperCollins, ejemplo oficial del propio LRMoo) tiene como abreviador a la persona
+        que produjo esa versión reducida — un rol distinto del autor original del texto completo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_scientific_editor"
+    local_name: P14_has_scientific_editor
+    label: {es: "tiene como editor científico"}
+    comment:
+      es: >-
+        Subpropiedad de P14_carried_out_by, restringida al rol de responsabilidad científica en el
+        establecimiento editorial de una versión de una obra (revisar el texto, redactar un
+        prefacio o aparato crítico) (MARC Relator «edt» —
+        http://id.loc.gov/vocabulary/relators/edt, verificado el 8 de julio de 2026: «A person,
+        family, or organization contributing to a resource by revising or elucidating the content,
+        e.g., adding an introduction, notes, or other critical matter. An editor may also prepare a
+        resource for production, publication, or distribution.»). Declarada siguiendo el propio
+        método oficial de CIDOC-CRM para las propiedades «.1» (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Se aplica, por subsunción de dominio (E7_Activity), a
+        F30_Manifestation_Creation y a cualquier E7_Activity independiente vinculada a
+        F5_Item/D1_Digital_Object mediante P16_used_specific_object. Por ejemplo, la instancia de
+        F30_Manifestation_Creation que establece la edición crítica de 1927 de «Le Rouge et le
+        Noir» de Stendhal tiene como editor científico a Henri Martineau, quien revisó el texto y
+        redactó el prefacio — distinto del editor comercial (véase P14_has_publisher), responsable
+        comercial y material de esa misma manifestación — véase
+        decisions/fr/informe-activite-editoriale-scientifique.md.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_publisher"
+    local_name: P14_has_publisher
+    label: {es: "tiene como editor comercial"}
+    comment:
+      es: >-
+        Subpropiedad de P14_carried_out_by, restringida al rol de editor/impresor comercial
+        responsable de publicar o producir una manifestación o ejemplar (MARC Relator «pbl» —
+        http://id.loc.gov/vocabulary/relators/pbl, verificado el 8 de julio de 2026: «A person or
+        organization responsible for publishing, releasing, or issuing a resource.»). Declarada
+        siguiendo el propio método oficial de CIDOC-CRM para las propiedades «.1» (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Distinta de P14_has_scientific_editor: esta propiedad
+        cubre la responsabilidad comercial/material de la publicación, la otra la responsabilidad
+        intelectual sobre el contenido del texto. Se aplica a F30_Manifestation_Creation y
+        F32_Item_Production_Event. Por ejemplo, la instancia de F30_Manifestation_Creation que
+        establece la edición crítica de 1927 de «Le Rouge et le Noir» de Stendhal tiene como editor
+        comercial a Le Divan, la editorial parisina responsable de la publicación e impresión —
+        véase decisions/fr/informe-activite-editoriale-scientifique.md.

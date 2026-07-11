@@ -1,0 +1,375 @@
+# Lote 7: 5 propiedades de datos + 12 pares de propiedades de objeto CIDOC-CRM (primera mitad de
+# las 48 propiedades de objeto restantes). Todas ya tienen label oficial en fr; solo falta
+# label/comment es + comment fr.
+
+terms:
+  # --- Propiedades de datos ---
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P3_has_note"
+    local_name: P3_has_note
+    label: {es: "tiene nota"}
+    comment:
+      fr: >-
+        Cette propriété sert de conteneur pour toutes les descriptions informelles d'un objet qui
+        n'ont pas été exprimées au moyen des constructions du CIDOC CRM. Elle saisit en particulier
+        la caractérisation de l'élément lui-même, ses structures internes, son apparence, etc.
+        Comme la propriété a pour type (est le type de), cette propriété découle du champ
+        d'application volontairement restreint du CIDOC CRM. L'objectif n'est pas de saisir, sous
+        une forme structurée, tout ce qui peut être dit d'un élément ; le formalisme du CIDOC CRM
+        n'est en effet pas considéré comme suffisant pour exprimer tout ce qui peut être dit. Une
+        bonne pratique consiste à utiliser des champs de note distincts pour différents aspects
+        d'une caractérisation. La propriété P3.1 a pour type, rattachée à a pour note, permet de
+        différencier des notes spécifiques, par exemple « construction », « décoration », etc. Un
+        élément peut avoir de nombreuses notes, mais chaque note est rattachée à un élément
+        spécifique.
+      es: >-
+        Esta propiedad sirve de contenedor para todas las descripciones informales de un objeto que
+        no se han expresado mediante las construcciones del CIDOC CRM. Recoge en particular la
+        caracterización del propio elemento, sus estructuras internas, su apariencia, etc. Al igual
+        que la propiedad tiene tipo (es tipo de), esta propiedad es consecuencia del ámbito
+        deliberadamente restringido del CIDOC CRM. El objetivo no es recoger, de forma
+        estructurada, todo lo que pueda decirse de un elemento; de hecho, el formalismo del CIDOC
+        CRM no se considera suficiente para expresar todo lo que puede decirse. Una buena práctica
+        consiste en emplear campos de nota distintos para distintos aspectos de una
+        caracterización. La propiedad P3.1 tiene tipo, asociada a tiene nota, permite diferenciar
+        notas específicas, por ejemplo «construcción», «decoración», etc. Un elemento puede tener
+        muchas notas, pero cada nota está vinculada a un elemento específico.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"
+    local_name: P82_at_some_time_within
+    label: {es: "ocurrió en algún momento dentro de"}
+    comment:
+      fr: >-
+        Cette propriété décrit la période maximale au sein de laquelle se situe un intervalle
+        temporel. Les intervalles temporels pouvant ne pas avoir une étendue temporelle connue avec
+        précision, le CIDOC CRM permet de formuler des affirmations sur les étendues temporelles
+        minimale et maximale des intervalles temporels. Cette propriété permet d'attribuer à
+        l'étendue temporelle maximale d'un intervalle temporel (c'est-à-dire sa limite extérieure)
+        une valeur de Primitive temporelle. Les primitives temporelles sont traitées par le CIDOC
+        CRM comme des intervalles de dates propres à une application ou à un système, et ne font
+        l'objet d'aucune analyse plus poussée. Si différentes sources de preuves justifient des
+        étendues maximales différentes sans se contredire, l'intersection résultante de toutes ces
+        étendues constituera la meilleure estimation. Il convient d'en tenir compte lors de
+        l'intégration d'informations.
+      es: >-
+        Esta propiedad describe el periodo máximo dentro del cual se sitúa un intervalo temporal.
+        Dado que los intervalos temporales pueden no tener una extensión temporal conocida con
+        precisión, el CIDOC CRM permite formular afirmaciones sobre las extensiones temporales
+        mínima y máxima de los intervalos temporales. Esta propiedad permite asignar a la extensión
+        temporal máxima de un intervalo temporal (es decir, su límite exterior) un valor de
+        Primitiva temporal. Las primitivas temporales son tratadas por el CIDOC CRM como intervalos
+        de fechas propios de una aplicación o de un sistema, y no son objeto de un análisis más
+        detallado. Si distintas fuentes de evidencia justifican extensiones máximas diferentes sin
+        contradecirse entre sí, la intersección resultante de todas esas extensiones constituirá la
+        mejor estimación. Esto debe tenerse en cuenta en la integración de información.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin"
+    local_name: P82a_begin_of_the_begin
+    label: {es: "comienzo del comienzo"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end"
+    local_name: P82b_end_of_the_end
+    label: {es: "fin del fin"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P90_has_value"
+    local_name: P90_has_value
+    label: {es: "tiene valor"}
+    comment:
+      fr: "Cette propriété permet d'approximer une instance de Dimension au moyen d'une instance de la primitive Nombre."
+      es: "Esta propiedad permite aproximar una instancia de Dimensión mediante una instancia de la primitiva Número."
+
+  # --- Propiedades de objeto ---
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of"
+    local_name: P100_was_death_of
+    label: {es: "fue la muerte de"}
+    comment:
+      fr: >-
+        Cette propriété relie une instance de Mort à l'instance de Personne décédée. Une instance
+        de Mort peut concerner plusieurs personnes, par exemple dans le cas d'une bataille ou d'une
+        catastrophe. Cette propriété n'est pas destinée à être utilisée avec du matériel d'histoire
+        naturelle en général, mais seulement avec des personnes.
+      es: >-
+        Esta propiedad vincula una instancia de Muerte con la instancia de Persona fallecida. Una
+        instancia de Muerte puede afectar a varias personas, por ejemplo en el caso de una batalla o
+        una catástrofe. Esta propiedad no está pensada para material general de historia natural,
+        sino únicamente para personas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P100i_died_in"
+    local_name: P100i_died_in
+    label: {es: "murió en"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to"
+    local_name: P104_is_subject_to
+    label: {es: "está sujeto a"}
+    comment:
+      fr: >-
+        Cette propriété relie une instance particulière d'Objet juridique aux instances de Droit
+        auxquelles elle est soumise. Le droit est détenu par une instance d'Actant, comme le décrit
+        la propriété possède (est possédé par).
+      es: >-
+        Esta propiedad vincula una instancia concreta de Objeto jurídico con las instancias de
+        Derecho a las que está sujeta. El derecho lo posee una instancia de Actor, tal como describe
+        la propiedad posee (es poseído por).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to"
+    local_name: P104i_applies_to
+    label: {es: "se aplica a"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"
+    local_name: P106_is_composed_of
+    label: {es: "se compone de"}
+    comment:
+      fr: >-
+        Cette propriété associe une instance d'Objet symbolique à une partie de celle-ci qui est
+        elle-même une instance d'Objet symbolique, comme des fragments de texte ou des extraits
+        d'une image. Cette propriété est transitive et asymétrique.
+      es: >-
+        Esta propiedad asocia una instancia de Objeto simbólico con una parte de ella que es a su
+        vez una instancia de Objeto simbólico, como fragmentos de texto o recortes de una imagen.
+        Esta propiedad es transitiva y asimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"
+    local_name: P106i_forms_part_of
+    label: {es: "forma parte de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"
+    local_name: P108_has_produced
+    label: {es: "ha producido"}
+    comment:
+      fr: >-
+        Cette propriété identifie l'instance de Chose matérielle élaborée par l'humain qui est
+        venue à l'existence à la suite de l'instance de Production. L'identité d'une instance de
+        Chose matérielle élaborée par l'humain n'est pas définie par sa matière, mais par son
+        existence en tant que sujet de documentation. Une Production peut aboutir à la création de
+        plusieurs instances de Chose matérielle élaborée par l'humain.
+      es: >-
+        Esta propiedad identifica la instancia de Cosa física elaborada por el ser humano que
+        llegó a existir como resultado de la instancia de Producción. La identidad de una instancia
+        de Cosa física elaborada por el ser humano no viene definida por su materia, sino por su
+        existencia como sujeto de documentación. Una Producción puede dar lugar a la creación de
+        varias instancias de Cosa física elaborada por el ser humano.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by"
+    local_name: P108i_was_produced_by
+    label: {es: "fue producido por"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term"
+    local_name: P127_has_broader_term
+    label: {es: "tiene término genérico"}
+    comment:
+      fr: >-
+        Cette propriété associe une instance de Type à une autre instance de Type ayant une
+        signification plus large. Elle permet d'organiser les instances de Type en hiérarchies. Il
+        s'agit du sens de « terme générique (BTG) » tel que défini par la norme ISO 25964-2:2013
+        (Organisation internationale de normalisation, 2013). Cette propriété est transitive. Cette
+        propriété est asymétrique.
+      es: >-
+        Esta propiedad asocia una instancia de Tipo con otra instancia de Tipo que tiene un
+        significado más amplio. Permite organizar las instancias de Tipo en jerarquías. Corresponde
+        al sentido de «término genérico (BTG)» tal como se define en la norma ISO 25964-2:2013
+        (Organización Internacional de Normalización, 2013). Esta propiedad es transitiva. Esta
+        propiedad es asimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term"
+    local_name: P127i_has_narrower_term
+    label: {es: "tiene término específico"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"
+    local_name: P14_carried_out_by
+    label: {es: "fue efectuado por"}
+    comment:
+      fr: >-
+        Cette propriété décrit la participation active d'une instance d'Actant à une instance
+        d'Activité. Elle implique une responsabilité causale ou juridique. La propriété P14.1 en
+        tant que rôle, rattachée à cette propriété, précise la nature de la participation d'un
+        actant.
+      es: >-
+        Esta propiedad describe la participación activa de una instancia de Actor en una instancia
+        de Actividad. Implica una responsabilidad causal o jurídica. La propiedad P14.1 en calidad
+        de, asociada a esta propiedad, precisa la naturaleza de la participación de un actor.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14i_performed"
+    local_name: P14i_performed
+    label: {es: "efectuó"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of"
+    local_name: P150_defines_typical_parts_of
+    label: {es: "define las partes típicas de"}
+    comment:
+      fr: >-
+        Cette propriété associe une instance de Type « A » à une instance de Type « B », lorsque
+        les éléments de type « A » constituent typiquement une partie des éléments de type « B »,
+        comme « moteurs de voiture » et « voitures ». Elle permet d'organiser les types en
+        hiérarchies fondées sur le fait qu'un type décrit une partie typique d'un autre. Cette
+        propriété équivaut au « terme générique partitif (BTP) » tel que défini dans la norme ISO
+        2788, et à « broaderPartitive » dans SKOS. Cette propriété n'est pas transitive. Cette
+        propriété est asymétrique.
+      es: >-
+        Esta propiedad asocia una instancia de Tipo «A» con una instancia de Tipo «B», cuando los
+        elementos de tipo «A» forman típicamente parte de los elementos de tipo «B», como «motores
+        de coche» y «coches». Permite organizar los tipos en jerarquías basadas en que un tipo
+        describe una parte típica de otro. Esta propiedad equivale al «término genérico partitivo
+        (BTP)» tal como se define en la norma ISO 2788, y a «broaderPartitive» en SKOS. Esta
+        propiedad no es transitiva. Esta propiedad es asimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for"
+    local_name: P150i_defines_typical_wholes_for
+    label: {es: "define los todos típicos para"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"
+    local_name: P16_used_specific_object
+    label: {es: "utilizó el objeto específico"}
+    comment:
+      fr: >-
+        Cette propriété décrit l'utilisation de choses matérielles ou immatérielles d'une manière
+        essentielle à l'exécution ou au résultat d'une instance d'Activité. Cette propriété
+        s'applique généralement aux outils, instruments, moules, matières premières et éléments
+        incorporés à un produit. Elle implique que la présence de l'objet en question constituait
+        une condition nécessaire à l'action. Par exemple, la rédaction de ce texte a nécessité
+        l'utilisation d'un ordinateur. Une chose immatérielle peut être utilisée si au moins l'un de
+        ses supports est présent, par exemple les outils logiciels sur un ordinateur. Un autre
+        exemple est l'utilisation d'un nom particulier par un groupe de personnes donné, sur une
+        certaine durée, pour identifier une chose, telle qu'un établissement humain. Dans ce cas,
+        les supports physiques de ce nom sont à tout le moins les personnes qui en comprennent
+        l'usage.
+      es: >-
+        Esta propiedad describe el uso de cosas materiales o inmateriales de un modo esencial para
+        la ejecución o el resultado de una instancia de Actividad. Esta propiedad se aplica
+        típicamente a herramientas, instrumentos, moldes, materias primas y elementos incorporados
+        a un producto. Implica que la presencia del objeto en cuestión era una condición necesaria
+        para la acción. Por ejemplo, la redacción de este texto requirió el uso de un ordenador. Una
+        cosa inmaterial puede utilizarse si al menos uno de sus soportes está presente, por ejemplo
+        las herramientas de software en un ordenador. Otro ejemplo es el uso de un nombre concreto
+        por parte de un grupo de personas determinado, durante un cierto periodo, para identificar
+        una cosa, como un asentamiento. En este caso, los soportes físicos de ese nombre son, como
+        mínimo, las personas que comprenden su uso.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"
+    local_name: P16i_was_used_for
+    label: {es: "fue utilizado para"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"
+    local_name: P1_is_identified_by
+    label: {es: "está identificado por"}
+    comment:
+      fr: >-
+        Cette propriété décrit le fait de nommer ou d'identifier tout élément du monde réel au
+        moyen d'un nom ou de tout autre identifiant. Cette propriété est destinée aux identifiants
+        d'usage général, qui font partie du monde que le modèle entend décrire, et non simplement
+        aux identifiants internes de base de données propres à un système technique, sauf si ces
+        derniers ont également un usage plus général en dehors du contexte technique. Cette
+        propriété englobe en particulier l'identification au moyen d'expressions mathématiques,
+        telles que les systèmes de coordonnées utilisés pour identifier des instances de Lieu.
+        Cette propriété ne révèle rien quant au moment, au lieu, ni à la personne ayant utilisé cet
+        identifiant. Une représentation plus détaillée peut être obtenue au moyen du chemin
+        pleinement développé (c'est-à-dire indirect) passant par E15 Attribution d'identifiant.
+        Cette propriété constitue un raccourci pour le chemin allant d'Entité CRM, via a été
+        attribué par, E15 Attribution d'identifiant, a été attribué à, jusqu'à Identifiant. Elle
+        constitue également un raccourci pour le chemin allant d'Entité CRM, via est identifié par,
+        Appellation, a pour forme alternative, jusqu'à Appellation.
+      es: >-
+        Esta propiedad describe el hecho de nombrar o identificar cualquier elemento del mundo real
+        mediante un nombre o cualquier otro identificador. Esta propiedad está pensada para
+        identificadores de uso general, que forman parte del mundo que el modelo pretende describir,
+        y no simplemente para identificadores internos de base de datos propios de un sistema
+        técnico, salvo que estos últimos tengan también un uso más general fuera del contexto
+        técnico. Esta propiedad incluye en particular la identificación mediante expresiones
+        matemáticas, tales como los sistemas de coordenadas empleados para identificar instancias
+        de Lugar. Esta propiedad no revela nada sobre cuándo, dónde ni por quién se utilizó ese
+        identificador. Puede obtenerse una representación más detallada mediante el camino
+        plenamente desarrollado (es decir, indirecto) que pasa por E15 Asignación de identificador.
+        Esta propiedad constituye un atajo para el camino que va de Entidad CRM, mediante fue
+        atribuido por, E15 Asignación de identificador, fue asignado a, hasta Identificador.
+        Constituye también un atajo para el camino que va de Entidad CRM, mediante está identificado
+        por, Apelativo, tiene forma alternativa, hasta Apelativo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P1i_identifies"
+    local_name: P1i_identifies
+    label: {es: "identifica"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"
+    local_name: P21_had_general_purpose
+    label: {es: "tuvo como finalidad general"}
+    comment:
+      fr: >-
+        Cette propriété décrit une relation intentionnelle entre une instance d'Activité et un but
+        ou une finalité générale, décrite comme une instance de Type. Cela peut concerner des
+        activités conçues comme la préparation d'un certain type d'activité ou d'événement. A eu
+        pour finalité générale (a été la finalité de) se distingue de a eu pour finalité spécifique
+        (a été la finalité de) en ce qu'aucun événement spécifique n'est impliqué en tant que
+        finalité.
+      es: >-
+        Esta propiedad describe una relación intencional entre una instancia de Actividad y algún
+        objetivo o finalidad general, descrita como una instancia de Tipo. Esto puede implicar
+        actividades concebidas como preparación de un determinado tipo de actividad o evento. Tuvo
+        como finalidad general (fue la finalidad de) se distingue de tuvo como finalidad específica
+        (fue la finalidad de) en que no se implica ningún evento concreto como finalidad.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"
+    local_name: P21i_was_purpose_of
+    label: {es: "fue la finalidad de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
+    local_name: P2_has_type
+    label: {es: "tiene tipo"}
+    comment:
+      fr: >-
+        Cette propriété permet la sous-typisation des entités du CIDOC CRM — une forme de
+        spécialisation — au moyen d'une hiérarchie terminologique, ou thésaurus. Le CIDOC CRM vise
+        à se concentrer sur les entités et les relations de haut niveau nécessaires pour décrire
+        des structures de données. Il ne spécialise donc pas davantage les entités que ce qui est
+        requis à cette fin immédiate. Cependant, les entités de la hiérarchie isA du CIDOC CRM
+        peuvent être spécialisées en un nombre quelconque de sous-entités, qui peuvent être
+        définies dans la hiérarchie de Type. Appellation, par exemple, peut être spécialisée en
+        « adresse électronique », « numéro de téléphone », « boîte postale », « URL », etc., dont
+        aucune ne figure explicitement dans la hiérarchie de classes du CIDOC CRM. Une explication
+        complète sur l'affinement des concepts du CIDOC CRM au moyen de Type est donnée dans la
+        section « À propos des types » de la partie « Constructions de modélisation spécifiques »
+        du présent document. Cette propriété constitue un raccourci pour le chemin allant d'Entité
+        CRM, via a été classé par, E17 Attribution de type, a été attribué à, jusqu'à Type.
+      es: >-
+        Esta propiedad permite la subtipificación de las entidades del CIDOC CRM —una forma de
+        especialización— mediante una jerarquía terminológica, o tesauro. El CIDOC CRM pretende
+        centrarse en las entidades y relaciones de alto nivel necesarias para describir estructuras
+        de datos. En consecuencia, no especializa las entidades más allá de lo requerido para este
+        fin inmediato. Sin embargo, las entidades de la jerarquía isA del CIDOC CRM pueden
+        especializarse en cualquier número de subentidades, que pueden definirse en la jerarquía de
+        Tipo. Apelativo, por ejemplo, puede especializarse en «dirección de correo electrónico»,
+        «número de teléfono», «apartado de correos», «URL», etc., ninguna de las cuales figura
+        explícitamente en la jerarquía de clases del CIDOC CRM. En la sección «Acerca de los tipos»
+        de la parte «Construcciones de modelado específicas» de este documento se ofrece una
+        explicación completa sobre cómo refinar los conceptos del CIDOC CRM mediante Tipo. Esta
+        propiedad constituye un atajo para el camino que va de Entidad CRM, mediante fue clasificado
+        por, E17 Asignación de tipo, fue asignado a, hasta Tipo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"
+    local_name: P2i_is_type_of
+    label: {es: "es tipo de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension"
+    local_name: P43_has_dimension
+    label: {es: "tiene dimensión"}
+    comment:
+      fr: >-
+        Cette propriété enregistre une instance de Dimension d'une instance de Cosa. Lorsque la
+        propriété enregistrée résulte d'une mesure d'une instance de Chose matérielle, cette
+        propriété constitue un raccourci du chemin plus développé allant de Chose matérielle, via a
+        été mesuré par, E16 Mesure, dimension observée, jusqu'à Dimension. Elle ne fournit aucune
+        information sur la manière dont une instance de Dimension a été établie, ni sur le moment
+        ni sur la personne qui l'a établie. La connaissance d'une instance de Dimension ne résulte
+        pas nécessairement d'une mesure ; elle peut résulter de l'évaluation de données ou d'autres
+        informations, ce qui doit être documenté comme une instance d'E13 Attribution d'attribut.
+        Une instance de Dimension est spécifique à une instance de Cosa.
+      es: >-
+        Esta propiedad registra una instancia de Dimensión de alguna instancia de Cosa. En el caso
+        de que la propiedad registrada sea resultado de una medición de una instancia de Cosa
+        física, esta propiedad constituye un atajo del camino más desarrollado que va de Cosa
+        física, mediante fue medido por, E16 Medición, dimensión observada, hasta Dimensión. No
+        ofrece información sobre cómo ni cuándo se estableció una instancia de Dimensión, ni por
+        quién. El conocimiento sobre una instancia de Dimensión no tiene por qué ser resultado de
+        una medición; puede ser resultado de la evaluación de datos u otra información, lo cual
+        debe documentarse como una instancia de E13 Asignación de atributo. Una instancia de
+        Dimensión es específica de una instancia de Cosa.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of"
+    local_name: P43i_is_dimension_of
+    label: {es: "es dimensión de"}

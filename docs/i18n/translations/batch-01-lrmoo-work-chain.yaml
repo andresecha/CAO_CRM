@@ -1,0 +1,445 @@
+# Lote piloto: cadena LRMoo Work -> Expression -> Manifestation -> Item, y los eventos/propiedades
+# que la conectan. Terminología anclada en glossary_crosswalk.yaml (obra/expresión/manifestación/
+# ejemplar en es; œuvre/expression/manifestation/exemplaire en fr, ya usados en docs/intro*.html).
+#
+# Los nombres de propiedad, códigos e IRIs dentro de las definiciones se dejan literalmente en
+# inglés entre backticks (`R16_created`, `F1_Work`...) -- son identificadores del modelo, no texto
+# a traducir; así ya se hace en docs/intro.html.
+#
+# Las propiedades inversas (Ri_...) no tienen comentario oficial en inglés (CIDOC-CRM/LRMoo no
+# documentan las inversas por separado, su semántica se deduce de la propiedad directa) -- por eso
+# solo llevan label, sin comment.
+
+terms:
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F1_Work"
+    local_name: F1_Work
+    label:
+      fr: "Œuvre"
+      es: "Obra"
+    comment:
+      fr: >-
+        Cette classe comprend les idées intellectuelles distinctes véhiculées par des créations
+        artistiques et intellectuelles, telles que des poèmes, des récits ou des compositions
+        musicales. Une œuvre est le résultat d'un processus intellectuel mené par une ou plusieurs
+        personnes. La notion d'œuvre suppose intrinsèquement l'existence de réalisations
+        reconnaissables de cette œuvre sous la forme d'une ou plusieurs expressions. Les œuvres sont
+        souvent considérées comme achevées et distinctes, par exemple lorsqu'elles sont déclarées
+        comme telles par leur créateur, ou en raison de l'élaboration ou de la cohérence logique de
+        leur contenu. Toutefois, une œuvre peut être reconnue comme existante bien qu'inachevée, par
+        exemple lorsque ses créateurs, délibérément ou accidentellement, n'ont jamais explicitement
+        mené à terme une expression particulière, mais ont laissé des expressions partielles. En
+        l'absence d'information explicite sur la conception initiale — rarement disponible —, la
+        première expression créée constitue le témoin du commencement de l'existence d'une œuvre.
+        Une œuvre peut évoluer dans le temps, par exemple à travers des éditions révisées. Une œuvre
+        peut être élaborée par un ou plusieurs actants, simultanément, en parallèle, ou
+        successivement dans le temps. De nouvelles expressions d'une même œuvre peuvent continuer à
+        être créées au fil du temps. Les limites d'une œuvre n'ont aucun rapport avec la valeur de
+        l'accomplissement intellectuel, mais seulement avec la prédominance d'un concept. L'objectif
+        principal de cette classe est de permettre de rassembler des expressions intellectuellement
+        équivalentes, afin de présenter à un utilisateur l'ensemble des variantes disponibles d'un
+        même contenu intellectuel ou artistique.
+      es: >-
+        Esta clase comprende las ideas intelectuales distintas transmitidas por creaciones
+        artísticas e intelectuales, tales como poemas, relatos o composiciones musicales. Una obra
+        es el resultado de un proceso intelectual llevado a cabo por una o varias personas. La
+        noción de obra supone intrínsecamente la existencia de realizaciones reconocibles de esa
+        obra en forma de una o varias expresiones. Las obras suelen considerarse acabadas y
+        distintas, por ejemplo cuando así las declara su creador, o en virtud de la elaboración o
+        coherencia lógica de su contenido. No obstante, una obra puede reconocerse como existente
+        aunque inacabada, por ejemplo cuando sus creadores, deliberada o accidentalmente, nunca
+        llegaron a concluir explícitamente una expresión concreta, pero dejaron expresiones
+        parciales. A falta de información explícita sobre la concepción inicial —rara vez
+        disponible—, la primera expresión creada constituye testimonio del comienzo de la
+        existencia de una obra. Una obra puede evolucionar con el tiempo, por ejemplo a través de
+        ediciones revisadas. Una obra puede ser elaborada por uno o varios actores, de forma
+        simultánea, en paralelo, o sucesivamente en el tiempo. Pueden seguir creándose nuevas
+        expresiones de una misma obra con el paso del tiempo. Los límites de una obra no guardan
+        relación alguna con el valor del logro intelectual, sino únicamente con la preeminencia de
+        un concepto. El propósito principal de esta clase es permitir reunir expresiones
+        intelectualmente equivalentes, con el fin de presentar a un usuario todas las variantes
+        disponibles de un mismo contenido intelectual o artístico.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"
+    local_name: F2_Expression
+    label:
+      fr: "Expression"
+      es: "Expresión"
+    comment:
+      fr: >-
+        Cette classe comprend les réalisations intellectuelles ou artistiques d'œuvres sous la forme
+        d'objets immatériels identifiables, tels que des textes, des poèmes, des plaisanteries, des
+        notations musicales ou chorégraphiques, des motifs de mouvement, des motifs sonores, des
+        images, des objets multimédias, ou toute combinaison de ces formes. La substance d'une
+        expression est constituée de signes. Une expression est le résultat du processus
+        intellectuel ou créatif de réalisation d'une œuvre. Des expressions ultérieures véhiculant
+        la même œuvre peuvent être créées au fil du temps. Les expressions ne dépendent d'aucun
+        support physique particulier et peuvent exister sur un ou plusieurs supports simultanément.
+        Du point de vue de la pratique bibliographique, seules sont prises en compte les expressions
+        extériorisées sur un support physique autre que le cerveau du créateur ou celui d'un
+        auditeur. La forme d'une expression est une caractéristique qui lui est inhérente. Des
+        différences de forme impliquent des expressions différentes (par exemple, passer du texte à
+        la parole, ou la transcription d'un enregistrement). De même, des différences de langue ou
+        de moyen d'exécution impliquent des expressions différentes (par exemple, des traductions ou
+        des arrangements pour des instruments différents). Ainsi, si un texte est révisé ou modifié,
+        le résultat est considéré comme une nouvelle expression. Bien que, en théorie, tout
+        changement dans les signes produise une nouvelle expression, ce sont conventionnellement le
+        contexte et l'usage qui déterminent les règles permettant de distinguer les expressions
+        entre elles. Une expression qui comporte un texte parlé ou écrit peut être instanciée
+        conjointement comme un objet linguistique. Cela permet d'associer la langue du texte à
+        l'expression au moyen de la propriété `P72_has_language` (`P72i_is_language_of`).
+      es: >-
+        Esta clase comprende las realizaciones intelectuales o artísticas de obras en forma de
+        objetos inmateriales identificables, tales como textos, poemas, chistes, notaciones
+        musicales o coreográficas, patrones de movimiento, patrones sonoros, imágenes, objetos
+        multimedia, o cualquier combinación de estas formas. La sustancia de una expresión son los
+        signos. Una expresión es el resultado del proceso intelectual o creativo de realización de
+        una obra. Con el tiempo pueden crearse expresiones posteriores que transmitan la misma obra.
+        Las expresiones no dependen de un soporte físico concreto y pueden existir en uno o varios
+        soportes simultáneamente. Por lo que respecta a la práctica bibliográfica, solo se tienen en
+        cuenta las expresiones exteriorizadas en un soporte físico distinto tanto del cerebro del
+        creador como del de un oyente. La forma de una expresión es una característica inherente a
+        ella. Las diferencias de forma implican expresiones distintas (por ejemplo, pasar de un
+        texto a la palabra hablada, o la transcripción de una grabación). Del mismo modo, las
+        diferencias de lengua o de medio de ejecución implican expresiones distintas (por ejemplo,
+        traducciones o arreglos para instrumentos diferentes). Así, si un texto se revisa o se
+        modifica, el resultado se considera una nueva expresión. Aunque, en teoría, cualquier cambio
+        en los signos produciría una nueva expresión, es el contexto y el uso los que determinan
+        convencionalmente las reglas para distinguir unas expresiones de otras. Una expresión que
+        incluya texto hablado o escrito puede instanciarse conjuntamente como un objeto lingüístico.
+        Esto permite asociar la lengua del texto con la expresión mediante la propiedad
+        `P72_has_language` (`P72i_is_language_of`).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"
+    local_name: F3_Manifestation
+    label:
+      fr: "Manifestation"
+      es: "Manifestación"
+    comment:
+      fr: >-
+        Cette classe comprend les produits qui rendent une ou plusieurs expressions. Une
+        manifestation se définit à la fois par le contenu global et par la forme de sa présentation.
+        La substance d'une manifestation n'est pas seulement constituée de signes, mais aussi de la
+        manière dont ceux-ci sont présentés pour être perçus par les usagers, y compris le type de
+        média adopté. Une manifestation est le résultat d'un processus de publication au cours
+        duquel une ou plusieurs expressions sont préparées en vue d'une diffusion publique, mais
+        elle peut aussi consister en une forme unique créée directement sur un support matériel,
+        sans intention de publication formelle. Une manifestation incorpore généralement une ou
+        plusieurs expressions représentant un contenu logique distinct, ainsi que tout apport
+        supplémentaire de l'éditeur, comme la mise en page du texte ou la conception de la
+        couverture. Une manifestation peut en outre être identifiée par les caractéristiques
+        physiques propres à son support de diffusion, le cas échéant. Par exemple, des publications
+        sous forme d'éditions reliées et d'éditions brochées constitueraient deux manifestations
+        distinctes, même si le contenu rédactionnel et éditorial est par ailleurs identique dans les
+        deux publications. Dans le cas de produits industriels tels que des livres imprimés ou des
+        CD musicaux, mais aussi de matériel numérique, une manifestation peut être considérée comme
+        le prototype de tous ses exemplaires. Dans ces cas, une manifestation spécifie l'ensemble
+        des caractéristiques ou traits que les exemplaires doivent présenter pour être considérés
+        comme des copies d'une publication donnée. Dans le cas de produits industriels, les
+        manifestations sont également des instances d'E99 Type de produit, aujourd'hui généralement
+        identifiées par des identifiants caractéristiques tels que les numéros ISBN.
+      es: >-
+        Esta clase comprende los productos que hacen efectiva una o varias expresiones. Una
+        manifestación se define tanto por el contenido global como por la forma de su presentación.
+        La sustancia de una manifestación no está formada únicamente por signos, sino también por la
+        manera en que estos se presentan para ser percibidos por los usuarios, incluido el tipo de
+        soporte adoptado. Una manifestación es el resultado de un proceso de publicación en el que
+        una o varias expresiones se preparan para su difusión pública, aunque también puede tratarse
+        de una forma única creada directamente sobre un soporte material, sin intención de
+        publicación formal. Una manifestación incorpora habitualmente una o varias expresiones que
+        representan un contenido lógico distinto, junto con cualquier otra aportación del editor,
+        como la maquetación del texto o el diseño de la cubierta. Además, una manifestación puede
+        identificarse por las características físicas propias de su medio de distribución, cuando
+        proceda. Por ejemplo, las publicaciones en edición de tapa dura y en edición de bolsillo
+        constituirían dos manifestaciones distintas, aunque el contenido de autoría y edición sea
+        por lo demás idéntico en ambas publicaciones. En el caso de productos industriales como
+        libros impresos o discos compactos de música, así como de material digital, una
+        manifestación puede considerarse el prototipo de todos sus ejemplares. En estos casos, una
+        manifestación especifica todos los rasgos o características que los ejemplares deben
+        presentar para ser copias de una publicación concreta. En el caso de productos industriales,
+        las manifestaciones son también instancias de E99 Tipo de producto, hoy en día identificadas
+        normalmente mediante identificadores característicos como los números ISBN.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F5_Item"
+    local_name: F5_Item
+    label:
+      fr: "Exemplaire"
+      es: "Ejemplar"
+    comment:
+      fr: >-
+        Cette classe comprend les objets physiques (livres imprimés, partitions, CD, DVD, CD-ROM,
+        etc.) qui ont été produits par (P186i) un processus industriel impliquant une manifestation
+        donnée. De ce fait, tous les exemplaires associés à une manifestation donnée sont censés
+        porter le contenu défini par cette manifestation, bien qu'il puisse arriver que certains,
+        voire tous, portent un contenu significativement différent, en raison soit d'un accident
+        survenu au cours de la production industrielle, soit d'une modification ou d'une dégradation
+        physique ultérieure. Un exemplaire constitué d'un objet physique ou d'un ensemble d'objets
+        aux limites physiques clairement définies est également un objet élaboré par l'humain. Un
+        exemplaire conservé sur une partie d'un support physique plus vaste (comme un fichier
+        électronique parmi d'autres sur un disque) peut également être considéré comme une
+        caractéristique élaborée par l'humain. La notion d'exemplaire n'est pertinente qu'au regard
+        du processus de production, d'un point de vue bibliographique. Les unités physiques gérées
+        par les institutions patrimoniales dans leurs fonds relèvent d'une notion distincte : une
+        unité de fonds peut certes être égale à un exemplaire, mais elle peut aussi être « plus
+        grande » qu'un exemplaire (par exemple lorsque deux exemplaires sont reliés ensemble, dans
+        le cas de livres imprimés), ou « plus petite » qu'un exemplaire (par exemple pour des fonds
+        incomplets, lorsque seul un CD d'un coffret de deux CD est conservé). D'un point de vue
+        opérationnel, les institutions patrimoniales ne gèrent généralement pas des exemplaires,
+        mais des unités physiques de fonds, des objets physiques, bien que pour les bibliothèques
+        cela ne pose le plus souvent pas de difficulté, chaque exemplaire correspondant à une unité
+        unique. Lorsque ce n'est pas le cas, le lien entre les exemplaires et les unités pertinentes
+        pour la gestion des collections peut être enregistré au moyen de la propriété est composé de
+        (forme partie de) entre un exemplaire et un objet physique. Si nécessaire, un objet physique
+        peut être typé comme unité au moyen de la propriété a pour type (est le type de).
+      es: >-
+        Esta clase comprende los objetos físicos (libros impresos, partituras, CD, DVD, CD-ROM,
+        etc.) que fueron producidos por (P186i) un proceso industrial que involucra una
+        manifestación determinada. Como resultado, se espera que todos los ejemplares asociados a
+        una manifestación determinada porten el contenido definido en dicha manifestación, aunque
+        algunos, o incluso todos ellos, puedan llegar a portar un contenido que difiera
+        significativamente de este, ya sea por un accidente ocurrido durante la producción
+        industrial, o por una modificación o degradación física posterior. Un ejemplar que consiste
+        en un objeto físico o un conjunto de objetos con límites físicos claros es también un objeto
+        elaborado por el ser humano. Un ejemplar almacenado en una parte de un soporte físico más
+        amplio (como un archivo electrónico entre otros en un disco) también puede considerarse un
+        rasgo elaborado por el ser humano. La noción de ejemplar solo resulta pertinente en relación
+        con el proceso de producción, desde un punto de vista bibliográfico. Las unidades físicas
+        gestionadas por las instituciones de patrimonio cultural en sus fondos constituyen una
+        noción distinta: una unidad de fondo ciertamente puede ser igual a un ejemplar, pero también
+        puede ser «mayor» que uno (por ejemplo, cuando dos ejemplares se encuadernan juntos, en el
+        caso de libros impresos), o «menor» que uno (por ejemplo, en fondos incompletos, cuando solo
+        se conserva un CD de un estuche de dos). Desde un punto de vista operativo, las instituciones
+        de patrimonio cultural normalmente no gestionan ejemplares, sino unidades físicas de fondo,
+        objetos físicos, aunque para las bibliotecas esto en la mayoría de los casos no resulta
+        significativo, porque cada ejemplar corresponde a una única unidad. Cuando no es así, el
+        vínculo entre los ejemplares y las unidades pertinentes para la gestión de la colección puede
+        registrarse mediante la propiedad se compone de (forma parte de) entre un ejemplar y un
+        objeto físico. Si es necesario, un objeto físico puede tipificarse como unidad mediante la
+        propiedad tiene tipo (es tipo de).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation"
+    local_name: F27_Work_Creation
+    label:
+      fr: "Création de l'œuvre"
+      es: "Creación de la obra"
+    comment:
+      fr: >-
+        Cette classe comprend les activités par lesquelles des œuvres viennent à exister. Une
+        création d'œuvre peut servir à documenter la période durant laquelle une œuvre est venue à
+        exister, ainsi que les circonstances de cette venue à l'existence, lorsqu'elles sont connues.
+        Une création d'œuvre marque la création initiale d'une œuvre au moyen d'expressions ou
+        d'autres extériorisations suffisamment élaborées pour que l'identité conceptuelle
+        caractéristique de l'œuvre puisse être reconnue comme existante. Dans de nombreux cas, cela
+        coïncidera avec la première extériorisation complète connue d'une expression de l'œuvre.
+        Dans d'autres cas, la création initiale d'une œuvre peut être déduite d'expressions
+        multiples ou postérieures, ou d'autres formes de témoignage. Par exemple, la commande d'une
+        œuvre peut avoir été explicitement convenue après la présentation d'une élaboration déjà
+        complète et détaillée de l'œuvre, mais qui n'a pas été rendue publique. Des représentations
+        peuvent précéder des expressions écrites, comme dans le cas des œuvres de Shakespeare.
+        L'œuvre, en tant que construction intellectuelle, peut évoluer depuis sa création initiale
+        jusqu'à sa dernière expression connue. Un actant auquel une œuvre est associée par la chaîne
+        de propriétés `F1_Work → R16i_was_created_by → F27_Work_Creation → P14_carried_out_by →
+        E39_Actor` correspond à la notion de « créateur » de l'œuvre. Lorsqu'une expression d'une
+        œuvre sert de matériau source pour la création de la première expression d'une nouvelle
+        œuvre, la relation directe entre les deux œuvres est indiquée au moyen de la propriété
+        `R2_is_derivative_of` (`R2i_has_derivative`) entre les deux œuvres. Le lien vers l'expression
+        source spécifique est indiqué au moyen de la propriété `P16_used_specific_object`
+        (`P16i_was_used_for`), selon le chemin : `F1_Work(1) → R3_is_realised_in →
+        F2_Expression(1) → P16i_was_used_for → F27_Work_Creation → R16_created → F1_Work(2)`.
+      es: >-
+        Esta clase comprende las actividades mediante las cuales las obras llegan a existir. Una
+        creación de obra puede servir para documentar el periodo en que una obra estuvo llegando a
+        existir, así como las circunstancias de ello, cuando se conocen. Una creación de obra marca
+        la creación inicial de una obra a través de expresiones u otras exteriorizaciones
+        suficientemente elaboradas como para que pueda reconocerse como existente la identidad
+        conceptual característica de la obra. En muchos casos, esto coincidirá con la primera
+        exteriorización completa conocida de una expresión de la obra. En otros casos, la creación
+        inicial de una obra puede inferirse a partir de expresiones múltiples o posteriores, u otras
+        formas de evidencia. Por ejemplo, el encargo de una obra puede haberse acordado
+        explícitamente tras la presentación de una elaboración ya completa y detallada de la obra
+        que no había sido hecha pública. Las representaciones pueden ser anteriores a las
+        expresiones escritas, como en el caso de las obras de Shakespeare. La obra, como
+        construcción intelectual, puede evolucionar desde su creación inicial hasta su última
+        expresión conocida. Un actor con el que se asocia una obra mediante la cadena de propiedades
+        `F1_Work → R16i_was_created_by → F27_Work_Creation → P14_carried_out_by → E39_Actor`
+        corresponde a la noción de «creador» de la obra. En la situación en que una expresión de una
+        obra sirve como material fuente para la creación de la primera expresión de una nueva obra,
+        la relación directa entre las obras se indica mediante la propiedad `R2_is_derivative_of`
+        (`R2i_has_derivative`) entre ambas obras. El vínculo con la expresión fuente específica se
+        indica mediante la propiedad `P16_used_specific_object` (`P16i_was_used_for`), siguiendo el
+        camino: `F1_Work(1) → R3_is_realised_in → F2_Expression(1) → P16i_was_used_for →
+        F27_Work_Creation → R16_created → F1_Work(2)`.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation"
+    local_name: F28_Expression_Creation
+    label:
+      fr: "Création de l'expression"
+      es: "Creación de la expresión"
+    comment:
+      fr: >-
+        Cette classe comprend les activités qui ont pour résultat la venue à l'existence
+        d'expressions. Une expression est considérée comme créée lorsqu'elle est fixée sur un
+        support autre que le cerveau de son créateur. Bien qu'une expression soit une entité
+        abstraite, un objet conceptuel, la création d'une expression affecte inévitablement aussi le
+        monde physique : lorsqu'on griffonne le premier jet d'un poème sur une feuille de papier, on
+        produit à la fois une manifestation et un exemplaire. La création d'expression est une
+        sous-classe de production, car l'enregistrement de l'expression entraîne une modification
+        physique de la chose matérielle qui sert de support. La création d'une expression coïncide
+        avec la création de la première manifestation qui incarne (est incarnée dans) cette
+        expression. La propriété a pour type (est le type de) peut être utilisée pour préciser le
+        type de création d'expression concerné (par exemple, traduire, réviser ou arranger une
+        œuvre musicale sont des types de processus de création). Le type du processus est distinct
+        du type de son résultat, même si la typologie fréquemment utilisée pour les expressions
+        résultantes peut suggérer la catégorie de la création d'expression correspondante. Une
+        création d'expression peut utiliser comme matériau source une ou plusieurs expressions
+        spécifiques. Lorsque l'expression source est documentée, cela s'exprime également au moyen
+        de la propriété `R76_is_derivative_of` (`R76i_has_derivative`).
+      es: >-
+        Esta clase comprende las actividades que dan como resultado la venida a la existencia de
+        expresiones. Una expresión se considera creada cuando queda fijada en un soporte distinto
+        del cerebro de su creador. Aunque una expresión es una entidad abstracta, un objeto
+        conceptual, la creación de una expresión afecta inevitablemente también al mundo físico:
+        cuando se garabatea el primer borrador de un poema en una hoja de papel, se produce a la vez
+        una manifestación y un ejemplar. La creación de expresión es una subclase de producción,
+        porque el registro de la expresión provoca una modificación física de la cosa física que
+        sirve de soporte. La creación de una expresión coincide con la creación de la primera
+        manifestación que encarna (está encarnada en) esa expresión. La propiedad tiene tipo (es
+        tipo de) puede utilizarse para precisar el tipo de creación de expresión de que se trate
+        (por ejemplo, traducir, revisar o arreglar una obra musical son tipos de proceso de
+        creación). El tipo del proceso es distinto del tipo de su resultado, aunque la tipología
+        frecuentemente empleada para las expresiones resultantes pueda sugerir la categoría de la
+        creación de expresión correspondiente. Una creación de expresión puede utilizar como
+        material fuente una o varias expresiones específicas. Cuando la expresión fuente está
+        documentada, esto también se expresa mediante la propiedad `R76_is_derivative_of`
+        (`R76i_has_derivative`).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation"
+    local_name: F30_Manifestation_Creation
+    label:
+      fr: "Création de la manifestation"
+      es: "Creación de la manifestación"
+    comment:
+      fr: >-
+        Cette classe comprend les activités consistant à sélectionner, organiser et présenter une ou
+        plusieurs expressions sur un support ou tout autre moyen de présentation durable, dans le but
+        de les communiquer à un public. Elle inclut la spécification de la présentation du point de
+        vue de l'impression sensorielle (telle que l'apparence visuelle ou le rendu sonore).
+      es: >-
+        Esta clase comprende las actividades de seleccionar, organizar y presentar una o varias
+        expresiones sobre un soporte u otro medio de presentación duradero, con el propósito de
+        comunicarlas a un público. Incluye la especificación de la presentación en cuanto a la
+        impresión sensorial (como la apariencia visual o la reproducción sonora).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"
+    local_name: F32_Item_Production_Event
+    label:
+      fr: "Événement de production de l'exemplaire"
+      es: "Evento de producción del ejemplar"
+    comment:
+      fr: >-
+        Cette classe comprend les activités qui ont pour résultat la venue à l'existence d'un ou
+        plusieurs exemplaires. La production d'une série d'objets physiques (livres imprimés,
+        partitions, CD, DVD, CD-ROM, etc.), la production d'un exemplaire unique (rédaction d'un
+        manuscrit sur parchemin, réalisation d'une aquarelle, etc.), ainsi que la création d'une
+        nouvelle copie d'un fichier sur un support électronique, sont toutes considérées comme des
+        événements de production d'exemplaire. Pour les exemplaires produits en série, le processus
+        de production (qu'il s'agisse d'un livre, d'un enregistrement sonore, d'un DVD, d'une
+        ressource cartographique, etc.) vise à produire des exemplaires aussi semblables que
+        possible à un prototype présentant l'ensemble des caractéristiques que toutes les copies de
+        la publication doivent également présenter, ce que reflète la propriété
+        `R27_materialized: F3_Manifestation`.
+      es: >-
+        Esta clase comprende las actividades que dan como resultado la venida a la existencia de uno
+        o varios ejemplares. La producción de una serie de objetos físicos (libros impresos,
+        partituras, CD, DVD, CD-ROM, etc.), la producción de un ejemplar único (redacción de un
+        manuscrito sobre pergamino, realización de una acuarela, etc.), así como la creación de una
+        nueva copia de un archivo en un soporte electrónico, se consideran todas ellas eventos de
+        producción de ejemplar. En el caso de los ejemplares producidos en serie, el proceso de
+        producción (ya se trate de un libro, una grabación sonora, un DVD, un recurso cartográfico,
+        etc.) busca producir ejemplares lo más semejantes posible a un prototipo que presente todas
+        las características que también deben presentar todas las copias de la publicación, lo cual
+        queda reflejado en la propiedad `R27_materialized: F3_Manifestation`.
+
+  # --- Propiedades que conectan la cadena ---
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R16_created"
+    local_name: R16_created
+    label: {fr: "a créé", es: "creó"}
+    comment:
+      fr: "Cette propriété associe la création initiale d'une œuvre à l'œuvre ainsi créée."
+      es: "Esta propiedad asocia la creación inicial de una obra con la obra así creada."
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by"
+    local_name: R16i_was_created_by
+    label: {fr: "a été créée par", es: "fue creada por"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in"
+    local_name: R3_is_realised_in
+    label: {fr: "se réalise dans", es: "se realiza en"}
+    comment:
+      fr: >-
+        Cette propriété associe une expression à une œuvre. Elle exprime l'association qui existe
+        entre une expression et l'œuvre que cette expression véhicule. Notre connaissance factuelle
+        de la manière dont une œuvre donnée s'est historiquement réalisée en expressions est souvent
+        limitée. Cette propriété permet donc d'exprimer l'association entre une expression et
+        l'œuvre qu'elle véhicule, sans avoir à identifier les expressions particulières qui ont fait
+        partie d'une chaîne de dérivation depuis la source.
+      es: >-
+        Esta propiedad asocia una expresión con una obra. Expresa la asociación que existe entre una
+        expresión y la obra que dicha expresión transmite. Nuestro conocimiento factual de cómo una
+        obra determinada se ha realizado históricamente en expresiones suele ser limitado. Por ello,
+        esta propiedad permite expresar la asociación entre una expresión y la obra que transmite
+        sin necesidad de identificar las expresiones concretas que formaron parte de una cadena de
+        derivación desde la fuente.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R3i_realises"
+    local_name: R3i_realises
+    label: {fr: "réalise", es: "realiza"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R4_embodies"
+    local_name: R4_embodies
+    label: {fr: "incarne", es: "encarna"}
+    comment:
+      fr: >-
+        Cette propriété associe une manifestation à une ou plusieurs expressions qu'elle rend
+        effectives. La manifestation met en forme la ou les expressions selon la manière dont elles
+        doivent être présentées à un public, y compris en spécifiant l'impression sensorielle
+        recherchée (telle que l'apparence visuelle ou le rendu sonore).
+      es: >-
+        Esta propiedad asocia una manifestación con una o varias expresiones que dicha manifestación
+        hace efectivas. La manifestación da forma a la expresión o expresiones según la manera en
+        que deben presentarse a un público, incluida la especificación de la impresión sensorial
+        prevista (como la apariencia visual o la reproducción sonora).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in"
+    local_name: R4i_is_embodied_in
+    label: {fr: "est incarnée dans", es: "está encarnada en"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R27_materialized"
+    local_name: R27_materialized
+    label: {fr: "a matérialisé", es: "materializó"}
+    comment:
+      fr: >-
+        Cette propriété associe un événement de production d'exemplaire à l'ensemble des signes
+        fournis par l'éditeur pour être portés par tous les exemplaires produits, ainsi qu'à toute
+        autre caractéristique physique prévue comme faisant partie intégrante de la manifestation
+        ainsi matérialisée.
+      es: >-
+        Esta propiedad asocia un evento de producción de ejemplar con el conjunto de signos
+        proporcionados por el editor para ser portados por todos los ejemplares producidos, así como
+        con cualquier otra característica física prevista como parte integrante de la manifestación
+        así materializada.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by"
+    local_name: R27i_was_materialized_by
+    label: {fr: "a été matérialisée par", es: "fue materializada por"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R28_produced"
+    local_name: R28_produced
+    label: {fr: "a produit", es: "produjo"}
+    comment:
+      fr: "Cette propriété associe un événement de production d'exemplaire à l'un quelconque des exemplaires produits."
+      es: "Esta propiedad asocia un evento de producción de ejemplar con cualquiera de los ejemplares producidos."
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by"
+    local_name: R28i_was_produced_by
+    label: {fr: "a été produit par", es: "fue producido por"}

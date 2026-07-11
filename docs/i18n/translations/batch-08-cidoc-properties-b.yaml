@@ -1,0 +1,320 @@
+# Lote 8 (final): los 12 pares de propiedades de objeto CIDOC-CRM restantes del módulo. Completa
+# los 130 términos. P54_has_current_permanent_location y P55_has_current_location ya tenían un
+# comment fr propio de CAO_CRM (nota de restricción de dominio, añadida en trabajo previo del
+# proyecto); aquí se añade además el equivalente es de la definición oficial completa.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P44_has_condition"
+    local_name: P44_has_condition
+    label: {es: "tiene estado de conservación"}
+    comment:
+      fr: >-
+        Cette propriété enregistre un État matériel pour une Chose matérielle donnée. Cette
+        propriété constitue un raccourci du chemin plus développé allant de Chose matérielle, via a
+        été évalué par, E14 Évaluation d'état, a identifié, jusqu'à État matériel. Elle ne fournit
+        aucune information sur la manière dont l'État matériel a été établi, ni sur le moment, ni
+        sur la personne qui l'a établi. Une instance d'État matériel est spécifique à une instance
+        de Chose matérielle.
+      es: >-
+        Esta propiedad registra un Estado de conservación para una Cosa física determinada. Esta
+        propiedad constituye un atajo del camino más desarrollado que va de Cosa física, mediante
+        fue evaluado por, E14 Evaluación de estado, identificó, hasta Estado de conservación. No
+        ofrece información sobre cómo ni cuándo se estableció el Estado de conservación, ni por
+        quién. Una instancia de Estado de conservación es específica de una instancia de Cosa
+        física.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of"
+    local_name: P44i_is_condition_of
+    label: {es: "es estado de conservación de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P45_consists_of"
+    local_name: P45_consists_of
+    label: {es: "consiste en"}
+    comment:
+      fr: >-
+        Cette propriété identifie les instances de Matériau dont est composée une instance de
+        Chose matérielle. Toutes les choses matérielles sont constituées de matériaux physiques.
+        Consiste en (est incorporé dans) permet d'enregistrer les différents matériaux. Consiste en
+        (est incorporé dans) désigne ici le matériau observé, par opposition à la matière première
+        consommée. Un matériau, tel un alliage théorique, peut ne posséder aucune instance
+        physique.
+      es: >-
+        Esta propiedad identifica las instancias de Material de las que se compone una instancia
+        de Cosa física. Todas las cosas físicas están constituidas por materiales físicos. Consiste
+        en (está incorporado en) permite registrar los distintos materiales. Consiste en (está
+        incorporado en) designa aquí el material observado, en contraposición a la materia prima
+        consumida. Un material, como una aleación teórica, puede no tener ninguna instancia física.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in"
+    local_name: P45i_is_incorporated_in
+    label: {es: "está incorporado en"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of"
+    local_name: P46_is_composed_of
+    label: {es: "se compone de"}
+    comment:
+      fr: >-
+        Cette propriété associe une instance de Chose matérielle à une autre instance de Chose
+        matérielle qui en fait partie. L'étendue spatiale de la partie composante est incluse dans
+        l'étendue spatiale du tout. Les éléments constitutifs, étant eux-mêmes des instances de
+        Chose matérielle, peuvent à leur tour être analysés en sous-composants, créant ainsi une
+        hiérarchie de décomposition en parties. Une instance de Chose matérielle peut être partagée
+        entre plusieurs touts : par exemple, deux bâtiments peuvent partager un mur commun. Cette
+        propriété ne précise pas quand ni pendant combien de temps un élément composant a résidé
+        dans le tout concerné. Si un composant ne fait pas partie d'un tout depuis le début de
+        l'existence de ce dernier, ou jusqu'à sa fin, les classes E79 Ajout de partie et E90
+        Retrait de partie peuvent être utilisées pour documenter le moment où un composant est
+        devenu partie d'un tout particulier et/ou celui où il a cessé d'en faire partie. Pendant
+        l'intervalle de temps où il fait partie du tout concerné, le composant est entièrement
+        contenu dans l'espace occupé par ce tout. Cette propriété est destinée à décrire des
+        composants spécifiques documentés individuellement, plutôt que des aspects généraux. Les
+        descriptions d'ensemble de la structure d'une instance de Chose matérielle sont saisies au
+        moyen de la propriété a pour note. Les instances de Matériau dont est composée une instance
+        de Chose matérielle doivent être documentées au moyen de la propriété consiste en (est
+        incorporé dans). Cette propriété est transitive et asymétrique.
+      es: >-
+        Esta propiedad asocia una instancia de Cosa física con otra instancia de Cosa física que
+        forma parte de ella. La extensión espacial de la parte componente queda incluida en la
+        extensión espacial del todo. Los elementos componentes, al ser ellos mismos instancias de
+        Cosa física, pueden a su vez analizarse en subcomponentes, creando así una jerarquía de
+        descomposición en partes. Una instancia de Cosa física puede compartirse entre varios
+        todos: por ejemplo, dos edificios pueden compartir un muro común. Esta propiedad no
+        especifica cuándo ni durante cuánto tiempo un elemento componente residió en el todo
+        correspondiente. Si un componente no forma parte de un todo desde el comienzo de la
+        existencia de este, o hasta su fin, las clases E79 Adición de parte y E90 Eliminación de
+        parte pueden emplearse para documentar el momento en que un componente pasó a formar parte
+        de un todo concreto y/o el momento en que dejó de serlo. Durante el intervalo de tiempo en
+        que forma parte del todo correspondiente, el componente está completamente contenido en el
+        espacio que ocupa dicho todo. Esta propiedad está pensada para describir componentes
+        específicos documentados individualmente, más que aspectos generales. Las descripciones
+        globales de la estructura de una instancia de Cosa física se recogen mediante la propiedad
+        tiene nota. Las instancias de Material de las que se compone una instancia de Cosa física
+        deben documentarse mediante la propiedad consiste en (está incorporado en). Esta propiedad
+        es transitiva y asimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of"
+    local_name: P46i_forms_part_of
+    label: {es: "forma parte de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"
+    local_name: "P4_has_time-span"
+    label: {es: "tiene intervalo temporal"}
+    comment:
+      fr: >-
+        Cette propriété associe une instance d'Entité temporelle à l'instance d'Intervalle
+        temporel pendant laquelle elle s'est déroulée. L'instance d'Intervalle temporel associée
+        est comprise comme l'intervalle de temps réel durant lequel les phénomènes constituant
+        l'instance d'entité temporelle étaient actifs. Plusieurs instances d'Entité temporelle ne
+        peuvent partager une même instance d'Intervalle temporel que si elles commencent et
+        cessent d'exister en raison de déclarations ou d'événements identiques.
+      es: >-
+        Esta propiedad asocia una instancia de Entidad temporal con la instancia de Intervalo
+        temporal durante la cual estuvo en curso. La instancia de Intervalo temporal asociada se
+        entiende como el intervalo de tiempo real durante el cual estuvieron activos los fenómenos
+        que constituyen la instancia de entidad temporal. Varias instancias de Entidad temporal
+        solo pueden compartir una misma instancia de Intervalo temporal si comienzan y dejan de
+        existir debido a declaraciones o eventos idénticos.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of"
+    local_name: "P4i_is_time-span_of"
+    label: {es: "es intervalo temporal de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location"
+    local_name: P54_has_current_permanent_location
+    label: {es: "tiene actualmente como localización permanente"}
+    comment:
+      es: >-
+        Esta propiedad registra la ubicación permanente prevista de una instancia de Objeto físico
+        en el momento de validez del registro o base de datos que contiene la afirmación que usa
+        esta propiedad. Tiene actualmente como localización permanente (es la localización
+        permanente actual de) es similar a tiene actualmente como localización (posee
+        actualmente). Sin embargo, indica el Lugar reservado actualmente para un objeto, como el
+        lugar de almacenamiento permanente o un lugar de exhibición permanente. El objeto puede
+        retirarse temporalmente de su ubicación permanente, por ejemplo cuando se utiliza en
+        exposiciones temporales o se presta a otra institución. El objeto puede incluso no llegar a
+        encontrarse nunca realmente en su ubicación permanente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of"
+    local_name: P54i_is_current_permanent_location_of
+    label: {es: "es la localización permanente actual de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location"
+    local_name: P55_has_current_location
+    label: {es: "tiene actualmente como localización"}
+    comment:
+      es: >-
+        Esta propiedad registra la ubicación de una instancia de Objeto físico en el momento de
+        validez del registro o base de datos que contiene la afirmación que usa esta propiedad.
+        Esta propiedad es una especialización de tuvo antigua o actualmente como localización (fue
+        antigua o actual localización de). Indica que la instancia de Lugar asociada a la instancia
+        de Objeto físico es la ubicación actual del objeto. La propiedad no permite indicar durante
+        cuánto tiempo el objeto ha estado en la ubicación actual. Esta propiedad es un atajo. Una
+        representación más detallada puede recurrir al camino plenamente desarrollado (es decir,
+        indirecto) que va de Objeto físico, mediante fue trasladado por, E9 Traslado, trasladado a,
+        hasta Lugar, si y solo si dicho Traslado es el más reciente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds"
+    local_name: P55i_currently_holds
+    label: {es: "posee actualmente"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+    local_name: P67_refers_to
+    label: {es: "se refiere a"}
+    comment:
+      fr: >-
+        Cette propriété documente le fait qu'une instance d'Objet propositionnel formule une
+        affirmation à propos d'une instance d'Entité CRM. Renvoie à (fait l'objet d'un renvoi de)
+        possède le lien P67.1 a pour type vers une instance de Type. Ce lien est destiné à
+        permettre une description plus détaillée du type de renvoi. Cela diffère de a pour sujet
+        (est le sujet de), qui décrit le ou les sujets principaux de l'instance d'Objet
+        propositionnel.
+      es: >-
+        Esta propiedad documenta que una instancia de Objeto proposicional formula una afirmación
+        sobre una instancia de Entidad CRM. Se refiere a (es referido por) posee el enlace P67.1
+        tiene tipo hacia una instancia de Tipo. Este enlace está destinado a permitir una
+        descripción más detallada del tipo de referencia. Esto difiere de trata sobre (es tratado
+        por), que describe el sujeto o los sujetos principales de la instancia de Objeto
+        proposicional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by"
+    local_name: P67i_is_referred_to_by
+    label: {es: "es referido por"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P72_has_language"
+    local_name: P72_has_language
+    label: {es: "tiene lengua"}
+    comment:
+      fr: >-
+        Cette propriété associe une ou plusieurs instances d'Objet linguistique à une instance de
+        Langue dans laquelle elles sont, au moins partiellement, exprimées. Les objets linguistiques
+        sont composés dans une ou plusieurs langues humaines. Cette propriété permet de documenter
+        ces langues.
+      es: >-
+        Esta propiedad asocia una o varias instancias de Objeto lingüístico con una instancia de
+        Lengua en la que se expresan, al menos parcialmente. Los objetos lingüísticos se componen
+        en una o varias lenguas humanas. Esta propiedad permite documentar dichas lenguas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of"
+    local_name: P72i_is_language_of
+    label: {es: "es lengua de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at"
+    local_name: P7_took_place_at
+    label: {es: "ocurrió en"}
+    comment:
+      fr: >-
+        Cette propriété décrit la localisation spatiale d'une instance de Période. L'instance de
+        Lieu associée doit être comprise comme une approximation plus large de la zone géométrique
+        au sein de laquelle se sont produits les phénomènes caractérisant la période concernée, voir
+        ci-dessous. A eu lieu dans (a été témoin de) ne véhicule aucune signification autre qu'un
+        positionnement spatial (fréquemment à la surface de la terre). Par exemple, on peut dire que
+        la période « Révolution française » a eu lieu en « France en 1789 » ; on peut dire que la
+        période « victorienne » a eu lieu en « Grande-Bretagne de 1837 à 1901 » et dans ses
+        colonies, ainsi que dans d'autres parties de l'Europe et de l'Amérique du Nord. Une instance
+        de Période peut avoir eu lieu en plusieurs endroits non contigus et non chevauchants. Tout
+        lieu où quelque chose s'est produit inclut la projection spatiale de cet événement donnée
+        dans le même système de référence géométrique. Par exemple, le H.M.S. Victory, en tant que
+        lieu de la mort de Lord Nelson, inclut la position de son corps par rapport à la coque du
+        H.M.S. Victory au moment de sa mort, comme lieu le plus précis de son décès. Par définition
+        de a pour projection spatiale, une instance de Période a lieu sur l'ensemble de ses
+        projections spatiales vers les systèmes de référence respectifs, c'est-à-dire des instances
+        de Lieu. Cette propriété implique donc le chemin plus développé allant de Période, via a
+        pour projection spatiale, Lieu, s'insère dans, jusqu'à Lieu, où les deux lieux sont définis
+        dans le même système de référence géométrique. La relation entre une instance de Lieu et
+        son système de référence peut commodément être documentée au moyen de la propriété est au
+        repos par rapport à (fournit l'espace de référence de). Ce qui s'est produit en un lieu
+        donné peut également être considéré comme s'étant produit dans un lieu plus restreint
+        inclus en son sein : par exemple, il est raisonnable de dire que le meurtre de César a eu
+        lieu à Rome, mais aussi sur le Forum Romain, et plus précisément dans la Curie. Il est
+        caractéristique que différentes sources historiques emploient des degrés de précision
+        variables dans de telles affirmations, sans pour autant se contredire. Cela peut tenir à un
+        manque de connaissance ou à la pertinence de la précision au regard de l'objet de
+        l'affirmation. Dans l'intégration d'informations, l'affirmation la plus précise enrichit la
+        connaissance d'ensemble.
+      es: >-
+        Esta propiedad describe la localización espacial de una instancia de Periodo. La instancia
+        de Lugar asociada debe entenderse como una aproximación más amplia del área geométrica
+        dentro de la cual se produjeron los fenómenos que caracterizan el periodo en cuestión, véase
+        más abajo. Ocurrió en (fue testigo de) no transmite ningún significado más allá de un
+        posicionamiento espacial (frecuentemente en la superficie de la tierra). Por ejemplo, puede
+        decirse que el periodo «Revolución francesa» ocurrió en «Francia en 1789»; puede decirse que
+        el periodo «victoriano» ocurrió en «Gran Bretaña de 1837 a 1901» y sus colonias, así como en
+        otras partes de Europa y Norteamérica. Una instancia de Periodo puede haber ocurrido en
+        varios lugares no contiguos y sin solaparse. Cualquier lugar en que algo haya ocurrido
+        incluye la proyección espacial de ese suceso, dada en el mismo sistema de referencia
+        geométrico. Por ejemplo, el H.M.S. Victory, como lugar de la muerte de Lord Nelson, incluye
+        la posición de su cuerpo respecto al casco del H.M.S. Victory en el momento de su muerte,
+        como el lugar más preciso de su fallecimiento. Por definición de tiene proyección espacial,
+        una instancia de Periodo ocurre en todas sus proyecciones espaciales hacia los respectivos
+        sistemas de referencia, es decir, instancias de Lugar. Por ello, esta propiedad implica el
+        camino más desarrollado que va de Periodo, mediante tiene proyección espacial, Lugar, se
+        inserta en, hasta Lugar, donde ambos lugares se definen en el mismo sistema de referencia
+        geométrico. La relación entre una instancia de Lugar y su sistema de referencia puede
+        documentarse convenientemente mediante la propiedad está en reposo respecto a (proporciona
+        el espacio de referencia de). Lo que ha ocurrido en un lugar determinado también puede
+        considerarse que ha ocurrido en un lugar más pequeño dentro de él: por ejemplo, es razonable
+        decir que el asesinato de César tuvo lugar en Roma, pero también en el Foro Romano, y más
+        precisamente en la Curia. Es característico que distintas fuentes históricas empleen
+        precisiones diferentes en tales afirmaciones, sin que ello suponga contradicción entre
+        ellas. Esto puede deberse a la falta de conocimiento o a la relevancia de la precisión para
+        el propósito de la afirmación. En la integración de información, la afirmación más precisa
+        mejora el conocimiento de conjunto.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed"
+    local_name: P7i_witnessed
+    label: {es: "fue testigo de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within"
+    local_name: P86_falls_within
+    label: {es: "se inserta en"}
+    comment:
+      fr: >-
+        Cette propriété décrit la relation d'inclusion entre deux instances d'Intervalle temporel.
+        Elle exprime l'idée que l'étendue temporelle d'une instance d'Intervalle temporel s'insère
+        dans l'étendue temporelle d'une autre instance d'Intervalle temporel. Elle ne traite que de
+        l'inclusion temporelle, sans impliquer aucun lien contextuel entre les deux instances
+        d'Intervalle temporel. Cette propriété est transitive et réflexive.
+      es: >-
+        Esta propiedad describe la relación de inclusión entre dos instancias de Intervalo
+        temporal. Expresa la idea de que la extensión temporal de una instancia de Intervalo
+        temporal se inserta dentro de la extensión temporal de otra instancia de Intervalo
+        temporal. Se refiere únicamente a la inclusión temporal, sin implicar ningún vínculo
+        contextual entre ambas instancias de Intervalo temporal. Esta propiedad es transitiva y
+        reflexiva.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P86i_contains"
+    local_name: P86i_contains
+    label: {es: "contiene"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"
+    local_name: P91_has_unit
+    label: {es: "tiene unidad de medida"}
+    comment:
+      fr: "Cette propriété indique le type d'unité dans lequel une instance de Dimension a été exprimée."
+      es: "Esta propiedad indica el tipo de unidad en el que se expresó una instancia de Dimensión."
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of"
+    local_name: P91i_is_unit_of
+    label: {es: "es unidad de medida de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life"
+    local_name: P98_brought_into_life
+    label: {es: "dio vida a"}
+    comment:
+      fr: >-
+        Cette propriété relie une instance d'événement de Naissance à une instance de Personne
+        dans le rôle de descendant. Les jumeaux, triplés, etc., sont amenés à la vie par une seule
+        et même instance de Naissance. Cette propriété n'est pas destinée à être utilisée avec du
+        matériel général d'histoire naturelle, mais seulement avec des personnes. Il n'existe pas
+        de méthode explicite pour modéliser la conception et la gestation, si ce n'est au moyen
+        d'extensions.
+      es: >-
+        Esta propiedad vincula una instancia del evento Nacimiento con una instancia de Persona en
+        el papel de descendiente. Los gemelos, trillizos, etc., son traídos a la vida por una misma
+        instancia de Nacimiento. Esta propiedad no está pensada para material general de historia
+        natural, sino únicamente para personas. No existe un método explícito para modelar la
+        concepción y la gestación, salvo mediante extensiones.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P98i_was_born"
+    local_name: P98i_was_born
+    label: {es: "nació"}

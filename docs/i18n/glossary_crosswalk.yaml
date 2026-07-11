@@ -1,0 +1,168 @@
+# Crosswalk terminológico EN -> {fr, es} para los conceptos CIDOC-CRM/LRMoo/CRMdig que se repiten
+# en decenas de etiquetas y definiciones distintas. Construir esto UNA vez, antes de traducir
+# ninguna entrada individual, es lo que evita que "Actor" salga traducido de dos formas distintas
+# en dos fichas distintas.
+#
+# fr: siempre que existe, es la etiqueta OFICIAL de CIDOC-CRM (verificada contra
+#     ontology/CAO_CRM-1.0.rdf, rdfs:label@fr) -- no una invención nuestra. Marcado source: official.
+# es: no existe ninguna traducción oficial en ningún estándar fuente (verificado: cero rdfs:label@es
+#     en los 130 términos del módulo). Son decisiones de CAO_CRM, ancladas en terminología museística/
+#     archivística/bibliotecaria española estándar (registros CIDOC-CRM en español, tesauros del
+#     Ministerio de Cultura, convención FRBR ya usada en nuestra propia documentation/es/). Marcado
+#     source: cao_crm_working.
+#
+# Cada entrada anota su razonamiento breve para que una revisión futura no tenga que re-derivarlo.
+
+concepts:
+
+  # --- Núcleo CIDOC-CRM (raíces que aparecen en decenas de comentarios) ---
+  Entity:
+    fr: {text: "Entité", source: official}
+    es: {text: "Entidad", source: cao_crm_working, note: "cognado directo, sin ambigüedad"}
+  Thing:
+    fr: {text: "Chose", source: official}
+    es: {text: "Cosa", source: cao_crm_working}
+  Physical Thing:
+    fr: {text: "Chose matérielle", source: official}
+    es: {text: "Cosa física", source: cao_crm_working, note: "paralelo a 'Chose matérielle'; distingue de Objeto elaborado por el ser humano (E22, más específico)"}
+  Human-Made Object:
+    fr: {text: "Objet élaboré par l'humain", source: official}
+    es: {text: "Objeto elaborado por el ser humano", source: cao_crm_working}
+  Temporal Entity:
+    fr: {text: "Entité temporelle", source: official}
+    es: {text: "Entidad temporal", source: cao_crm_working}
+  Period:
+    fr: {text: "Période", source: official}
+    es: {text: "Periodo", source: cao_crm_working}
+  Activity:
+    fr: {text: "Activité", source: official}
+    es: {text: "Actividad", source: cao_crm_working}
+  Actor:
+    fr: {text: "Actant", source: official, note: "CIDOC-CRM evita 'Acteur' en fr por la connotación teatral"}
+    es: {text: "Actor", source: cao_crm_working, note: "en español el registro documental/jurídico de 'actor' ya cubre agentes individuales y colectivos sin la connotación teatral que motivó 'Actant' en francés"}
+  Person:
+    fr: {text: "Personne", source: official}
+    es: {text: "Persona", source: cao_crm_working}
+  Right:
+    fr: {text: "Droit", source: official}
+    es: {text: "Derecho", source: cao_crm_working}
+  Legal Object:
+    fr: {text: "Objet juridique", source: official}
+    es: {text: "Objeto jurídico", source: cao_crm_working, note: "'jurídico' calca con precisión 'juridique'; evita 'legal', que en español suena más a 'lícito' que a 'de naturaleza jurídica'"}
+  Linguistic Object:
+    fr: {text: "Objet linguistique", source: official}
+    es: {text: "Objeto lingüístico", source: cao_crm_working}
+  Propositional Object:
+    fr: {text: "Objet propositionnel", source: official}
+    es: {text: "Objeto proposicional", source: cao_crm_working}
+  Symbolic Object:
+    fr: {text: "Objet symbolique", source: official}
+    es: {text: "Objeto simbólico", source: cao_crm_working}
+  Title:
+    fr: {text: "Titre", source: official}
+    es: {text: "Título", source: cao_crm_working}
+  Appellation:
+    fr: {text: "Appellation", source: official}
+    es: {text: "Apelativo", source: cao_crm_working, note: "término estándar en documentación patrimonial española para 'denominación por la que algo es conocido', distinto de Título"}
+  Identifier:
+    fr: {text: "Identifiant", source: official}
+    es: {text: "Identificador", source: cao_crm_working}
+  Time-Span:
+    fr: {text: "Intervalle temporel", source: official}
+    es: {text: "Intervalo temporal", source: cao_crm_working}
+  Place:
+    fr: {text: "Lieu", source: official}
+    es: {text: "Lugar", source: cao_crm_working}
+  Type:
+    fr: {text: "Type", source: official}
+    es: {text: "Tipo", source: cao_crm_working}
+  Dimension:
+    fr: {text: "Dimension", source: official}
+    es: {text: "Dimensión", source: cao_crm_working}
+  Language:
+    fr: {text: "Langue", source: official}
+    es: {text: "Lengua", source: cao_crm_working}
+  Material:
+    fr: {text: "Matériau", source: official}
+    es: {text: "Material", source: cao_crm_working}
+  Measurement Unit:
+    fr: {text: "Unité de mesure", source: official}
+    es: {text: "Unidad de medida", source: cao_crm_working}
+  Production:
+    fr: {text: "Production", source: official}
+    es: {text: "Producción", source: cao_crm_working}
+  Birth:
+    fr: {text: "Naissance", source: official}
+    es: {text: "Nacimiento", source: cao_crm_working}
+  Death:
+    fr: {text: "Mort", source: official}
+    es: {text: "Muerte", source: cao_crm_working, note: "mismo registro directo que 'Mort' en fr, no 'Defunción' (más notarial)"}
+  Condition State:
+    fr: {text: "État matériel", source: official}
+    es: {text: "Estado de conservación", source: cao_crm_working, note: "verificar contra el comentario EN completo antes de usar -- CIDOC lo define como el estado físico observable de una cosa material, no necesariamente ligado a conservación patrimonial; revisar en el lote correspondiente"}
+
+  # --- Cadena LRMoo Work -> Item (ya anclada en docs/intro.html e intro-es.html, NO reinventar) ---
+  Work:
+    fr: {text: "œuvre", source: cao_crm_working, note: "ya usado de forma consistente en docs/intro.html (46 apariciones)"}
+    es: {text: "obra", source: cao_crm_working, note: "ya usado de forma consistente en documentation/es/ y docs/intro-es.html"}
+  Expression:
+    fr: {text: "expression", source: cao_crm_working, note: "cognado nativo del francés, ya usado en docs/intro.html"}
+    es: {text: "expresión", source: cao_crm_working, note: "ya usado en documentation/es/ (04-construccion-rdf.md, 10-notas-de-aplicacion.md)"}
+  Manifestation:
+    fr: {text: "manifestation", source: cao_crm_working, note: "cognado nativo del francés"}
+    es: {text: "manifestación", source: cao_crm_working, note: "ya usado en documentation/es/03-jerarquia-ejemplo.md"}
+  Item:
+    fr: {text: "exemplaire", source: cao_crm_working, note: "ya usado en docs/intro.html; evita 'item', anglicismo innecesario"}
+    es: {text: "ejemplar", source: cao_crm_working, note: "elección ya fijada del proyecto (no 'ítem', más literal pero menos natural) -- ver documentation/es/03-jerarquia-ejemplo.md"}
+  Work Creation:
+    fr: {text: "création de l'œuvre", source: cao_crm_working}
+    es: {text: "creación de la obra", source: cao_crm_working}
+  Expression Creation:
+    fr: {text: "création de l'expression", source: cao_crm_working}
+    es: {text: "creación de la expresión", source: cao_crm_working}
+  Manifestation Creation:
+    fr: {text: "création de la manifestation", source: cao_crm_working}
+    es: {text: "creación de la manifestación", source: cao_crm_working}
+  Item Production Event:
+    fr: {text: "événement de production de l'exemplaire", source: cao_crm_working}
+    es: {text: "evento de producción del ejemplar", source: cao_crm_working}
+
+  # --- CRMdig ---
+  Digital Object:
+    fr: {text: "objet numérique", source: cao_crm_working, note: "ya usado en docs/intro.html (D1_Digital_Object)"}
+    es: {text: "objeto digital", source: cao_crm_working}
+  Data Object:
+    fr: {text: "objet de données", source: cao_crm_working}
+    es: {text: "objeto de datos", source: cao_crm_working}
+  Digitization Process:
+    fr: {text: "processus de numérisation", source: cao_crm_working}
+    es: {text: "proceso de digitalización", source: cao_crm_working}
+  Digital Machine Event:
+    fr: {text: "événement de machine numérique", source: cao_crm_working}
+    es: {text: "evento de máquina digital", source: cao_crm_working}
+  Digital Information Carrier:
+    fr: {text: "support d'information numérique", source: cao_crm_working}
+    es: {text: "soporte de información digital", source: cao_crm_working}
+
+# Convenciones de fraseo recurrente (no son "conceptos" con IRI propia, pero aparecen decenas de
+# veces en las definiciones EN oficiales -- fijar una sola vez la traducción de estas fórmulas
+# evita variación involuntaria entre entradas traducidas en sesiones distintas).
+phrasing_conventions:
+  "This class comprises":
+    fr: "Cette classe comprend"
+    es: "Esta clase comprende"
+  "This property":
+    fr: "Cette propriété"
+    es: "Esta propiedad"
+  "is documented":
+    fr: "est documenté(e)"
+    es: "se documenta"
+  "instance(s) of":
+    fr: "instance(s) de"
+    es: "instancia(s) de"
+  "carrier":
+    fr: "support"
+    es: "soporte"
+  "realisation / realization":
+    fr: "réalisation"
+    es: "realización"

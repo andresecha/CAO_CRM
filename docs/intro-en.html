@@ -1,0 +1,285 @@
+<!--
+-- CAO_CRM (Corpus Author Ontology CRM)
+-- Copyright (c) 2026 Andres Echavarria Pelaez
+-- Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+-- Encoding carried out under the scientific direction and support of Fatiha Idmhand
+--
+-- This file is part of the CAO_CRM publication package, licensed under the
+-- Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+-- License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+-- https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
+<style>
+  /* Full, explicit override of Widoco's own .backlink rule (resources/extra.css:
+     float:right, navy dotted border, background-color) -- both rules share equal
+     specificity, so relying on cascade order left a messy hybrid. Every
+     conflicting property is reset here rather than only adding new ones. */
+  .backlink { font-size: 0.55em !important; font-weight: normal !important; color: #888 !important; vertical-align: middle !important; margin-left: 0.8em !important; white-space: nowrap !important; float: none !important; text-align: left !important; border: none !important; background-color: transparent !important; padding: 0 !important; }
+  .backlink a { color: #888 !important; text-decoration: none !important; border-bottom: 1px dotted #888 !important; }
+  .backlink a:hover { color: #555 !important; border-bottom-style: solid !important; }
+  .backlink::before { content: "↑ "; }
+
+  /* Print/PDF-only cover page: turns Widoco's own metadata block (title,
+     version, authors, license -- everything inside <div class="head">) into
+     a proper title page instead of looking like a printed webpage. Invisible
+     on screen; only applies when generating the PDF (see docs/build.sh). */
+  @media print {
+    @page {
+      size: A4;
+      margin: 2.6cm 2cm 2.2cm 2cm;
+      @top-center { content: "CAO_CRM (Corpus Author Ontology CRM)"; font-size: 8pt; color: #888; }
+      @bottom-center { content: counter(page) " / " counter(pages); font-size: 8pt; color: #888; }
+    }
+    /* No running header/footer on the cover page itself. */
+    @page :first {
+      @top-center { content: ""; }
+      @bottom-center { content: ""; }
+    }
+    body { font-size: 10.5pt; line-height: 1.45; }
+    /* Widoco's dark/light mode toggle: its custom element (resources/dark-mode-
+       toggle.mjs) relocates its host <div class="darkmode"> to the very start
+       of <body> once the browser's JS runs (a common "portal" pattern for
+       fixed-position UI). In paged/print media this fixed-position element
+       was producing a spurious blank first page -- meaningless on paper
+       anyway, so it's hidden outright rather than merely repositioned. */
+    .darkmode, dark-mode-toggle { display: none !important; }
+    .backlink, #toc, .container > .head > div[style*="float:right"] { display: none !important; }
+    a[href*="provenance/"] { display: none !important; }
+    a { color: #333 !important; }
+    pre, code { white-space: pre-wrap; overflow-wrap: break-word; }
+    /* Widoco's own .type-c/.type-op/.type-dp classes (the small superscript
+       markers after every class/property name) only set color, not size --
+       browsers apply their own default <sup> sizing, which prints too large.
+       Forced down to about half here. */
+    sup.type-c, sup.type-op, sup.type-dp, sup.type-ap { font-size: 0.5em; }
+
+    .container > .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 24cm;
+      page-break-after: always;
+      border-bottom: none !important;
+    }
+    .container > .head::before {
+      content: "";
+      display: block;
+      width: 5em;
+      height: 0.2em;
+      background: #1a1a1a;
+      margin: 0 auto 1.5em auto;
+    }
+    .container > .head h1 { font-size: 2.2em; margin-bottom: 0.1em; }
+    .container > .head h2 { font-size: 1.1em; font-weight: normal; color: #555; margin-top: 0; }
+    .container > .head dl { text-align: left; max-width: 28em; margin: 2em auto 0 auto; font-size: 0.9em; }
+    .container > .head dt { font-weight: bold; margin-top: 0.6em; }
+    .container > .head dd { margin-left: 0; color: #333; }
+    .container > .head hr { display: none; }
+    #abstract { page-break-after: always; }
+  }
+</style>
+<h2 id="status">Status of this document <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+
+This document describes **CAO_CRM** (Corpus Author Ontology CRM), an ontology module developed within the Huma-Num ARIANE Consortium (Analyses, Research, Artificial Intelligence and New Digital Editions) to describe the metadata of textual corpora and, more specifically, literary objects.
+
+**Version 1.0**. This first version was published on July 8, 2026.
+
+The module comprises 41 classes, 84 object properties, and 5 data properties (a total of 1,165 triples). It was verified at every stage through an automated validation pipeline (`make validate`) covering syntax, logical consistency, SHACL constraints, standards compliance, metadata, and design quality, FAIR principles (FOOPS!), and competency questions on real data (all eight validation categories passed successfully, plus competency questions). It was then subjected to three successive independent audits. Each audit was conducted without assuming the validity of the previous one and consisted of verifying every statement directly against the source files rather than relying on summaries.
+
+**Source code and repository:** [https://github.com/andresecha/CAO_CRM](https://github.com/andresecha/CAO_CRM) (institutional reference copy on GitLab: [https://gitlab.huma-num.fr/consortiumariane/cao_crm](https://gitlab.huma-num.fr/consortiumariane/cao_crm)).
+
+This document does not represent the official position of either the CIDOC CRM Special Interest Group (CRM-SIG), the IFLA consortium, which is responsible for LRMoo, or FORTH-ICS, which maintains CRMdig. CAO_CRM is a proposal developed by the Metadata Working Group of the Huma-Num ARIANE Consortium. It is an independent derivative work that assembles a selected subset of these three models without claiming to represent them in their entirety or to modify them. Questions and comments regarding this document may be addressed to the Huma-Num ARIANE Consortium (consortium.ariane@gmail.com).
+
+**Authors:** <a href="https://cachetown.fr/" target="_blank" rel="noopener noreferrer">Andrés Echavarría Peláez</a> and <a href="https://www.linkedin.com/in/melanie-bouland" target="_blank" rel="noopener noreferrer">Mélanie Bouland</a>.
+
+**Contributors:** <a href="https://fatihaidmhand.ovh/" target="_blank" rel="noopener noreferrer">Fatiha Idmhand</a>, <a href="https://www.sorbonne-nouvelle.fr/mme-galleron-ioana-468922.kjsp" target="_blank" rel="noopener noreferrer">Ioana Galleron</a>, <a href="https://eric.univ-lyon2.fr/sabine/" target="_blank" rel="noopener noreferrer">Sabine Loudcher</a>, <a href="https://alaeddinelaouir.github.io/homepage/" target="_blank" rel="noopener noreferrer">Ala Eddine Laouir</a>, and <a href="https://www.linkedin.com/in/guizani-ameni-5b431b220" target="_blank" rel="noopener noreferrer">Ameni Guizani</a>.
+
+**The authors.** Mélanie Bouland developed a conceptual model synthesizing the extensive discussions initially conducted within the Metadata Working Group of the Huma-Num ARIANE Consortium, and subsequently within the scientific team involved in the development of the AMIS assistant. This work resulted in a conceptual model that the present module adopts and adapts to ensure compliance with the CIDOC CRM, LRMoo, and CRMdig standards.
+
+The RDF/OWL encoding was carried out by Andrés Echavarría Peláez using a reproducible and fully documented methodology. The three complete official models were first merged into a single graph. The selected classes and properties (documented in `imports/module-terms.txt`) were then extracted in a single combined pass using the ROBOT tool, thereby preserving relationships spanning the three source models. The resulting ontology was subsequently processed with the HermiT OWL reasoner to confirm its logical consistency and was finally validated through visual inspection in Protégé.
+
+</span>
+
+<h2 id="introduction-detail">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+
+### Background and motivation
+
+The literary text is not a univocal object. It may be understood as an intellectual work belonging to the realm of ideas, as a material artefact (manuscript, printed document, edition), as a linguistic resource existing in varying degrees of stabilization, or as a digital object subject to continuous transformations (encoding, annotation, algorithmic processing). This plurality of modes of existence, already identified by Galleron, Idmhand, and Meynard (2018) in their research on the modelling of literary objects, raises a central question: how can one represent, within a coherent semantic framework, an entity that simultaneously belongs to the domains of intellectual creation, documentary materiality, literary interpretation, and the digital environment?
+
+This issue became particularly acute within the AMIS project, whose objective is to facilitate, through artificial intelligence models (named entity recognition, classification, automatic summarization, dependency analysis), the creation and enrichment of metadata for digital textual resources. Existing standards (the XML-TEI header and Dublin Core) have proven insufficient, as they do not reliably distinguish between what pertains to the work, the manifestation, the physical item, or the digital object: the same piece of information (a date or a name, for instance) may in fact refer to entities of fundamentally different natures.
+
+CAO_CRM addresses this need by building, on the basis of the CIDOC-CRM, LRMoo, and CRMdig standards, an integrated model capable of representing the entire life cycle of textual objects, from the creation of the work to its contemporary editorial, material, and digital forms.
+
+### CAO_CRM: Hierarchy and descriptive organization
+
+CAO_CRM adopts the hierarchy of LRMoo and structures the description according to a progression ranging from the work, understood as an abstract concept, to its various material or digital forms:
+
+- `F1_Work` — the work in its purely conceptual dimension, independent of any material realization. The inalienable moral right is attached to this level through the path `F1_Work → F27_Work_Creation → P14_has_original_author → Person`.
+- `F2_Expression` — an identifiable realization of this idea. Any substantial modification of the intellectual content results in a new expression. This entity is co-typed as `E33_Linguistic_Object` in order to carry information relating to language (`P72_has_language`) and writing system.
+- `F3_Manifestation` — the generic material form through which the work is made accessible (for example, a printed book or an audiovisual edition). A manifestation may give rise to one or more items through `F32_Item_Production_Event`.
+- `F5_Item` — a specific material copy, that is, the physical object actually consulted or handled. It is co-typed as `E22_Human-Made_Object` in order to represent its current location.
+- `D1_Digital_Object` (CRMdig) — any digital file associated with an expression. It is co-typed as `D9_Data_Object` when it has a measurable dimension. It may originate either from the digitization of a pre-existing physical object (a process documented by `D2_Digitization_Process`) or from a native digital production process (documented by `D7_Digital_Machine_Event`).
+
+For each entity, the model organizes possible metadata into four transversal categories:
+
+- "Characteristics": identifiers, titles, dimensions, materials, formats, and languages — that is, the elements allowing a resource to be distinguished and uniquely identified;
+- "Processes": actors, dates, places, and operations that led to the existence or transformation of the resource;
+- "Status": applicable rights, preservation information, and deposit location;
+- "Relations": links to other resources in the model, including relationships between expressions and between works through `R75`, `R76`, and `R2`.
+
+### CAO_CRM, RDF and OWL
+
+CAO_CRM is published in RDF/OWL, with available serializations in RDF/XML, Turtle, N-Triples, and JSON-LD. The module was built according to a reproducible and documented methodology: the three complete official models (CIDOC-CRM 7.1.3, LRMoo 1.1.1, and CRMdig 5.0) are first merged. The selected classes and properties — documented in `imports/module-terms.txt` (130 terms) — are then extracted in a single combined operation using the <a href="http://robot.obolibrary.org/">ROBOT</a> tool. This approach preserves the relationships that cross the three source models within the selected scope.
+
+Unlike a conventional import using `owl:imports`, CAO_CRM is an autonomous ("vendored") module: it no longer depends on external source files at runtime.
+
+The guiding principle of CAO_CRM is that of **pure composition**: the module defines no classes or properties of its own, with a single methodological exception explicitly authorized by CIDOC-CRM itself. This exception concerns the five role sub-properties:
+
+- `P14_has_original_author`;
+- `P14_has_translator`;
+- `P14_has_abridger`;
+- `P14_has_scientific_editor`;
+- `P14_has_publisher`.
+
+These sub-properties are declared in accordance with Encoding Rule 4 from the official CIDOC-CRM preamble (see "Design Justification" below).
+
+Outside this specific case, every entity present in the module originates directly from CIDOC-CRM, LRMoo, or CRMdig, with its original axioms preserved (domains, ranges, labels, and comments).
+
+### Consistency and integrity
+
+The ontology is validated at every modification through a reproducible toolchain (`make validate`) including:
+
+- RDF/XML syntax validation (`rapper`, `riot`, `rdflib`);
+- logical reasoning (HermiT reasoner via ROBOT, applied to the merged model incorporating the three complete official sources);
+- SHACL constraint validation;
+- verification of compliance with required metadata annotations;
+- structural alignment with official sources (`robot diff`);
+- detection of potential design issues (OOPS!).
+
+At the time of publication, the module is logically consistent: the reasoner detects no unsatisfiable classes, and all eight validation categories, including the FAIR assessment (run locally, score 0.79/1.0), pass successfully without exception.
+
+This consistency is not merely the result of an automated check: it is the outcome of an exhaustive verification process. The complete details of this process — including every non-trivial modeling decision and its justification based on official references — are presented in the following section.
+
+### Inference, dependency and the open world assumption
+
+Like any RDF/OWL model, CAO_CRM adopts the **Open World Assumption**: the absence of a triple in the data never means it is false, only that it has not been, or not yet been, asserted. This point matters particularly for reading this module, for two concrete reasons:
+
+1. **Deliberately absent domains and ranges are not errors.** Several official CIDOC-CRM properties have, in their complete model, a domain or range pointing to a class deliberately excluded from the chosen scope (for example `E1_CRM_Entity`, the root of the entire hierarchy). The module does not systematically replace these with a substitute class: in most cases, it simply leaves that domain or range absent; in a few specific cases (`P54`/`P55_has_current_location`, restricted to `E22_Human-Made_Object`), a deliberate restriction was applied, after verifying that no other use of the module would suffer from it.
+2. **The HermiT reasoner confirms consistency; it does not invent missing facts.** That the module is consistent means that no logical contradiction has been detected within it, not that every useful relation has been automatically inferred or completed. Every relation must be explicitly asserted in the data to be usable.
+
+The module depends, at runtime, on no external file (see "CAO_CRM, RDF and OWL" above). Its correctness, however, depends on the fidelity of the extraction to the official source files, a fidelity verified through systematic comparison (`robot diff`).
+
+### Design Justification
+
+The guiding principle, **zero native classes or properties, pure composition of a subset of CIDOC-CRM, LRMoo, and CRMdig**, reflects the decision not to mobilize the entirety of the three combined models, whose complete use would be difficult to implement in practice, particularly for users who are not ontology specialists.
+
+CAO_CRM therefore deliberately adopts a limited and controlled subset, even if this means leaving some descriptive requirements temporarily unaddressed, rather than developing specific extensions. This commitment to methodological rigor has led, during the construction of the module, to the following modeling decisions.
+
+### Typing the description of an object with `P3_has_note`
+
+The source conceptual diagram represented the free-text description of an object through an artificial chain (`E55_Type` followed by `E62_String`), whereas `E62_String`, like `E60_Number`, does not officially have any URI class in CIDOC-CRM.
+
+These two concepts correspond to "primitive values" that the standard itself specifies should be represented directly as literals (`rdfs:Literal`), rather than as entities with their own identity.
+
+Consequently, `P3_has_note` has been declared as an `owl:DatatypeProperty`, with its range set to `rdfs:Literal`, exactly reproducing the convention applied by CIDOC-CRM for `P90_has_value`.
+
+### The intentional absence of class disjointness
+
+No `owl:disjointWith` declaration has been added between the classes in the module. This choice faithfully follows the three complete official files of CIDOC-CRM, LRMoo, and CRMdig, which themselves declare no class disjointness axioms.
+
+The CIDOC-CRM consortium deliberately leaves the definition of possible disjointness relationships to concrete implementations rather than imposing them at the generic model level. Introducing logical restrictions here that the source models intentionally avoid would have constituted a modeling decision specific to CAO_CRM, contrary to the principle of pure composition.
+
+### The absence of official translation for LRMoo and CRMdig terms, and for CIDOC-CRM's own definitions
+
+The classes and properties from LRMoo and CRMdig used by CAO_CRM have, in their official sources, only `rdfs:label` values in English — unlike CIDOC-CRM, whose majority of terms are available in multiple languages (up to seven in some cases). An exhaustive check further reveals that CIDOC-CRM itself never translates its long definitions (`rdfs:comment`), in any language, not even for its own native terms (for example, `E39_Actor` has a `label@fr` but a `comment` only in English).
+
+Adding French or Spanish translations for these terms or definitions to `ontology/CAO_CRM-1.0.rdf` itself would, by definition, introduce content created by CAO_CRM itself rather than content derived from an official source — the published RDF file therefore remains, in this respect, rigorously faithful to the sources: these 130 terms officially have a translation only where CIDOC-CRM itself provides one (short labels, never definitions).
+
+So that the documentation itself remains usable in French and Spanish, a separate working-translation layer (`docs/i18n/`) supplies the 44 missing French labels and 130 missing French definitions, as well as the 130 missing Spanish labels and 130 missing Spanish definitions — merged only into a temporary copy of the graph when generating the HTML and PDF, never into the published file. Every label or definition produced this way carries, in the generated documentation, a small mark (†) with a tooltip noting its status as a working, non-official translation.
+
+### Structural corrections identified through comparison with the official models
+
+Eight structural issues were identified by comparing the conceptual diagram, page by page, against the complete official models. Each issue was resolved through a documented reference to the relevant official specifications.
+
+**1. Description and writing system.** The diagram routed these two characteristics through the same construction (`E55_Type` followed by `E62_String`), although they serve fundamentally different purposes: free text for the description and a controlled vocabulary value for the writing system. The description is now represented directly through `P3_has_note`; the writing system is represented through an `E55_Type` value linked via `P2_has_type`, with `P127_has_broader_term` used to organize related values whenever several controlled facets coexist (writing system, production mode, rights type).
+
+**2. The language of an expression.** The property `P150_defines_typical_parts_of` was incorrectly diverted from its official meaning and used to attach language information to `F3_Manifestation`, whereas LRMoo's own official scope note explicitly places this information at the Expression level: *"An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object."* Language is therefore now represented at the `F2_Expression` level, co-typed as `E33_Linguistic_Object`, through `P72_has_language`.
+
+**3. The location of an item.** `P7_took_place_at` was applied to `E3_Condition_State`, which is not a valid subclass of `E4_Period`, the only official domain of this property. This verification also revealed a genuine modeling gap: no property allowed the location of `F5_Item` to be represented in the diagram. The adopted solution is to co-type the item as `E22_Human-Made_Object` — a practice explicitly authorized by the official scope note of `F5_Item` — thereby enabling the use of `P54_has_current_location` and `P55_has_current_location`.
+
+**4. Rights.** `P104_is_subject_to` was applied to seven classes simultaneously, three of which are categorically incompatible (`F1_Work`, `E7_Activity`, and `D2_Digitization_Process`). The official range of this property requires `E72_Legal_Object`, which includes neither abstract works nor processes. The complete resolution of this issue is discussed below, in the section "Moral rights and patrimonial rights."
+
+**5. The production of an item.** `R27_materialized` linked `E12_Production` directly to `F3_Manifestation`, whereas the official domain requires `F32_Item_Production_Event`, a specialized subclass of `E12_Production` specifically intended for this purpose. No information is lost through this correction: `F32_Item_Production_Event` inherits all axioms from its superclass.
+
+**6. The digital object carrying a dimension.** This follows the same pattern as the previous case: `L61_contains_value_set_of` requires `D9_Data_Object`, a specialized subclass of `D1_Digital_Object`, rather than `D1_Digital_Object` itself.
+
+**7. The unit of measurement.** `P90_has_value` requires a range of `rdfs:Literal`, not `E60_Number` (another "Primitive Value" without an official URI class). In addition, `P91_has_unit`, which links a dimension to its measurement unit through `E58_Measurement_Unit`, was entirely absent from the diagram and has therefore been added.
+
+**8. Date precision.** The first extraction of the module had lost the precise XSD datatype declarations (`xsd:dateTime`, `xsd:integer`) that Mélanie Bouland's original file correctly applied to `P82`, `P82a`, `P82b`, and `P90_has_value`. While the official standard defines these properties more generically through `rdfs:Literal`, this additional precision was restored without removing any existing information from the module.
+
+A ninth, more subtle case required revisiting an earlier conclusion. One branch of the diagram distinguished between the digitization of an existing physical object and native digital production without a prior physical carrier. However, it implemented this distinction through a class requiring a physical input object (`D2_Digitization_Process`, which presupposes `E18_Physical_Thing`). This was not an error to eliminate, but rather a distinction genuinely intended by the project team. It is now represented through `D7_Digital_Machine_Event`, the more general CRMdig class of which `D2_Digitization_Process` is a specialization and which does not require a prior physical object.
+
+### Completion of the four cross-cutting category matrix
+
+An exhaustive review of this matrix for the five main classes made it possible to add three missing relationships, all of them official and introducing no new classes:
+
+- `R75_incorporates` and `R76_is_derivative_of` between two instances of `F2_Expression`, in order to document, for example, a translation or an abridged version derived from an original expression;
+- `R2_is_derivative_of` between two instances of `F1_Work`, in order to document adaptations or sequels derived from a source work;
+- `R28_produced`, linking a production event directly to the item it produces.
+
+### Moral rights and patrimonial rights
+
+Moral rights — inalienable and non-transferable, attached to the author's person and to the work itself independently of any particular expression — create a structural modeling challenge. `P104_is_subject_to` requires `E72_Legal_Object`, whose official scope note explicitly excludes conceptual objects such as `F1_Work` (*"the identity of an instance of E28 Conceptual Object [...] may be too ambiguous to reliably establish instances of E30 Right"*).
+
+This exclusion was confirmed by the official CIDOC-CRM SIG issue concerning the rights model (Issue 328, 2017), which specifically addresses the case of moral rights and concludes that no mechanism currently exists for transferring or directly attaching this type of right to such an object.
+
+The solution adopted distinguishes two mechanisms already available within the module, each used according to the legal reality it represents best.
+
+To answer, uniquely and unambiguously, the question "Who is the moral author of this work?", the appropriate path is: `F1_Work → R16i_was_created_by → F27_Work_Creation → P14_has_original_author → Person`, which LRMoo itself explicitly describes as representing "the notion of the creator of the work."
+
+To document the formal legal framework and transferable patrimonial rights (translation rights, publishing rights), specific to a particular Expression or Manifestation, the appropriate mechanism is: `P104_is_subject_to` toward an instance of `E30_Right`, typed through `P2_has_type` (for example, "moral right" or "inalienable intellectual property").
+
+This dual interpretation requires no new terms: it explicitly connects two mechanisms already provided by LRMoo and CIDOC-CRM, each applied to the legal reality it represents most appropriately.
+
+### Five role subproperties: the sole exception to the pure-composition principle
+
+No official property allows the different actor roles associated with a single text to be distinguished: `P14_carried_out_by` indiscriminately covers any role in any activity. However, CIDOC-CRM explicitly authorizes, in its own preamble, the creation of named subproperties for role specialization — a mechanism referred to as Encoding Rule 4.
+
+Three authorship roles are therefore distinguished at the Expression level, each aligned with the international MARC Relator Terms vocabulary:
+
+- `P14_has_original_author` (original author, code `aut`);
+- `P14_has_translator` (translator, code `trl`);
+- `P14_has_abridger` (person responsible for producing an abridged version, code `abr`).
+
+The same principle applies to the Manifestation level, where CAO_CRM's source paper explicitly identifies, as an original differentiating feature of the model compared with plain LRMoo, an "editorial activities" branch distinguishing the responsibility of the commercial publisher (the agent who publishes and prints) from that of the scientific editor (the agent who establishes the critical text and writes the preface).
+
+These two roles are represented respectively by:
+
+- `P14_has_publisher` (MARC code `pbl`);
+- `P14_has_scientific_editor` (MARC code `edt`);
+
+both applied to the same `F30_Manifestation_Creation` event.
+
+The latter property also applies separately to the Item and the Digital Object whenever a distinct scholarly activity (such as copy collation or editorial decisions for a digital edition) involves specialist responsibility independently from the material production process.
+
+### How to read this document
+
+This document follows the standard structure of an ontology specification. Following this introduction, it presents an overview of the module (a list of its classes and properties), followed by a cross-reference section describing each class and property individually, including its label, multilingual comments, domain, and range.
+
+Each term is identified by its original code from CIDOC-CRM, LRMoo, or CRMdig (for example, `E7` for Activity, `P2` for has type, and `F1` for Work). This code, which appears both in the full IRI of each term and on its reference entry, allows readers to locate the corresponding definition directly in the official documentation of the source models.
+
+Readers seeking a non-technical introduction to the model may instead consult the documentation in `documentation/en/`, which comprises ten introductory pages ranging from "What is CAO_CRM?" to a glossary and FAQ (also available in French and Spanish). Additional resources include the interactive visualization `graph/CAO_CRM-1.0-graph.html`, the practical Protégé guide `documentation/en/07-guia-protege.md`, and the application notes `documentation/en/10-notas-de-aplicacion.md`, which provide concrete examples for every `P14_has_*` role and every `E55_Type` value used in the model.
+
+### Conformance
+
+CAO_CRM is expressed in OWL 2 and RDF Schema. With the sole exception of the five `P14_has_*` role subproperties, described and justified in the Design Justification section, every class and property in the module corresponds exactly to a class or property declared in one of the following official releases:
+
+- CIDOC-CRM version 7.1.3 (RDFS Implementation, February 2024);
+- LRMoo version 1.1.1 (November 2025), an extension of the IFLA LRM model;
+- CRMdig version 5.0 (October 2025).
+
+</span>

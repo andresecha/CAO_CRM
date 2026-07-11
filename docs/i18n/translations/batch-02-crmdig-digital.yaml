@@ -1,0 +1,170 @@
+# Lote 2: los 13 términos CRMdig del módulo (5 clases D*, 4 pares de propiedades L*).
+# Terminología anclada en glossary_crosswalk.yaml (objeto numérique/digital, ya usado en
+# docs/intro.html para D1_Digital_Object).
+
+terms:
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"
+    local_name: D1_Digital_Object
+    label: {fr: "Objet numérique", es: "Objeto digital"}
+    comment:
+      fr: >-
+        Cette classe comprend les éléments immatériels identifiables pouvant être représentés comme
+        des ensembles de séquences de bits, tels que des jeux de données, des textes numériques, des
+        images, des éléments audio ou vidéo, des logiciels, etc., et documentés comme des unités
+        uniques. Tout changement dans la séquence de bits produit une nouvelle instance d'objet
+        numérique. Toute agrégation d'objets numériques en un ensemble traité comme une unité unique
+        est également considérée comme un objet numérique. Cela signifie, par exemple, que le
+        contenu d'un DVD, un fichier XML qu'il contient, et un élément de ce fichier, sont considérés
+        comme des objets numériques distincts, reliés entre eux par la propriété est composé de
+        (forme partie de). Dans le cas de métadonnées incorporées, le documentaliste doit veiller à
+        distinguer l'identité de l'objet incluant les métadonnées de l'identité du contenu inclus que
+        ces métadonnées décrivent. Un objet numérique ne dépend d'aucun support physique particulier,
+        et peut exister sur un ou plusieurs supports simultanément.
+      es: >-
+        Esta clase comprende elementos inmateriales identificables que pueden representarse como
+        conjuntos de secuencias de bits, tales como conjuntos de datos, textos electrónicos,
+        imágenes, elementos de audio o vídeo, software, etc., y que se documentan como unidades
+        únicas. Cualquier cambio en la secuencia de bits da lugar a una nueva instancia de objeto
+        digital. Cualquier agregación de objetos digitales en un conjunto tratado como una unidad
+        única también se considera un objeto digital. Esto significa que, por ejemplo, el contenido
+        de un DVD, un archivo XML contenido en él, y un elemento de ese archivo, se consideran
+        objetos digitales distintos, relacionados entre sí mediante la propiedad se compone de
+        (forma parte de). En el caso de metadatos incrustados, quien documenta debe procurar
+        distinguir la identidad del objeto que incluye los metadatos de la identidad del contenido
+        incluido que dichos metadatos describen. Un objeto digital no depende de un soporte físico
+        concreto, y puede existir en uno o varios soportes simultáneamente.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"
+    local_name: D2_Digitization_Process
+    label: {fr: "Processus de numérisation", es: "Proceso de digitalización"}
+    comment:
+      fr: >-
+        Cette classe comprend les événements qui aboutissent à la création d'objets de données
+        représentant l'apparence (par exemple, les propriétés de réflexion de la lumière), la forme
+        ou la structure interne enregistrée d'une chose matérielle telle qu'un document papier, une
+        statue, un bâtiment, une peinture, un objet biologique, etc. De telles méthodes sont
+        généralement appelées « techniques d'imagerie ». La conversion analogique-numérique de
+        matériel audiovisuel en constitue un cas particulier. Cette classe représente le passage d'un
+        objet matériel à une représentation immatérielle d'une distribution spatiale pertinente des
+        propriétés physiques locales de cet objet matériel (dans le cas d'un objet matériel sonore,
+        également le long de la piste sonore correspondante). Les étapes de traitement ultérieures du
+        résultat des processus de numérisation, qui préservent ou améliorent les corrélations
+        spatiales pertinentes avec l'objet numérisé ou une partie de celui-ci, sont considérées comme
+        des instances de D3 Dérivation formelle.
+      es: >-
+        Esta clase comprende los eventos que dan como resultado la creación de objetos de datos que
+        representan la apariencia (por ejemplo, las propiedades de reflexión de la luz), la forma o
+        la estructura interna registrada de una cosa física tal como un documento en papel, una
+        estatua, un edificio, una pintura, un objeto biológico, etc. Estos métodos suelen
+        denominarse «técnicas de imagen». Un caso particular es la conversión analógico-digital de
+        material audiovisual. Esta clase representa el tránsito de un objeto material a una
+        representación inmaterial de una distribución espacial relevante de las propiedades físicas
+        locales de ese objeto material (en el caso de un objeto material sonoro, también a lo largo
+        de la pista sonora correspondiente). Los pasos de procesamiento posteriores del resultado de
+        los procesos de digitalización que preservan o mejoran las correlaciones espaciales
+        relevantes con el objeto digitalizado o una parte de él se consideran instancias de D3
+        Derivación formal.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"
+    local_name: D7_Digital_Machine_Event
+    label: {fr: "Événement de machine numérique", es: "Evento de máquina digital"}
+    comment:
+      fr: >-
+        Cette classe comprend les événements qui se produisent sur des dispositifs numériques
+        physiques à la suite d'une activité humaine ayant intentionnellement provoqué leur
+        déclenchement, immédiat ou différé, et qui aboutissent à la création d'un nouvel objet
+        numérique pour le compte de l'actant humain. L'entrée d'un événement de machine numérique
+        peut consister en des réglages de paramètres et/ou des données à traiter. Certains
+        événements de machine numérique peuvent s'inscrire dans un événement de création plus large.
+        Dans ce cas, l'ensemble des sorties machine des événements partiels est considéré comme
+        relevant de la création de l'activité globale.
+      es: >-
+        Esta clase comprende los eventos que ocurren en dispositivos digitales físicos a raíz de una
+        actividad humana que provocó intencionadamente su inicio, inmediato o diferido, y que dan
+        como resultado la creación de un nuevo objeto digital en nombre del actor humano. La entrada
+        de un evento de máquina digital puede consistir en ajustes de parámetros y/o datos que deben
+        procesarse. Algunos eventos de máquina digital pueden formar parte de un evento de creación
+        más amplio. En ese caso, toda la salida de máquina de los eventos parciales se considera
+        parte de la creación de la actividad global.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object"
+    local_name: D9_Data_Object
+    label: {fr: "Objet de données", es: "Objeto de datos"}
+    comment:
+      fr: >-
+        Cette classe comprend les objets numériques qui résultent de mesures ou d'autres observations
+        et/ou de leur évaluation algorithmique sous forme de données structurées, telles que des
+        propositions formelles codées, des fichiers CSV (« valeurs séparées par des virgules ») ou
+        des représentations équivalentes. Si un objet numérique contient l'ensemble des valeurs d'une
+        dimension, comme les données primaires issues d'une mesure, cette association peut être
+        documentée au moyen de la propriété `L61_contains_value_set_of`
+        (`L61i_has_value_set_representation`).
+      es: >-
+        Esta clase comprende objetos digitales que son el resultado de mediciones u otras
+        observaciones y/o de su evaluación algorítmica en forma de datos estructurados, tales como
+        proposiciones formales codificadas, archivos CSV («valores separados por comas») o
+        representaciones equivalentes. Si un objeto digital contiene el conjunto de valores de una
+        dimensión, como los datos primarios procedentes de una medición, esta asociación puede
+        documentarse mediante la propiedad `L61_contains_value_set_of`
+        (`L61i_has_value_set_representation`).
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier"
+    local_name: D13_Digital_Information_Carrier
+    label: {fr: "Support d'information numérique", es: "Soporte de información digital"}
+    comment:
+      fr: >-
+        Cette classe comprend toutes les instances d'E84 Support d'information explicitement conçues
+        pour servir de supports physiques numériques persistants d'objets numériques. Un support
+        d'information numérique peut contenir de l'information ou non, par exemple une disquette
+        vierge.
+      es: >-
+        Esta clase comprende todas las instancias de E84 Soporte de información explícitamente
+        diseñadas para servir como soportes físicos digitales persistentes de objetos digitales. Un
+        soporte de información digital puede contener información o no, por ejemplo un disquete
+        vacío.
+
+  # --- Propiedades ---
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11_had_output"
+    local_name: L11_had_output
+    label: {fr: "a eu pour sortie", es: "tuvo como salida"}
+    comment:
+      fr: "Cette propriété associe un événement de machine numérique à l'objet numérique qui constitue le résultat de cette activité."
+      es: "Esta propiedad asocia un evento de máquina digital con el objeto digital que constituye el resultado de esa actividad."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of"
+    local_name: L11i_was_output_of
+    label: {fr: "a été la sortie de", es: "fue la salida de"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19_stores"
+    local_name: L19_stores
+    label: {fr: "stocke", es: "almacena"}
+    comment:
+      fr: "Cette propriété associe un support d'information numérique à l'objet numérique qui y est stocké."
+      es: "Esta propiedad asocia un soporte de información digital con el objeto digital almacenado en él."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on"
+    local_name: L19i_is_stored_on
+    label: {fr: "est stocké sur", es: "está almacenado en"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1_digitized"
+    local_name: L1_digitized
+    label: {fr: "a numérisé", es: "digitalizó"}
+    comment:
+      fr: "Cette propriété associe un processus de numérisation à la chose matérielle qui en fait l'objet."
+      es: "Esta propiedad asocia un proceso de digitalización con la cosa física que es objeto de dicho proceso."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by"
+    local_name: L1i_was_digitized_by
+    label: {fr: "a été numérisée par", es: "fue digitalizada por"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of"
+    local_name: L61_contains_value_set_of
+    label: {fr: "contient l'ensemble de valeurs de", es: "contiene el conjunto de valores de"}
+    comment:
+      fr: "Cette propriété associe un objet de données à une dimension, lorsque le premier contient l'ensemble des valeurs de cette dimension sous forme numérique."
+      es: "Esta propiedad asocia un objeto de datos con una dimensión, cuando el primero contiene el conjunto de valores de dicha dimensión en formato digital."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation"
+    local_name: L61i_has_value_set_representation
+    label: {fr: "a pour représentation de l'ensemble de valeurs", es: "tiene como representación del conjunto de valores"}

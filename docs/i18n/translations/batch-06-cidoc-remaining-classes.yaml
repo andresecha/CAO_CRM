@@ -1,0 +1,600 @@
+# Lote 6: las 18 clases CIDOC-CRM restantes del módulo (identidad, tipo, dimensión, tiempo/lugar,
+# derechos, eventos biológicos). Todas ya tienen label oficial en fr; solo falta comment fr +
+# label/comment es.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"
+    local_name: E41_Appellation
+    label: {es: "Apelativo"}
+    comment:
+      fr: >-
+        Cette classe comprend tous les signes, significatifs ou non, ou les agencements de signes
+        suivant une syntaxe spécifique, qui sont utilisés ou peuvent être utilisés pour désigner et
+        identifier une instance spécifique d'une classe donnée dans un certain contexte. Les
+        instances d'Appellation n'identifient pas les choses par leur signification, même si elles
+        en possèdent une, mais par convention, tradition ou accord. Les instances d'Appellation sont
+        des constructions culturelles ; à ce titre, elles ont un contexte, une histoire, et un usage
+        dans le temps et dans l'espace propre à un groupe d'utilisateurs donné. Une instance
+        d'Appellation donnée peut avoir des formes alternatives, c'est-à-dire d'autres instances
+        d'Appellation considérées comme équivalentes, indépendamment de la chose qu'elle désigne.
+        Des langues différentes peuvent utiliser des appellations différentes pour une même chose,
+        comme les noms des grandes villes. Certaines appellations peuvent être formulées au moyen
+        d'un groupe nominal valide dans une langue particulière. Dans ces cas, les instances
+        d'Appellation correspondantes doivent également être déclarées comme des instances d'Objet
+        linguistique. La langue utilisant l'appellation peut alors être déclarée au moyen de la
+        propriété a pour langue : Langue. Les instances d'Appellation peuvent servir à identifier
+        n'importe quelle instance d'Entité CRM, et sont parfois caractéristiques d'instances de
+        sous-classes plus spécifiques d'Entité CRM, comme les instances d'Intervalle temporel (par
+        exemple les « dates »), d'Actant, de Lieu ou d'Objet conceptuel. Les adresses postales et
+        les adresses électroniques sont des exemples caractéristiques d'identifiants utilisés par
+        les services chargés d'acheminer des choses entre des clients. Même les identifiants
+        exprimés numériquement pour des étendues dans l'espace ou dans le temps sont également
+        considérés comme des instances d'Appellation, tels que les dates du calendrier grégorien ou
+        les coordonnées spatiales, bien qu'ils permettent de déterminer un moment ou un lieu au
+        moyen d'une procédure connue à partir d'un point de référence, et jouent de ce fait un
+        double rôle en tant qu'instances de Valeur primitive. Appellation ne doit pas être confondue
+        avec l'acte de nommer quelque chose. Cf. E15 Attribution d'identifiant.
+      es: >-
+        Esta clase comprende todos los signos, significativos o no, o las disposiciones de signos
+        que siguen una sintaxis específica, que se utilizan o pueden utilizarse para referirse a e
+        identificar una instancia específica de alguna clase dentro de un contexto determinado. Las
+        instancias de Apelativo no identifican las cosas por su significado, aunque puedan tener
+        uno, sino por convención, tradición o acuerdo. Las instancias de Apelativo son
+        construcciones culturales; como tales, tienen un contexto, una historia y un uso en el
+        tiempo y en el espacio propio de un grupo de usuarios. Una instancia de Apelativo
+        determinada puede tener formas alternativas, es decir, otras instancias de Apelativo
+        consideradas equivalentes, con independencia de la cosa que denota. Lenguas distintas
+        pueden emplear apelativos distintos para una misma cosa, como los nombres de las grandes
+        ciudades. Algunos apelativos pueden formularse mediante un sintagma nominal válido de una
+        lengua concreta. En estos casos, las instancias de Apelativo correspondientes deben
+        declararse también como instancias de Objeto lingüístico. La lengua que emplea el apelativo
+        puede entonces declararse mediante la propiedad tiene lengua: Lengua. Las instancias de
+        Apelativo pueden emplearse para identificar cualquier instancia de Entidad CRM, y en
+        ocasiones son características de instancias de subclases más específicas de Entidad CRM,
+        como las instancias de Intervalo temporal (por ejemplo, las «fechas»), Actor, Lugar u Objeto
+        conceptual. Las direcciones postales y las direcciones de correo electrónico son ejemplos
+        característicos de identificadores empleados por los servicios que transportan cosas entre
+        clientes. Incluso los identificadores expresados numéricamente para extensiones en el
+        espacio o en el tiempo se consideran también instancias de Apelativo, como las fechas del
+        calendario gregoriano o las coordenadas espaciales, aunque permitan determinar un momento o
+        un lugar mediante un procedimiento conocido a partir de un punto de referencia,
+        desempeñando por ello un doble papel como instancias de Valor primitivo. Apelativo no debe
+        confundirse con el acto de nombrar algo. Cf. E15 Asignación de identificador.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"
+    local_name: E42_Identifier
+    label: {es: "Identificador"}
+    comment:
+      fr: >-
+        Cette classe comprend les chaînes de caractères ou les codes attribués à des instances
+        d'Entité CRM afin de les identifier de manière unique et permanente dans le contexte d'une
+        ou plusieurs organisations. Ces codes sont souvent appelés numéros d'inventaire, codes
+        d'enregistrement, etc., et se composent généralement de séquences alphanumériques. Les
+        adresses postales, les numéros de téléphone, les URL et les adresses électroniques
+        constituent des exemples caractéristiques d'identifiants utilisés par les services chargés
+        d'acheminer des choses entre des clients. La classe Identifiant n'est normalement pas
+        utilisée pour les identifiants générés automatiquement à des fins de traitement automatisé,
+        sauf si ceux-ci sont également utilisés par des agents humains.
+      es: >-
+        Esta clase comprende las cadenas de caracteres o códigos asignados a instancias de Entidad
+        CRM con el fin de identificarlas de manera única y permanente en el contexto de una o
+        varias organizaciones. Estos códigos suelen conocerse como números de inventario, códigos
+        de registro, etc., y normalmente se componen de secuencias alfanuméricas. Las direcciones
+        postales, los números de teléfono, las URL y las direcciones de correo electrónico son
+        ejemplos característicos de identificadores empleados por los servicios que transportan
+        cosas entre clientes. La clase Identificador no se utiliza normalmente para identificadores
+        generados automáticamente para procesamiento automatizado, salvo que estos sean también
+        empleados por agentes humanos.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E35_Title"
+    local_name: E35_Title
+    label: {es: "Título"}
+    comment:
+      fr: >-
+        Cette classe comprend les chaînes textuelles qui, dans un contexte culturel donné, peuvent
+        être clairement identifiées comme des titres en raison de leur forme. En tant que
+        sous-classe d'Appellation, Titre ne peut être utilisée que lorsqu'une telle chaîne est
+        effectivement employée comme titre d'une œuvre, tel un texte, une œuvre d'art ou une pièce
+        musicale. Les titres sont des groupes nominaux propres ou des groupes verbaux, et ne
+        doivent pas être confondus avec des noms d'objets génériques tels que « chaise »,
+        « peinture » ou « livre » (ces derniers étant des noms communs correspondant à des
+        instances de Type). Les titres peuvent être attribués par le créateur de l'œuvre lui-même,
+        ou par un groupe social. Cette classe comprend également les traductions de titres
+        utilisées comme substituts des titres originaux dans différents contextes sociaux.
+      es: >-
+        Esta clase comprende las cadenas textuales que, dentro de un contexto cultural determinado,
+        pueden identificarse claramente como títulos por su forma. Al ser una subclase de
+        Apelativo, Título solo puede utilizarse cuando dicha cadena se emplea efectivamente como
+        título de una obra, tal como un texto, una obra de arte o una pieza musical. Los títulos
+        son sintagmas nominales propios o sintagmas verbales, y no deben confundirse con nombres
+        genéricos de objetos tales como «silla», «pintura» o «libro» (estos últimos son sustantivos
+        comunes que corresponden a instancias de Tipo). Los títulos pueden ser asignados por el
+        propio creador de la obra, o por un grupo social. Esta clase comprende también las
+        traducciones de títulos que se emplean como sustitutos de los títulos originales en
+        distintos contextos sociales.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E55_Type"
+    local_name: E55_Type
+    label: {es: "Tipo"}
+    comment:
+      fr: >-
+        Cette classe comprend les concepts désignés par des termes issus de thésaurus et de
+        vocabulaires contrôlés, utilisés pour caractériser et classer les instances des classes du
+        CIDOC CRM. Les instances de Type représentent des concepts, à la différence des instances
+        d'Appellation, qui servent à nommer les instances des classes du CIDOC CRM. Type constitue
+        une interface vers des ontologies et des thésaurus spécifiques à un domaine. Ceux-ci
+        peuvent être représentés dans le CIDOC CRM comme des sous-classes de Type, formant des
+        hiérarchies de termes, c'est-à-dire des instances de Type reliées entre elles par la
+        propriété a pour terme générique (a pour terme spécifique) : Type. Ces hiérarchies peuvent
+        être enrichies au moyen de propriétés supplémentaires.
+      es: >-
+        Esta clase comprende los conceptos designados por términos procedentes de tesauros y
+        vocabularios controlados, empleados para caracterizar y clasificar las instancias de las
+        clases del CIDOC CRM. Las instancias de Tipo representan conceptos, a diferencia de las
+        instancias de Apelativo, que sirven para nombrar las instancias de las clases del CIDOC
+        CRM. Tipo constituye una interfaz hacia ontologías y tesauros específicos de un dominio.
+        Estos pueden representarse en el CIDOC CRM como subclases de Tipo, formando jerarquías de
+        términos, es decir, instancias de Tipo relacionadas entre sí mediante la propiedad tiene
+        término genérico (tiene término específico): Tipo. Estas jerarquías pueden ampliarse
+        mediante propiedades adicionales.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"
+    local_name: E54_Dimension
+    label: {es: "Dimensión"}
+    comment:
+      fr: >-
+        Cette classe comprend les propriétés quantifiables qui peuvent être mesurées au moyen d'un
+        instrument étalonné et approximées par des valeurs, c'est-à-dire des points ou des régions
+        dans un espace mathématique ou conceptuel, tels que des nombres entiers naturels ou réels,
+        des valeurs RVB, etc. Une instance de Dimension représente la grandeur obtenue empiriquement
+        ou de façon théorique, y compris les tolérances de précision résultant de la méthode ou du
+        calcul particulier employé. L'identité d'une instance de Dimension dépend de sa méthode de
+        détermination, car chaque méthode peut produire des valeurs différentes même en déterminant
+        des grandeurs comparables. Par exemple, l'envergure d'un oiseau vivant ou mort constitue une
+        dimension différente. La datation par thermoluminescence et la datation par
+        réhydroxylation [RHX] constituent des dimensions différentes de la distance temporelle par
+        rapport au présent, même si elles visent à dater le même objet. La méthode de détermination
+        doit être exprimée au moyen de la propriété a pour type (est le type de). Notez que des
+        termes simples tels que « diamètre » ou « longueur » sont normalement insuffisants pour
+        décrire sans ambiguïté une dimension donnée. En revanche, « étendue linéaire maximale » peut
+        s'avérer suffisant. Les propriétés de la classe Dimension permettent d'exprimer
+        l'approximation numérique des valeurs des instances de Dimension, adaptée à la précision de
+        la méthode de détermination appliquée. Si la grandeur concernée relève d'un espace non
+        discret selon les lois de la physique, comme les distances spatiales, il est recommandé de
+        les consigner comme des approximations, sous forme d'intervalles ou de régions
+        d'indétermination englobant les valeurs vraies supposées. Par exemple, une longueur de 5 cm
+        peut être consignée comme 4,5-5,5 cm, selon la précision de l'observation concernée. Notez
+        que la comparabilité de valeurs exprimées dans des unités différentes dépend de façon
+        critique de leur représentation sous forme de régions de valeurs. Les approximations
+        numériques exprimées dans des instances archaïques d'Unité de mesure utilisées dans les
+        archives historiques doivent être préservées. Les équivalents correspondant aux
+        connaissances actuelles doivent être consignés comme des instances supplémentaires de
+        Dimension, le cas échéant.
+      es: >-
+        Esta clase comprende las propiedades cuantificables que pueden medirse mediante algún medio
+        calibrado y aproximarse mediante valores, es decir, puntos o regiones en un espacio
+        matemático o conceptual, tales como números naturales o reales, valores RGB, etc. Una
+        instancia de Dimensión representa la magnitud obtenida empíricamente o de forma teórica,
+        incluidas las tolerancias de precisión resultantes del método o cálculo concreto empleado.
+        La identidad de una instancia de Dimensión depende de su método de determinación, porque
+        cada método puede producir valores distintos incluso al determinar magnitudes comparables.
+        Por ejemplo, la envergadura de un ave viva o muerta constituye una dimensión distinta. La
+        datación por termoluminiscencia y la datación por rehidroxilación [RHX] constituyen
+        dimensiones distintas de la distancia temporal respecto al presente, aunque ambas pretendan
+        datar el mismo objeto. El método de determinación debe expresarse mediante la propiedad
+        tiene tipo (es tipo de). Nótese que términos simples como «diámetro» o «longitud»
+        normalmente resultan insuficientes para describir sin ambigüedad una dimensión concreta. En
+        cambio, «extensión lineal máxima» puede resultar suficiente. Las propiedades de la clase
+        Dimensión permiten expresar la aproximación numérica de los valores de las instancias de
+        Dimensión, adecuada a la precisión del método de determinación aplicado. Si la magnitud
+        correspondiente pertenece a un espacio no discreto según las leyes de la física, como las
+        distancias espaciales, se recomienda registrarlas como aproximaciones mediante intervalos o
+        regiones de indeterminación que engloben los valores verdaderos supuestos. Por ejemplo, una
+        longitud de 5 cm puede registrarse como 4,5-5,5 cm, según la precisión de la observación
+        correspondiente. Nótese que la comparabilidad de valores expresados en unidades distintas
+        depende de forma crítica de su representación como regiones de valores. Las aproximaciones
+        numéricas expresadas en instancias arcaicas de Unidad de medida empleadas en los registros
+        históricos deben conservarse. Los equivalentes correspondientes al conocimiento actual deben
+        registrarse como instancias adicionales de Dimensión, según proceda.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"
+    local_name: E58_Measurement_Unit
+    label: {es: "Unidad de medida"}
+    comment:
+      fr: >-
+        Cette classe est une spécialisation de Type et comprend les types d'unités de mesure :
+        pieds, pouces, centimètres, litres, lumens, etc. Ce type est utilisé de manière catégorielle
+        dans le modèle, sans référence à ses propres instances : le modèle ne prévoit pas la
+        description d'instances d'instances d'Unité de mesure, telles que des « instances de cm ».
+        Il convient d'utiliser, chaque fois que possible, les unités du Système international (SI)
+        ou des termes hors SI reconnus internationalement, tels que ceux définis par la norme
+        ISO 80000:2009. Les unités de mesure archaïques utilisées dans les archives historiques
+        doivent être préservées.
+      es: >-
+        Esta clase es una especialización de Tipo y comprende los tipos de unidades de medida:
+        pies, pulgadas, centímetros, litros, lúmenes, etc. Este tipo se utiliza de forma categórica
+        en el modelo, sin referencia a instancias propias: el modelo no prevé la descripción de
+        instancias de instancias de Unidad de medida, como «instancias de cm». Debe emplearse,
+        siempre que sea posible, unidades del Sistema Internacional (SI) o términos ajenos al SI
+        reconocidos internacionalmente, como los definidos por la norma ISO 80000:2009. Las
+        unidades de medida arcaicas empleadas en los registros históricos deben conservarse.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E57_Material"
+    local_name: E57_Material
+    label: {es: "Material"}
+    comment:
+      fr: >-
+        Cette classe est une spécialisation de Type et comprend les concepts de matériaux. Les
+        instances de Matériau peuvent désigner des propriétés de la matière avant son usage,
+        pendant son usage, et une fois incorporée à un objet, comme la poudre d'outremer, la pâte
+        de détrempe, ou le béton armé. Les pièces discrètes de matières premières conservées dans
+        les musées, telles que des briques, des morceaux de tissu ou des fragments de métal,
+        doivent être modélisées individuellement de la même manière que les autres objets. Les
+        fragments discrets utilisés ou transformés, comme les pierres du temple de Néfertiti,
+        doivent être modélisés comme des parties (cf. est composé de (forme partie de) : Chose
+        matérielle). Ce type est utilisé de manière catégorielle dans le modèle, sans référence à
+        ses propres instances : le modèle ne prévoit pas la description d'instances d'instances de
+        Matériau, telles que des « instances d'or ». Il est recommandé d'utiliser des codes et une
+        terminologie reconnus au niveau international ou national.
+      es: >-
+        Esta clase es una especialización de Tipo y comprende los conceptos de materiales. Las
+        instancias de Material pueden denotar propiedades de la materia antes de su uso, durante
+        su uso, y una vez incorporada a un objeto, como el polvo de ultramar, la pasta de temple o
+        el hormigón armado. Las piezas discretas de materias primas conservadas en museos, tales
+        como ladrillos, trozos de tela o fragmentos de metal, deben modelarse individualmente del
+        mismo modo que otros objetos. Los fragmentos discretos utilizados o transformados, como las
+        piedras del templo de Nefertiti, deben modelarse como partes (cf. se compone de (forma
+        parte de): Cosa física). Este tipo se utiliza de forma categórica en el modelo, sin
+        referencia a instancias propias: el modelo no prevé la descripción de instancias de
+        instancias de Material, como «instancias de oro». Se recomienda emplear códigos y
+        terminología reconocidos a nivel internacional o nacional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E56_Language"
+    local_name: E56_Language
+    label: {es: "Lengua"}
+    comment:
+      fr: >-
+        Cette classe est une spécialisation de Type et comprend les langues naturelles envisagées
+        comme des concepts. Ce type est utilisé de manière catégorielle dans le modèle, sans
+        référence à ses propres instances : le modèle ne prévoit pas la description d'instances
+        d'instances de Langue, telles que des « instances de mandarin ». Il est recommandé
+        d'utiliser, pour désigner les instances de Langue, des codes et une terminologie reconnus au
+        niveau international ou national, tels que ceux définis par la norme ISO 639-3:2007 et ses
+        versions ultérieures.
+      es: >-
+        Esta clase es una especialización de Tipo y comprende las lenguas naturales entendidas como
+        conceptos. Este tipo se utiliza de forma categórica en el modelo, sin referencia a
+        instancias propias: el modelo no prevé la descripción de instancias de instancias de
+        Lengua, como «instancias de mandarín». Se recomienda emplear, para denotar las instancias
+        de Lengua, códigos y terminología reconocidos a nivel internacional o nacional, tales como
+        los definidos por la norma ISO 639-3:2007 y sus versiones posteriores.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"
+    local_name: E33_Linguistic_Object
+    label: {es: "Objeto lingüístico"}
+    comment:
+      fr: >-
+        Cette classe comprend les expressions identifiables dans une ou plusieurs langues
+        naturelles. Les instances d'Objet linguistique peuvent s'exprimer de nombreuses façons :
+        par exemple sous forme de textes écrits, de discours enregistrés, ou de langue des signes.
+        Le CIDOC CRM traite toutefois les instances d'Objet linguistique indépendamment du support
+        ou de la méthode par lesquels elles s'expriment. Les expressions en langage formel, tel le
+        code informatique ou les formules mathématiques, ne sont pas traitées par le CIDOC CRM
+        comme des instances d'Objet linguistique. Elles doivent être modélisées comme des instances
+        d'Objet d'information. De manière générale, une instance d'Objet linguistique peut également
+        contenir des informations non linguistiques, souvent de valeur artistique ou esthétique. Ce
+        n'est que dans les cas où le contenu d'une instance d'Objet linguistique peut être exprimé
+        intégralement par une série de symboles encodés en binaire que son contenu peut être
+        documenté, au sein d'une base de connaissances donnée, au moyen de la propriété a pour
+        contenu symbolique : Chaîne de caractères. Dans le cas contraire, elle doit être comprise
+        comme une ressource numérique identifiable, disponible uniquement indépendamment de la base
+        de connaissances concernée. Dans d'autres cas, tels que les pages d'un manuscrit enluminé ou
+        des enregistrements contenant un discours dans une langue dotée d'un système d'écriture, la
+        partie linguistique du contenu d'une instance d'Objet linguistique peut être documentée, au
+        sein d'une base de connaissances donnée, dans une note au moyen de la propriété a pour note
+        : Chaîne de caractères. Dans le cas contraire, elle peut être décrite au moyen de la
+        propriété incorpore (est incorporé dans) : Objet d'information, en tant qu'objet distinct
+        doté de sa propre identité.
+      es: >-
+        Esta clase comprende las expresiones identificables en una o varias lenguas naturales. Las
+        instancias de Objeto lingüístico pueden expresarse de muchas maneras: por ejemplo, como
+        textos escritos, habla grabada, o lengua de signos. Sin embargo, el CIDOC CRM trata las
+        instancias de Objeto lingüístico con independencia del soporte o del método mediante el
+        cual se expresan. Las expresiones en lenguajes formales, como el código informático o las
+        fórmulas matemáticas, no se tratan en el CIDOC CRM como instancias de Objeto lingüístico.
+        Deben modelarse como instancias de Objeto de información. En general, una instancia de
+        Objeto lingüístico también puede contener información no lingüística, a menudo de valor
+        artístico o estético. Solo en los casos en que el contenido de una instancia de Objeto
+        lingüístico pueda expresarse íntegramente mediante una serie de símbolos codificados en
+        binario, su contenido podrá documentarse, dentro de una base de conocimiento determinada,
+        mediante la propiedad tiene contenido simbólico: Cadena de caracteres. En caso contrario,
+        debe entenderse como un recurso digital identificable, disponible únicamente de forma
+        independiente respecto a dicha base de conocimiento. En otros casos, como las páginas de un
+        manuscrito iluminado o grabaciones que contienen habla en una lengua dotada de un sistema
+        de escritura, la parte lingüística del contenido de una instancia de Objeto lingüístico
+        puede documentarse, dentro de una base de conocimiento determinada, en una nota mediante la
+        propiedad tiene nota: Cadena de caracteres. En caso contrario, puede describirse mediante la
+        propiedad incorpora (está incorporado en): Objeto de información, como un objeto distinto
+        con identidad propia.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"
+    local_name: E3_Condition_State
+    label: {es: "Estado de conservación"}
+    comment:
+      fr: >-
+        Cette classe comprend les états d'objets caractérisés par une certaine condition sur un
+        intervalle de temps donné. Une instance de cette classe décrit l'état physique prévalant
+        pour tout objet matériel ou toute caractéristique physique, au cours d'une instance donnée
+        d'Intervalle temporel. En général, l'intervalle de temps pour lequel un certain état peut
+        être affirmé peut être plus court que l'intervalle de temps réel durant lequel cet état a
+        effectivement prévalu. La nature de cet état peut être décrite au moyen de la propriété a
+        pour type. Par exemple, l'instance d'État matériel « état du SS Great Britain entre le 22
+        septembre 1846 et le 27 août 1847 » peut être caractérisée comme une instance « naufragé »
+        de Type.
+      es: >-
+        Esta clase comprende los estados de objetos caracterizados por una determinada condición
+        durante un intervalo de tiempo. Una instancia de esta clase describe la condición física
+        predominante de cualquier objeto material o rasgo físico durante una instancia concreta de
+        Intervalo temporal. En general, el intervalo de tiempo para el cual puede afirmarse una
+        determinada condición puede ser más breve que el intervalo de tiempo real durante el cual
+        dicha condición se mantuvo. La naturaleza de esa condición puede describirse mediante la
+        propiedad tiene tipo. Por ejemplo, la instancia de Estado de conservación «estado del SS
+        Great Britain entre el 22 de septiembre de 1846 y el 27 de agosto de 1847» puede
+        caracterizarse como una instancia «naufragado» de Tipo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+    local_name: E53_Place
+    label: {es: "Lugar"}
+    comment:
+      fr: >-
+        Cette classe comprend des étendues dans l'espace naturel où vivent les êtres humains, en
+        particulier à la surface de la Terre, au sens purement physique du terme : indépendamment
+        des phénomènes temporels et de la matière. Elles peuvent servir à décrire la position
+        physique de choses, de phénomènes, ou d'autres zones d'intérêt. Géométriquement, les
+        instances de Lieu constituent des zones contiguës uniques, ou une agrégation finie de zones
+        disjointes dans l'espace, chacune étant individuellement contiguë. Elles peuvent présenter
+        des limites floues. Les instances de Lieu sont habituellement déterminées par référence à
+        la position d'objets « immobiles », tels que des bâtiments, des villes, des montagnes, des
+        rivières, ou des repères géodésiques dédiés, mais elles peuvent également être déterminées
+        par référence à des objets mobiles. Un lieu peut être déterminé en combinant un cadre de
+        référence et une position par rapport à ce cadre. Il est parfois avancé que les instances
+        de Lieu s'identifient au mieux au moyen de coordonnées globales ou de systèmes de référence
+        absolus. Cependant, les références relatives sont souvent plus pertinentes dans le contexte
+        de la documentation culturelle et tendent à être plus précises. En particulier, on
+        s'intéresse souvent à une position par rapport à de grands objets mobiles, tels que des
+        navires. Par exemple, le lieu où Nelson est mort est connu par référence à un grand objet
+        mobile, à savoir le H.M.S. Victory. Une résolution de ce lieu en termes de coordonnées
+        absolues nécessiterait de connaître les mouvements du navire ainsi que l'heure précise du
+        décès, deux éléments susceptibles d'être révisés, et le résultat obtenu manquerait de
+        pertinence historique et culturelle. Toute instance de Chose matérielle peut servir de
+        cadre de référence pour une instance de Lieu. Cela peut être documenté au moyen de la
+        propriété est au repos par rapport à (fournit l'espace de référence de).
+      es: >-
+        Esta clase comprende extensiones en el espacio natural en el que viven las personas, en
+        particular sobre la superficie de la Tierra, en el sentido puramente físico del término:
+        con independencia de los fenómenos temporales y de la materia. Pueden servir para describir
+        la posición física de cosas, fenómenos u otras áreas de interés. Geométricamente, las
+        instancias de Lugar constituyen áreas contiguas únicas, o una agregación finita de áreas
+        disjuntas en el espacio, cada una de ellas individualmente contigua. Pueden presentar
+        límites difusos. Las instancias de Lugar se determinan habitualmente por referencia a la
+        posición de objetos «inmóviles», tales como edificios, ciudades, montañas, ríos, o marcas
+        geodésicas específicas, pero también pueden determinarse por referencia a objetos móviles.
+        Un lugar puede determinarse combinando un marco de referencia y una posición respecto a
+        dicho marco. En ocasiones se sostiene que las instancias de Lugar se identifican mejor
+        mediante coordenadas globales o sistemas de referencia absolutos. Sin embargo, las
+        referencias relativas suelen ser más pertinentes en el contexto de la documentación
+        cultural y tienden a ser más precisas. En particular, con frecuencia interesa la posición en
+        relación con grandes objetos móviles, como los barcos. Por ejemplo, el lugar en que murió
+        Nelson se conoce por referencia a un gran objeto móvil, a saber, el H.M.S. Victory. Resolver
+        este lugar en términos de coordenadas absolutas exigiría conocer los movimientos del navío
+        y la hora precisa del fallecimiento, ambos susceptibles de revisión, y el resultado
+        carecería de pertinencia histórica y cultural. Cualquier instancia de Cosa física puede
+        servir de marco de referencia para una instancia de Lugar. Esto puede documentarse mediante
+        la propiedad está en reposo respecto a (proporciona el espacio de referencia de).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"
+    local_name: "E52_Time-Span"
+    label: {es: "Intervalo temporal"}
+    comment:
+      fr: >-
+        Cette classe comprend des étendues temporelles abstraites, au sens de la physique
+        galiléenne, dotées d'un début, d'une fin et d'une durée. Les instances d'Intervalle temporel
+        ne comportent aucune connotation sémantique quant aux phénomènes se produisant au sein de
+        l'étendue temporelle qu'elles représentent. Elles ne véhiculent aucune signification autre
+        qu'un positionnement sur la « ligne du temps » de la chronologie. L'étendue effective d'une
+        instance d'Intervalle temporel peut être approximée au moyen des propriétés d'Intervalle
+        temporel fournissant des bornes intérieures et extérieures sous forme de dates (instances de
+        Primitive temporelle). La comparaison des connaissances relatives aux intervalles temporels
+        est fondamentale pour le raisonnement chronologique. Certaines instances d'Intervalle
+        temporel peuvent être définies comme l'étendue temporelle réelle, en principe observable,
+        d'instances d'Entité temporelle, au moyen de la propriété a pour intervalle temporel (est
+        l'intervalle temporel de) : Intervalle temporel. Elles constituent des intervalles temporels
+        phénoménaux, tels que définis dans CRMgeo (Doerr & Hiebel 2013). Notre connaissance de
+        l'histoire étant imparfaite et les phénomènes physiques étant de nature floue, l'étendue des
+        intervalles temporels phénoménaux ne peut être décrite que de façon approximative. Un cas
+        extrême d'approximation pourrait, par exemple, définir une instance d'Intervalle temporel
+        dont le début, la fin et la durée sont inconnus. Elle peut néanmoins être associée à
+        d'autres descriptions permettant d'en déduire une connaissance, comme dans le cas des
+        chronologies relatives. Certaines instances d'Intervalle temporel peuvent être définies avec
+        précision comme représentant la déclaration d'une étendue temporelle, comme cela se fait
+        par exemple dans un contrat commercial. Elles constituent des intervalles temporels
+        déclaratifs, tels que définis dans CRMgeo (Doerr & Hiebel 2013), et peuvent être décrites au
+        moyen de la propriété Primitive temporelle définit le temps (le temps est défini par) :
+        Intervalle temporel. Lorsqu'il est utilisé comme Intervalle temporel commun à deux
+        événements, il les décrit néanmoins comme étant simultanés, même si aucune autre
+        information n'est connue.
+      es: >-
+        Esta clase comprende extensiones temporales abstractas, en el sentido de la física
+        galileana, dotadas de un comienzo, un final y una duración. Las instancias de Intervalo
+        temporal no comportan ninguna connotación semántica acerca de los fenómenos que ocurren
+        dentro de la extensión temporal que representan. No transmiten ningún significado más allá
+        de un posicionamiento en la «línea temporal» de la cronología. La extensión real de una
+        instancia de Intervalo temporal puede aproximarse mediante propiedades de Intervalo
+        temporal que proporcionan límites internos y externos en forma de fechas (instancias de
+        Primitiva temporal). Comparar el conocimiento sobre intervalos temporales es fundamental
+        para el razonamiento cronológico. Algunas instancias de Intervalo temporal pueden definirse
+        como la extensión temporal real, en principio observable, de instancias de Entidad
+        temporal, mediante la propiedad tiene intervalo temporal (es el intervalo temporal de):
+        Intervalo temporal. Constituyen intervalos temporales fenoménicos, tal como se definen en
+        CRMgeo (Doerr & Hiebel 2013). Dado que nuestro conocimiento de la historia es imperfecto y
+        los fenómenos físicos son de naturaleza difusa, la extensión de los intervalos temporales
+        fenoménicos solo puede describirse de forma aproximada. Un caso extremo de aproximación
+        podría, por ejemplo, definir una instancia de Intervalo temporal cuyo comienzo, final y
+        duración son desconocidos. No obstante, puede asociarse con otras descripciones que
+        permitan inferir conocimiento sobre ella, como ocurre en las cronologías relativas. Algunas
+        instancias de Intervalo temporal pueden definirse con precisión como la representación de
+        la declaración de una extensión temporal, como ocurre, por ejemplo, en un contrato
+        comercial. Constituyen intervalos temporales declarativos, tal como se definen en CRMgeo
+        (Doerr & Hiebel 2013), y pueden describirse mediante la propiedad Primitiva temporal define
+        el tiempo (el tiempo es definido por): Intervalo temporal. Cuando se emplea como Intervalo
+        temporal común a dos eventos, los describe no obstante como simultáneos, aunque no se
+        conozca ninguna otra información.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E30_Right"
+    local_name: E30_Right
+    label: {es: "Derecho"}
+    comment:
+      fr: >-
+        Cette classe comprend les prérogatives juridiques portant sur des choses matérielles ou
+        immatérielles, ou sur leurs dérivés. Elle inclut notamment les droits de reproduction et
+        les droits de propriété.
+      es: >-
+        Esta clase comprende las prerrogativas jurídicas relativas a cosas materiales o
+        inmateriales, o a sus derivados. Incluye, entre otros, los derechos de reproducción y los
+        derechos de propiedad.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
+    local_name: E89_Propositional_Object
+    label: {es: "Objeto proposicional"}
+    comment:
+      fr: >-
+        Cette classe comprend les éléments immatériels, incluant notamment, sans s'y limiter, les
+        récits, les intrigues, les prescriptions procédurales, les algorithmes, les lois de la
+        physique ou les images qui sont, ou représentent en un certain sens, des ensembles de
+        propositions relatives à des choses réelles ou imaginaires, et qui sont documentés comme
+        des unités uniques ou servent de sujet de discours. Cette classe comprend également les
+        éléments qui portent « sur » quelque chose, au sens d'un sujet. Au sens large, cette classe
+        inclut des expressions de valeur psychologique telles que l'art non figuratif et les thèmes
+        musicaux. Les éléments conceptuels tels que les types et les classes ne sont toutefois pas
+        des instances d'Objet propositionnel. Cela ne doit pas être confondu avec la définition
+        d'un type, qui constitue quant à elle bel et bien une instance d'Objet propositionnel.
+      es: >-
+        Esta clase comprende los elementos inmateriales, incluyendo, entre otros, relatos, tramas,
+        prescripciones de procedimiento, algoritmos, leyes de la física o imágenes que son, o
+        representan en cierto sentido, conjuntos de proposiciones sobre cosas reales o imaginarias,
+        y que se documentan como unidades únicas o sirven como tema de discurso. Esta clase
+        comprende también los elementos que tratan «sobre» algo, en el sentido de un tema. En
+        sentido amplio, esta clase incluye expresiones de valor psicológico tales como el arte no
+        figurativo y los temas musicales. Sin embargo, los elementos conceptuales como los tipos y
+        las clases no son instancias de Objeto proposicional. Esto no debe confundirse con la
+        definición de un tipo, que sí constituye una instancia de Objeto proposicional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+    local_name: E90_Symbolic_Object
+    label: {es: "Objeto simbólico"}
+    comment:
+      fr: >-
+        Cette classe comprend les symboles identifiables et toute agrégation de symboles, tels que
+        des caractères, des identifiants, des panneaux de signalisation, des emblèmes, des textes,
+        des jeux de données, des images, des partitions musicales, des objets multimédias, du code
+        informatique, ou des formules mathématiques, dotés d'une structure objectivement
+        reconnaissable et documentés comme des unités uniques. Elle inclut des ensembles de signes
+        de toute nature, pouvant servir à désigner quelque chose ou à communiquer un contenu
+        propositionnel. Une instance d'Objet symbolique peut avoir ou non une signification
+        spécifique, comme dans le cas d'une chaîne de caractères arbitraire. Dans certains cas, le
+        contenu d'une instance d'Objet symbolique peut être représenté intégralement par un modèle
+        de contenu numérique sérialisé, tel qu'une séquence de caractères encodés en ASCII, un
+        document XML ou HTML, ou une image TIFF. La propriété a pour note et sa sous-propriété a
+        pour contenu symbolique permettent de décrire ce modèle de contenu. Afin de lever toute
+        ambiguïté quant au niveau symbolique porteur de la signification, la propriété P3.1 a pour
+        type peut être utilisée pour préciser l'encodage (par exemple « bit », « caractère latin »,
+        pixel RVB).
+      es: >-
+        Esta clase comprende los símbolos identificables y cualquier agregación de símbolos, tales
+        como caracteres, identificadores, señales de tráfico, emblemas, textos, conjuntos de datos,
+        imágenes, partituras musicales, objetos multimedia, código informático, o fórmulas
+        matemáticas, dotados de una estructura objetivamente reconocible y documentados como
+        unidades únicas. Incluye conjuntos de signos de cualquier naturaleza, que pueden servir para
+        designar algo o para comunicar algún contenido proposicional. Una instancia de Objeto
+        simbólico puede tener o no un significado específico, como en el caso de una cadena de
+        caracteres arbitraria. En algunos casos, el contenido de una instancia de Objeto simbólico
+        puede representarse íntegramente mediante un modelo de contenido digital serializado, como
+        una secuencia de caracteres codificados en ASCII, un documento XML o HTML, o una imagen
+        TIFF. La propiedad tiene nota y su subpropiedad tiene contenido simbólico permiten describir
+        este modelo de contenido. Para eliminar la ambigüedad sobre qué nivel simbólico es portador
+        del significado, puede emplearse la propiedad P3.1 tiene tipo para especificar la
+        codificación (por ejemplo, «bit», «carácter latino», píxel RGB).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E12_Production"
+    local_name: E12_Production
+    label: {es: "Producción"}
+    comment:
+      fr: >-
+        Cette classe comprend les activités conçues pour créer un ou plusieurs nouveaux éléments,
+        et qui y parviennent effectivement. Elle spécialise la notion de modification en celle de
+        production. La décision de considérer ou non un objet comme nouveau dépend du contexte.
+        Normalement, un élément est considéré comme « nouveau » s'il ne présente aucune similitude
+        globale évidente avec les éléments consommés et les matériaux utilisés pour sa production.
+        Dans d'autres cas, un élément est considéré comme « nouveau » parce qu'une modification le
+        rend pertinent pour la documentation. Par exemple, le griffonnage d'un nom sur un tesson de
+        poterie peut en faire un jeton de vote. Le tesson d'origine peut ne pas mériter d'être
+        documenté, contrairement au tesson inscrit. Cette entité peut être collective : l'impression
+        de mille livres, par exemple, serait normalement considérée comme un événement unique. Un
+        événement doit également être documenté au moyen d'une instance de Transformation s'il
+        entraîne la destruction d'un ou plusieurs objets et la production simultanée d'autres objets
+        utilisant des parties ou des matériaux issus des originaux. Dans ce cas, les nouveaux
+        éléments possèdent des identités distinctes, et la matière est préservée, mais non
+        l'identité.
+      es: >-
+        Esta clase comprende las actividades concebidas para crear uno o varios elementos nuevos, y
+        que lo logran efectivamente. Especializa la noción de modificación en la de producción. La
+        decisión de si un objeto se considera nuevo o no depende del contexto. Normalmente, un
+        elemento se considera «nuevo» si no presenta ninguna similitud global evidente con los
+        elementos consumidos y los materiales empleados en su producción. En otros casos, un
+        elemento se considera «nuevo» porque una modificación lo hace relevante para la
+        documentación. Por ejemplo, garabatear un nombre sobre un fragmento de cerámica puede
+        convertirlo en un tique de votación. El fragmento original puede no merecer ser documentado,
+        a diferencia del fragmento inscrito. Esta entidad puede ser colectiva: la impresión de mil
+        libros, por ejemplo, normalmente se consideraría un único evento. Un evento también debe
+        documentarse mediante una instancia de Transformación si conlleva la destrucción de uno o
+        varios objetos y la producción simultánea de otros que emplean partes o materiales
+        procedentes de los originales. En este caso, los nuevos elementos poseen identidades
+        separadas, y la materia se conserva, pero no la identidad.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E67_Birth"
+    local_name: E67_Birth
+    label: {es: "Nacimiento"}
+    comment:
+      fr: >-
+        Cette classe comprend les naissances d'êtres humains. Naissance est un événement biologique
+        centré sur le contexte dans lequel des personnes viennent à la vie. (Début d'existence
+        comprend, pour sa part, la venue à la vie de tout être vivant.) Les jumeaux, triplés, etc.,
+        sont amenés à la vie par une seule et même instance de Naissance. L'introduction de
+        l'événement Naissance comme élément de documentation permet de décrire un ensemble de
+        relations familiales au moyen d'un modèle simple. Des extensions appropriées peuvent
+        décrire plus en détail la complexité de la maternité depuis l'avènement de la médecine
+        moderne. Dans ce modèle, le père biologique n'est pas considéré comme un participant
+        nécessaire à la Naissance.
+      es: >-
+        Esta clase comprende los nacimientos de seres humanos. Nacimiento es un evento biológico
+        centrado en el contexto en que las personas vienen a la vida. (Comienzo de existencia
+        comprende, por su parte, la venida a la vida de cualquier ser vivo.) Los gemelos, trillizos,
+        etc., son traídos a la vida por una misma instancia de Nacimiento. La introducción del
+        evento Nacimiento como elemento de documentación permite describir un conjunto de
+        relaciones familiares mediante un modelo sencillo. Extensiones adecuadas pueden describir
+        con más detalle la complejidad de la maternidad desde la aparición de la medicina moderna.
+        En este modelo, el padre biológico no se considera un participante necesario en el
+        Nacimiento.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E69_Death"
+    local_name: E69_Death
+    label: {es: "Muerte"}
+    comment:
+      fr: >-
+        Cette classe comprend les décès d'êtres humains. Si une personne est tuée, son décès doit
+        être instancié à la fois comme Mort et comme Activité. Le décès ou la disparition d'autres
+        êtres vivants doit être documenté comme des instances de Fin d'existence.
+      es: >-
+        Esta clase comprende las defunciones de seres humanos. Si una persona es asesinada, su
+        muerte debe instanciarse a la vez como Muerte y como Actividad. La muerte o desaparición de
+        otros seres vivos debe documentarse como instancias de Fin de existencia.

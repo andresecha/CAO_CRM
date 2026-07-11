@@ -1,0 +1,140 @@
+# Lote 4: el resto de propiedades LRMoo del módulo (13 términos), completando la familia LRMoo
+# (31 términos en total, junto con las 8 clases + 10 propiedades ya cubiertas en batch-01).
+
+terms:
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17_created"
+    local_name: R17_created
+    label: {fr: "a créé", es: "creó"}
+    comment:
+      fr: >-
+        Cette propriété associe une expression extériorisée au cours d'une création d'expression
+        donnée à cet événement de création particulier. Une création d'expression crée une
+        expression, ainsi que toute expression qui en constitue une partie.
+      es: >-
+        Esta propiedad asocia una expresión exteriorizada durante una creación de expresión
+        determinada con ese evento de creación concreto. Una creación de expresión crea una
+        expresión, así como cualquier expresión que forme parte de ella.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by"
+    local_name: R17i_was_created_by
+    label: {fr: "a été créée par", es: "fue creada por"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24_created"
+    local_name: R24_created
+    label: {fr: "a créé", es: "creó"}
+    comment:
+      fr: >-
+        Cette propriété associe la manifestation créée au cours d'une création de manifestation
+        donnée à cet événement de création de manifestation.
+      es: >-
+        Esta propiedad asocia la manifestación creada durante una creación de manifestación
+        determinada con ese evento de creación de manifestación.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through"
+    local_name: R24i_was_created_through
+    label: {fr: "a été créée à travers", es: "fue creada a través de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of"
+    local_name: R2_is_derivative_of
+    label: {fr: "est dérivée de", es: "es derivada de"}
+    comment:
+      fr: >-
+        Cette propriété associe une œuvre qui modifie le contenu d'une autre œuvre à cette
+        dernière. Cette propriété est transitive, asymétrique et irréflexive. Elle est équivalente
+        au chemin : `F1_Work(1) → R3_is_realised_in → F2_Expression(1) → R17i_was_created_by →
+        F28_Expression_Creation → P16_used_specific_object → F2_Expression(2) → R3i_realises →
+        F1_Work(2)`. C'est-à-dire `F1_Work(1) → R2_is_derivative_of → F1_Work(2)`, sans qu'il soit
+        nécessaire de préciser les expressions particulières impliquées dans la dérivation.
+      es: >-
+        Esta propiedad asocia una obra que modifica el contenido de otra obra con esta última. Esta
+        propiedad es transitiva, asimétrica e irreflexiva. Es equivalente al camino:
+        `F1_Work(1) → R3_is_realised_in → F2_Expression(1) → R17i_was_created_by →
+        F28_Expression_Creation → P16_used_specific_object → F2_Expression(2) → R3i_realises →
+        F1_Work(2)`. Es decir, `F1_Work(1) → R2_is_derivative_of → F1_Work(2)`, sin necesidad de
+        precisar las expresiones concretas implicadas en la derivación.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative"
+    local_name: R2i_has_derivative
+    label: {fr: "a pour dérivée", es: "tiene como derivada"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71_has_part"
+    local_name: R71_has_part
+    label: {fr: "a pour partie", es: "tiene como parte"}
+    comment:
+      fr: >-
+        Cette propriété associe une manifestation à une partie structurelle de celle-ci qui est
+        elle-même une manifestation. Cette propriété est transitive, asymétrique et irréflexive.
+      es: >-
+        Esta propiedad asocia una manifestación con una parte estructural de ella que es a su vez
+        una manifestación. Esta propiedad es transitiva, asimétrica e irreflexiva.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of"
+    local_name: R71i_is_part_of
+    label: {fr: "fait partie de", es: "forma parte de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates"
+    local_name: R75_incorporates
+    label: {fr: "incorpore", es: "incorpora"}
+    comment:
+      fr: >-
+        Cette propriété associe une expression à une autre expression qui en fait partie
+        intégrante, mais où cette dernière réalise une œuvre différente de la première. Cette
+        propriété est transitive, asymétrique et irréflexive.
+      es: >-
+        Esta propiedad asocia una expresión con otra expresión que forma parte integrante de la
+        primera, pero en la que esta última realiza una obra distinta de la primera. Esta propiedad
+        es transitiva, asimétrica e irreflexiva.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in"
+    local_name: R75i_is_incorporated_in
+    label: {fr: "est incorporée dans", es: "está incorporada en"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of"
+    local_name: R76_is_derivative_of
+    label: {fr: "est dérivée de", es: "es derivada de"}
+    comment:
+      fr: >-
+        Cette propriété associe une expression à une autre expression qui lui a servi de source, ou
+        de l'une de ses sources. Cette propriété n'est pas transitive. Elle est asymétrique et
+        irréflexive. Elle constitue également un raccourci du chemin complet :
+        `F2_Expression(1) → P16i_was_used_for → F28_Expression_Creation → R17_created →
+        F2_Expression(2)`.
+      es: >-
+        Esta propiedad asocia una expresión con otra expresión que le sirvió de fuente, o de una de
+        sus fuentes. Esta propiedad no es transitiva. Es asimétrica e irreflexiva. Constituye
+        también un atajo del camino completo:
+        `F2_Expression(1) → P16i_was_used_for → F28_Expression_Creation → R17_created →
+        F2_Expression(2)`.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative"
+    local_name: R76i_has_derivative
+    label: {fr: "a pour dérivée", es: "tiene como derivada"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate"
+    local_name: R78_has_alternate
+    label: {fr: "a pour alternative", es: "tiene como alternativa"}
+    comment:
+      fr: >-
+        Cette propriété associe une manifestation à une autre manifestation qui illustre la même
+        expression, lorsque les deux manifestations peuvent être utilisées l'une pour l'autre comme
+        alternatives dans certains cas d'usage. Cette propriété est transitive et symétrique. Elle
+        est irréflexive. Les manifestations alternatives peuvent revêtir la même forme physique,
+        par exemple des publications simultanées sur des marchés différents. Le plus souvent,
+        cependant, la relation d'alternative s'établit lorsque les manifestations alternatives
+        revêtent des formes physiques différentes, conçues pour permettre l'usage d'un même contenu
+        avec des équipements de lecture différents (comme une version DVD et une version Blu-ray du
+        même enregistrement vidéo). Cette propriété constitue un raccourci pour le chemin reliant
+        une manifestation à une autre manifestation, toutes deux liées, par la propriété incarne
+        (est incarnée dans) et son inverse, à la même expression.
+      es: >-
+        Esta propiedad asocia una manifestación con otra manifestación que ejemplifica la misma
+        expresión, cuando ambas manifestaciones pueden utilizarse una en lugar de la otra como
+        alternativas en casos de uso concretos. Esta propiedad es transitiva y simétrica. Es
+        irreflexiva. Las manifestaciones alternativas pueden tener la misma forma física, por
+        ejemplo publicaciones simultáneas en mercados distintos. Con mayor frecuencia, sin embargo,
+        la relación de alternancia se establece cuando las manifestaciones alternativas tienen
+        formas físicas distintas, concebidas para permitir el uso del mismo contenido con equipos
+        de reproducción diferentes (como una versión en DVD y una versión en Blu-ray de la misma
+        grabación de vídeo). Esta propiedad constituye un atajo para el camino que une una
+        manifestación con otra manifestación, ambas vinculadas, mediante la propiedad encarna (está
+        encarnada en) y su inversa, a la misma expresión.
