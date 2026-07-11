@@ -1,0 +1,31 @@
+.venv/
+.tools
+.tools/
+imports/vendor/
+imports/merged.ttl
+validation/*/out/
+docs/.tools/
+__pycache__/
+*.pyc
+
+# NB: unlike the GitLab institutional mirror, /documentation and /decisions are NOT
+# ignored here -- this is the primary repository, and both are public-facing content
+# (see README.md sections 7-8), meant to be tracked and versioned normally.
+
+# docs/site/ is intentionally NOT ignored in this delivery package -- it's committed
+# as a ready-to-view artifact, regenerate with `make docs` if the ontology changes.
+
+# Widoco's own serialization copies (RDF/XML, Turtle, N-Triples, JSON-LD),
+# superseded by the versioned, permanently-linked files in ontology/
+# (CAO_CRM-1.0.rdf/.ttl/.nt/.jsonld) -- docs/config-*.properties' download
+# links point there, not here, so these regenerated duplicates are no longer
+# referenced from anywhere and don't need to be committed.
+docs/site/ontology.owl
+docs/site/ontology.ttl
+docs/site/ontology.nt
+docs/site/ontology.jsonld
+
+# public/ is GitHub Pages' own build output (see .github/workflows/pages.yml) --
+# it's a straight copy of docs/site/ made fresh by every workflow run, never
+# meant to be committed itself.
+public/
