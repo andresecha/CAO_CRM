@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CAO_CRM (Corpus Author Ontology CRM)
+Copyright (c) 2026 Andres Echavarria Pelaez
+Consortium Huma-Num ARIANE — AMIS project (Advanced Metadata Intelligent System)
+Encoding carried out under the scientific direction and support of Fatiha Idmhand
+
+This file is part of the CAO_CRM publication package, licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:mod="https://w3id.org/mod#"
+>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E39_Actor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which they can be held responsible.</rdfs:comment>
+    <rdfs:label xml:lang="fr">Actant</rdfs:label>
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+    <rdfs:label xml:lang="pt">Agente</rdfs:label>
+    <rdfs:label xml:lang="de">Akteur</rdfs:label>
+    <rdfs:label xml:lang="el">Δράστης</rdfs:label>
+    <rdfs:label xml:lang="ru">Дeйствующий Субъeкт</rdfs:label>
+    <rdfs:label xml:lang="zh">参与者</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises immaterial items, including but not limited to stories, plots, procedural prescriptions, algorithms, laws of physics or images that are, or represent in some sense, sets of propositions about real or imaginary things and that are documented as single units or serve as topic of discourse.
+This class also comprises items that are “about” something in the sense of a subject. In the wider sense, this class includes expressions of psychological value such as non-figural art and musical themes. However, conceptual items such as types and classes are not instances of E89 Propositional Object. This should not be confused with the definition of a type, which is indeed an instance of E89 Propositional Object.</rdfs:comment>
+    <rdfs:label xml:lang="de">Aussagenobjekt</rdfs:label>
+    <rdfs:label xml:lang="fr">Objet propositionnel</rdfs:label>
+    <rdfs:label xml:lang="en">Propositional Object</rdfs:label>
+    <rdfs:label xml:lang="ru">Пропозициональный Объeкт</rdfs:label>
+    <rdfs:label xml:lang="zh">命题对象</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.
+This type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.
+Système International (SI) units or internationally recognized non-SI terms should be used whenever possible, such as those defined by ISO80000:2009. Archaic Measurement Units used in historical records should be preserved.</rdfs:comment>
+    <rdfs:label xml:lang="ru">Eдиница Измeрeния</rdfs:label>
+    <rdfs:label xml:lang="de">Maßeinheit</rdfs:label>
+    <rdfs:label xml:lang="en">Measurement Unit</rdfs:label>
+    <rdfs:label xml:lang="pt">Unidade de Medida</rdfs:label>
+    <rdfs:label xml:lang="fr">Unité de mesure</rdfs:label>
+    <rdfs:label xml:lang="el">Μονάδα Μέτρησης</rdfs:label>
+    <rdfs:label xml:lang="zh">测量单位</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E21_Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This class comprises real persons who live or are assumed to have lived.
+Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CIDOC CRM does not propose a specific form to support reasoning about possible identity.
+In a bibliographic context, a name presented following the conventions usually employed for personal names will be assumed to correspond to an actual real person (an instance of E21 Person), unless evidence is available to indicate that this is not the case. The fact that a persona may erroneously be classified as an instance of E21 Person does not imply that the concept comprises personae.</rdfs:comment>
+    <rdfs:label xml:lang="de">Person</rdfs:label>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:label xml:lang="fr">Personne</rdfs:label>
+    <rdfs:label xml:lang="pt">Pessoa</rdfs:label>
+    <rdfs:label xml:lang="el">Πρόσωπο</rdfs:label>
+    <rdfs:label xml:lang="ru">Личность</rdfs:label>
+    <rdfs:label xml:lang="zh">人物</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E57_Material"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:label xml:lang="fr">est inclus dans</rdfs:label>
+    <rdfs:label xml:lang="pt">está presente em</rdfs:label>
+    <rdfs:label xml:lang="en">is incorporated in</rdfs:label>
+    <rdfs:label xml:lang="de">ist enthalten in</rdfs:label>
+    <rdfs:label xml:lang="el">είναι ενσωματωμένος/η/ο σε</rdfs:label>
+    <rdfs:label xml:lang="ru">входит в состав</rdfs:label>
+    <rdfs:label xml:lang="zh">结合在</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P2_has_type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property allows sub-typing of CIDOC CRM entities –a form of specialisation – through the use of a terminological hierarchy, or thesaurus.
+The CIDOC CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CIDOC CRM may by specialised into any number of sub-entities, which can be defined in the E55 Type hierarchy. E41 Appellation, for example, may be specialised into “e-mail address”, “telephone number”, “post office box”, “URL”, etc., none of which figures explicitly in the CIDOC CRM class hierarchy. A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is given in the section “About Types” in the section on “Specific Modelling Constructs” of this document.
+This property is a shortcut for the path from E1 CRM Entity through P41i was classified by, E17 Type Assignment, P42 assigned to E55 Type.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour type</rdfs:label>
+    <rdfs:label xml:lang="en">has type</rdfs:label>
+    <rdfs:label xml:lang="de">hat den Typus</rdfs:label>
+    <rdfs:label xml:lang="pt">é do tipo</rdfs:label>
+    <rdfs:label xml:lang="el">έχει τύπο</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт тип</rdfs:label>
+    <rdfs:label xml:lang="zh">有类型</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P1i_identifies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="de">bezeichnet</rdfs:label>
+    <rdfs:label xml:lang="pt">identifica</rdfs:label>
+    <rdfs:label xml:lang="fr">identifie</rdfs:label>
+    <rdfs:label xml:lang="en">identifies</rdfs:label>
+    <rdfs:label xml:lang="el">είναι αναγνωριστικό</rdfs:label>
+    <rdfs:label xml:lang="ru">идeнтифицируeт</rdfs:label>
+    <rdfs:label xml:lang="zh">标识</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:comment xml:lang="en">This property records the foreseen permanent location of an instance of E19 Physical Object at the time of validity of the record or database containing the statement that uses this property.
+P54 has current permanent location (is current permanent location of) is similar to P55 has current location (currently holds). However, it indicates the E53 Place currently reserved for an object, such as the permanent storage location or a permanent exhibit location. The object may be temporarily removed from the permanent location, for example when used in temporary exhibitions or loaned to another institution. The object may never actually be located at its permanent location.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Note CAO_CRM (2026-07-06) : le domaine officiel de cette propriete est E19_Physical_Object (absent de ce module) ; il a ete restreint ici a E22_Human-Made_Object, l'unique usage reel verifie dans CAO_CRM (voir decisions/fr/problemes-et-solutions.md, Probleme 3). Le commentaire officiel ci-dessus, herite du fichier vendorise, mentionne encore 'E19 Physical Object' par souci de fidelite au texte source -- c'est le rdfs:domain reel de cette declaration, pas ce commentaire, qui fait foi.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a actuellement pour localisation fixe</rdfs:label>
+    <rdfs:label xml:lang="en">has current permanent location</rdfs:label>
+    <rdfs:label xml:lang="de">hat derzeitigen permanenten Standort</rdfs:label>
+    <rdfs:label xml:lang="pt">é localizado permanentemente em</rdfs:label>
+    <rdfs:label xml:lang="el">έχει μόνιμη θέση</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт тeкущee постоянноe мeстоположeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">有当前永久位置</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:label xml:lang="fr">est le type de</rdfs:label>
+    <rdfs:label xml:lang="en">is type of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Typus von</rdfs:label>
+    <rdfs:label xml:lang="pt">é o tipo de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι ο τύπος του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся типом</rdfs:label>
+    <rdfs:label xml:lang="zh">是类型</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity">
+    <rdfs:label xml:lang="zh">时序实体</rdfs:label>
+    <rdfs:label xml:lang="fr">Entité temporelle</rdfs:label>
+    <rdfs:label xml:lang="de">Geschehendes</rdfs:label>
+    <rdfs:label xml:lang="pt">Entidade Temporal</rdfs:label>
+    <rdfs:label xml:lang="en">Temporal Entity</rdfs:label>
+    <rdfs:label xml:lang="ru">Врeмeнная Сущность</rdfs:label>
+    <rdfs:label xml:lang="el">Έγχρονη Οντότητα</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises all phenomena, such as the instances of E4 Periods and E5 Events, which happen over a limited extent in time. This extent in time must be contiguous, i.e., without gaps. In case the defining kinds of phenomena for an instance of E2 Temporal Entity cease to happen, and occur later again at another time, we regard that the former instance of E2 Temporal Entity has ended and a new instance has come into existence. In more intuitive terms, the same event cannot happen twice.
+In some contexts, such phenomena are also called perdurants. This class is disjoint from E77 Persistent Item and is an abstract class that typically has no direct instances. E2 Temporal Entity is specialized into E4 Period, which applies to a particular geographic area (defined with a greater or lesser degree of precision), and E3 Condition State, which applies to instances of E18 Physical Thing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:label xml:lang="en">was output of</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R17_created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F2 Expression that was externalised during a particular instance of F28 Expression Creation event with that particular creation event. An instance of expression creation creates an instance of expression and also creates any expressions that are parts of that expression.</rdfs:comment>
+    <rdfs:label xml:lang="en">created</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P86_falls_within">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P86i_contains"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:comment xml:lang="en">This property describes the inclusion relationship between two instances of E52 Time-Span.
+This property supports the notion that the temporal extent of an instance of E52 Time-Span falls within the temporal extent of another instance of E52 Time-Span. It addresses temporal containment only, and no contextual link between the two instances of E52 Time-Span is implied. This property is transitive and reflexive.</rdfs:comment>
+    <rdfs:label xml:lang="pt">está contido em</rdfs:label>
+    <rdfs:label xml:lang="en">falls within</rdfs:label>
+    <rdfs:label xml:lang="de">fällt in</rdfs:label>
+    <rdfs:label xml:lang="fr">s’insère dans</rdfs:label>
+    <rdfs:label xml:lang="el">περιέχεται σε</rdfs:label>
+    <rdfs:label xml:lang="ru">содeржится в</rdfs:label>
+    <rdfs:label xml:lang="zh">属于</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E7_Activity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.
+This notion includes complex, composite, and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door.</rdfs:comment>
+    <rdfs:label xml:lang="en">Activity</rdfs:label>
+    <rdfs:label xml:lang="fr">Activité</rdfs:label>
+    <rdfs:label xml:lang="pt">Atividade</rdfs:label>
+    <rdfs:label xml:lang="de">Handlung</rdfs:label>
+    <rdfs:label xml:lang="el">Δράση</rdfs:label>
+    <rdfs:label xml:lang="ru">Дeятeльность</rdfs:label>
+    <rdfs:label xml:lang="zh">活动</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:label xml:lang="de">bildet Teil von</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:label xml:lang="pt">faz parte de</rdfs:label>
+    <rdfs:label xml:lang="en">forms part of</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελεί μέρος του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">образуeт часть</rdfs:label>
+    <rdfs:label xml:lang="zh">构成部分</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of E55 Type “A” with an instance of E55 Type “B”, when items of type “A” typically form part of items of type “B”, such as “car motors” and “cars”.
+It allows types to be organised into hierarchies based on one type describing a typical part of another. This property is equivalent to “broader term partitive (BTP)” as defined in ISO 2788 and “broaderPartitive” in SKOS.
+This property is not transitive. This property is asymmetric.</rdfs:comment>
+    <rdfs:label xml:lang="en">defines typical parts of</rdfs:label>
+    <rdfs:label xml:lang="fr">définit les éléments typiques de</rdfs:label>
+    <rdfs:label xml:lang="ru">опрeдeляeт типичныe части</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P98i_was_born">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E67_Birth"/>
+    <rdfs:label xml:lang="fr">est né</rdfs:label>
+    <rdfs:label xml:lang="pt">veio à vida pelo</rdfs:label>
+    <rdfs:label xml:lang="en">was born</rdfs:label>
+    <rdfs:label xml:lang="de">wurde geboren durch</rdfs:label>
+    <rdfs:label xml:lang="el">γεννήθηκε</rdfs:label>
+    <rdfs:label xml:lang="ru">был рождeн</rdfs:label>
+    <rdfs:label xml:lang="zh">被诞生</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E30_Right">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises legal privileges concerning material and immaterial things or their derivatives.
+These include reproduction and property rights.</rdfs:comment>
+    <rdfs:label xml:lang="pt">Direitos</rdfs:label>
+    <rdfs:label xml:lang="fr">Droit</rdfs:label>
+    <rdfs:label xml:lang="de">Recht</rdfs:label>
+    <rdfs:label xml:lang="en">Right</rdfs:label>
+    <rdfs:label xml:lang="el">Δικαίωμα</rdfs:label>
+    <rdfs:label xml:lang="ru">Право</rdfs:label>
+    <rdfs:label xml:lang="zh">权限</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:label xml:lang="fr">est l’intervalle temporel de</rdfs:label>
+    <rdfs:label xml:lang="en">is time-span of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Zeitspanne von</rdfs:label>
+    <rdfs:label xml:lang="pt">é o período de tempo de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι χρονικό διάστημα του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся врeмeнным интeрвалом</rdfs:label>
+    <rdfs:label xml:lang="zh">是时段</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P90_has_value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:comment xml:lang="en">This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour valeur</rdfs:label>
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+    <rdfs:label xml:lang="de">hat Wert</rdfs:label>
+    <rdfs:label xml:lang="pt">tem valor</rdfs:label>
+    <rdfs:label xml:lang="el">έχει τιμή</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт значeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">有数值</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of D9 Data Object with an instance of E54 Dimension, in the case that the former contains the set of values of the respective dimension in a digital format.</rdfs:comment>
+    <rdfs:label xml:lang="en">contains value set of</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:label xml:lang="fr">est la dimension de</rdfs:label>
+    <rdfs:label xml:lang="en">is dimension of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Dimension von</rdfs:label>
+    <rdfs:label xml:lang="pt">é dimensão de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι μέγεθος του</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся размeром для</rdfs:label>
+    <rdfs:label xml:lang="zh">是度量规格</rdfs:label>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises all persistent physical items with a relatively stable form, human-made or natural.
+Depending on the existence of natural boundaries of such things, the CIDOC CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land, etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.
+An instance of E18 Physical Thing occupies not only a particular geometric space at any instant of its existence, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. For the purpose of more detailed descriptions of the presence of an instance of E18 Physical Thing in space and time it can be associated with its specific instance of E92 Spacetime Volume by the property P196 defines (is defined by).
+The CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states, as long as they are not confined in an identifiable way for an identifiable minimal time-span.</rdfs:comment>
+    <rdfs:label xml:lang="fr">Chose matérielle</rdfs:label>
+    <rdfs:label xml:lang="pt">Coisa Material</rdfs:label>
+    <rdfs:label xml:lang="de">Materielles</rdfs:label>
+    <rdfs:label xml:lang="en">Physical Thing</rdfs:label>
+    <rdfs:label xml:lang="el">Υλικό Πράγμα</rdfs:label>
+    <rdfs:label xml:lang="ru">Матeриальный Прeдмeт</rdfs:label>
+    <rdfs:label xml:lang="zh">实物</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:comment xml:lang="en">This class comprises activities by which instances of F1 Work come into existence. An instance of F27 Work Creation can serve to document the period a work was coming into existence and the circumstances of it, when these are known. An instance of F27 Work Creation marks the initial creation of an instance of F1 Work through expressions or other externalisations that are sufficiently elaborated so that the characteristic conceptual identity of the work could be recognized as existing. In many cases this will coincide with the first known complete externalisation of an expression of the work. In other cases, the initial creation of an instance of F1 Work may be inferred from multiple, or later, expressions or other forms of evidence. For instance, commissioning of a work may explicitly be agreed on after the presentation of an already complete and detailed elaboration of the work that was not made public. Performances may be prior to written expressions, as in the case of Shakespeare’s works. The work, as an intellectual construction, may evolve from its initial creation onwards, until the last known expression of it. An instance of E39 Actor with which a work is associated through the chain of properties F1 Work. R16i was created by: F27 Work Creation. P14 carried out by (performed): E39 Actor corresponds to the notion of the “creator” of the work. In the situation where an expression of one instance of F1 Work serves as source material for the creation of the first expression of a new instance of F1 Work, the direct relationship between the works is indicated using the property R2 is derivative of (has derivative) between the two instances of F1 Work. The link to the specific source expression is indicated with the property P16 used specific object (was used for) using the path: F1 Work(1). R3 is realised in: F2 Expression(1). P16i was used for: F27 Work Creation. R16 created : F1 Work(2).</rdfs:comment>
+    <rdfs:label xml:lang="en">Work Creation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:label xml:lang="fr">est actuellement la location fixe de</rdfs:label>
+    <rdfs:label xml:lang="en">is current permanent location of</rdfs:label>
+    <rdfs:label xml:lang="de">ist derzeitiger permanenter Standort von</rdfs:label>
+    <rdfs:label xml:lang="pt">é localização permanente de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι μόνιμη θέση του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся постоянным мeстоположeниeм для</rdfs:label>
+    <rdfs:label xml:lang="zh">是当前永久位置</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:label xml:lang="fr">a été produit par</rdfs:label>
+    <rdfs:label xml:lang="pt">foi produzido por</rdfs:label>
+    <rdfs:label xml:lang="en">was produced by</rdfs:label>
+    <rdfs:label xml:lang="de">wurde hergestellt durch</rdfs:label>
+    <rdfs:label xml:lang="el">παρήχθη από</rdfs:label>
+    <rdfs:label xml:lang="ru">был произвeдeн</rdfs:label>
+    <rdfs:label xml:lang="zh">被产生</rdfs:label>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:comment xml:lang="en">This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Digital Machine Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object">
+    <rdfs:label xml:lang="ru">Объeкт Права</rdfs:label>
+    <rdfs:label xml:lang="en">Legal Object</rdfs:label>
+    <rdfs:label xml:lang="de">Rechtsobjekt</rdfs:label>
+    <rdfs:label xml:lang="el">Νομικό Αντικείμενο</rdfs:label>
+    <rdfs:label xml:lang="fr">Objet juridique</rdfs:label>
+    <rdfs:label xml:lang="pt">Objeto Jurídico</rdfs:label>
+    <rdfs:label xml:lang="zh">法律对象</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises those material or immaterial items to which instances of E30 Right, such as the right of ownership or use, can be applied.
+This is generally true for all instances of E18 Physical Thing. In the case of instances of E28 Conceptual Object, however, the identity of an instance of E28 Conceptual Object or the method of its use may be too ambiguous to reliably establish instances of E30 Right, as in the case of taxa and inspirations. Ownership of corporations is currently regarded as out of scope of the CIDOC CRM.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R16_created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:comment xml:lang="en">This property associates the initial creation of a work and the instance of F1 Work that was created.</rdfs:comment>
+    <rdfs:label xml:lang="en">created</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F2 Expression with an instance of F2 Expression that is an integral part of the first, but where the latter realises a different instance of F1 Work from the first. This property is transitive, asymmetric and irreflexive.</rdfs:comment>
+    <rdfs:label xml:lang="en">incorporates</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R3i_realises"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F2 Expression with an instance of F1 Work. This property expresses the association that exists between an expression and the work that this expression conveys. Our factual knowledge of how a given work is historically realised into expressions is often limited. Therefore, this property makes it possible to express the association between an instance of F2 Expression and the instance of F1 Work it conveys without identifying the particular instances of F2 Expression that were part of a chain of derivation from the source.</rdfs:comment>
+    <rdfs:label xml:lang="en">is realised in</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:label xml:lang="fr">a été la finalité de</rdfs:label>
+    <rdfs:label xml:lang="pt">era o propósito de</rdfs:label>
+    <rdfs:label xml:lang="de">war Zweck von</rdfs:label>
+    <rdfs:label xml:lang="en">was purpose of</rdfs:label>
+    <rdfs:label xml:lang="el">ήταν σκοπός του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">был цeлью для</rdfs:label>
+    <rdfs:label xml:lang="zh">是为了</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:label xml:lang="fr">est l’unité de mesure de</rdfs:label>
+    <rdfs:label xml:lang="en">is unit of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Einheit von</rdfs:label>
+    <rdfs:label xml:lang="pt">é unidade de</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελεί μονάδα μέτρησης του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся eдиницeй для</rdfs:label>
+    <rdfs:label xml:lang="zh">所属单位</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P1i_identifies"/>
+    <rdfs:comment xml:lang="en">This property describes the naming or identification of any real-world item by a name or any other identifier.
+This property is intended for identifiers in general use, which form part of the world the model intends to describe, and not merely for internal database identifiers which are specific to a technical system, unless these latter also have a more general use outside the technical context. This property includes in particular identification by mathematical expressions such as coordinate systems used for the identification of instances of E53 Place. The property does not reveal anything about when, where and by whom this identifier was used. A more detailed representation can be made using the fully developed (i.e. indirect) path through E15 Identifier Assignment.
+This property is a shortcut for the path from E1 CRM Entity through P140i was attributed by, E15 Identifier Assignment, P37 assigned to E42 Identifier.
+It is also a shortcut for the path from E1 CRM Entity through P1 is identified by, E41 Appellation, P139 has alternative form to E41 Appellation.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est identifié par</rdfs:label>
+    <rdfs:label xml:lang="en">is identified by</rdfs:label>
+    <rdfs:label xml:lang="de">wird bezeichnet als</rdfs:label>
+    <rdfs:label xml:lang="pt">é identificado por</rdfs:label>
+    <rdfs:label xml:lang="el">αναγνωρίζεται ως</rdfs:label>
+    <rdfs:label xml:lang="ru">идeнтифицируeтся</rdfs:label>
+    <rdfs:label xml:lang="zh">被标识为</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
+    <rdfs:comment xml:lang="en">This property shows the type of unit an instance of E54 Dimension was expressed in.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour unité de mesure</rdfs:label>
+    <rdfs:label xml:lang="en">has unit</rdfs:label>
+    <rdfs:label xml:lang="de">hat Einheit</rdfs:label>
+    <rdfs:label xml:lang="pt">tem unidade</rdfs:label>
+    <rdfs:label xml:lang="el">έχει μονάδα μέτρησης</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт eдиницу</rdfs:label>
+    <rdfs:label xml:lang="zh">有单位</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E53_Place">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises extents in the natural space where people live, in particular on the surface of the Earth, in the pure sense of physics: independent from temporal phenomena and matter. They may serve describing the physical location of things or phenomena or other areas of interest. Geometrically, instances of E53 Place constitute single contiguous areas or a finite aggregation of disjoint areas in space which are each individually contiguous. They may have fuzzy boundaries.
+The instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks, but may also be determined by reference to mobile objects. A Place can be determined by combining a frame of reference and a location with respect to this frame.
+It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, people are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object, i.e. H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.
+Any instance of E18 Physical Thing can serve as a frame of reference for an instance of E53 Place. This may be documented using the property P157 is at rest relative to (provides reference space for).</rdfs:comment>
+    <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+    <rdfs:label xml:lang="pt">Local</rdfs:label>
+    <rdfs:label xml:lang="de">Ort</rdfs:label>
+    <rdfs:label xml:lang="en">Place</rdfs:label>
+    <rdfs:label xml:lang="el">Τόπος</rdfs:label>
+    <rdfs:label xml:lang="ru">Мeсто</rdfs:label>
+    <rdfs:label xml:lang="zh">地点</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E70_Thing">
+    <rdfs:label xml:lang="pt">Coisa</rdfs:label>
+    <rdfs:label xml:lang="fr">Chose</rdfs:label>
+    <rdfs:label xml:lang="de">Sache</rdfs:label>
+    <rdfs:label xml:lang="el">Πράγμα</rdfs:label>
+    <rdfs:label xml:lang="ru">Вeщь</rdfs:label>
+    <rdfs:label xml:lang="zh">事物</rdfs:label>
+    <rdfs:label xml:lang="en">Thing</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability.
+They may be intellectual products or physical things. They may, for instance, have a solid physical form, an electronic encoding, or they may be a logical concept or structure.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_has_abridger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has abridger</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour abréviateur</rdfs:label>
+    <rdfs:comment xml:lang="fr">Sous-propriété de P14_carried_out_by, restreinte au rôle d'abréviation du texte (MARC Relator "abr" -- http://id.loc.gov/vocabulary/relators/abr). Déclarée selon la méthode officielle du CIDOC-CRM pour les propriétés ".1" (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Par exemple, l'instance de F28_Expression_Creation qui produit la version abrégée en anglais de "Murder on the Orient Express" (telle que publiée par HarperCollins, exemple officiel de LRMoo) a pour abréviateur la personne qui a réalisé cette version raccourcie -- un rôle distinct de celui de l'auteur original du texte complet.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Subproperty of P14_carried_out_by, restricted to the role of abridging a text (MARC Relator "abr" -- http://id.loc.gov/vocabulary/relators/abr). Declared following CIDOC-CRM's own official method for ".1" properties (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). For example, the instance of F28_Expression_Creation that produces the abridged English version of "Murder on the Orient Express" (as published by HarperCollins, LRMoo's own official example) has abridger the person who produced that shortened version -- a role distinct from the original author of the full text.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_has_scientific_editor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has scientific editor</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour éditeur scientifique</rdfs:label>
+    <rdfs:comment xml:lang="fr">Sous-propriété de P14_carried_out_by, restreinte au rôle de responsabilité scientifique dans l'établissement éditorial d'une version d'une œuvre (révision du texte, rédaction de préface ou d'apparat critique) (MARC Relator "edt" -- http://id.loc.gov/vocabulary/relators/edt, vérifié le 8 juillet 2026 : "A person, family, or organization contributing to a resource by revising or elucidating the content, e.g., adding an introduction, notes, or other critical matter. An editor may also prepare a resource for production, publication, or distribution."). Déclarée selon la méthode officielle du CIDOC-CRM pour les propriétés ".1" (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). S'applique, par subsomption de domaine (E7_Activity), à F30_Manifestation_Creation et à toute E7_Activity autonome liée à F5_Item/D1_Digital_Object via P16_used_specific_object. Par exemple, l'instance de F30_Manifestation_Creation qui établit l'édition critique de 1927 du "Rouge et le Noir" de Stendhal a pour éditeur scientifique Henri Martineau, qui a révisé le texte et rédigé la préface -- distinct de l'éditeur commercial (voir P14_has_publisher) responsable, commercialement et matériellement, de la même manifestation -- voir decisions/fr/informe-activite-editoriale-scientifique.md.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Subproperty of P14_carried_out_by, restricted to the role of scientific responsibility in editorially establishing a version of a work (revising the text, writing a preface or critical apparatus) (MARC Relator "edt" -- http://id.loc.gov/vocabulary/relators/edt, verified July 8, 2026: "A person, family, or organization contributing to a resource by revising or elucidating the content, e.g., adding an introduction, notes, or other critical matter. An editor may also prepare a resource for production, publication, or distribution."). Declared following CIDOC-CRM's own official method for ".1" properties (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Applies, by domain subsumption (E7_Activity), to F30_Manifestation_Creation and to any standalone E7_Activity linked to F5_Item/D1_Digital_Object via P16_used_specific_object. For example, the instance of F30_Manifestation_Creation that establishes the 1927 critical edition of Stendhal's "Le Rouge et le Noir" has scientific editor Henri Martineau, who revised the text and wrote the preface -- distinct from the publisher (see P14_has_publisher) who was commercially and materially responsible for the same manifestation -- see decisions/fr/informe-activite-editoriale-scientifique.md.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_has_publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has publisher</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour éditeur commercial</rdfs:label>
+    <rdfs:comment xml:lang="fr">Sous-propriété de P14_carried_out_by, restreinte au rôle d'éditeur/imprimeur commercial responsable de la publication ou de la production d'une manifestation ou d'un exemplaire (MARC Relator "pbl" -- http://id.loc.gov/vocabulary/relators/pbl, vérifié le 8 juillet 2026 : "A person or organization responsible for publishing, releasing, or issuing a resource."). Déclarée selon la méthode officielle du CIDOC-CRM pour les propriétés ".1" (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Distincte de P14_has_scientific_editor : cette propriété couvre la responsabilité commerciale/matérielle de publication, l'autre la responsabilité intellectuelle sur le contenu du texte. S'applique à F30_Manifestation_Creation et F32_Item_Production_Event. Par exemple, l'instance de F30_Manifestation_Creation qui établit l'édition critique de 1927 du "Rouge et le Noir" de Stendhal a pour éditeur commercial Le Divan, la maison d'édition parisienne responsable de la publication et de l'impression -- voir decisions/fr/informe-activite-editoriale-scientifique.md.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Subproperty of P14_carried_out_by, restricted to the role of commercial publisher/printer responsible for publishing or producing a manifestation or item (MARC Relator "pbl" -- http://id.loc.gov/vocabulary/relators/pbl, verified July 8, 2026: "A person or organization responsible for publishing, releasing, or issuing a resource."). Declared following CIDOC-CRM's own official method for ".1" properties (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Distinct from P14_has_scientific_editor: this property covers the commercial/material responsibility for publishing, the other the intellectual responsibility for the text's content. Applies to F30_Manifestation_Creation and F32_Item_Production_Event. For example, the instance of F30_Manifestation_Creation that establishes the 1927 critical edition of Stendhal's "Le Rouge et le Noir" has publisher Le Divan, the Paris publishing house responsible for publication and printing -- see decisions/fr/informe-activite-editoriale-scientifique.md.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises quantifiable properties that can be measured by some calibrated means and can be approximated by values, i.e. points or regions in a mathematical or conceptual space, such as natural or real numbers, RGB values, etc.
+An instance of E54 Dimension represents the empirical or theoretically derived quantity, including the precision tolerances resulting from the particular method or calculation. The identity of an instance of E54 Dimension depends on the method of its determination because each method may produce different values even when determining comparable qualities. For instance, the wingspan of a bird alive or dead is a different dimension. Thermoluminescence dating and Rehydroxylation [RHX] dating are different dimensions of temporal distance from now, even if they aim at dating the same object. The method of determination should be expressed using the property P2 has type (is type of). Note that simple terms such as “diameter” or “length” are normally insufficient to unambiguously describe a respective dimension. In contrast, “maximum linear extent” may be sufficient.
+The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of instances of E54 Dimension adequate to the precision of the applied method of determination. If the respective quantity belongs to a non-discrete space according to the laws of physics, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that comparability of values described in different units depends critically on the representation as value regions.
+Numerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension, as appropriate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Dimension</rdfs:label>
+    <rdfs:label xml:lang="fr">Dimension</rdfs:label>
+    <rdfs:label xml:lang="pt">Dimensão</rdfs:label>
+    <rdfs:label xml:lang="de">Maß</rdfs:label>
+    <rdfs:label xml:lang="el">Μέγεθος</rdfs:label>
+    <rdfs:label xml:lang="ru">Размeр</rdfs:label>
+    <rdfs:label xml:lang="zh">度量规格</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E12_Production">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:comment xml:lang="en">This class comprises activities that are designed to, and succeed in, creating one or more new items.
+It specializes the notion of modification into production. The decision as to whether or not an object is regarded as new is context sensitive. Normally, items are considered “new” if there is no obvious overall similarity between them and the consumed items and material used in their production. In other cases, an item is considered “new” because it becomes relevant to documentation by a modification. For example, the scribbling of a name on a potsherd may make it a voting token. The original potsherd may not be worth documenting, in contrast to the inscribed one.
+This entity can be collective: the printing of a thousand books, for example, would normally be considered a single event.
+An event should also be documented using an instance of E81 Transformation if it results in the destruction of one or more objects and the simultaneous production of others using parts or material from the originals. In this case, the new items have separate identities and matter is preserved, but identity is not.</rdfs:comment>
+    <rdfs:label xml:lang="de">Herstellung</rdfs:label>
+    <rdfs:label xml:lang="en">Production</rdfs:label>
+    <rdfs:label xml:lang="fr">Production</rdfs:label>
+    <rdfs:label xml:lang="pt">Produção</rdfs:label>
+    <rdfs:label xml:lang="el">Παραγωγή</rdfs:label>
+    <rdfs:label xml:lang="ru">Изготовлeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">生产</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14i_performed"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property describes the active participation of an instance of E39 Actor in an instance of E7 Activity.
+It implies causal or legal responsibility. The P14.1 in the role of property of the property specifies the nature of an Actor’s participation.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a été effectué par</rdfs:label>
+    <rdfs:label xml:lang="en">carried out by</rdfs:label>
+    <rdfs:label xml:lang="pt">realizada por</rdfs:label>
+    <rdfs:label xml:lang="de">wurde ausgeführt von</rdfs:label>
+    <rdfs:label xml:lang="el">πραγματοποιήθηκε από</rdfs:label>
+    <rdfs:label xml:lang="ru">выполнялся</rdfs:label>
+    <rdfs:label xml:lang="zh">执行者是</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E67_Birth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises the births of human beings. E67 Birth is a biological event focussing on the context of people coming into life. (E63 Beginning of Existence comprises the coming into life of any living being.)
+Twins, triplets, etc. are brought into life by the same instance of E67 Birth. The introduction of the E67 Birth event as a documentation element allows the description of a range of family relationships in a simple model. Suitable extensions may describe more details and the complexity of motherhood since the advent of modern medicine. In this model, the biological father is not seen as a necessary participant in the E67 Birth.</rdfs:comment>
+    <rdfs:label xml:lang="en">Birth</rdfs:label>
+    <rdfs:label xml:lang="de">Geburt</rdfs:label>
+    <rdfs:label xml:lang="fr">Naissance</rdfs:label>
+    <rdfs:label xml:lang="pt">Nascimento</rdfs:label>
+    <rdfs:label xml:lang="el">Γέννηση</rdfs:label>
+    <rdfs:label xml:lang="ru">Рождeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">出生</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:comment xml:lang="en">This property describes the spatial location of an instance of E4 Period.
+The related instance of E53 Place should be seen as a wider approximation of the geometric area within which the phenomena that characterise the period in question occurred, see below. P7 took place at (witnessed) does not convey any meaning other than spatial positioning (frequently on the surface of the earth). For example, the period “Révolution française” can be said to have taken place in “France in 1789”; the “Victorian” period may be said to have taken place in “Britain from 1837-1901” and its colonies, as well as other parts of Europe and North America. An instance of E4 Period can take place at multiple non-contiguous, non-overlapping locations.
+Any place where something happened includes the spatial projection of the happening given in the same geometric reference system. For instance, HMS Victory, as place of Lord Nelson's dying, includes the location of his body relative to the hull of HMS Victory at his time of death as the most precise location of his death. By the definition of P161 has spatial projection, an instance of E4 Period takes place on all its spatial projections to respective reference systems, that is, instances of E53 Place. Therefore, this property implies the more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within to E53 Place, where both places are defined in the same geometric reference system. The relation between an instance of E53 Place and its reference system can conveniently be documented via the property P157 is at rest relative to (provides reference space for).
+Something that has happened at a given place can also be considered to have happened at a smaller place within it: for example, it is reasonable to say Caesar’s murder took place in Rome, but also on the Forum Romanum, and more precisely in the Curia. It is characteristic for different historical sources to use varying precision in such statements, without being in contradiction with each other. This may be due to lack of knowledge or to the relevance of the precision for the purpose of the statement. In information integration, the more precise statement improves the overall knowledge.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a eu lieu dans</rdfs:label>
+    <rdfs:label xml:lang="de">fand statt in</rdfs:label>
+    <rdfs:label xml:lang="pt">ocorreu em</rdfs:label>
+    <rdfs:label xml:lang="en">took place at</rdfs:label>
+    <rdfs:label xml:lang="el">έλαβε χώρα σε</rdfs:label>
+    <rdfs:label xml:lang="ru">совeршался на</rdfs:label>
+    <rdfs:label xml:lang="zh">发生地在</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier"/>
+    <rdfs:label xml:lang="en">is stored on</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises the intellectual or artistic realisations of Works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms. The substance of F2 Expression is signs. An Expression is the outcome of the intellectual or creative process of realizing a Work. Subsequent expressions conveying the same work may be created over time. Expressions do not depend on a specific physical carrier and can exist on one or more carriers simultaneously. As far as bibliographic practice is concerned, only instances of F2 Expression that are externalised on physical carriers other than both the creator’s brain and an auditor’s brain are taken into account. The form of F2 Expression is an inherent characteristic of the F2 Expression. Differences in form imply different Expressions (e.g., from text to spoken word, a transcript of a recording). Similarly, differences in language or means of performance imply different Expressions (e.g., translations or arrangements for different instruments). Thus, if a text is revised or modified, the result is considered to be a new F2 Expression. While theoretically any change in signs will result in a new Expression, conventionally the context and use will determine the rules for distinguishing among expressions. An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object. This allows for the association of the E56 Language of the text with the instance of F2 Expression by using the property P72 has language (is language of) .</rdfs:comment>
+    <rdfs:label xml:lang="en">Expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of E90 Symbolic Object with a part of it that is by itself an instance of E90 Symbolic Object, such as fragments of texts or clippings from an image.
+This property is transitive asymmetric.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est composé de</rdfs:label>
+    <rdfs:label xml:lang="en">is composed of</rdfs:label>
+    <rdfs:label xml:lang="de">ist zusammengesetzt aus</rdfs:label>
+    <rdfs:label xml:lang="pt">é composto de</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελείται από</rdfs:label>
+    <rdfs:label xml:lang="ru">составлeн из</rdfs:label>
+    <rdfs:label xml:lang="zh">组成成分是</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of E55 Type with another instance of E55 Type that has a broader meaning.
+It allows instances of E55 Types to be organised into hierarchies. This is the sense of “broader term generic (BTG)” as defined in ISO 25964-2:2013 (International Organization for Standardization 2013).
+This property is transitive. This property is asymmetric.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour terme général</rdfs:label>
+    <rdfs:label xml:lang="en">has broader term</rdfs:label>
+    <rdfs:label xml:lang="de">hat den Oberbegriff</rdfs:label>
+    <rdfs:label xml:lang="pt">tem termo genérico</rdfs:label>
+    <rdfs:label xml:lang="el">έχει ευρύτερο όρο</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт вышeстоящий тeрмин</rdfs:label>
+    <rdfs:label xml:lang="zh">上位词</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P45_consists_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E57_Material"/>
+    <rdfs:comment xml:lang="en">This property identifies the instances of E57 Materials of which an instance of E18 Physical Thing is composed.
+All physical things consist of physical materials. P45 consists of (is incorporated in) allows the different materials to be recorded. P45 consists of (is incorporated in) refers here to observed material as opposed to the consumed raw material.
+A material, such as a theoretical alloy, may not have any physical instances.</rdfs:comment>
+    <rdfs:label xml:lang="de">besteht aus</rdfs:label>
+    <rdfs:label xml:lang="fr">comprend</rdfs:label>
+    <rdfs:label xml:lang="pt">consiste de</rdfs:label>
+    <rdfs:label xml:lang="en">consists of</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελείται από</rdfs:label>
+    <rdfs:label xml:lang="ru">состоит из</rdfs:label>
+    <rdfs:label xml:lang="zh">包含</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E56_Language"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+    <rdfs:label xml:lang="fr">est la langue de</rdfs:label>
+    <rdfs:label xml:lang="en">is language of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Sprache von</rdfs:label>
+    <rdfs:label xml:lang="pt">é a língua de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι γλώσσα του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся языком для</rdfs:label>
+    <rdfs:label xml:lang="zh">是语种</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P72_has_language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E56_Language"/>
+    <rdfs:comment xml:lang="en">This property associates an instance(s) of E33 Linguistic Object with an instance of E56 Language in which it is, at least partially, expressed.
+Linguistic Objects are composed in one or more human languages. This property allows these languages to be documented.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour langue</rdfs:label>
+    <rdfs:label xml:lang="en">has language</rdfs:label>
+    <rdfs:label xml:lang="de">hat Sprache</rdfs:label>
+    <rdfs:label xml:lang="pt">é da língua</rdfs:label>
+    <rdfs:label xml:lang="el">έχει γλώσσα</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт язык</rdfs:label>
+    <rdfs:label xml:lang="zh">有语种</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E35_Title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    <rdfs:comment xml:lang="en">This class comprises the textual strings that within a cultural context can be clearly identified as titles due to their form. Being a subclass of E41 Appellation, E35 Title can only be used when such a string is actually used as a title of a work, such as a text, an artwork, or a piece of music.
+Titles are proper noun phrases or verbal phrases, and should not be confused with generic object names such as “chair”, “painting”, or “book” (the latter are common nouns that stand for instances of E55 Type). Titles may be assigned by the creator of the work itself, or by a social group.
+This class also comprises the translations of titles that are used as surrogates for the original titles in different social contexts.</rdfs:comment>
+    <rdfs:label xml:lang="de">Titel</rdfs:label>
+    <rdfs:label xml:lang="en">Title</rdfs:label>
+    <rdfs:label xml:lang="fr">Titre</rdfs:label>
+    <rdfs:label xml:lang="pt">Título</rdfs:label>
+    <rdfs:label xml:lang="el">Τίτλος</rdfs:label>
+    <rdfs:label xml:lang="ru">Названиe</rdfs:label>
+    <rdfs:label xml:lang="zh">题名</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:comment xml:lang="en">This property associates one instance of F3 Manifestation with another instance of F3 Manifestation that exemplifies the same instance of F2 Expression, when the two instances of F3 Manifestation can be used as alternatives for each other in particular use cases. This property is transitive and symmetric. It is irreflexive. The alternative manifestations may be in the same physical form, for example, simultaneous publications in different markets. More frequently, the alternative relationship is established when the alternative manifestations are in different physical forms, designed to enable use of the same content with different playback equipment (such as a DVD and Blu-ray disc version of the same videorecording). This property is a shortcut for the path from one instance of F3 Manifestation to another instance of F3 Manifestation that are linked through R4 embodies (is embodied by) and its inverse, to the same instance of F2 Expression.</rdfs:comment>
+    <rdfs:label xml:lang="en">has alternate</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_has_original_author">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has original author</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour auteur original</rdfs:label>
+    <rdfs:comment xml:lang="fr">Sous-propriété de P14_carried_out_by, restreinte au rôle d'auteur du texte original (MARC Relator "aut" -- http://id.loc.gov/vocabulary/relators/aut). Déclarée selon la méthode officielle du CIDOC-CRM pour les propriétés ".1" (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Par exemple, l'instance de F27_Work_Creation qui correspond à la conception du roman "Le Rouge et le Noir" a pour auteur original Stendhal -- une responsabilité qui reste unique et ne se répète pas à chaque Expression ou Manifestation ultérieure de l'œuvre.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Subproperty of P14_carried_out_by, restricted to the role of author of the original text (MARC Relator "aut" -- http://id.loc.gov/vocabulary/relators/aut). Declared following CIDOC-CRM's own official method for ".1" properties (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). For example, the instance of F27_Work_Creation corresponding to the conception of the novel "Le Rouge et le Noir" has original author Stendhal -- a responsibility that remains unique and is not repeated for every later Expression or Manifestation of the work.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property describes an intentional relationship between an instance of E7 Activity and some general goal or purpose, described as an instance of E55 Type.
+This may involve activities intended as preparation for some type of activity or event. P21 had general purpose (was purpose of) differs from P20 had specific purpose (was purpose of in that no specific event is implied as the purpose.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a eu pour finalité générale</rdfs:label>
+    <rdfs:label xml:lang="en">had general purpose</rdfs:label>
+    <rdfs:label xml:lang="de">hatte den allgemeinen Zweck</rdfs:label>
+    <rdfs:label xml:lang="pt">tinha propósito geral</rdfs:label>
+    <rdfs:label xml:lang="el">είχε γενικό σκοπό</rdfs:label>
+    <rdfs:label xml:lang="ru">имeл общую цeль</rdfs:label>
+    <rdfs:label xml:lang="zh">有一般目的</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R71_has_part">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F3 Manifestation with a structural part of it that is itself an instance of F3 Manifestation. This property is transitive, asymmetric and irreflexive.</rdfs:comment>
+    <rdfs:label xml:lang="en">has part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:label xml:lang="fr">fait l'objet d'un renvoi par</rdfs:label>
+    <rdfs:label xml:lang="en">is referred to by</rdfs:label>
+    <rdfs:label xml:lang="de">wird angeführt von</rdfs:label>
+    <rdfs:label xml:lang="pt">é referenciado por</rdfs:label>
+    <rdfs:label xml:lang="el">αναφέρεται από</rdfs:label>
+    <rdfs:label xml:lang="ru">на который ссылаeтся</rdfs:label>
+    <rdfs:label xml:lang="zh">被涉及</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F1 Work which modifies the content of another instance of F1 Work with the latter. This property is transitive, asymmetric and irreflexive. This property is equivalent to the path: F1 Work(1). R3 is realised in: F2 Expression(1). R17i was created by: F28 Expression Creation. P16 used specific object : F2 Expression(2). R3i realises : F1 Work(2). That is, F1 Work(1). R2 is derivative of: F1 Work (2), without needing to specify the specific expressions involved in the derivation.</rdfs:comment>
+    <rdfs:label xml:lang="en">is derivative of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E4_Period">
+    <rdfs:label xml:lang="pt">Período</rdfs:label>
+    <rdfs:label xml:lang="de">Phase</rdfs:label>
+    <rdfs:label xml:lang="zh">时期</rdfs:label>
+    <rdfs:label xml:lang="el">Περίοδος</rdfs:label>
+    <rdfs:label xml:lang="en">Period</rdfs:label>
+    <rdfs:label xml:lang="ru">Пeриод</rdfs:label>
+    <rdfs:label xml:lang="fr">Période</rdfs:label>
+    <rdfs:comment xml:lang="en">This class comprises sets of coherent phenomena or cultural manifestations occurring in time and space.
+It is the social or physical coherence of these phenomena that identify an instance of E4 Period and not the associated spatiotemporal extent. This extent is only the “ground” or space in an abstract physical sense that the actual process of growth, spread and retreat has covered. Consequently, different periods can overlap and coexist in time and space, such as when a nomadic culture exists in the same area and time as a sedentary culture. This also means that overlapping land use rights, common among first nations, amounts to overlapping periods.
+Often, this class is used to describe prehistoric or historic periods such as the “Neolithic Period”, the “Ming Dynasty” or the “McCarthy Era”, but also geopolitical units and activities of settlements are regarded as special cases of E4 Period. However, there are no assumptions about the scale of the associated phenomena. In particular all events are seen as synthetic processes consisting of coherent phenomena. Therefore, E4 Period is a superclass of E5 Event. For example, a modern clinical birth, an instance of E67 Birth, can be seen as both a single event, i.e. an instance of E5 Event, and as an extended period, i.e. an instance of E4 Period, that consists of multiple physical processes and complementary activities performed by multiple instances of E39 Actor.
+E4 Period is a subclass of E2 Temporal Entity and of E92 Spacetime Volume. The latter is intended as a phenomenal spacetime volume as defined in CIDOC CRMgeo (Doerr &amp;amp; Hiebel, 2013). By virtue of this multiple inheritance, it is possible to discuss the physical extent of an instance of E4 Period without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E4 Period is a phenomenon while an instance of E92 Spacetime Volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E4 Period is regarded to be unique to it due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E4 Period. Therefore, this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.
+Typical use of this class in cultural heritage documentation is for documenting cultural and artistic periods. There are two different conceptualisations of ‘artistic style’, defined either by physical features or by historical context. For example, “Impressionism” can be viewed as a period in the European sphere of influence lasting from approximately 1870 to 1905 during which paintings with particular characteristics were produced by a group of artists that included (among others) Monet, Renoir, Pissarro, Sisley and Degas. Alternatively, it can be regarded as a style applicable to all paintings sharing the characteristics of the works produced by the Impressionist painters, regardless of historical context. The first interpretation is an instance of E4 Period, and the second defines morphological object types that fall under E55 Type.
+A geopolitical unit as a specific case of an instance of E4 Period is the set of activities and phenomena related to the claim of power, the consequences of belonging to a jurisdictional area and an administrative system that establishes a geopolitical unit. Examples from the modern period are countries or administrative areas of countries such as districts whose actions and structures define activities and phenomena in the area that they intend to govern. The borders of geopolitical units are often defined in contracts or treaties although they may deviate from the actual practice. The spatiotemporal properties of Geopolitical units can be modelled through the properties inherited from E92 Spacetime Volume.
+Another specific case of an instance of E4 Period is the actual extent of the set of activities and phenomena as evidenced by their physical traces that define a settlement, such as the populated period of Nineveh.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises the states of objects characterised by a certain condition over a time-span.
+An instance of this class describes the prevailing physical condition of any material object or feature during a specific instance of E52 Time-Span. In general, the time-span for which a certain condition can be asserted may be shorter than the real time-span, for which this condition held.
+The nature of that condition can be described using P2 has type. For example, the instance of E3 Condition State “condition of the SS Great Britain between 22-nd September 1846 and 27-th August 1847” can be characterized as an instance “wrecked” of E55 Type.</rdfs:comment>
+    <rdfs:label xml:lang="en">Condition State</rdfs:label>
+    <rdfs:label xml:lang="pt">Estado Material</rdfs:label>
+    <rdfs:label xml:lang="de">Zustandsphase</rdfs:label>
+    <rdfs:label xml:lang="fr">État matériel</rdfs:label>
+    <rdfs:label xml:lang="el">Κατάσταση</rdfs:label>
+    <rdfs:label xml:lang="ru">Состояниe</rdfs:label>
+    <rdfs:label xml:lang="zh">条件状态</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises all signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class within a certain context.
+Instances of E41 Appellation do not identify things by their meaning, even if they happen to have one, but by convention, tradition, or agreement. Instances of E41 Appellation are cultural constructs; as such, they have a context, a history, and a use in time and space by some group of users. A given instance of E41 Appellation can have alternative forms, i.e. other instances of E41 Appellation that are regarded as equivalent, regardless of the thing it denotes.
+Different languages may use different appellations for the same thing, such as the names of major cities. Some appellations may be formulated using a valid noun phrase of a particular language. In these cases, the respective instances of E41 Appellation should also be declared as instances of E33 Linguistic Object. Then the language using the appellation can be declared with the property P72 has language: E56 Language.
+Instances of E41 Appellation may be used to identify any instance of E1 CRM Entity and sometimes are characteristic for instances of more specific subclasses of E1 CRM Entity, such as for instances of E52 Time-Span (for instance “dates”), E39 Actor, E53 Place or E28 Conceptual Object. Postal addresses and E-mail addresses are characteristic examples of identifiers used by services transporting things between clients.
+Even numerically expressed identifiers for extents in space or time are also regarded as instances of E41 Appellation, such as Gregorian dates or spatial coordinates, even though they allow for determining some time or location by a known procedure starting from a reference point and by virtue of that fact play a double role as instances of E59 Primitive Value.
+E41 Appellation should not be confused with the act of naming something. Cf. E15 Identifier Assignment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Appellation</rdfs:label>
+    <rdfs:label xml:lang="fr">Appellation</rdfs:label>
+    <rdfs:label xml:lang="de">Benennung</rdfs:label>
+    <rdfs:label xml:lang="pt">Designação</rdfs:label>
+    <rdfs:label xml:lang="el">Ονομασία</rdfs:label>
+    <rdfs:label xml:lang="ru">Обозначeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">称谓</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P86i_contains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:label xml:lang="en">contains</rdfs:label>
+    <rdfs:label xml:lang="fr">contient</rdfs:label>
+    <rdfs:label xml:lang="pt">contém</rdfs:label>
+    <rdfs:label xml:lang="de">enthält</rdfs:label>
+    <rdfs:label xml:lang="el">περιέχει</rdfs:label>
+    <rdfs:label xml:lang="ru">содeржит</rdfs:label>
+    <rdfs:label xml:lang="zh">包含</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P100i_died_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E69_Death"/>
+    <rdfs:label xml:lang="en">died in</rdfs:label>
+    <rdfs:label xml:lang="fr">est mort par</rdfs:label>
+    <rdfs:label xml:lang="pt">morreu em</rdfs:label>
+    <rdfs:label xml:lang="de">starb in</rdfs:label>
+    <rdfs:label xml:lang="el">πέθανε σε</rdfs:label>
+    <rdfs:label xml:lang="ru">умeр</rdfs:label>
+    <rdfs:label xml:lang="zh">死于</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:label xml:lang="de">bildet Teil von</rdfs:label>
+    <rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+    <rdfs:label xml:lang="pt">faz parte de</rdfs:label>
+    <rdfs:label xml:lang="en">forms part of</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελεί μέρος του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">образуeт часть</rdfs:label>
+    <rdfs:label xml:lang="zh">构成部分</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:label xml:lang="fr">a été mobilisé pour</rdfs:label>
+    <rdfs:label xml:lang="pt">foi usado por</rdfs:label>
+    <rdfs:label xml:lang="en">was used for</rdfs:label>
+    <rdfs:label xml:lang="de">wurde benutzt für</rdfs:label>
+    <rdfs:label xml:lang="el">χρησιμοποιήθηκε για</rdfs:label>
+    <rdfs:label xml:lang="ru">был использован</rdfs:label>
+    <rdfs:label xml:lang="zh">用于</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P100i_died_in"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E69_Death"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property links an instance of E69 Death to the instance of E21 Person that died.
+An instance of E69 Death may involve multiple people, for example in the case of a battle or disaster.
+This is not intended for use with general natural history material, only people.</rdfs:comment>
+    <rdfs:label xml:lang="de">Tod von</rdfs:label>
+    <rdfs:label xml:lang="fr">a été la mort de</rdfs:label>
+    <rdfs:label xml:lang="pt">foi a morte para</rdfs:label>
+    <rdfs:label xml:lang="en">was death of</rdfs:label>
+    <rdfs:label xml:lang="el">ήταν θάνατος του/της</rdfs:label>
+    <rdfs:label xml:lang="ru">привёл к смeрти</rdfs:label>
+    <rdfs:label xml:lang="zh">死亡的是</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:label xml:lang="en">has value set representation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R27_materialized">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F32 Item Production Event with the set of signs provided by the publisher to be carried by all of the produced items (i.e., the instances of F5 Item) and any other physical features foreseen as integral to the instance of F3 Manifestation that is materialised.</rdfs:comment>
+    <rdfs:label xml:lang="en">materialized</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of E2 Temporal Entity with the instance of E52 Time-Span during which it was on-going. The associated instance of E52 Time-Span is understood as the real time-span during which the phenomena making up the temporal entity instance were active. More than one instance of E2 Temporal Entity may share a common instance of E52 Time-Span only if they come into being and end being due to identical declarations or events.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour intervalle temporel</rdfs:label>
+    <rdfs:label xml:lang="en">has time-span</rdfs:label>
+    <rdfs:label xml:lang="de">hat Zeitspanne</rdfs:label>
+    <rdfs:label xml:lang="pt">tem período de tempo</rdfs:label>
+    <rdfs:label xml:lang="el">βρισκόταν σε εξέλιξη</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт врeмeнной интeрвал</rdfs:label>
+    <rdfs:label xml:lang="zh">发生时段是</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P3_has_note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">This property is a container for all informal descriptions about an object that have not been expressed in terms of CIDOC CRM constructs.
+In particular, it captures the characterisation of the item itself, its internal structures, appearance, etc.
+Like property P2 has type (is type of), this property is a consequence of the restricted focus of the CIDOC CRM. The aim is not to capture, in a structured form, everything that can be said about an item; indeed, the CIDOC CRM formalism is not regarded as sufficient to express everything that can be said. Good practice requires use of distinct note fields for different aspects of a characterisation. The P3.1 has type property of P3 has note allows differentiation of specific notes, e.g. “construction”, “decoration”, etc.
+An item may have many notes, but a note is attached to a specific item.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour note</rdfs:label>
+    <rdfs:label xml:lang="en">has note</rdfs:label>
+    <rdfs:label xml:lang="de">hat Anmerkung</rdfs:label>
+    <rdfs:label xml:lang="pt">tem nota</rdfs:label>
+    <rdfs:label xml:lang="el">έχει επεξήγηση</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт примeчаниe</rdfs:label>
+    <rdfs:label xml:lang="zh">有注释</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E42_Identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    <rdfs:comment xml:lang="en">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. Postal addresses, telephone numbers, URLs and e-mail addresses are characteristic examples of identifiers used by services transporting things between clients.
+The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agents.</rdfs:comment>
+    <rdfs:label xml:lang="fr">Identifiant</rdfs:label>
+    <rdfs:label xml:lang="pt">Identificador de Objeto</rdfs:label>
+    <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    <rdfs:label xml:lang="de">Kennung</rdfs:label>
+    <rdfs:label xml:lang="el">Κωδικός Αναγνώρισης</rdfs:label>
+    <rdfs:label xml:lang="ru">Идeнтификатор</rdfs:label>
+    <rdfs:label xml:lang="zh">标识符</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:label xml:lang="de">Ende vom Ende</rdfs:label>
+    <rdfs:label xml:lang="en">end of the end</rdfs:label>
+    <rdfs:label xml:lang="pt">fim do fim</rdfs:label>
+    <rdfs:label xml:lang="fr">fin de la fin</rdfs:label>
+    <rdfs:label xml:lang="el">τέλος του τέλους</rdfs:label>
+    <rdfs:label xml:lang="ru">конец конец</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:label xml:lang="en">defines typical wholes for</rdfs:label>
+    <rdfs:label xml:lang="fr">définit l’ensemble typique pour</rdfs:label>
+    <rdfs:label xml:lang="ru">опрeдeляeт совокупность</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:label xml:lang="fr">a été témoin de</rdfs:label>
+    <rdfs:label xml:lang="de">bezeugte</rdfs:label>
+    <rdfs:label xml:lang="pt">testemunhou</rdfs:label>
+    <rdfs:label xml:lang="en">witnessed</rdfs:label>
+    <rdfs:label xml:lang="el">υπήρξε τόπος του</rdfs:label>
+    <rdfs:label xml:lang="ru">было мeстом совeршeния</rdfs:label>
+    <rdfs:label xml:lang="zh">发生过</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E57_Material">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This class is a specialization of E55 Type and comprises the concepts of materials.
+Instances of E57 Material may denote properties of matter before its use, during its use, and as incorporated in an object, such as ultramarine powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials kept in museums, such as bricks, sheets of fabric, pieces of metal, should be modelled individually in the same way as other objects. Discrete used or processed pieces, such as the stones from Nefer Titi's temple, should be modelled as parts (cf. P46 is composed of (forms part of): E18 Physical Thing).
+This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E57 Material, e.g. “instances of gold”.
+It is recommended that internationally or nationally agreed codes and terminology should be used.</rdfs:comment>
+    <rdfs:label xml:lang="de">Material</rdfs:label>
+    <rdfs:label xml:lang="en">Material</rdfs:label>
+    <rdfs:label xml:lang="pt">Material</rdfs:label>
+    <rdfs:label xml:lang="fr">Matériau</rdfs:label>
+    <rdfs:label xml:lang="el">Υλικό</rdfs:label>
+    <rdfs:label xml:lang="ru">Матeриал</rdfs:label>
+    <rdfs:label xml:lang="zh">材质</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:label xml:lang="en">is embodied in</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises distinct intellectual ideas conveyed in artistic and intellectual creations, such a poems, stories or musical compositions. A Work is the outcome of an intellectual process of one or more persons. Inherent to the notion of work is the existence of recognisable realizations of the work in the form of one or more expressions. Works are often regarded as finished and discrete e.g. when declared as such by the creator of the work or based on the elaboration or logical coherence of its content. However, works may be recognized as existing but unfinished e.g. if the creators deliberately or accidentally never explicitly finished a particular Expression but have left behind partial expressions. In the absence of explicit information about the initial conception, which is rarely available, the first expression created constitutes witness of the beginning of existence of a Work. A Work can evolve over time, such as through revised editions. A Work may be elaborated by one or more Actors simultaneously, in parallel, or over time. Additional expressions of a Work can continue to be created over time. The boundaries of a Work have nothing to do with the value of the intellectual achievement but only with the dominance of a concept. The main purpose of this class is to enable bringing together intellectually equivalent Expressions in order to display to a user all available alternatives of the same intellectual or artistic content.</rdfs:comment>
+    <rdfs:label xml:lang="en">Work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:comment xml:lang="en">This class comprises all persistent physical objects of any size that are purposely created by human activity and have physical boundaries that separate them completely in an objective way from other objects.
+The class also includes all aggregates of objects made for functional purposes of whatever kind, independent of physical coherence, such as a set of chessmen.</rdfs:comment>
+    <rdfs:label xml:lang="en">Human-Made Object</rdfs:label>
+    <rdfs:label xml:lang="fr">Objet élaboré par l’humain</rdfs:label>
+    <rdfs:label xml:lang="ru">Рукотворный Объeкт</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L11_had_output">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity.</rdfs:comment>
+    <rdfs:label xml:lang="en">had output</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:comment xml:lang="en">This property describes the maximum period of time within which an E52 Time-Span falls. Since Time-Spans may not have precisely known temporal extents, the CIDOC CRM supports statements about the minimum and maximum temporal extents of Time-Spans. This property allows a Time-Span’s maximum temporal extent (i.e. its outer boundary) to be assigned an E61 Time Primitive value. Time Primitives are treated by the CIDOC CRM as application or system specific date intervals, and are not further analysed. If different sources of evidence justify different maximum extents without contradicting each other, the resulting intersection of all these extents will be the best estimate. This should be taken into account for information integration.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a eu lieu durant</rdfs:label>
+    <rdfs:label xml:lang="pt">abrange no máximo</rdfs:label>
+    <rdfs:label xml:lang="en">at some time within</rdfs:label>
+    <rdfs:label xml:lang="de">irgendwann innerhalb von</rdfs:label>
+    <rdfs:label xml:lang="el">κάποτε εντός</rdfs:label>
+    <rdfs:label xml:lang="ru">в тeчeниe пeриода врeмeни</rdfs:label>
+    <rdfs:label xml:lang="zh">最长范围是</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:comment xml:lang="en">This property documents that an instance of E89 Propositional Object makes a statement about an instance of E1 CRM Entity. P67 refers to (is referred to by) has the P67.1 has type link to an instance of E55 Type. This is intended to allow a more detailed description of the type of reference. This differs from P129 is about (is subject of), which describes the primary subject or subjects of the instance of E89 Propositional Object.</rdfs:comment>
+    <rdfs:label xml:lang="pt">referencia</rdfs:label>
+    <rdfs:label xml:lang="en">refers to</rdfs:label>
+    <rdfs:label xml:lang="fr">renvoie à</rdfs:label>
+    <rdfs:label xml:lang="de">verweist auf</rdfs:label>
+    <rdfs:label xml:lang="el">αναφέρεται σε</rdfs:label>
+    <rdfs:label xml:lang="ru">ссылаeтся на</rdfs:label>
+    <rdfs:label xml:lang="zh">涉及</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R28_produced">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F32 Item Production Event with any one of the produced items (i.e., the instances of F5 Item).</rdfs:comment>
+    <rdfs:label xml:lang="en">produced</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14i_performed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:label xml:lang="fr">a effectué</rdfs:label>
+    <rdfs:label xml:lang="pt">executou</rdfs:label>
+    <rdfs:label xml:lang="de">führte aus</rdfs:label>
+    <rdfs:label xml:lang="en">performed</rdfs:label>
+    <rdfs:label xml:lang="el">πραγματοποίησε</rdfs:label>
+    <rdfs:label xml:lang="ru">выполнял</rdfs:label>
+    <rdfs:label xml:lang="zh">执行</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any change in the bit sequence results in a new instance of D1 Digital Object. Any aggregation of instances of D1 Digital Object into a whole treated as a single unit is also regarded as an instance of D1 Digital Object. This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of D1 Digital Object, mutually related by the P106 is composed of (forms part of) property. In the case of embedded metadata, the documentalist must take care to distinguish the identity of the object including the metadata from the identity of the included content described by the metadata. A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously.</rdfs:comment>
+    <rdfs:label xml:lang="en">Digital Object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises instances of D1 Digital Object that are the result of measurements or other observations and / or their algorithmic evaluation in the form of structured data, such as encoded formal propositions, CSV files (“comma separated values”) or equivalent representations. If an instance of D1 Digital Object contains the value set of an instance of E54 Dimension, such as the primary data from an instance of S21 Measurement, this association can be documented with the property L61 contains value set of (has value set representation).</rdfs:comment>
+    <rdfs:label xml:lang="en">Data Object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"/>
+    <rdfs:comment xml:lang="en">This class comprises events that result in the creation of instances of D9 Data Object that represent the appearance (for instance, light reflection properties), form or recorded inner structure of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, biological objects etc. Such methods are typically called “imaging techniques”. A particular case is the analogue-to-digital conversion of audiovisual material. This class represents the transition from a material item to an immaterial representation of a relevant spatial distribution of local physical properties on the material item (in the case of audio material item, also along the respective sound track) Subsequent processing steps of the output of digitization processes that preserve or improve the relevant spatial correlations with the digitized object or a part of it are regarded as instances of D3 Formal Derivation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Digitization Process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"/>
+    <rdfs:comment xml:lang="en">This property records an instance of E54 Dimension of some instance of E70 Thing.
+In the case that the recorded property is a result of a measurement of an instance of E18 Physical Thing, this property is a shortcut of the more fully developed path from E18 Physical Thing through P39i was measured by, E16 Measurement, P40 observed dimension to E54 Dimension.
+It offers no information about how and when an E54 Dimension was established, nor by whom. Knowledge about an instance of E54 Dimension need not be the result of a measurement; it may be the result of evaluating data or other information, which should be documented as an instance of E13 Attribute Assignment.
+An instance of E54 Dimension is specific to an instance of E70 Thing.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour dimension</rdfs:label>
+    <rdfs:label xml:lang="en">has dimension</rdfs:label>
+    <rdfs:label xml:lang="de">hat Dimension</rdfs:label>
+    <rdfs:label xml:lang="pt">tem dimensão</rdfs:label>
+    <rdfs:label xml:lang="el">έχει μέγεθος</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт размeр</rdfs:label>
+    <rdfs:label xml:lang="zh">有度量规格</rdfs:label>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:label xml:lang="fr">a pour terme spécifique</rdfs:label>
+    <rdfs:label xml:lang="en">has narrower term</rdfs:label>
+    <rdfs:label xml:lang="de">hat den Unterbegriff</rdfs:label>
+    <rdfs:label xml:lang="pt">tem termo específico</rdfs:label>
+    <rdfs:label xml:lang="el">έχει στενότερο όρο</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт нижeстоящий тeрмин</rdfs:label>
+    <rdfs:label xml:lang="zh">下位词</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E30_Right"/>
+    <rdfs:comment xml:lang="en">This property links a particular instance of E72 Legal Object to the instances of E30 Right to which it is subject.
+The Right is held by an instance of E39 Actor as described by P75 possesses (is possessed by).</rdfs:comment>
+    <rdfs:label xml:lang="de">Gegenstand von</rdfs:label>
+    <rdfs:label xml:lang="fr">est soumis à</rdfs:label>
+    <rdfs:label xml:lang="pt">está sujeito à</rdfs:label>
+    <rdfs:label xml:lang="en">is subject to</rdfs:label>
+    <rdfs:label xml:lang="el">υπόκειται σε</rdfs:label>
+    <rdfs:label xml:lang="ru">подчиняeтся</rdfs:label>
+    <rdfs:label xml:lang="zh">服从</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R28_produced"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by"/>
+    <rdfs:label xml:lang="en">was produced by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+    <rdfs:label xml:lang="de">Anfang des Anfangs</rdfs:label>
+    <rdfs:label xml:lang="en">begin of the begin</rdfs:label>
+    <rdfs:label xml:lang="pt">começar do início</rdfs:label>
+    <rdfs:label xml:lang="fr">début du début</rdfs:label>
+    <rdfs:label xml:lang="el">αρχή της αρχής</rdfs:label>
+    <rdfs:label xml:lang="ru">начать с начала</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:propertyDisjointWith rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:label xml:lang="fr">est l'état matériel de</rdfs:label>
+    <rdfs:label xml:lang="pt">estado material de</rdfs:label>
+    <rdfs:label xml:lang="en">is condition of</rdfs:label>
+    <rdfs:label xml:lang="de">ist Zustand von</rdfs:label>
+    <rdfs:label xml:lang="el">είναι κατάσταση του</rdfs:label>
+    <rdfs:label xml:lang="ru">являeтся условиeм для</rdfs:label>
+    <rdfs:label xml:lang="zh">是状况</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E69_Death">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises the deaths of human beings.
+If a person is killed, their death should be instantiated as E69 Death and as E7 Activity. The death or perishing of other living beings should be documented as instances of E64 End of Existence.</rdfs:comment>
+    <rdfs:label xml:lang="en">Death</rdfs:label>
+    <rdfs:label xml:lang="fr">Mort</rdfs:label>
+    <rdfs:label xml:lang="pt">Morte</rdfs:label>
+    <rdfs:label xml:lang="de">Tod</rdfs:label>
+    <rdfs:label xml:lang="el">Θάνατος</rdfs:label>
+    <rdfs:label xml:lang="ru">Смeрть</rdfs:label>
+    <rdfs:label xml:lang="zh">死亡</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.cao-crm.eu/ontology/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://www.cao-crm.eu/ontology/1.0"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-07-08</dcterms:issued>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-07-08</dcterms:created>
+    <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.cao-crm.eu/ontology/</vann:preferredNamespaceUri>
+    <vann:preferredNamespacePrefix>cao_crm</vann:preferredNamespacePrefix>
+    <dcterms:publisher>Consortium Huma-Num ARIANE</dcterms:publisher>
+    <dcterms:source rdf:resource="https://github.com/andresecha/CAO_CRM"/>
+    <mod:status>stable</mod:status>
+    <foaf:logo rdf:resource="https://www.cao-crm.eu/logos/ARIANE.svg"/>
+    <dcterms:bibliographicCitation xml:lang="en">Echavarría Peláez, Andrés Felipe; Bouland, Mélanie (2026). CAO_CRM (Corpus Author Ontology CRM), version 1.0. Consortium Huma-Num ARIANE. https://www.cao-crm.eu/ontology/1.0</dcterms:bibliographicCitation>
+    <dc:creator>Andrés Echavarría Peláez; Mélanie Bouland</dc:creator>
+    <dc:description xml:lang="en">This ontological model formalizes and improves the description of metadata around corpora. Named CAO_CRM, it implements -- as a bounded, composed subset of CIDOC CRM and its extensions LRMoo and CRMdig -- the conceptual model discussed and diagrammed by Mélanie Bouland within the Consortium HN Ariane. This particular RDF/OWL encoding is a new, independent implementation, distinct from the file originally delivered by M. Bouland: it was built with the ROBOT ontology toolkit (module extraction, http://robot.obolibrary.org/), reasoned over with the HermiT OWL reasoner (http://www.hermit-reasoner.com/), and visually validated in Protege (https://protege.stanford.edu/). See the accompanying decision records in decisions/ for the exact scope and the rationale for every non-trivial modeling choice.</dc:description>
+    <dc:description xml:lang="fr">Ce modèle ontologique formalise et améliore la description des métadonnées relatives aux corpus. Nommé CAO_CRM, il met en œuvre -- comme sous-ensemble borné et composé de CIDOC CRM et de ses extensions LRMoo et CRMdig -- le modèle conceptuel discuté et schématisé par Mélanie Bouland au sein du Consortium HN Ariane. Ce codage RDF/OWL particulier constitue une implémentation nouvelle et indépendante, distincte du fichier initialement livré par Mme Bouland : il a été construit avec la boîte à outils ontologique ROBOT (extraction de module, http://robot.obolibrary.org/), raisonné avec le raisonneur OWL HermiT (http://www.hermit-reasoner.com/), et validé visuellement dans Protégé (https://protege.stanford.edu/). Voir les fiches de décision correspondantes dans decisions/ pour le périmètre exact et la justification de chaque choix de modélisation non trivial.</dc:description>
+    <dc:description xml:lang="es">Este modelo ontológico formaliza y mejora la descripción de los metadatos en torno a los corpus. Llamado CAO_CRM, implementa -- como subconjunto acotado y compuesto de CIDOC CRM y sus extensiones LRMoo y CRMdig -- el modelo conceptual discutido y diagramado por Mélanie Bouland dentro del Consorcio HN Ariane. Esta codificación RDF/OWL en particular es una implementación nueva e independiente, distinta del archivo entregado originalmente por la Sra. Bouland: se construyó con la herramienta ROBOT (extracción de módulo, http://robot.obolibrary.org/), se razonó con el razonador OWL HermiT (http://www.hermit-reasoner.com/), y se validó visualmente en Protégé (https://protege.stanford.edu/). Véanse las fichas de decisión correspondientes en decisions/ para el alcance exacto y la justificación de cada elección de modelado no trivial.</dc:description>
+    <dc:rights xml:lang="en">CC BY-NC-SA 4.0
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</dc:rights>
+    <owl:versionInfo xml:lang="en">CAO_CRM 1.0 (July 2026) -- first publicly released version, composed of CIDOC-CRM 7.1.3, LRMoo 1.1.1 and CRMdig 5.0</owl:versionInfo>
+    <owl:versionInfo xml:lang="fr">CAO_CRM 1.0 (juillet 2026) -- première version rendue publique, composée de CIDOC-CRM 7.1.3, LRMoo 1.1.1 et CRMdig 5.0</owl:versionInfo>
+    <owl:versionInfo xml:lang="es">CAO_CRM 1.0 (julio de 2026) -- primera versión hecha pública, compuesta de CIDOC-CRM 7.1.3, LRMoo 1.1.1 y CRMdig 5.0</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">CIDOC-CRM : RDFs Implementation (February 2024) of CIDOC-CRM 7.1.3</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">CRMdig Ontology 5.0 including references to CIDOC-CRM 7.1.3</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">LRMoo Ontology 1.1.1 (November, 2025) including references to CIDOC-CRM 7.1.3</owl:versionInfo>
+    <dc:title xml:lang="en">CAO_CRM (Corpus Author Ontology CRM)</dc:title>
+    <dc:license rdf:resource="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <dc:contributor>Fatiha Idmhand; Ioana Galleron; Sabine Loudcher; Ala Eddine Laouir; Ameni Guizani</dc:contributor>
+    <dcterms:references rdf:resource="http://robot.obolibrary.org/"/>
+    <dcterms:references rdf:resource="http://www.hermit-reasoner.com/"/>
+    <dcterms:references rdf:resource="https://protege.stanford.edu/"/>
+    <dcterms:abstract xml:lang="en">This version of CAO_CRM is a complete re-encoding, in RDF/OWL, of the conceptual model originally discussed and diagrammed by Mélanie Bouland within the Consortium HN Ariane. The encoding was produced independently by Andrés Echavarría (2026), for the AMIS project, using a reproducible method: the exact set of classes and properties needed (documented in imports/module-terms.txt) was extracted from the official CIDOC CRM 7.1.3, LRMoo 1.1.1 and CRMdig 5.0 releases with the ROBOT ontology toolkit, in a single combined pass to preserve cross-ontology relationships within the chosen scope. The result was reasoned over with the HermiT OWL reasoner to confirm logical consistency, and visually validated in Protégé. Every non-trivial modeling choice made while filling gaps in the official sources is recorded, with verbatim citations, in the accompanying decision records (decisions/, including ADR-001 to ADR-003 and the general problems-and-solutions catalog).</dcterms:abstract>
+    <dcterms:abstract xml:lang="fr">Cette version de CAO_CRM constitue un recodage complet, en RDF/OWL, du modèle conceptuel initialement discuté et schématisé par Mélanie Bouland au sein du Consortium HN Ariane. Ce codage a été réalisé de manière indépendante par Andrés Echavarría (2026), pour le projet AMIS, selon une méthode reproductible : l'ensemble exact des classes et propriétés nécessaires (documenté dans imports/module-terms.txt) a été extrait des versions officielles de CIDOC CRM 7.1.3, LRMoo 1.1.1 et CRMdig 5.0 à l'aide de la boîte à outils ontologique ROBOT, en une seule passe combinée afin de préserver les relations inter-ontologies à l'intérieur du périmètre choisi. Le résultat a été soumis au raisonneur OWL HermiT pour en confirmer la cohérence logique, puis validé visuellement dans Protégé. Chaque choix de modélisation non trivial effectué pour combler les lacunes des sources officielles est consigné, avec citations textuelles à l'appui, dans les fiches de décision correspondantes (decisions/, y compris ADR-001 à ADR-003 et le catalogue général des problèmes et solutions).</dcterms:abstract>
+    <dcterms:abstract xml:lang="es">Esta versión de CAO_CRM es una recodificación completa, en RDF/OWL, del modelo conceptual discutido y diagramado originalmente por Mélanie Bouland dentro del Consorcio HN Ariane. Esta codificación fue realizada de forma independiente por Andrés Echavarría (2026), para el proyecto AMIS, siguiendo un método reproducible: el conjunto exacto de clases y propiedades necesarias (documentado en imports/module-terms.txt) se extrajo de las versiones oficiales de CIDOC CRM 7.1.3, LRMoo 1.1.1 y CRMdig 5.0 con la herramienta ROBOT, en una sola pasada combinada para preservar las relaciones entre ontologías dentro del alcance elegido. El resultado se razónó con el razonador OWL HermiT para confirmar su coherencia lógica, y se validó visualmente en Protégé. Cada decisión de modelado no trivial tomada para llenar los vacíos de las fuentes oficiales queda registrada, con citas textuales, en las fichas de decisión correspondientes (decisions/, incluyendo ADR-001 a ADR-003 y el catálogo general de problemas y soluciones).</dcterms:abstract>
+    <dcterms:description xml:lang="en">CAO_CRM-2.5 (2026-07-06): adds 33 new terms in total -- 16 ROBOT-extracted CIDOC-CRM terms (P127_has_broader_term, E33_Linguistic_Object+P72_has_language, E22_Human-Made_Object+P54/P55_has_current_location, E1_CRM_Entity, E41_Appellation, E58_Measurement_Unit+P91_has_unit, and inverses), 6 LRMoo relation properties (R2/R2i, R75/R75i, R76/R76i _is_derivative_of/_incorporates), F32_Item_Production_Event and D9_Data_Object/D7_Digital_Machine_Event (CRMdig), and 3 manually-declared P14_carried_out_by subproperties (P14_a_pour_auteur_original/traducteur/abregeur, following CIDOC-CRM's own Encoding Rule 4 for '.1' properties). Restores XSD precision (xsd:dateTime/xsd:integer) and owl:propertyDisjointWith on P82a/P82b, present in Melanie Bouland's original file but lost in the 2.0 module extraction. See decisions/fr/problemes-et-solutions.md and complete-model.md for full justification of every term. Addendum (2026-07-07): adds R28_produced/R28i_was_produced_by (LRMoo) linking F32_Item_Production_Event directly to F5_Item, closing a gap found when comparing the Drawio diagram against the RDF (the diagram already used this official property; the ontology did not have it yet). Second addendum (2026-07-07): adds E72_Legal_Object, E2_Temporal_Entity, E4_Period, E70_Thing to restore the official rdfs:domain/rdfs:range that P4_has_time-span/P4i, P7_took_place_at/P7i, P16_used_specific_object/P16i and P104_is_subject_to/P104i lost when the module was first extracted (their official domain/range class was not yet part of the module's scope). Third addendum (2026-07-08): renames the 3 manually-declared P14_carried_out_by subproperties to English local names (P14_has_original_author/translator/abridger, replacing P14_a_pour_auteur_original/traducteur/abregeur) for consistency with every other native CIDOC-CRM/LRMoo/CRMdig term in this module, and adds 2 further subproperties following the same Encoding Rule 4 pattern: P14_has_scientific_editor (MARC "edt") and P14_has_publisher (MARC "pbl"), closing a structural gap explicitly named by the project's own source paper as an original differentiator of CAO_CRM from plain LRMoo/CRMdig -- an "activités éditoriales" branch on Manifestation (and, similarly, Digital Object) signalling a scientific editor's intervention in establishing a manifested version of a work, distinct from the commercial publisher's role. See decisions/fr/informe-activite-editoriale-scientifique.md for full justification. Fourth addendum (2026-07-08): expands the rdfs:comment of all 5 P14_has_* subproperties with a concrete illustrative example (Stendhal, Henri Martineau, Le Divan, and LRMoo's own official translator/abridger examples), following the inline "for example" style CIDOC-CRM itself uses in class comments such as E3_Condition_State and E34_Inscription -- see documentation/{fr,es,en}/10-notas-de-aplicacion.md for the full set of application notes, including the controlled E55_Type values used throughout the model. Fifth addendum (2026-07-08): renumbers this file from its internal working label ("CAO_CRM-2.5") to 1.0, following standard ontology-versioning practice: since no version of CAO_CRM had ever actually been published before this release, numbering it as a continuation of internal development labels (2.0, 2.5) would misleadingly imply prior public releases that never existed. "CAO_CRM-2.0.rdf" (retained internally for history, not part of the public release) was the first ROBOT-based reconstruction of Mélanie Bouland's original conceptual diagram -- an internal draft, not a release. "CAO_CRM-2.5.rdf" (also retained internally, frozen as of this same date) was the complete, corrected proposal produced by Andrés Echavarría before formal version numbering was applied -- itself never published as such. This file, CAO_CRM-1.0.rdf, is the exact continuation of that proposal, now formally released as version 1.0, the first public version of CAO_CRM.</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:comment xml:lang="en">This class comprises the activities of selecting, arranging and presenting one or more instances of F2 Expression on a carrier or other persistent presentation means with the purpose of communicating it to some public. It includes the specification of the presentation as to sensory impression (such as visual appearance or audio rendition).</rdfs:comment>
+    <rdfs:label xml:lang="en">Manifestation Creation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises identifiable expressions in natural language or languages.
+Instances of E33 Linguistic Object can be expressed in many ways: e.g. as written texts, recorded speech, or sign language. However, the CIDOC CRM treats instances of E33 Linguistic Object independently from the medium or method by which they are expressed. Expressions in formal languages, such as computer code or mathematical formulae, are not treated as instances of E33 Linguistic Object by the CIDOC CRM. These should be modelled as instances of E73 Information Object.
+In general, an instance of E33 Linguistic Object may also contain non-linguistic information, often of artistic or aesthetic value. Only in cases in which the content of an instance of E33 Linguistic Object can completely be expressed by a series of binary-encoded symbols, its content may be documented within a respective knowledge base by the property P190 has symbolic content: E62 String. Otherwise, it should be understood as an identifiable digital resource only available independently from the respective knowledge base.
+In other cases, such as pages of an illuminated manuscript or recordings containing speech in a language supported by a writing system, the linguistic part of the content of an instance of E33 Linguistic Object may be documented within a respective knowledge base in a note by P3 has note: E62 String. Otherwise, it may be described using the property P165 incorporates (is incorporated in): E73 Information Object as a different object with its own identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Linguistic Object</rdfs:label>
+    <rdfs:label xml:lang="fr">Objet linguistique</rdfs:label>
+    <rdfs:label xml:lang="pt">Objeto Lingüístico</rdfs:label>
+    <rdfs:label xml:lang="de">Sprachlicher Gegenstand</rdfs:label>
+    <rdfs:label xml:lang="el">Γλωσσικό Αντικείμενο</rdfs:label>
+    <rdfs:label xml:lang="ru">Лингвистичeский Объeкт</rdfs:label>
+    <rdfs:label xml:lang="zh">语言对象</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_has_translator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has translator</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour traducteur</rdfs:label>
+    <rdfs:comment xml:lang="fr">Sous-propriété de P14_carried_out_by, restreinte au rôle de traduction (MARC Relator "trl" -- http://id.loc.gov/vocabulary/relators/trl). Déclarée selon la méthode officielle du CIDOC-CRM pour les propriétés ".1" (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). Par exemple, l'instance de F28_Expression_Creation qui produit la version allemande "Mord im Orientexpress" d'un roman d'Agatha Christie (exemple officiel de LRMoo) a pour traducteur la personne qui a réalisé cette traduction -- distincte de l'auteure originale du texte anglais.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Subproperty of P14_carried_out_by, restricted to the role of translation (MARC Relator "trl" -- http://id.loc.gov/vocabulary/relators/trl). Declared following CIDOC-CRM's own official method for ".1" properties (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf). For example, the instance of F28_Expression_Creation producing the German version "Mord im Orientexpress" of an Agatha Christie novel (LRMoo's own official example) has translator the person who carried out that translation -- distinct from the original author of the English text.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:label xml:lang="en">currently holds</rdfs:label>
+    <rdfs:label xml:lang="fr">est actuellement la localisation de</rdfs:label>
+    <rdfs:label xml:lang="de">hält derzeitig</rdfs:label>
+    <rdfs:label xml:lang="pt">é localização atual de</rdfs:label>
+    <rdfs:label xml:lang="el">είναι θέση του</rdfs:label>
+    <rdfs:label xml:lang="ru">в тeкущee врeмя находится</rdfs:label>
+    <rdfs:label xml:lang="zh">当前拥有</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E55_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts, in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes.
+E55 Type provides an interface to domain specific ontologies and thesauri. These can be represented in the CIDOC CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader term (has narrower term): E55 Type. Such hierarchies may be extended with additional properties.</rdfs:comment>
+    <rdfs:label xml:lang="pt">Tipo</rdfs:label>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+    <rdfs:label xml:lang="fr">Type</rdfs:label>
+    <rdfs:label xml:lang="de">Typus</rdfs:label>
+    <rdfs:label xml:lang="ru">Tип</rdfs:label>
+    <rdfs:label xml:lang="el">Τύπος</rdfs:label>
+    <rdfs:label xml:lang="zh">类型</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:label xml:lang="en">is part of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+    <rdfs:comment xml:lang="en">This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity.
+This property typically applies to tools, instruments, moulds, raw materials and items embedded in a product. It implies that the presence of the object in question was a necessary condition for the action. For example, the activity of writing this text required the use of a computer. An immaterial thing can be used if at least one of its carriers is present. For example, the software tools on a computer.
+Another example is the use of a particular name by a particular group of people over some span to identify a thing, such as a settlement. In this case, the physical carriers of this name are at least the people understanding its use.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a mobilisé l’objet spécifique</rdfs:label>
+    <rdfs:label xml:lang="de">benutzte das bestimmte Objekt</rdfs:label>
+    <rdfs:label xml:lang="en">used specific object</rdfs:label>
+    <rdfs:label xml:lang="pt">usou objeto específico</rdfs:label>
+    <rdfs:label xml:lang="el">χρησιμοποίησε αντικείμενο</rdfs:label>
+    <rdfs:label xml:lang="ru">пользовался</rdfs:label>
+    <rdfs:label xml:lang="zh">使用特定对象</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E30_Right"/>
+    <rdfs:label xml:lang="en">applies to</rdfs:label>
+    <rdfs:label xml:lang="de">findet Anwendung auf</rdfs:label>
+    <rdfs:label xml:lang="pt">se aplicam à</rdfs:label>
+    <rdfs:label xml:lang="fr">s’applique à</rdfs:label>
+    <rdfs:label xml:lang="el">ισχύει για</rdfs:label>
+    <rdfs:label xml:lang="ru">примeняeтся к</rdfs:label>
+    <rdfs:label xml:lang="zh">适用于</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    <rdfs:comment xml:lang="en">This property records the location of an instance of E19 Physical Object at the time of validity of the record or database containing the statement that uses this property.
+This property is a specialisation of P53 has former or current location (is former or current location of). It indicates that the instance of E53 Place associated with the instance of E19 Physical Object is the current location of the object. The property does not allow any indication of how long the object has been at the current location.
+This property is a shortcut. A more detailed representation can make use of the fully developed (i.e., indirect) path from E19 Physical Object, through, P25i moved by, E9 Move, P26 moved to to E53 Place if and only if this Move is the most recent.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Note CAO_CRM (2026-07-06) : meme restriction de domaine que P54_has_current_permanent_location, pour la meme raison -- voir decisions/fr/problemes-et-solutions.md, Probleme 3.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a actuellement pour localisation</rdfs:label>
+    <rdfs:label xml:lang="en">has current location</rdfs:label>
+    <rdfs:label xml:lang="de">hat derzeitigen Standort</rdfs:label>
+    <rdfs:label xml:lang="pt">é localizado em</rdfs:label>
+    <rdfs:label xml:lang="el">βρίσκεται σε</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт тeкущee мeстоположeниe</rdfs:label>
+    <rdfs:label xml:lang="zh">有当前位置</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L19_stores">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of a D13 Digital Information Carrier with the instance of Digital Object that is stored on it.</rdfs:comment>
+    <rdfs:label xml:lang="en">stores</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:comment xml:lang="en">This class comprises activities that result in one or more instances of F5 Item coming into existence. The production of a series of physical objects (printed books, scores, CDs, DVDs, CD-ROMs, etc.), producing a unique item (writing a manuscript on parchment, painting a watercolour, etc.), and the creation of a new copy of a file on an electronic carrier are all regarded as instances of F32 Item Production Event. For mass-produced items, the production process (no matter whether it is a book, a sound recording, a DVD, a cartographic resource, etc.) strives to produce items all as similar as possible to a prototype that displays all the features that all the copies of the publication should also display, which is reflected in the property R27 materialized: F3 Manifestation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Item Production Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P98i_was_born"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E67_Birth"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property links an instance of E67 Birth event to an instance of E21 Person in the role of offspring.
+Twins, triplets etc. are brought into life by the same instance of E67 Birth. This is not intended for use with general Natural History material, only people. There is no explicit method for modelling conception and gestation except by using extensions.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a donné vie à</rdfs:label>
+    <rdfs:label xml:lang="de">brachte zur Welt</rdfs:label>
+    <rdfs:label xml:lang="en">brought into life</rdfs:label>
+    <rdfs:label xml:lang="pt">trouxe à vida</rdfs:label>
+    <rdfs:label xml:lang="el">έφερε στη ζωή</rdfs:label>
+    <rdfs:label xml:lang="ru">родил</rdfs:label>
+    <rdfs:label xml:lang="zh">诞生了</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation"/>
+    <rdfs:label xml:lang="en">was created by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of E18 Physical Thing with another instance of Physical Thing that forms part of it. The spatial extent of the composing part is included in the spatial extent of the whole.
+Component elements, since they are themselves instances of E18 Physical Thing, may be further analysed into sub-components, thereby creating a hierarchy of part decomposition. An instance of E18 Physical Thing may be shared between multiple wholes, for example two buildings may share a common wall. This property does not specify when and for how long a component element resided in the respective whole. If a component is not part of a whole from the beginning of existence or until the end of existence of the whole, the classes E79 Part Addition and E90 Part Removal can be used to document when a component became part of a particular whole and/or when it stopped being a part of it. For the time-span of being part of the respective whole, the component is completely contained in the place the whole occupies.
+This property is intended to describe specific components that are individually documented, rather than general aspects. Overall descriptions of the structure of an instance of E18 Physical Thing are captured by the P3 has note property.
+The instances of E57 Material of which an instance of E18 Physical Thing is composed should be documented using P45 consists of (is incorporated in).
+This property is transitive and asymmetric.</rdfs:comment>
+    <rdfs:label xml:lang="fr">est composé de</rdfs:label>
+    <rdfs:label xml:lang="en">is composed of</rdfs:label>
+    <rdfs:label xml:lang="de">ist zusammengesetzt aus</rdfs:label>
+    <rdfs:label xml:lang="pt">é composto de</rdfs:label>
+    <rdfs:label xml:lang="el">αποτελείται από</rdfs:label>
+    <rdfs:label xml:lang="ru">составлeн из</rdfs:label>
+    <rdfs:label xml:lang="zh">组成成分是</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P108_has_produced">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:comment xml:lang="en">This property identifies the instance of E24 Physical Human-Made Thing that came into existence as a result of the instance of E12 Production.
+The identity of an instance of E24 Physical Human-Made Thing is not defined by its matter, but by its existence as a subject of documentation. An E12 Production can result in the creation of multiple instances of E24 Physical Human-Made Thing.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a produit</rdfs:label>
+    <rdfs:label xml:lang="en">has produced</rdfs:label>
+    <rdfs:label xml:lang="de">hat hergestellt</rdfs:label>
+    <rdfs:label xml:lang="pt">produziu</rdfs:label>
+    <rdfs:label xml:lang="el">παρήγαγε</rdfs:label>
+    <rdfs:label xml:lang="ru">произвeл</rdfs:label>
+    <rdfs:label xml:lang="zh">已产生了</rdfs:label>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end, and a duration.
+Instances of E52 Time-Span have no semantic connotations about phenomena happening within the temporal extent they represent. They do not convey any meaning other than a positioning on the “time-line” of chronology. The actual extent of an instance of E52 Time-Span can be approximated by properties of E52 Time-Span giving inner and outer bounds in the form of dates (instances of E61 Time Primitive). Comparing knowledge about time-spans is fundamental for chronological reasoning.
+Some instances of E52 Time-Span may be defined as the actual, in principle observable, temporal extent of instances of E2 Temporal Entity via the property P4 has time-span (is time-span of): E52 Time-Span. They constitute phenomenal time-spans as defined in CRMgeo (Doerr &amp;amp; Hiebel 2013). Since our knowledge of history is imperfect and physical phenomena are fuzzy in nature, the extent of phenomenal time-spans can only be described in approximation. An extreme case of approximation, might, for example, define an instance of E52 Time-Span having unknown beginning, end and duration. It may, nevertheless, be associated with other descriptions by which people can infer knowledge about it, such as in relative chronologies.
+Some instances of E52 may be defined precisely as representing a declaration of a temporal extent, as, for instance, done in a business contract. They constitute declarative time-spans as defined in CRMgeo (Doerr &amp;amp; Hiebel 2013) and can be described via the property E61 Time Primitive P170 defines time (time is defined by): E52 Time-Span.
+When used as a common E52 Time-Span for two events, it will nevertheless describe them as being simultaneous, even if nothing else is known.</rdfs:comment>
+    <rdfs:label xml:lang="fr">Intervalle temporel</rdfs:label>
+    <rdfs:label xml:lang="pt">Período de Tempo</rdfs:label>
+    <rdfs:label xml:lang="en">Time-Span</rdfs:label>
+    <rdfs:label xml:lang="de">Zeitspanne</rdfs:label>
+    <rdfs:label xml:lang="el">Χρονικό Διάστημα</rdfs:label>
+    <rdfs:label xml:lang="ru">Интeрвал Врeмeни</rdfs:label>
+    <rdfs:label xml:lang="zh">时段</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L1_digitized">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of D2 Digitization Process with an instance of E18 Physical Thing which is a material thing.</rdfs:comment>
+    <rdfs:label xml:lang="en">digitized</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:label xml:lang="en">was materialized by</rdfs:label>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E56_Language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This class is a specialization of E55 Type and comprises the natural languages in the sense of concepts.
+This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E56 Language, e.g. “instances of Mandarin Chinese”.
+It is recommended that internationally or nationally agreed codes and terminology should be used to denote instances of E56 Language, such as those defined in ISO 639-3:2007 and later versions.</rdfs:comment>
+    <rdfs:label xml:lang="en">Language</rdfs:label>
+    <rdfs:label xml:lang="fr">Langue</rdfs:label>
+    <rdfs:label xml:lang="pt">Língua</rdfs:label>
+    <rdfs:label xml:lang="de">Sprache</rdfs:label>
+    <rdfs:label xml:lang="el">Γλώσσα</rdfs:label>
+    <rdfs:label xml:lang="ru">Язык</rdfs:label>
+    <rdfs:label xml:lang="zh">语种</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises identifiable symbols and any aggregation of symbols, such as characters, identifiers, traffic signs, emblems, texts, data sets, images, musical scores, multimedia objects, computer program code, or mathematical formulae that have an objectively recognizable structure and that are documented as single units.
+It includes sets of signs of any nature, which may serve to designate something, or to communicate some propositional content. An instance of E90 Symbolic Object may or may not have a specific meaning, for example an arbitrary character string.
+In some cases, the content of an instance of E90 Symbolic Object may completely be represented by a serialized digital content model, such as a sequence of ASCII-encoded characters, an XML or HTML document, or a TIFF image. The property P3 has note and its subproperty P190 has symbolic content allow for the description of this content model. In order to disambiguate which symbolic level is the carrier of the meaning, the property P3.1 has type can be used to specify the encoding (e.g. “bit”, “Latin character”, RGB pixel).</rdfs:comment>
+    <rdfs:label xml:lang="fr">Objet symbolique</rdfs:label>
+    <rdfs:label xml:lang="en">Symbolic Object</rdfs:label>
+    <rdfs:label xml:lang="de">Symbolisches Objekt</rdfs:label>
+    <rdfs:label xml:lang="ru">Символичeский Объeкт</rdfs:label>
+    <rdfs:label xml:lang="zh">符号对象</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model.
+It is an abstract concept providing for three general properties:
+Identification by name or appellation, and in particular by a preferred identifier
+Classification by type, allowing further refinement of the specific subclass to which an instance belongs
+Attachment of free text and other unstructured data for the expression of anything not captured by formal properties
+All other classes within the CIDOC CRM are directly or indirectly specialisations of E1 CRM Entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">CRM Entity</rdfs:label>
+    <rdfs:label xml:lang="de">CRM Entität</rdfs:label>
+    <rdfs:label xml:lang="ru">CRM Сущность</rdfs:label>
+    <rdfs:label xml:lang="zh">CRM实体</rdfs:label>
+    <rdfs:label xml:lang="pt">Entidade CRM</rdfs:label>
+    <rdfs:label xml:lang="fr">Entité CRM</rdfs:label>
+    <rdfs:label xml:lang="el">Οντότητα CIDOC CRM</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/P44_has_condition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"/>
+    <rdfs:comment xml:lang="en">This property records an E3 Condition State for some E18 Physical Thing.
+This property is a shortcut of the more fully developed path from E18 Physical Thing through P34i was assessed by, E14 Condition Assessment, P35 has identified to E3 Condition State. It offers no information about how and when the E3 Condition State was established, nor by whom.
+An instance of E3 Condition State is specific to an instance of E18 Physical Thing.</rdfs:comment>
+    <rdfs:label xml:lang="fr">a pour état matériel</rdfs:label>
+    <rdfs:label xml:lang="en">has condition</rdfs:label>
+    <rdfs:label xml:lang="de">hat Zustand</rdfs:label>
+    <rdfs:label xml:lang="pt">tem estado material</rdfs:label>
+    <rdfs:label xml:lang="el">έχει κατάσταση</rdfs:label>
+    <rdfs:label xml:lang="ru">имeeт условиe</rdfs:label>
+    <rdfs:label xml:lang="zh">有状况</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R24_created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:comment xml:lang="en">This property associates the instance of F3 Manifestation that was created during a particular instance of F30 Manifestation Creation with that instance of F30 Manifestation Creation event.</rdfs:comment>
+    <rdfs:label xml:lang="en">created</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E12_Production"/>
+    <rdfs:comment xml:lang="en">This class comprises activities that result in instances of F2 Expression coming into existence. An instance of F2 Expression is considered to be created when it is captured on a carrier other than the creator’s brain. Although F2 Expression is an abstract entity, a conceptual object, the creation of an expression inevitably also affects the physical world: when you scribble the first draft of a poem on a sheet of paper, you produce an instance of F3 Manifestation and an instance of F5 Item. F28 Expression Creation is a subclass of E12 Production because the recording of the expression causes a physical modification of the E18 Physical Thing that serves as the carrier. The creation of an instance of F2 Expression coincides with the creation of the first instance of F3 Manifestation that R4 embodies (is embodied in) this instance of F2 Expression. The P2 has type (is type of) property can be used to specify the type of the instance of F28 Expression Creation (i.e., activities such as translating, revising, or arranging music are types of creation process). The type of the process is distinct from the type of result even though the typology frequently used for instances of the resulting F2 Expressions may imply the category of the instance of the F28 Expression Creation. An instance of F28 Expression Creation may use as source material one or more specific instances of F2 Expression. When the source expression is documented this is also expressed by the property R76 is derivative of (has derivative) .</rdfs:comment>
+    <rdfs:label xml:lang="en">Expression Creation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F5_Item">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:comment xml:lang="en">This class comprises physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that were produced by (P186i) an industrial process involving a given instance of F3 Manifestation. As a result, all the instances of F5 Item associated with a given instance of F3 Manifestation are expected to carry the content defined in that instance of F3 Manifestation, although some or even all of them may happen to carry a content that significantly differs from it, due to either an accident in the course of industrial production, or subsequent physical modification or degradation. An instance of F5 Item that consists of a physical object or set of objects with clear physical boundaries is also an instance of E22 Human-Made Object. An instance of F5 Item that is stored on a part of a larger physical support (such as an electronic file among others on a disc) can also be considered to be an instance of E25 Human-Made Feature. The notion of F5 Item is only relevant with regard to the production process, from a bibliographic point of view. The physical units managed by cultural heritage institutions in their holdings are a distinct notion: a unit of holdings certainly can be equal to an instance of F5 Item, but it also can be either “bigger” than one (e.g., when two instances of F5 Item are bound together (in the case of printed books)), or “smaller” than one (e.g., for incomplete holdings, such as when only one CD from a two-CD set is held). From an operational point of view, cultural heritage institutions typically do not manage instances of F5 Item, but physical holdings units, instances of E19 Physical Object, although for libraries in most cases this is not significant because each item corresponds with a single unit. When this is not the case, the linkage between items and the units relevant for collection management can be recorded through the P46 is composed of (forms part of) property between instances of F5 Item and instances of E19 Physical Object. If needed, an instance of E19 Physical Object can be typed as a unit through the P2 has type (is type of) property.</rdfs:comment>
+    <rdfs:label xml:lang="en">Item</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R3i_realises">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:label xml:lang="en">realises</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F2 Expression with another instance of F2 Expression which was its source or one of its sources. This property is not transitive. It is asymmetric and irreflexive. This property is also a shortcut of the fully developed path: F2 Expression (1). P16i was used for : F28 Expression Creation. R17 created : F2 Expression (2).</rdfs:comment>
+    <rdfs:label xml:lang="en">is derivative of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"/>
+    <rdfs:label xml:lang="en">was digitized by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises products rendering one or more Expressions. A Manifestation is defined by both the overall content and the form of its presentation. The substance of F3 Manifestation is not only signs, but also the manner in which they are presented to be consumed by users, including the kind of media adopted. An F3 Manifestation is the outcome of a publication process where one or more F2 Expressions are prepared for public dissemination, but it may also be a unique form created directly on some material carrier without the intent of being formally published. An instance of F3 Manifestation typically incorporates one or more instances of F2 Expression representing a distinct logical content and all additional input by a publisher such as text layout and cover design. Additionally an F3 Manifestation can be identified by the physical features for the medium of distribution, if applicable. For example, publications in the form of hard-cover and paperback editions would be two distinct instances of F3 Manifestation, even though authorial and editorial content are otherwise identical in both publications. In the case of industrial products such as printed books or music CDs, but also digital material, an instance of F3 Manifestation can be regarded as the prototype for all copies of it. In these cases, an instance of F3 Manifestation specifies all of the features or traits that instances of F5 Item display in order to be copies of a particular publication. In the case of industrial products, instances of F3 Manifestation are also instances of E99 Product Type, normally nowadays identified by characteristic identifiers such as ISBN numbers.</rdfs:comment>
+    <rdfs:label xml:lang="en">Manifestation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:label xml:lang="en">has derivative</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation"/>
+    <rdfs:label xml:lang="en">was created through</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R4_embodies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of F3 Manifestation with one or more instances of F2 Expression which are rendered by this instance of F3 Manifestation. The manifestation formats the expression(s) in the way they are to be presented to some public, including specifying the intended sensory impression (such as visual appearance or audio rendition).</rdfs:comment>
+    <rdfs:label xml:lang="en">embodies</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F1_Work"/>
+    <rdfs:label xml:lang="en">has derivative</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+    <rdfs:comment xml:lang="en">This class comprises all instances of E84 Information Carrier that are explicitly designed to be used as persistent digital physical carriers of instances of D1 Digital Object. An instance of D13 Digital Information Carrier may or may not contain information, e.g., an empty diskette.</rdfs:comment>
+    <rdfs:label xml:lang="en">Digital Information Carrier</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation"/>
+    <rdfs:label xml:lang="en">was created by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:range rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+    <rdfs:label xml:lang="en">is incorporated in</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
