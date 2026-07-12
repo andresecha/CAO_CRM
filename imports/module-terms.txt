@@ -1,0 +1,186 @@
+# module-terms.txt — la lista de términos que definió el módulo acotado de CAO_CRM
+#
+# Este es el archivo de entrada real usado con `robot extract --method subset --term-file
+# module-terms.txt` (ver decisions/informe-implementacion-RDF-modulo-acotado.md, sección 4) para
+# generar ontology/CAO_CRM-1.0.rdf a partir de los archivos oficiales vendored en vendor/.
+#
+# El contenido es EXACTAMENTE la lista de 41 clases + 84 propiedades de objeto + 5 propiedades de
+# datos (130 términos en total) que el equipo confirmó como alcance definitivo de CAO_CRM,
+# verificado término por término contra los archivos oficiales antes de usarse (ver el mismo
+# informe, sección 3). Dos clases inicialmente consideradas (E60_Number, E62_String) no aparecen
+# aquí porque no existen como URI en el CIDOC-CRM 7.1.3 oficial — ver ADR y el informe de
+# completitud para el porqué.
+#
+# Formato: un IRI completo por línea. Las líneas que empiezan con # son comentarios (ROBOT las
+# ignora); reutilizable tal cual con robot extract sin necesidad de limpiar nada.
+
+# --- CIDOC-CRM 7.1.3 (imports/vendor/cidoc-crm-7.1.3.rdf) ---
+# Clases (19)
+http://www.cidoc-crm.org/cidoc-crm/E12_Production
+http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing
+http://www.cidoc-crm.org/cidoc-crm/E21_Person
+http://www.cidoc-crm.org/cidoc-crm/E30_Right
+http://www.cidoc-crm.org/cidoc-crm/E35_Title
+http://www.cidoc-crm.org/cidoc-crm/E39_Actor
+http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State
+http://www.cidoc-crm.org/cidoc-crm/E42_Identifier
+http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span
+http://www.cidoc-crm.org/cidoc-crm/E53_Place
+http://www.cidoc-crm.org/cidoc-crm/E54_Dimension
+http://www.cidoc-crm.org/cidoc-crm/E55_Type
+http://www.cidoc-crm.org/cidoc-crm/E56_Language
+http://www.cidoc-crm.org/cidoc-crm/E57_Material
+http://www.cidoc-crm.org/cidoc-crm/E67_Birth
+http://www.cidoc-crm.org/cidoc-crm/E69_Death
+http://www.cidoc-crm.org/cidoc-crm/E7_Activity
+http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object
+http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object
+
+# Propiedades de objeto (38, en pares directa/inversa) + P3_has_note (ver decisions/fr/problemes-et-solutions.md, Problema 1)
+http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of
+http://www.cidoc-crm.org/cidoc-crm/P100i_died_in
+http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to
+http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to
+http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of
+http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of
+http://www.cidoc-crm.org/cidoc-crm/P108_has_produced
+http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by
+http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by
+http://www.cidoc-crm.org/cidoc-crm/P14i_performed
+http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of
+http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for
+http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object
+http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for
+http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by
+http://www.cidoc-crm.org/cidoc-crm/P1i_identifies
+http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose
+http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of
+http://www.cidoc-crm.org/cidoc-crm/P2_has_type
+http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of
+http://www.cidoc-crm.org/cidoc-crm/P3_has_note
+http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension
+http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of
+http://www.cidoc-crm.org/cidoc-crm/P44_has_condition
+http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of
+http://www.cidoc-crm.org/cidoc-crm/P45_consists_of
+http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in
+http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of
+http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of
+http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span
+http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of
+http://www.cidoc-crm.org/cidoc-crm/P67_refers_to
+http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by
+http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at
+http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed
+http://www.cidoc-crm.org/cidoc-crm/P86_falls_within
+http://www.cidoc-crm.org/cidoc-crm/P86i_contains
+http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life
+http://www.cidoc-crm.org/cidoc-crm/P98i_was_born
+
+# Propiedades de datos (4)
+http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within
+http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin
+http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end
+http://www.cidoc-crm.org/cidoc-crm/P90_has_value
+
+# --- LRMoo 1.1.1 (imports/vendor/lrmoo-1.1.1.rdf) ---
+# Clases (7)
+http://iflastandards.info/ns/lrm/lrmoo/F1_Work
+http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation
+http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation
+http://iflastandards.info/ns/lrm/lrmoo/F2_Expression
+http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation
+http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation
+http://iflastandards.info/ns/lrm/lrmoo/F5_Item
+
+# Propiedades de objeto (15, en pares directa/inversa; R78 no tiene inversa oficial)
+http://iflastandards.info/ns/lrm/lrmoo/R16_created
+http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by
+http://iflastandards.info/ns/lrm/lrmoo/R17_created
+http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by
+http://iflastandards.info/ns/lrm/lrmoo/R24_created
+http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through
+http://iflastandards.info/ns/lrm/lrmoo/R27_materialized
+http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by
+http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in
+http://iflastandards.info/ns/lrm/lrmoo/R3i_realises
+http://iflastandards.info/ns/lrm/lrmoo/R4_embodies
+http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in
+http://iflastandards.info/ns/lrm/lrmoo/R71_has_part
+http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of
+http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate
+
+# --- CRMdig 5.0 (imports/vendor/crmdig-5.0.rdf) ---
+# Clases (3)
+http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier
+http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object
+http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process
+
+# Propiedades de objeto (8, en pares directa/inversa)
+http://www.cidoc-crm.org/extensions/crmdig/L11_had_output
+http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of
+http://www.cidoc-crm.org/extensions/crmdig/L19_stores
+http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on
+http://www.cidoc-crm.org/extensions/crmdig/L1_digitized
+http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by
+http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of
+http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation
+
+# --- Ajouts CAO_CRM-2.5 (6 juillet 2026) — voir sendCAO_CRM/decisions/fr/problemes-et-solutions.md
+# et complete-model.md pour la justification complète de chaque terme ---
+
+# CIDOC-CRM 7.1.3 -- classes
+http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
+http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object
+http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object
+http://www.cidoc-crm.org/cidoc-crm/E41_Appellation
+http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit
+
+# CIDOC-CRM 7.1.3 -- proprietes (extraites)
+http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term
+http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
+http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location
+http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of
+http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location
+http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds
+http://www.cidoc-crm.org/cidoc-crm/P72_has_language
+http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of
+http://www.cidoc-crm.org/cidoc-crm/P91_has_unit
+http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of
+
+# CIDOC-CRM 7.1.3 -- proprietes (declarees manuellement, methode Encoding Rule 4,
+# PAS extraites par ROBOT -- sous-proprietes de P14_carried_out_by, noms locaux en
+# anglais par coherence avec le reste du module, voir informe-P14-roles-autorat.md
+# et informe-activite-editoriale-scientifique.md)
+http://www.cidoc-crm.org/cidoc-crm/P14_has_original_author
+http://www.cidoc-crm.org/cidoc-crm/P14_has_translator
+http://www.cidoc-crm.org/cidoc-crm/P14_has_abridger
+http://www.cidoc-crm.org/cidoc-crm/P14_has_scientific_editor
+http://www.cidoc-crm.org/cidoc-crm/P14_has_publisher
+
+# LRMoo 1.1.1 -- classes
+http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event
+
+# LRMoo 1.1.1 -- proprietes
+http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of
+http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative
+http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates
+http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in
+http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of
+http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative
+
+# CRMdig 5.0 -- classes
+http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event
+http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object
+
+# LRMoo 1.1.1 -- ajout du 7 juillet 2026 (F32_Item_Production_Event -> F5_Item,
+# relation manquante detectee par comparaison diagramme/RDF)
+http://iflastandards.info/ns/lrm/lrmoo/R28_produced
+http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by
+
+# CIDOC-CRM 7.1.3 -- ajout du 7 juillet 2026 (restaure domain/range perdus sur
+# P4/P7/P16/P104 lors de l'extraction du module -- diagnostic avant publication)
+http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object
+http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity
+http://www.cidoc-crm.org/cidoc-crm/E4_Period
+http://www.cidoc-crm.org/cidoc-crm/E70_Thing
