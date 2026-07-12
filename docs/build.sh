@@ -32,16 +32,14 @@ fi
 # (ontology/CAO_CRM-<version>.ttl etc.) rather than Widoco's own generic,
 # unversioned docs/site/ontology.* copies. RDF/XML itself is not regenerated
 # here: the existing .rdf file already *is* that serialization.
-python3 -c "
-import rdflib, sys
-g = rdflib.Graph()
-g.parse('$ROOT/$FILE', format='xml')
-base = '$ROOT/ontology/${ONTOLOGY_BASENAME%.rdf}'
-g.serialize(destination=base + '.ttl', format='turtle')
-g.serialize(destination=base + '.nt', format='nt')
-g.serialize(destination=base + '.jsonld', format='json-ld')
-print(f'Serializations refreshed: {base}.ttl / .nt / .jsonld ({len(g)} triples)')
-"
+#
+# Delegates to scripts/reserialize-ontology.py rather than calling rdflib
+# directly: a plain g.parse()/g.serialize() round trip silently drops the
+# copyright header comment from .ttl/.nt (comments aren't part of the RDF
+# data model) -- that script re-stamps it. Regenerating it inline here once
+# already stripped the watermark from all three real copies of this repo
+# without check-watermark.sh catching it (see that script's own history).
+python3 "$ROOT/scripts/reserialize-ontology.py"
 
 # CIDOC-CRM only ever translates rdfs:label (never rdfs:comment, in ANY
 # language, not even for its own native terms -- verified empirically,

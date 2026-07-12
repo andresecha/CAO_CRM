@@ -29,3 +29,18 @@ docs/site/ontology.jsonld
 # it's a straight copy of docs/site/ made fresh by every workflow run, never
 # meant to be committed itself.
 public/
+
+# Documentation in Romanian, Italian, and Portuguese: AI-assisted draft translations,
+# not yet reviewed by native speakers or by the consortium's partners. Not wired into
+# docs/build.sh's language loop or config, and not committed until the team validates
+# them and decides to publish. Do not delete -- this is deliberate work in progress,
+# not dead weight.
+documentation/ro/
+documentation/it/
+documentation/pt/
+docs/intro-ro.html
+docs/intro-it.html
+docs/intro-pt.html
+docs/config-ro.properties
+docs/config-it.properties
+docs/config-pt.properties
