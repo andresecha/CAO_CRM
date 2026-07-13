@@ -47,7 +47,7 @@ SUBTITLES = {
 TITLE_PAGE_TEMPLATE = """<div class="cover-title-page">
   <h1 class="cover-title-page-name">CAO_CRM<br>(Corpus Author Ontology CRM)</h1>
   <p class="cover-title-page-subtitle">__SUBTITLE__</p>
-  <p class="cover-title-page-authors"><a href="https://cachetown.fr/" target="_blank" rel="noopener noreferrer">Andr&eacute;s Echavarr&iacute;a Pel&aacute;ez</a>, M&eacute;lanie Bouland</p>
+  <p class="cover-title-page-authors"><a href="https://cachetown.fr/" target="_blank" rel="noopener noreferrer">Andr&eacute;s Echavarr&iacute;a Pel&aacute;ez</a></p>
   <img class="cover-title-page-logo" src="__LOGO_PATH__" alt="Consortium Huma-Num ARIANE">
 </div>
 <style>
