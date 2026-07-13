@@ -22,7 +22,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing",
@@ -47,7 +53,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -72,7 +84,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E21_Person",
@@ -97,7 +115,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object",
@@ -118,7 +142,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity",
@@ -143,7 +173,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
@@ -168,7 +204,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object",
@@ -193,7 +235,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
@@ -218,7 +266,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
@@ -243,7 +297,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State",
@@ -268,7 +328,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation",
@@ -293,7 +359,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -318,7 +390,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E4_Period",
@@ -343,7 +421,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span",
@@ -368,7 +452,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
@@ -393,7 +483,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
@@ -418,7 +514,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
@@ -443,7 +545,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E56_Language",
@@ -468,7 +576,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E57_Material",
@@ -493,7 +607,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit",
@@ -518,7 +638,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E67_Birth",
@@ -543,7 +669,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E69_Death",
@@ -568,7 +700,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E70_Thing",
@@ -593,7 +731,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object",
@@ -618,7 +762,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E7_Activity",
@@ -643,7 +793,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object",
@@ -666,7 +822,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object",
@@ -689,7 +851,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
@@ -714,7 +882,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within",
@@ -739,7 +913,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin",
@@ -761,7 +941,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end",
@@ -783,7 +969,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P90_has_value",
@@ -808,7 +1000,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of",
@@ -833,7 +1031,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P100i_died_in",
@@ -856,7 +1060,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to",
@@ -881,7 +1091,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to",
@@ -904,7 +1120,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of",
@@ -929,7 +1151,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of",
@@ -952,7 +1180,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P108_has_produced",
@@ -977,7 +1211,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by",
@@ -1000,7 +1240,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term",
@@ -1025,7 +1271,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term",
@@ -1048,7 +1300,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by",
@@ -1073,7 +1331,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_has_abridger",
@@ -1094,7 +1358,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_has_original_author",
@@ -1115,7 +1385,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_has_publisher",
@@ -1136,7 +1412,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_has_scientific_editor",
@@ -1157,7 +1439,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14_has_translator",
@@ -1178,7 +1466,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P14i_performed",
@@ -1201,7 +1495,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of",
@@ -1222,7 +1522,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for",
@@ -1241,7 +1547,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object",
@@ -1266,7 +1578,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for",
@@ -1289,7 +1607,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
@@ -1314,7 +1638,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P1i_identifies",
@@ -1337,7 +1667,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose",
@@ -1362,7 +1698,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of",
@@ -1385,7 +1727,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
@@ -1410,7 +1758,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of",
@@ -1433,7 +1787,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension",
@@ -1458,7 +1818,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of",
@@ -1481,7 +1847,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P44_has_condition",
@@ -1506,7 +1878,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of",
@@ -1529,7 +1907,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P45_consists_of",
@@ -1554,7 +1938,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in",
@@ -1577,7 +1967,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of",
@@ -1602,7 +1998,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of",
@@ -1625,7 +2027,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span",
@@ -1650,7 +2058,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of",
@@ -1673,7 +2087,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location",
@@ -1699,7 +2119,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of",
@@ -1722,7 +2148,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location",
@@ -1748,7 +2180,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": false,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds",
@@ -1771,7 +2209,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
@@ -1796,7 +2240,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by",
@@ -1819,7 +2269,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P72_has_language",
@@ -1844,7 +2300,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of",
@@ -1867,7 +2329,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at",
@@ -1892,7 +2360,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed",
@@ -1915,7 +2389,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within",
@@ -1940,7 +2420,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P86i_contains",
@@ -1963,7 +2449,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit",
@@ -1988,7 +2480,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of",
@@ -2011,7 +2509,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life",
@@ -2036,7 +2540,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/cidoc-crm/P98i_was_born",
@@ -2059,7 +2569,13 @@
     "needs_label_fr": false,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": false,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier",
@@ -2078,7 +2594,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object",
@@ -2097,7 +2619,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process",
@@ -2116,7 +2644,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event",
@@ -2135,7 +2669,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object",
@@ -2154,7 +2694,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L11_had_output",
@@ -2173,7 +2719,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of",
@@ -2190,7 +2742,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L19_stores",
@@ -2209,7 +2767,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on",
@@ -2226,7 +2790,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L1_digitized",
@@ -2245,7 +2815,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by",
@@ -2262,7 +2838,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of",
@@ -2281,7 +2863,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation",
@@ -2298,7 +2886,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F1_Work",
@@ -2317,7 +2911,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation",
@@ -2336,7 +2936,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation",
@@ -2355,7 +2961,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F2_Expression",
@@ -2374,7 +2986,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation",
@@ -2393,7 +3011,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event",
@@ -2412,7 +3036,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation",
@@ -2431,7 +3061,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/F5_Item",
@@ -2450,7 +3086,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R16_created",
@@ -2469,7 +3111,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by",
@@ -2486,7 +3134,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R17_created",
@@ -2505,7 +3159,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by",
@@ -2522,7 +3182,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R24_created",
@@ -2541,7 +3207,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through",
@@ -2558,7 +3230,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R27_materialized",
@@ -2577,7 +3255,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by",
@@ -2594,7 +3278,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R28_produced",
@@ -2613,7 +3303,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by",
@@ -2630,7 +3326,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of",
@@ -2649,7 +3351,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative",
@@ -2666,7 +3374,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in",
@@ -2685,7 +3399,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R3i_realises",
@@ -2702,7 +3422,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R4_embodies",
@@ -2721,7 +3447,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in",
@@ -2738,7 +3470,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R71_has_part",
@@ -2757,7 +3495,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of",
@@ -2774,7 +3518,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates",
@@ -2793,7 +3543,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in",
@@ -2810,7 +3566,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of",
@@ -2829,7 +3591,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative",
@@ -2846,7 +3614,13 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   },
   {
     "iri": "http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate",
@@ -2865,6 +3639,12 @@
     "needs_label_fr": true,
     "needs_comment_fr": true,
     "needs_label_es": true,
-    "needs_comment_es": true
+    "needs_comment_es": true,
+    "needs_label_ro": true,
+    "needs_comment_ro": true,
+    "needs_label_it": true,
+    "needs_comment_it": true,
+    "needs_label_pt": true,
+    "needs_comment_pt": true
   }
 ]
