@@ -1,0 +1,221 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+# Grafo de instancia (ABox) real, no sintético: los cinco niveles de CAO_CRM
+# (F1_Work -> F2_Expression -> F3_Manifestation -> F5_Item -> D1_Digital_Object)
+# aplicados a "Le Rouge et le Noir" de Stendhal -- el mismo ejemplo ya usado en
+# el diagrama conceptual CRM_V8.json ("page exemple") y en los comentarios
+# rdfs:comment de las cinco subpropiedades P14_has_* del propio módulo.
+#
+# Cada valor (fechas, ARK de Gallica, tirada de la edicion Martineau, etc.) fue
+# investigado y verificado con fuentes reales -- ver
+# PROVENANCE-stendhal-verificacion.md (en este mismo directorio) para el
+# detalle completo de cada fuente. El ARK de Gallica del Tomo I se confirmo por
+# busqueda cruzada (Google indexa el titulo exacto de la pagina), ya que
+# Gallica bloquea el acceso directo por curl/WebFetch con proteccion anti-bot;
+# por eso este grafo usa solo el Tomo I, no el Tomo II (no verificado igual).
+
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
+@prefix dig:   <http://www.cidoc-crm.org/extensions/crmdig/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <https://www.cao-crm.eu/test-data/stendhal/> .
+
+# ---------------------------------------------------------------------------
+# Actores
+# ---------------------------------------------------------------------------
+
+ex:Stendhal a crm:E21_Person ;
+    rdfs:label "Stendhal (Marie-Henri Beyle)"@fr, "Stendhal (Marie-Henri Beyle)"@es ;
+    crm:P3_has_note "Seudónimo de Marie-Henri Beyle, nacido el 23 de enero de 1783 en Grenoble y muerto el 23 de marzo de 1842 en París."@es .
+
+ex:HenriMartineau a crm:E21_Person ;
+    rdfs:label "Henri Martineau"@fr, "Henri Martineau"@es ;
+    crm:P3_has_note "Médico, crítico literario y principal editor científico de la obra de Stendhal en el siglo XX; nacido el 26 de abril de 1882, muerto el 21 de abril de 1958. Fundador y director de la revista y editorial Le Divan."@es .
+
+ex:LeDivan a crm:E39_Actor ;
+    rdfs:label "Le Divan (Librairie-Éditeur)"@fr ;
+    crm:P3_has_note "Casa editorial parisina (rue de la Convention, 203, XVe arrondissement), activa 1921-1958 bajo la dirección de Henri Martineau, especializada en la obra de Stendhal."@es .
+
+ex:BnF a crm:E53_Place ;
+    rdfs:label "Bibliothèque nationale de France"@fr, "Biblioteca Nacional de Francia"@es .
+
+ex:French a crm:E56_Language ;
+    rdfs:label "français"@fr, "francés"@es, "French"@en ;
+    crm:P3_has_note "ISO 639-1: fr ; ISO 639-3: fra." .
+
+ex:English a crm:E56_Language ;
+    rdfs:label "anglais"@fr, "inglés"@es, "English"@en ;
+    crm:P3_has_note "ISO 639-1: en ; ISO 639-3: eng." .
+
+ex:ScottMoncrieff a crm:E21_Person ;
+    rdfs:label "C. K. Scott Moncrieff"@en ;
+    crm:P3_has_note "Charles Kenneth Scott Moncrieff, traductor escocés (25 de septiembre de 1889 - 28 de febrero de 1930), célebre sobre todo por su traducción al inglés de À la recherche du temps perdu de Proust; también tradujo Le Rouge et le Noir de Stendhal."@es .
+
+# ---------------------------------------------------------------------------
+# Nivel 1 -- F1_Work: la obra en su dimensión conceptual
+# ---------------------------------------------------------------------------
+
+ex:Work_LeRougeEtLeNoir a lrmoo:F1_Work ;
+    rdfs:label "Le Rouge et le Noir"@fr ;
+    crm:P3_has_note "Chronique du XIXe siècle. Concebida a partir de octubre de 1829 (inspirada en el caso criminal real de Antoine Berthet), con el título de trabajo «Julien» hasta mayo de 1830."@es ;
+    lrmoo:R16i_was_created_by ex:WorkCreation .
+
+ex:WorkCreation a lrmoo:F27_Work_Creation ;
+    rdfs:label "Création de « Le Rouge et le Noir » par Stendhal"@fr ;
+    crm:P14_has_original_author ex:Stendhal ;
+    crm:P4_has_time-span ex:TimeSpan_Creation .
+
+ex:TimeSpan_Creation a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1829-10-01"^^xsd:date ;
+    crm:P82b_end_of_the_end "1830-05-01"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# Nivel 2 -- F2_Expression: el texto francés original, co-tipado E33
+# ---------------------------------------------------------------------------
+
+ex:Expression_FR_1830 a lrmoo:F2_Expression, crm:E33_Linguistic_Object ;
+    rdfs:label "Le Rouge et le Noir (texte français, 1830)"@fr ;
+    crm:P72_has_language ex:French ;
+    crm:P82_at_some_time_within "1830-11-13"^^xsd:date ;
+    crm:P3_has_note "Primera publicación de la expresión textual, en dos tomos, por la editorial Levasseur (París), 13 de noviembre de 1830."@es .
+
+ex:Work_LeRougeEtLeNoir lrmoo:R3_is_realised_in ex:Expression_FR_1830 .
+
+# ---------------------------------------------------------------------------
+# Nivel 3 -- F3_Manifestation: la edición crítica Martineau / Le Divan, 1927
+# ---------------------------------------------------------------------------
+
+ex:Manifestation_Martineau1927 a lrmoo:F3_Manifestation ;
+    rdfs:label "Le rouge et le noir : chronique du dix-neuvième siècle (édition Martineau, Le Divan, 1927)"@fr ;
+    crm:P3_has_note "Edición en dos volúmenes (Tome I y Tome II); tirada de 2525 ejemplares (25 numerados i-xxv en papel Rives rosa + 2500 numerados 1-2500 en papel vergé Lafuma). Texto revisado y prefaciado por Henri Martineau."@es ;
+    lrmoo:R4_embodies ex:Expression_FR_1830 ;
+    lrmoo:R27i_was_materialized_by ex:ManifestationCreation ;
+    crm:P104_is_subject_to ex:Right_PublicDomain .
+
+ex:ManifestationCreation a lrmoo:F30_Manifestation_Creation ;
+    rdfs:label "Édition Martineau de 1927 (Le Divan)"@fr ;
+    crm:P14_has_scientific_editor ex:HenriMartineau ;
+    crm:P14_has_publisher ex:LeDivan ;
+    crm:P4_has_time-span ex:TimeSpan_1927 .
+
+ex:TimeSpan_1927 a crm:E52_Time-Span ;
+    crm:P82_at_some_time_within "1927-01-01"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# Nivel 4 -- F5_Item: un ejemplar físico conservado en la BnF
+# ---------------------------------------------------------------------------
+
+ex:Item_BnF_Tome1 a lrmoo:F5_Item, crm:E22_Human-Made_Object ;
+    rdfs:label "Ejemplar del Tomo I (edición Martineau, 1927), BnF"@es ;
+    crm:P3_has_note "Registrado en el catálogo general de la BnF bajo el título convencional con ARK ark:/12148/cb11987967z (identificador de la obra, no de este ejemplar concreto; la signatura exacta de este ejemplar no se ha podido verificar sin acceso directo al catálogo de fondos de la Réserve des livres rares)." ;
+    crm:P54_has_current_permanent_location ex:BnF ;
+    lrmoo:R28i_was_produced_by ex:ItemProduction .
+
+ex:ItemProduction a lrmoo:F32_Item_Production_Event ;
+    rdfs:label "Producción del ejemplar del Tomo I"@es ;
+    lrmoo:R27_materialized ex:Manifestation_Martineau1927 ;
+    lrmoo:R28_produced ex:Item_BnF_Tome1 .
+
+# ---------------------------------------------------------------------------
+# Nivel 5 -- D1_Digital_Object: la digitalización real en Gallica
+# ---------------------------------------------------------------------------
+
+ex:DigitalObject_Gallica_Tome1 a dig:D1_Digital_Object ;
+    rdfs:label "Le rouge et le noir... Tome I (numérisation Gallica)"@fr ;
+    crm:P3_has_note "Identificador ARK de Gallica: ark:/12148/bpt6k6212441w -- https://gallica.bnf.fr/ark:/12148/bpt6k6212441w . Formato: imagen (páginas escaneadas, descargable en PDF)." ;
+    crm:P104_is_subject_to ex:Right_PublicDomain_Gallica .
+
+ex:DigitizationProcess_Tome1 a dig:D2_Digitization_Process ;
+    rdfs:label "Numérisation du Tome I par la BnF (Gallica)"@fr ;
+    dig:L1_digitized ex:Item_BnF_Tome1 ;
+    dig:L11_had_output ex:DigitalObject_Gallica_Tome1 .
+
+# ---------------------------------------------------------------------------
+# Ejemplo adicional -- traducción, editorial y repositorio distintos, para
+# ejercer P14_has_translator (sin dato de prueba previo) y diversificar las
+# fuentes de digitalización más allá de Gallica/BnF. Investigado y verificado
+# de forma independiente -- ver PROVENANCE-stendhal-traduccion-internet-archive.md
+# (en este mismo directorio) para el detalle completo (incluida la verificación
+# cruzada de la sesión principal contra la propia API de metadatos de
+# archive.org, no solo el informe del agente).
+# ---------------------------------------------------------------------------
+
+# Nivel 2b -- F2_Expression: la traducción inglesa de Scott Moncrieff (1929)
+
+ex:Expression_EN_1929 a lrmoo:F2_Expression, crm:E33_Linguistic_Object ;
+    rdfs:label "The Red and the Black"@en ;
+    crm:P72_has_language ex:English ;
+    crm:P3_has_note "Traducción al inglés de Charles Kenneth Scott Moncrieff, publicada por primera vez en 1926 y reeditada por Modern Library en 1929." .
+
+ex:Work_LeRougeEtLeNoir lrmoo:R3_is_realised_in ex:Expression_EN_1929 .
+
+ex:ExpressionCreation_EN a lrmoo:F28_Expression_Creation ;
+    rdfs:label "Traduction anglaise par C. K. Scott Moncrieff"@fr ;
+    crm:P14_has_translator ex:ScottMoncrieff ;
+    crm:P4_has_time-span ex:TimeSpan_1929 .
+
+ex:TimeSpan_1929 a crm:E52_Time-Span ;
+    crm:P82_at_some_time_within "1929-01-01"^^xsd:date .
+
+# Nivel 3b -- F3_Manifestation: la edición Modern Library de 1929
+
+ex:Manifestation_ModernLibrary1929 a lrmoo:F3_Manifestation ;
+    rdfs:label "The Red and the Black (Modern Library, 1929)"@en ;
+    lrmoo:R4_embodies ex:Expression_EN_1929 ;
+    lrmoo:R27i_was_materialized_by ex:ManifestationCreation_ModernLibrary ;
+    crm:P104_is_subject_to ex:Right_PublicDomain .
+
+ex:ManifestationCreation_ModernLibrary a lrmoo:F30_Manifestation_Creation ;
+    rdfs:label "Édition Modern Library de 1929"@fr ;
+    crm:P14_has_publisher ex:ModernLibrary ;
+    crm:P4_has_time-span ex:TimeSpan_1929 .
+
+ex:ModernLibrary a crm:E39_Actor ;
+    rdfs:label "Modern Library"@en ;
+    crm:P3_has_note "Sello editorial estadounidense (Nueva York), activo desde 1917." .
+
+# Nivel 4b -- F5_Item: el ejemplar físico digitalizado por Internet Archive
+
+ex:Item_IA_ScottMoncrieff a lrmoo:F5_Item ;
+    rdfs:label "Ejemplar de la edición Modern Library (1929), digitalizado por Internet Archive" ;
+    crm:P3_has_note "Ejemplar físico digitalizado en el centro de escaneo de Internet Archive en Cebú (Filipinas), según sus propios metadatos (scanningcenter=cebu); no co-tipado como E22_Human-Made_Object aquí porque, a diferencia del ejemplar de la BnF, no se ha podido verificar su ubicación de conservación permanente -- el centro de escaneo no es necesariamente su lugar de custodia. Documentar la incertidumbre en vez de asumir una ubicación no verificada." ;
+    lrmoo:R28i_was_produced_by ex:ItemProduction_IA .
+
+ex:ItemProduction_IA a lrmoo:F32_Item_Production_Event ;
+    rdfs:label "Producción del ejemplar digitalizado por Internet Archive"@es ;
+    lrmoo:R27_materialized ex:Manifestation_ModernLibrary1929 ;
+    lrmoo:R28_produced ex:Item_IA_ScottMoncrieff .
+
+# Nivel 5b -- D1_Digital_Object: la digitalización real en Internet Archive
+# (repositorio distinto de Gallica/BnF, a propósito, para diversificar fuentes)
+
+ex:DigitalObject_IA_ScottMoncrieff a dig:D1_Digital_Object ;
+    rdfs:label "The Red and the Black (Internet Archive digitization)"@en ;
+    crm:P3_has_note "Identificador de Internet Archive: redblack0000cktr -- https://archive.org/details/redblack0000cktr . Verificado directamente contra la API de metadatos (archive.org/metadata/redblack0000cktr): title=\"The Red and the Black\", publisher=\"Modern Library\", date=1929-01-01. Formatos disponibles: EPUB, PDF, DjVu, texto plano." ;
+    crm:P104_is_subject_to ex:Right_PublicDomain .
+
+ex:DigitizationProcess_IA a dig:D2_Digitization_Process ;
+    rdfs:label "Digitization by Internet Archive"@en ;
+    dig:L1_digitized ex:Item_IA_ScottMoncrieff ;
+    dig:L11_had_output ex:DigitalObject_IA_ScottMoncrieff .
+
+# ---------------------------------------------------------------------------
+# Derechos
+# ---------------------------------------------------------------------------
+
+ex:Right_PublicDomain a crm:E30_Right ;
+    rdfs:label "Domaine public"@fr, "Dominio público"@es ;
+    crm:P3_has_note "Stendhal murió el 23 de marzo de 1842; la obra está en dominio público en la Unión Europea desde 1912 (70 años tras la muerte del autor)." .
+
+ex:Right_PublicDomain_Gallica a crm:E30_Right ;
+    rdfs:label "Domaine public (déclaration Gallica)"@fr ;
+    crm:P3_has_note "Gallica declara explícitamente el estatuto de dominio público de sus digitalizaciones de obras cuyo plazo de protección ha expirado; se recomienda mencionar «Source gallica.bnf.fr / BnF» en usos no comerciales." .
