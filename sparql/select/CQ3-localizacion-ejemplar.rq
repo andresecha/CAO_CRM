@@ -1,0 +1,22 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
+# CQ3 -- ¿Dónde se conserva físicamente el ejemplar Y?
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?item ?location ?locationLabel WHERE {
+  ?item a crm:E22_Human-Made_Object .
+  { ?item crm:P54_has_current_permanent_location ?location }
+  UNION
+  { ?item crm:P55_has_current_location ?location }
+  OPTIONAL { ?location rdfs:label ?locationLabel }
+}

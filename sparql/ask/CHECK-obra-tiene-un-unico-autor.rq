@@ -1,0 +1,26 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
+# CHECK -- la obra de este ejemplo tiene exactamente un autor original declarado
+# (ni cero -- dato faltante -- ni varios -- posible duplicado accidental).
+PREFIX crm:   <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/>
+
+ASK {
+  {
+    SELECT (COUNT(?author) AS ?n) WHERE {
+      ?work a lrmoo:F1_Work ;
+            lrmoo:R16i_was_created_by ?creation .
+      ?creation crm:P14_has_original_author ?author .
+    }
+  }
+  FILTER (?n = 1)
+}

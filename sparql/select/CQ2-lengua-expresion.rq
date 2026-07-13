@@ -1,0 +1,20 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
+# CQ2 -- ¿En qué lengua está escrita esta expresión concreta?
+PREFIX crm:   <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?expression ?language ?languageLabel WHERE {
+  ?expression a crm:E33_Linguistic_Object ;
+              crm:P72_has_language ?language .
+  OPTIONAL { ?language rdfs:label ?languageLabel }
+}

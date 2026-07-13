@@ -1,0 +1,22 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
+# CQ5 -- ¿Este objeto digital proviene de digitalizar un objeto físico, o nació digital?
+# ASK: true si existe un D2_Digitization_Process que produjo (L11_had_output) este objeto
+# digital Y que a su vez digitalizó (L1_digitized) un objeto físico -- es decir, "digitalizado",
+# no "nacido digital" (que en cambio se documentaría con D7_Digital_Machine_Event sin L1_digitized).
+PREFIX dig: <http://www.cidoc-crm.org/extensions/crmdig/>
+
+ASK {
+  ?process a dig:D2_Digitization_Process ;
+           dig:L11_had_output ?digitalObject ;
+           dig:L1_digitized ?physicalThing .
+}

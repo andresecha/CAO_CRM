@@ -1,0 +1,32 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
+# CHECK -- toda F30_Manifestation_Creation del corpus debe declarar al menos un responsable
+# editorial (editor científico O editor comercial/publisher) -- no ambos obligatoriamente.
+#
+# Corrección (2026-07-10): la formulación original exigía P14_has_scientific_editor para
+# TODAS las manifestaciones, asumiendo incorrectamente que ese rol es universal. Al enriquecer
+# el dataset de prueba con la edición Modern Library de 1929 (que declara P14_has_publisher
+# pero no un editor científico distinguido -- a diferencia de la edición Martineau, que sí lo
+# tiene), esta prueba falló legítimamente y reveló el error de la formulación original, no un
+# error de los datos. Se corrige aquí para reflejar la regla real: la responsabilidad editorial
+# debe estar documentada de alguna forma, pero el rol científico es opcional, no universal
+# (ver decisions/fr/informe-activite-editoriale-scientifique.md).
+PREFIX crm:   <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/>
+
+ASK {
+  FILTER NOT EXISTS {
+    ?creation a lrmoo:F30_Manifestation_Creation .
+    FILTER NOT EXISTS { ?creation crm:P14_has_scientific_editor ?editor }
+    FILTER NOT EXISTS { ?creation crm:P14_has_publisher ?publisher }
+  }
+}
