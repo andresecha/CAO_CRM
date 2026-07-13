@@ -1,0 +1,111 @@
+# CAO_CRM (Corpus Author Ontology CRM)
+# Copyright (c) 2026 Andres Echavarria Pelaez
+# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+# Encoding carried out under the scientific direction and support of Fatiha Idmhand
+#
+# This file is part of the CAO_CRM publication package, licensed under the
+# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+# License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+# Restricciones de uso reales del modulo, en el sentido de mundo cerrado (CWA)
+# que complementa el razonamiento OWL de mundo abierto (ver research/sources/
+# w3c-hcls-compiling-to-sparql.md, seccion "CWA vs UNA"): CIDOC-CRM/LRMoo/
+# CRMdig permiten formalmente que estas propiedades esten ausentes (mundo
+# abierto), pero un dato de instancia bien formado para CAO_CRM SI debe
+# llevarlas, porque son precisamente las que las cinco fases del modulo
+# (ver docs/intro*.html, "Justificacion del diseno") identifican como
+# necesarias para responder a las competency questions reales del proyecto.
+
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
+@prefix dig:   <http://www.cidoc-crm.org/extensions/crmdig/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+# F1_Work -- toda obra registrada debe tener al menos un evento de creacion
+# documentado (si no, no se puede responder CQ1 "quien es el autor original").
+lrmoo:F1_Work_Shape
+    a sh:NodeShape ;
+    sh:targetClass lrmoo:F1_Work ;
+    sh:property [
+        sh:path lrmoo:R16i_was_created_by ;
+        sh:minCount 1 ;
+        sh:class lrmoo:F27_Work_Creation ;
+        sh:message "F1_Work debe tener al menos un F27_Work_Creation asociado (R16i_was_created_by)." ;
+    ] .
+
+# F27_Work_Creation -- el evento de creacion debe declarar exactamente un
+# autor original (CQ1). Mas de uno, o ninguno, es un dato incompleto para
+# este modulo (aunque OWL lo permita en abstracto).
+lrmoo:F27_Work_Creation_Shape
+    a sh:NodeShape ;
+    sh:targetClass lrmoo:F27_Work_Creation ;
+    sh:property [
+        sh:path crm:P14_has_original_author ;
+        sh:minCount 1 ;
+        sh:message "F27_Work_Creation debe declarar al menos un P14_has_original_author." ;
+    ] .
+
+# F2_Expression co-tipada E33_Linguistic_Object -- debe declarar su lengua
+# (CQ2 "en que lengua esta escrita esta expresion concreta"). Ver Problema 2
+# del proceso de modelado (decisions/fr/problemes-et-solutions.md).
+crm:E33_Linguistic_Object_Shape
+    a sh:NodeShape ;
+    sh:targetClass crm:E33_Linguistic_Object ;
+    sh:property [
+        sh:path crm:P72_has_language ;
+        sh:minCount 1 ;
+        sh:class crm:E56_Language ;
+        sh:message "Toda E33_Linguistic_Object (Expresion co-tipada) debe declarar P72_has_language." ;
+    ] .
+
+# F3_Manifestation -- debe encarnar (R4_embodies) al menos una expresion:
+# una manifestacion sin expresion asociada no tiene contenido intelectual
+# identificable, solo un soporte material sin fuente.
+lrmoo:F3_Manifestation_Shape
+    a sh:NodeShape ;
+    sh:targetClass lrmoo:F3_Manifestation ;
+    sh:property [
+        sh:path lrmoo:R4_embodies ;
+        sh:minCount 1 ;
+        sh:class lrmoo:F2_Expression ;
+        sh:message "F3_Manifestation debe declarar al menos un R4_embodies hacia una F2_Expression." ;
+    ] .
+
+# F5_Item co-tipado E22_Human-Made_Object -- debe declarar su localizacion
+# actual (CQ3 "donde se conserva fisicamente el ejemplar Y"), via P54 o P55.
+# Ver Problema 3 del proceso de modelado (localizacion de un ejemplar fisico).
+crm:E22_Human-Made_Object_Location_Shape
+    a sh:NodeShape ;
+    sh:targetClass crm:E22_Human-Made_Object ;
+    sh:or (
+        [ sh:property [ sh:path crm:P54_has_current_permanent_location ; sh:minCount 1 ] ]
+        [ sh:property [ sh:path crm:P55_has_current_location ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "Todo E22_Human-Made_Object (Item co-tipado) debe declarar su ubicacion actual, mediante P54_has_current_permanent_location o P55_has_current_location." .
+
+# D1_Digital_Object -- debe llevar al menos una nota descriptiva minima
+# (identificador, procedencia de la digitalizacion, formato): un objeto
+# digital sin ninguna documentacion no es reutilizable ni citable.
+dig:D1_Digital_Object_Shape
+    a sh:NodeShape ;
+    sh:targetClass dig:D1_Digital_Object ;
+    sh:property [
+        sh:path crm:P3_has_note ;
+        sh:minCount 1 ;
+        sh:message "D1_Digital_Object debe llevar al menos un P3_has_note documentando su procedencia (identificador, formato, digitalizacion de origen)." ;
+    ] .
+
+# E30_Right -- todo derecho declarado debe llevar una etiqueta legible por
+# humanos: un E30_Right sin rdfs:label es una instancia opaca que no permite
+# responder CQ4 ("que derechos aplican... y quien los posee") sin inspeccionar
+# el propio grafo termino a termino.
+crm:E30_Right_Shape
+    a sh:NodeShape ;
+    sh:targetClass crm:E30_Right ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "E30_Right debe llevar al menos un rdfs:label legible." ;
+    ] .

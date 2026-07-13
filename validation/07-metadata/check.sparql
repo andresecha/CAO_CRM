@@ -1,0 +1,34 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+# Each block below is: a "# expect: true|false" directive line, then one ASK
+# query. check.sh pairs them up. Blocks are separated by blank lines.
+
+# expect: true
+ASK { ?o a owl:Ontology ; owl:versionIRI ?v . }
+
+# expect: true
+ASK { ?o a owl:Ontology ; dc:creator ?c . }
+
+# expect: true
+ASK { ?o a owl:Ontology ; dc:rights ?r . }
+
+# expect: true
+ASK { ?o a owl:Ontology ; owl:versionInfo ?vi . }
+
+# Regression checks for the 2026-07-02 finding: the ontology header at
+# http://www.CAO_CRM.org/ontology has SKOS's own dc:terms metadata (title,
+# creator, contributor) merged onto it verbatim, so Widoco/any consumer reading
+# terms:title reports the whole ontology as "SKOS Vocabulary". These must all
+# return false for the header to be considered clean; they currently do NOT
+# (see validation/07-metadata/README.md).
+
+# expect: false
+ASK { ?o a owl:Ontology ; terms:title "SKOS Vocabulary"@en . }
+
+# expect: false
+ASK { ?o a owl:Ontology ; terms:creator "Alistair Miles" . }
+
+# expect: false
+ASK { ?o a owl:Ontology ; terms:contributor "Dave Beckett" . }
