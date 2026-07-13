@@ -173,6 +173,7 @@ done
 # Invisible in the browser (display:none outside @media print).
 mkdir -p site/logos
 cp -f logos/ARIANE.svg site/logos/ARIANE.svg
+cp -f logos/ARIANE-dark.svg site/logos/ARIANE-dark.svg
 for lang in en fr es; do
   f="site/index-${lang}.html"
   [ -f "$f" ] && python3 postprocess_titlepage.py "$f" "$lang"
@@ -253,7 +254,7 @@ cat > site/index.html <<HTMLEOF
   h1 { font-size: 1.4rem; }
   p.subtitle { font-style: italic; color: #444; font-size: 0.95rem; margin: 0.3em 0; }
   ul { list-style: none; padding: 0; }
-  li { margin: 0.6rem 0; }
+  li { margin: 1.4rem 0; }
   a.lang { display: inline-block; padding: 0.5rem 1rem; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #1a1a1a; }
   a.lang:hover { background: #f0f0f0; }
   p.meta { color: #666; font-size: 0.9rem; }
@@ -269,14 +270,19 @@ cat > site/index.html <<HTMLEOF
 </head>
 <body>
 <h1>CAO_CRM (Corpus Author Ontology CRM)</h1>
-<p class="subtitle">Un cadre s&eacute;mantique d&eacute;velopp&eacute; par le groupe de travail &laquo;&nbsp;M&eacute;tadonn&eacute;es&nbsp;&raquo; du Consortium-HN ARIANE pour structurer l&rsquo;organisation, la description et l&rsquo;interop&eacute;rabilit&eacute; des m&eacute;tadonn&eacute;es d&eacute;crivant les corpus textuels.</p>
-<p class="subtitle">A semantic framework developed by the &ldquo;Metadata&rdquo; working group of the Consortium-HN ARIANE to structure the organization, description, and interoperability of metadata describing textual corpora.</p>
-<p class="subtitle">Un marco sem&aacute;ntico desarrollado por el grupo de trabajo &laquo;Metadatos&raquo; del Consorcio-HN ARIANE para estructurar la organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los metadatos que describen los corpus textuales.</p>
-<p>Choisir une langue / choose a language / elegir un idioma :</p>
 <ul>
-  <li><a class="lang" href="index-fr.html">🇫🇷 Français</a></li>
-  <li><a class="lang" href="index-en.html">🇬🇧 English</a></li>
-  <li><a class="lang" href="index-es.html">🇪🇸 Español</a></li>
+  <li>
+    <p class="subtitle">Un cadre s&eacute;mantique d&eacute;velopp&eacute; par le groupe de travail &laquo;&nbsp;M&eacute;tadonn&eacute;es&nbsp;&raquo; du Consortium-HN ARIANE pour structurer l&rsquo;organisation, la description et l&rsquo;interop&eacute;rabilit&eacute; des m&eacute;tadonn&eacute;es d&eacute;crivant les corpus textuels.</p>
+    <a class="lang" href="index-fr.html">🇫🇷 Français</a>
+  </li>
+  <li>
+    <p class="subtitle">A semantic framework developed by the &ldquo;Metadata&rdquo; working group of the Consortium-HN ARIANE to structure the organization, description, and interoperability of metadata describing textual corpora.</p>
+    <a class="lang" href="index-en.html">🇬🇧 English</a>
+  </li>
+  <li>
+    <p class="subtitle">Un marco sem&aacute;ntico desarrollado por el grupo de trabajo &laquo;Metadatos&raquo; del Consorcio-HN ARIANE para estructurar la organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los metadatos que describen los corpus textuales.</p>
+    <a class="lang" href="index-es.html">🇪🇸 Español</a>
+  </li>
 </ul>
 <p class="meta">Version PDF / PDF version / versión PDF :</p>
 <ul>
@@ -285,7 +291,10 @@ cat > site/index.html <<HTMLEOF
   <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-es.pdf">🇪🇸 PDF</a></li>
 </ul>
 <p class="meta">Version ${ONTOLOGY_VERSION} — Consortium HN Ariane / projet AMIS.</p>
-<img class="logo" src="logos/ARIANE.svg" alt="Consortium Huma-Num ARIANE">
+<picture>
+  <source srcset="logos/ARIANE-dark.svg" media="(prefers-color-scheme: dark)">
+  <img class="logo" src="logos/ARIANE.svg" alt="Consortium Huma-Num ARIANE">
+</picture>
 </body>
 </html>
 HTMLEOF
