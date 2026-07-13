@@ -44,3 +44,13 @@ docs/intro-pt.html
 docs/config-ro.properties
 docs/config-it.properties
 docs/config-pt.properties
+docs/i18n/translations-ro/
+docs/i18n/translations-it/
+docs/i18n/translations-pt/
+docs/i18n/glossary_crosswalk-ro.yaml
+docs/i18n/glossary_crosswalk-it.yaml
+docs/i18n/glossary_crosswalk-pt.yaml
+docs/i18n/CAO_CRM-1.0-i18n-ro.ttl
+docs/i18n/CAO_CRM-1.0-i18n-it.ttl
+docs/i18n/CAO_CRM-1.0-i18n-pt.ttl
+docs/i18n/review/
