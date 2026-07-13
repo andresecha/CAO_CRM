@@ -249,15 +249,18 @@ cat > site/index.html <<HTMLEOF
 <title>CAO_CRM (Corpus Author Ontology CRM)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; }
+  body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; text-align: center; }
   h1 { font-size: 1.4rem; }
+  p.subtitle { font-style: italic; color: #444; font-size: 0.95rem; margin: 0.3em 0; }
   ul { list-style: none; padding: 0; }
   li { margin: 0.6rem 0; }
   a.lang { display: inline-block; padding: 0.5rem 1rem; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #1a1a1a; }
   a.lang:hover { background: #f0f0f0; }
   p.meta { color: #666; font-size: 0.9rem; }
+  img.logo { width: 160px; height: auto; margin-top: 2rem; }
   @media (prefers-color-scheme: dark) {
     body { background: #1a1a1a; color: #eee; }
+    p.subtitle { color: #aaa; }
     a.lang { border-color: #444; color: #eee; }
     a.lang:hover { background: #2a2a2a; }
     p.meta { color: #999; }
@@ -265,8 +268,11 @@ cat > site/index.html <<HTMLEOF
 </style>
 </head>
 <body>
-<h1>CAO_CRM — Corpus Author Ontology CRM</h1>
-<p>Documentation générée automatiquement (Widoco) à partir de <code>ontology/${ONTOLOGY_BASENAME}</code>. Choisir une langue / choose a language / elegir un idioma :</p>
+<h1>CAO_CRM (Corpus Author Ontology CRM)</h1>
+<p class="subtitle">Un cadre s&eacute;mantique d&eacute;velopp&eacute; par le groupe de travail &laquo;&nbsp;M&eacute;tadonn&eacute;es&nbsp;&raquo; du Consortium-HN ARIANE pour structurer l&rsquo;organisation, la description et l&rsquo;interop&eacute;rabilit&eacute; des m&eacute;tadonn&eacute;es d&eacute;crivant les corpus textuels.</p>
+<p class="subtitle">A semantic framework developed by the &ldquo;Metadata&rdquo; working group of the Consortium-HN ARIANE to structure the organization, description, and interoperability of metadata describing textual corpora.</p>
+<p class="subtitle">Un marco sem&aacute;ntico desarrollado por el grupo de trabajo &laquo;Metadatos&raquo; del Consorcio-HN ARIANE para estructurar la organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los metadatos que describen los corpus textuales.</p>
+<p>Choisir une langue / choose a language / elegir un idioma :</p>
 <ul>
   <li><a class="lang" href="index-fr.html">🇫🇷 Français</a></li>
   <li><a class="lang" href="index-en.html">🇬🇧 English</a></li>
@@ -279,6 +285,7 @@ cat > site/index.html <<HTMLEOF
   <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-es.pdf">🇪🇸 PDF</a></li>
 </ul>
 <p class="meta">Version ${ONTOLOGY_VERSION} — Consortium HN Ariane / projet AMIS.</p>
+<img class="logo" src="logos/ARIANE.svg" alt="Consortium Huma-Num ARIANE">
 </body>
 </html>
 HTMLEOF
