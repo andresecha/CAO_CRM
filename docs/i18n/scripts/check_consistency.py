@@ -35,9 +35,10 @@ def whole_word(term: str, text: str) -> bool:
 
 
 def main():
-    if len(sys.argv) != 4:
-        sys.exit("usage: check_consistency.py <translations-dir> <glossary_crosswalk.yaml> <term_inventory.json>")
+    if len(sys.argv) < 4:
+        sys.exit("usage: check_consistency.py <translations-dir> <glossary_crosswalk.yaml> <term_inventory.json> [lang [lang ...]]")
     tdir, crosswalk_path, inventory_path = sys.argv[1], sys.argv[2], sys.argv[3]
+    langs = sys.argv[4:] or ["fr", "es"]
 
     with open(crosswalk_path, encoding="utf-8") as f:
         crosswalk = yaml.safe_load(f)
@@ -60,7 +61,7 @@ def main():
                 continue
             en_source = f"{inv.get('label_en', '')} {inv.get('comment_en', '')}"
 
-            for lang in ("fr", "es"):
+            for lang in langs:
                 translated = f"{entry.get('label', {}).get(lang, '')} {entry.get('comment', {}).get(lang, '')}"
                 if not translated.strip():
                     continue
