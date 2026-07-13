@@ -88,6 +88,77 @@ PARAGRAPHS = {
         "valiosos consejos, recomendaciones e intercambios a lo largo de la elaboración de "
         "esta ontología.",
     ),
+    # Working (unofficial) Romanian/Italian/Portuguese translations, produced by dedicated
+    # translation agents (2026-07-13), not yet vetted by the working group. No ANCHORS
+    # entry yet for these three: Widoco has never been run with lang=ro/it/pt for this
+    # project (these languages aren't in docs/build.sh's language loop -- see
+    # docs/config-{ro,it,pt}.properties, currently unwired/gitignored pending publication
+    # decision), so the exact wording of Widoco's own fixed tool-credits paragraph in these
+    # languages has never been observed and must not be guessed. Add the real ANCHORS
+    # entry (copy the fixed opening words from an actual generated index-{ro,it,pt}.html)
+    # before wiring these languages into main()'s ANCHORS check.
+    "ro": (
+        "Grupul de lucru «Metadate» al Consorțiului Huma-Num ARIANE dorește să le "
+        "mulțumească călduros lui Andrés Echavarría Peláez și Mélanie Bouland pentru "
+        "implicarea lor remarcabilă în conceperea, coordonarea și dezvoltarea acestei "
+        "ontologii.",
+        "De asemenea, mulțumește infrastructurii de cercetare IR* Huma-Num pentru "
+        "sprijinul acordat și, în mod special, lui Fatiha Idmhand, Ioana Galleron și "
+        "Sabine Loudcher pentru implicarea lor ca și coordonatoare ale Consorțiului ARIANE "
+        "în perioada 2023-2026, precum și pentru rolul lor de responsabile și membre "
+        "active ale grupului de lucru.",
+        "Adresează, de asemenea, sincere mulțumiri tuturor persoanelor implicate în "
+        "proiectul AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni "
+        "Guizani, Roxana Patras, Amelia Sanz și Simone Rebora, a căror atenție, observații "
+        "și schimburi de idei au contribuit la îmbogățirea acestei lucrări, situată la "
+        "intersecția dintre modelarea cunoașterii, tehnologiile Web-ului semantic, "
+        "umanioarele digitale și studiile de literatură comparată.",
+        "Grupul de lucru dorește de asemenea să mulțumească membrilor consorțiului "
+        "Huma-Num MASAPlus, și în mod special lui Florian Hivert și Olivier Marlet, "
+        "pentru sfaturile lor avizate, recomandările și schimburile de idei pe parcursul "
+        "elaborării acestei ontologii.",
+    ),
+    "it": (
+        "Il gruppo di lavoro «Metadati» del Consorzio Huma-Num ARIANE desidera esprimere "
+        "la propria più sincera gratitudine ad Andrés Echavarría Peláez e Mélanie Bouland "
+        "per il loro straordinario contributo alla progettazione, al coordinamento e allo "
+        "sviluppo di questa ontologia.",
+        "Il gruppo di lavoro ringrazia inoltre l'infrastruttura di ricerca IR* Huma-Num "
+        "per il suo sostegno, e rivolge un ringraziamento particolare a Fatiha Idmhand, "
+        "Ioana Galleron e Sabine Loudcher per il loro impegno come coordinatrici del "
+        "Consorzio ARIANE dal 2023 al 2026, nonché per il loro ruolo di responsabili e "
+        "membri attive del gruppo di lavoro.",
+        "Il gruppo di lavoro desidera inoltre ringraziare tutte le persone coinvolte nel "
+        "progetto AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni "
+        "Guizani, Roxana Patras, Amelia Sanz e Simone Rebora, la cui lettura attenta, i "
+        "cui commenti e i cui scambi hanno contribuito ad arricchire notevolmente questo "
+        "lavoro, che si colloca all'intersezione tra la modellazione della conoscenza, le "
+        "tecnologie del Web semantico, le discipline umanistiche digitali e gli studi "
+        "letterari comparati.",
+        "Il gruppo di lavoro desidera altresì ringraziare i membri del consorzio Huma-Num "
+        "MASAPlus, e in particolare Florian Hivert e Olivier Marlet, per i loro preziosi "
+        "consigli, le loro raccomandazioni e i loro scambi lungo tutto lo sviluppo di "
+        "questa ontologia.",
+    ),
+    "pt": (
+        "O grupo de trabalho «Metadados» do Consórcio Huma-Num ARIANE deseja agradecer "
+        "calorosamente a Andrés Echavarría Peláez e a Mélanie Bouland pelo seu notável "
+        "envolvimento na conceção, no acompanhamento e no desenvolvimento desta ontologia.",
+        "Agradece também à infraestrutura de investigação IR* Huma-Num pelo seu apoio, e "
+        "em particular a Fatiha Idmhand, Ioana Galleron e Sabine Loudcher, pelo seu "
+        "empenho como coordenadoras do Consórcio ARIANE de 2023 a 2026, bem como pelo seu "
+        "papel de responsáveis e membros ativas do grupo de trabalho.",
+        "Dirige ainda os seus sinceros agradecimentos a todas as pessoas envolvidas no "
+        "projeto AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni "
+        "Guizani, Roxana Patras, Amelia Sanz e Simone Rebora, cujo olhar atento, "
+        "comentários e trocas de ideias contribuíram para enriquecer este trabalho, "
+        "situado na interseção entre a modelação do conhecimento, as tecnologias da Web "
+        "semântica, as humanidades digitais e os estudos literários comparados.",
+        "O grupo de trabalho deseja também agradecer aos membros do consórcio Huma-Num "
+        "MASAPlus, e em particular a Florian Hivert e Olivier Marlet, pelos seus "
+        "conselhos avisados, recomendações e trocas de ideias ao longo da elaboração "
+        "desta ontologia.",
+    ),
 }
 
 
