@@ -1,3 +1,15 @@
+<!--
+CAO_CRM (Corpus Author Ontology CRM)
+Copyright (c) 2026 Andres Echavarria Pelaez
+Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+Encoding carried out under the scientific direction and support of Fatiha Idmhand
+
+This file is part of the CAO_CRM publication package, licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
+
 # Guía para resolver conflictos de Git priorizando la versión local
 
 Dado que tu rama local (`main`) y la remota (`origin/main`) han divergido, al intentar unirlas (hacer un `git pull` o `git merge`) podrías encontrarte con conflictos en algunos documentos. 
