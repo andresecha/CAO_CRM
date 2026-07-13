@@ -12,13 +12,19 @@
 	 prov:wasAttributedTo :agent3;
 	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo :agent5;
+	 prov:wasAttributedTo :agent6;
+	 prov:wasAttributedTo :agent7;
+	 prov:wasAttributedTo :agent8;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <https://www.cao-crm.eu/ontology/1.0>;
 	 prov:wasGeneratedAt "2026-07-01";
 .
-:agent0 a prov:Agent; foaf:name " Mélanie Bouland".
-:agent1 a prov:Agent; foaf:name "Fatiha Idmhand".
-:agent2 a prov:Agent; foaf:name " Ioana Galleron".
-:agent3 a prov:Agent; foaf:name " Sabine Loudcher".
-:agent4 a prov:Agent; foaf:name " Ala Eddine Laouir".
-:agent5 a prov:Agent; foaf:name " Ameni Guizani".
+:agent0 a prov:Agent; foaf:name "Mélanie Bouland (CNRS, Consortium-HN ARIANE, France)".
+:agent1 a prov:Agent; foaf:name " Fatiha Idmhand (Institut des textes et Manuscrits modernes, UMR8132, Université de Poitiers, France)".
+:agent2 a prov:Agent; foaf:name " Ioana Galleron (LATTICE, UMR8094, Université Sorbonne Nouvelle, France)".
+:agent3 a prov:Agent; foaf:name " Sabine Loudcher (ERIC, Université Lyon 2, France)".
+:agent4 a prov:Agent; foaf:name " Ala Eddine Laouir (CNRS, AMIS, Consortium-HN ARIANE, France)".
+:agent5 a prov:Agent; foaf:name " Ameni Guizani (CNRS, AMIS, Consortium-HN ARIANE, France)".
+:agent6 a prov:Agent; foaf:name " Amelia Sanz (Grupo de Investigación LEETHI, Universidad Complutense, Madrid, Espagne)".
+:agent7 a prov:Agent; foaf:name " Roxana Patras (Universitatea „Alexandru Ioan Cuza”, Iaşi, Roumanie)".
+:agent8 a prov:Agent; foaf:name " Simone Rebora (Verona University, Verone, Italie)".
