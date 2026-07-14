@@ -28,7 +28,7 @@ That is why the validation repository applies a **chain of eight automated check
 | 5 | Header metadata | `make metadata` | ✅ PASS (7/7) |
 | 6 | Design quality (OOPS!) | `make quality` | ✅ PASS |
 | 7 | Structural metrics (ROBOT report) | `make metrics` | ✅ PASS |
-| 8 | FAIR principles (FOOPS!) | `make fair` | ✅ PASS — 0.79/1.0 (real local run) |
+| 8 | FAIR principles (FOOPS!) | `make fair` | ✅ PASS — 0.80/1.0 (real local run) |
 
 All eight tests pass, with no exception. This is the result of verification work carried out in several successive waves, each more demanding than the last — the full detail of this journey, with citations and evidence, is in `decisions/fr/problemes-et-solutions.md` and in the chain of three independent audits (`auditoria-1-rdf.md`, `auditoria-2-documentacion-y-conformidad.md`, `auditoria-3-verificacion-final.md`).
 
@@ -62,7 +62,7 @@ This test scans the model for common oversights: properties lacking an explicit 
 
 ## 8. FAIR principles
 
-FAIR is a set of principles (that a resource be easy to find, access, combine with others, and reuse) used in open science. This test now runs for real, locally: the official FOOPS! release jar (version 0.4.0) is downloaded and run as a small server, then queried through its own documented REST endpoint (`assessOntologyFile`) — no need for the public online service, whose REST contract was never reliably documented. Score obtained: **0.79 out of 1.0** (Interoperable 3/3, Findable 3/4, Reusable 5/8; the Accessible dimension is not evaluated in local-file mode, since it requires a dereferenceable public URI). Full breakdown, dimension by dimension, is in `validation/08-fair/README.md`.
+FAIR is a set of principles (that a resource be easy to find, access, combine with others, and reuse) used in open science. This test now runs for real, locally: the official FOOPS! release jar (version 0.4.0) is downloaded and run as a small server, then queried through its own documented REST endpoint (`assessOntologyFile`) — no need for the public online service, whose REST contract was never reliably documented. Score obtained: **0.80 out of 1.0** (Interoperable 3/3, Findable 3/4, Reusable 6/8; the Accessible dimension is not evaluated in local-file mode, since it requires a dereferenceable public URI). Reusable rose from 5/8 to 6/8 on July 14, once the ontology's Nakala DOI was added (`dcterms:identifier`). Full breakdown, dimension by dimension, is in `validation/08-fair/README.md`.
 
 ## Competency questions and auto-generated documentation
 
