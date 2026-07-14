@@ -280,7 +280,7 @@ La ontología se verifica en cada modificación mediante una cadena de herramien
 - el alineamiento estructural con las fuentes oficiales (`robot diff`);
 - la detección de posibles errores de diseño (OOPS!).
 
-En la fecha de publicación, el módulo es lógicamente coherente: el razonador no detecta ninguna clase insatisfacible, y las ocho categorías de validación, incluida la evaluación FAIR (ejecutada en local, puntuación 0,79/1,0), se ejecutan con éxito, sin excepción.
+En la fecha de publicación, el módulo es lógicamente coherente: el razonador no detecta ninguna clase insatisfacible, y las ocho categorías de validación, incluida la evaluación FAIR (ejecutada en local, puntuación 0,80/1,0), se ejecutan con éxito, sin excepción.
 
 Esta coherencia no constituye un simple resultado automático: es el resultado de un proceso de verificación exhaustivo. El detalle completo de este proceso, que incluye cada decisión de modelado no trivial junto con su justificación basada en referencias oficiales, se presenta en la sección siguiente.
 
@@ -804,6 +804,11 @@ CAO_CRM se expresa en OWL 2 y RDF Schema. Con la única excepción de las cinco 
 <li>
 <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
 <span>description</span>
+</a>
+</li>
+<li>
+<a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">
+<span>identifier</span>
 </a>
 </li>
 <li>
@@ -4741,6 +4746,7 @@ Esta sección introduce más detalles sobre cada clase y propiedad definida por 
 <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
 <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
 <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+<li><a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier"> <span>identifier</span> </a></li>
 <li><a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued"> <span>issued</span> </a></li>
 <li><a href="#http://purl.org/dc/elements/1.1/license" title="http://purl.org/dc/elements/1.1/license"> <span>license</span> </a></li>
 <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
@@ -4781,6 +4787,10 @@ Esta sección introduce más detalles sobre cada clase y propiedad definida por 
 <div class="entity" id="http://purl.org/dc/terms/description">
 <h3>description<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
 <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+</div>
+<div class="entity" id="http://purl.org/dc/terms/identifier">
+<h3>identifier<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+<p><strong>IRI:</strong> http://purl.org/dc/terms/identifier</p>
 </div>
 <div class="entity" id="http://purl.org/dc/terms/issued">
 <h3>issued<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
