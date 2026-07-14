@@ -11,11 +11,33 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 -->
 # CAO_CRM — paquet de publication
 
+<p align="center">
+  <img src="https://img.shields.io/badge/CAO__CRM-Ontology%20v1.0-6f42c1?style=for-the-badge" alt="CAO_CRM — Ontology v1.0" />
+  <img src="https://img.shields.io/badge/Domain-CIDOC--CRM%20%C2%B7%20LRMoo%20%C2%B7%20CRMdig-ff6f00?style=flat-square" alt="Domain: CIDOC-CRM, LRMoo, CRMdig" />
+  <img src="https://img.shields.io/badge/Docs-FR%20%7C%20ES%20%7C%20EN-0d47a1?style=flat-square" alt="Documentation in French, Spanish and English" />
+</p>
+<p align="center">
+  <a href="https://github.com/andresecha/CAO_CRM/actions/workflows/validate.yml"><img src="https://github.com/andresecha/CAO_CRM/actions/workflows/validate.yml/badge.svg" alt="Validation pipeline status" /></a>
+  <a href="https://github.com/andresecha/CAO_CRM/actions/workflows/pages.yml"><img src="https://github.com/andresecha/CAO_CRM/actions/workflows/pages.yml/badge.svg" alt="GitHub Pages deployment status" /></a>
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.12" />
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-9e9e9e?style=flat-square" alt="License: CC BY-NC-SA 4.0" /></a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Digital_Humanities-yes-2e7d32?style=flat-square" alt="Digital Humanities" />
+  <img src="https://img.shields.io/badge/FAIR%20(FOOPS!)-0.79%2F1.0-00796b?style=flat-square" alt="FAIR score: 0.79/1.0" />
+  <img src="https://img.shields.io/badge/Validation-8%2F8%20passing-388e3c?style=flat-square" alt="8/8 validation categories passing" />
+  <img src="https://img.shields.io/badge/Terms-130%20(bounded%20module)-3f51b5?style=flat-square" alt="130 terms in the bounded module" />
+</p>
+<p align="center">
+  <a href="https://www.cao-crm.eu/"><img src="https://img.shields.io/badge/Site-www.cao--crm.eu-000000?style=flat-square&logo=googlechrome&logoColor=white" alt="Published documentation site" /></a>
+  <a href="https://github.com/andresecha/CAO_CRM/issues"><img src="https://img.shields.io/github/issues/andresecha/CAO_CRM?style=flat-square&color=fb8c00" alt="Open issues" /></a>
+</p>
+
 **CAO_CRM** (*Corpus Author Ontology CRM*) est le modèle ontologique développé au sein du Consortium HN Ariane pour structurer les métadonnées des corpus littéraires, dans le cadre du projet AMIS. Ce dossier rassemble la version finale (bornée et composée) de l'ontologie, sa documentation pédagogique complète en français, en espagnol et en anglais, ses décisions de conception justifiées, une visualisation interactive du modèle, et l'ensemble des tests de validation préalables à la publication.
 
 Ce document est le point d'entrée. La documentation pédagogique existe **en français, en espagnol et en anglais** (voir section 8) ; les citations littérales des sources officielles (CIDOC-CRM, LRMoo, CRMdig) restent, elles, toujours dans leur langue d'origine (l'anglais), pour ne jamais paraphraser ni déformer un texte de référence.
 
-**Dernière mise à jour de ce document : 10 juillet 2026.**
+**Dernière mise à jour de ce document : 14 juillet 2026.**
 
 ---
 
@@ -38,6 +60,103 @@ Ce document est le point d'entrée. La documentation pédagogique existe **en fr
 | `.github/workflows/pages.yml` | **Pipeline GitHub Actions, publication** : publie `docs/site/` tel quel sur **GitHub Pages**, avec le domaine propre `www.cao-crm.eu`, à chaque push sur la branche par défaut (voir section 5). |
 | `.gitlab-ci.yml` | Pipeline GitLab CI/CD historique, conservé pour la copie institutionnelle de ce dépôt sur GitLab (voir section 5) — inactif ici, GitHub Actions ne l'exécute pas. |
 | `.github/workflows/validate.yml` | Équivalent GitHub Actions du job `validate` ci-dessus — ne s'exécute que si ce dépôt est un jour poussé/miroité vers GitHub ; sans effet sur GitLab. |
+
+### Arborescence complète
+
+Les 174 fichiers suivis par Git, dossier par dossier (les fichiers ignorés — sorties de build regénérables, brouillons de traduction non encore revus — n'apparaissent pas ; voir `.gitignore`). Chaque dossier de premier niveau a son propre `README.md` avec le détail fichier par fichier ; le tableau ci-dessus reste la référence pour le *pourquoi*, cette arborescence pour le *où*.
+
+```
+./
+├── CNAME
+├── competency-questions/
+│   ├── CQ-001-a-005-stendhal.md
+│   └── README.md
+├── decisions/
+│   ├── README.md
+│   ├── es/
+│   │   ├── ADR-001-disjointness.md
+│   │   ├── ADR-002-idiomas-LRMoo-CRMdig.md
+│   │   ├── ADR-003-autoria-y-procedencia.md
+│   │   ├── informe-completitud-labels-domain-range.md
+│   │   ├── informe-implementacion-RDF-modulo-acotado.md
+│   │   ├── informe-integracion-properties_extracted.md
+│   │   └── informe-requisitos-publicacion-CAO_CRM.md
+│   └── fr/
+│       ├── ADR-001-disjointness.md
+│       ├── ADR-002-idiomas-LRMoo-CRMdig.md
+│       ├── ADR-003-autoria-y-procedencia.md
+│       ├── auditoria-1-rdf.md
+│       ├── auditoria-2-documentacion-y-conformidad.md
+│       ├── auditoria-3-verificacion-final.md
+│       ├── complete-model.md
+│       ├── informe-activite-editoriale-scientifique.md
+│       ├── informe-completitud-labels-domain-range.md
+│       ├── informe-implementacion-RDF-modulo-acotado.md
+│       ├── informe-P14-roles-autorat.md
+│       └── problemes-et-solutions.md
+├── docs/
+│   ├── bibliography.html
+│   ├── build.sh
+│   ├── config-{en,es,fr}.properties
+│   ├── i18n/
+│   │   ├── CAO_CRM-1.0-i18n.ttl
+│   │   ├── glossary_crosswalk.yaml
+│   │   ├── README.md
+│   │   ├── scripts/
+│   │   │   ├── build_review_doc.py
+│   │   │   ├── check_consistency.py
+│   │   │   ├── compile_i18n_overlay.py
+│   │   │   ├── extract_inventory.py
+│   │   │   └── prepend_review_frontmatter.py
+│   │   ├── term_inventory.json
+│   │   └── translations/               (8 lots thématiques .yaml)
+│   ├── intro{-en,-es,}.html
+│   ├── logos/ARIANE{-dark,}.svg
+│   ├── postprocess_*.py                (5 scripts de post-traitement Widoco)
+│   ├── README.md
+│   └── site/                           (documentation HTML/PDF générée, publiée sur GitHub Pages)
+├── documentation/
+│   ├── README.md
+│   ├── en/  (10 fiches .md)
+│   ├── es/  (10 fiches .md)
+│   └── fr/  (10 fiches .md)
+├── .github/workflows/
+│   ├── pages.yml
+│   └── validate.yml
+├── .gitignore
+├── .gitlab-ci.yml
+├── graph/
+│   ├── build_graph.py
+│   ├── CAO_CRM-1.0-graph.html
+│   ├── lib/                            (bibliothèques JS vendorisées : vis-network, tom-select)
+│   └── README.md
+├── imports/
+│   ├── fetch.sh
+│   ├── merge.sh
+│   ├── module-terms.txt
+│   └── README.md
+├── Makefile
+├── ontology/
+│   └── CAO_CRM-1.0.{rdf,ttl,nt,jsonld,owx}
+├── README.md
+├── requirements.txt
+├── scripts/
+│   ├── check-watermark.sh
+│   ├── install-tools.sh
+│   ├── reserialize-ontology.py
+│   ├── run-competency-questions.sh
+│   └── README.md
+├── sparql/
+│   ├── ask/     (3 requêtes .rq)
+│   ├── select/  (4 requêtes .rq)
+│   └── README.md
+├── test-data/
+│   ├── PROVENANCE-stendhal-*.md
+│   ├── README.md
+│   └── stendhal-le-rouge-et-le-noir.ttl
+└── validation/
+    └── 01-syntax/ … 08-fair/           (check.sh + README.md par catégorie, plus shapes.ttl et check.sparql où pertinent)
+```
 
 ---
 
@@ -234,3 +353,23 @@ Cette distinction, ainsi que les outils cités ci-dessous, figurent aussi direct
 - [Widoco](https://github.com/dgarijo/Widoco) — génération de la documentation HTML navigable (`docs/site/`).
 - [pyvis](https://pyvis.readthedocs.io/) / [rdflib](https://rdflib.readthedocs.io/) — génération du graphe interactif (`graph/`).
 - Chrome/Chromium (mode headless) — export de la documentation HTML en PDF (`docs/site/*.pdf`).
+
+---
+
+## 10. Comment citer ce dépôt
+
+Deux citations distinctes, selon ce qui est réutilisé — le modèle lui-même, ou les données de recherche qui documentent sa construction.
+
+**Le modèle (ce dépôt — `ontology/CAO_CRM-1.0.rdf`, identique à `dcterms:bibliographicCitation` dans l'en-tête du fichier, voir section 9) :**
+
+- **fr :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM (Corpus Author Ontology CRM)*, version 1.0. Consortium Huma-Num ARIANE. <https://www.cao-crm.eu/ontology/1.0>
+- **es :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM (Corpus Author Ontology CRM)*, versión 1.0. Consorcio Huma-Num ARIANE. <https://www.cao-crm.eu/ontology/1.0>
+- **en :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM (Corpus Author Ontology CRM)*, version 1.0. Consortium Huma-Num ARIANE. <https://www.cao-crm.eu/ontology/1.0>
+
+**Les données de recherche** (diagramme conceptuel, décisions de modélisation, documentation pédagogique, couche de traduction de travail — voir la collection Nakala séparée, `data-publication/`, hors de ce dépôt de code) :
+
+- **fr :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM — données de recherche* [Collection]. Nakala. [DOI en attente — collection non encore publiée]
+- **es :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM — datos de investigación* [Colección]. Nakala. [DOI pendiente — colección aún no publicada]
+- **en :** Echavarría Peláez, Andrés Felipe (2026). *CAO_CRM — research data* [Collection]. Nakala. [DOI pending — collection not yet published]
+
+Chacun des huit "data" qui composent cette collection (voir `data-publication/COLLECTION-METADATA-nakala.md`) a en plus sa propre citation suggérée, avec sa propre autorité, dans son `METADATA-nakala.md` respectif — utile pour citer, par exemple, uniquement la couche de traduction espagnole sans citer l'ensemble de la collection.
