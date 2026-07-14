@@ -28,7 +28,7 @@ C'est pourquoi le dépôt de validation applique une **chaîne de huit vérifica
 | 5 | Métadonnées de l'en-tête | `make metadata` | ✅ PASS (7/7) |
 | 6 | Qualité de conception (OOPS!) | `make quality` | ✅ PASS |
 | 7 | Métriques structurelles (ROBOT report) | `make metrics` | ✅ PASS |
-| 8 | Principes FAIR (FOOPS!) | `make fair` | ✅ PASS — 0,79/1,0 (exécution locale réelle) |
+| 8 | Principes FAIR (FOOPS!) | `make fair` | ✅ PASS — 0,80/1,0 (exécution locale réelle) |
 
 Les huit tests passent tous, sans exception. C'est le résultat d'un travail de vérification mené en plusieurs vagues successives, chacune plus exigeante que la précédente — le détail complet de ce parcours, avec citations et preuves, se trouve dans `decisions/fr/problemes-et-solutions.md` et dans la chaîne de trois audits indépendants (`auditoria-1-rdf.md`, `auditoria-2-documentacion-y-conformidad.md`, `auditoria-3-verificacion-final.md`).
 
@@ -62,7 +62,7 @@ Ce test parcourt le modèle à la recherche de négligences courantes : proprié
 
 ## 8. Principes FAIR
 
-FAIR est un ensemble de principes (qu'une ressource soit facile à trouver, à consulter, à combiner avec d'autres et à réutiliser) employé en science ouverte. Ce test s'exécute désormais réellement, en local : le jar officiel de FOOPS! (version 0.4.0) est téléchargé et lancé comme un petit serveur, puis interrogé via son propre point d'accès REST documenté (`assessOntologyFile`) — plus besoin du service public en ligne, dont le contrat REST n'a jamais été documenté de façon fiable. Score obtenu : **0,79 sur 1,0** (Interopérable 3/3, Trouvable 3/4, Réutilisable 5/8 ; la dimension Accessible n'est pas évaluée en mode fichier local, elle exige une URI publique déréférençable). Le détail complet, dimension par dimension, est dans `validation/08-fair/README.md`.
+FAIR est un ensemble de principes (qu'une ressource soit facile à trouver, à consulter, à combiner avec d'autres et à réutiliser) employé en science ouverte. Ce test s'exécute désormais réellement, en local : le jar officiel de FOOPS! (version 0.4.0) est téléchargé et lancé comme un petit serveur, puis interrogé via son propre point d'accès REST documenté (`assessOntologyFile`) — plus besoin du service public en ligne, dont le contrat REST n'a jamais été documenté de façon fiable. Score obtenu : **0,80 sur 1,0** (Interopérable 3/3, Trouvable 3/4, Réutilisable 6/8 ; la dimension Accessible n'est pas évaluée en mode fichier local, elle exige une URI publique déréférençable). Réutilisable est passé de 5/8 à 6/8 le 14 juillet, avec l'ajout du DOI Nakala de l'ontologie (`dcterms:identifier`). Le détail complet, dimension par dimension, est dans `validation/08-fair/README.md`.
 
 ## Questions de compétence et documentation générée automatiquement
 
