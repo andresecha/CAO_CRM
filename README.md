@@ -9,7 +9,7 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 License (CC BY-NC-SA 4.0). To view a copy of this license, visit
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 -->
-# CAO_CRM — paquet de publication
+#  CAO_CRM 1.0 — módulo ontológico (Corpus Author Ontology CRM)
 
 <p align="center">
   <a href="https://nakala.fr/10.34847/nkl.ae3bv5ji"><img src="https://img.shields.io/badge/CAO__CRM-Ontology%20v1.0-D5008F?style=plastic" alt="CAO_CRM — Ontology v1.0 (Nakala)" /></a>
