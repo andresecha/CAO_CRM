@@ -51,7 +51,7 @@ FILES=$(find . \
      -o -path ./docs/site -o -path ./imports/vendor \
      -o -name __pycache__ -o -name out \) -prune -o \
   -type f \( -name '*.md' -o -name '*.sh' -o -name '*.py' -o -name '*.rq' \
-             -o -name '*.rdf' -o -name '*.ttl' -o -name '*.nt' \) -print \
+             -o -name '*.rdf' -o -name '*.ttl' -o -name '*.nt' -o -name '*.owx' \) -print \
   | grep -v -e '/imports/module-terms\.txt$' -e '/docs/i18n/CAO_CRM-1\.0-i18n\.ttl$' \
             -e '/imports/merged.*\.ttl$' -e '/ontology/CAO_CRM-2\.[05]\.rdf$' \
   | sort)
@@ -89,11 +89,16 @@ for f in "${MISSING[@]}"; do
     *.rq|*.ttl|*.nt)
       { printf '# CAO_CRM (Corpus Author Ontology CRM)\n# Copyright (c) 2026 Andres Echavarria Pelaez\n# Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)\n# Encoding carried out under the scientific direction and support of Fatiha Idmhand\n#\n# This file is part of the CAO_CRM publication package, licensed under the\n# Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International\n# License (CC BY-NC-SA 4.0). To view a copy of this license, visit\n# https://creativecommons.org/licenses/by-nc-sa/4.0/\n#\n\n'; cat "$f"; } > "$f.tmp" && mv "$f.tmp" "$f"
       ;;
-    *.rdf)
+    *.rdf|*.owx)
       # XML comments forbid a literal "--" anywhere inside them (XML spec) -- use an
       # em dash here instead of the "--" used in every other file's header, or ROBOT/
       # rdflib's XML parser fails with a cryptic "not well-formed (invalid token)".
+      # The leading XML declaration (<?xml ...?>) is matched with a regex, not a fixed
+      # string: rdflib emits encoding="utf-8" in it (ontology/*.rdf), ROBOT's OWL/XML
+      # converter doesn't (ontology/*.owx) -- either way it must stay the very first
+      # line, before this comment, per the XML spec.
       python3 - "$f" <<'PYEOF'
+import re
 import sys
 path = sys.argv[1]
 s = open(path, encoding="utf-8").read()
@@ -109,8 +114,9 @@ License (CC BY-NC-SA 4.0). To view a copy of this license, visit
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 -->
 '''
-marker = '<?xml version="1.0" encoding="utf-8"?>\n'
-if s.startswith(marker):
+m = re.match(r'<\?xml[^>]*\?>\n?', s)
+if m:
+    marker = m.group(0)
     s = marker + header + s[len(marker):]
 else:
     s = header + s
