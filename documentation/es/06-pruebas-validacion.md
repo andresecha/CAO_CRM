@@ -28,7 +28,7 @@ Por eso el repositorio de validación aplica una **cadena de ocho verificaciones
 | 5 | Metadatos del encabezado | `make metadata` | ✅ PASS (7/7) |
 | 6 | Calidad de diseño (OOPS!) | `make quality` | ✅ PASS |
 | 7 | Métricas estructurales (ROBOT report) | `make metrics` | ✅ PASS |
-| 8 | Principios FAIR (FOOPS!) | `make fair` | ✅ PASS — 0,79/1,0 (ejecución local real) |
+| 8 | Principios FAIR (FOOPS!) | `make fair` | ✅ PASS — 0,80/1,0 (ejecución local real) |
 
 Las ocho pruebas pasan, sin excepción. Es el resultado de un trabajo de verificación hecho en varias oleadas sucesivas, cada una más exigente que la anterior —el detalle completo de este recorrido, con citas y pruebas, está en `decisions/fr/problemes-et-solutions.md` y en la cadena de tres auditorías independientes (`auditoria-1-rdf.md`, `auditoria-2-documentacion-y-conformidad.md`, `auditoria-3-verificacion-final.md`).
 
@@ -62,7 +62,7 @@ Esta prueba recorre el modelo en busca de descuidos frecuentes: propiedades sin 
 
 ## 8. Principios FAIR
 
-FAIR es un conjunto de principios (que un recurso sea fácil de encontrar, de consultar, de combinar con otros y de reutilizar) empleado en ciencia abierta. Esta prueba ahora se ejecuta de verdad, en local: se descarga y lanza el jar oficial de FOOPS! (versión 0.4.0) como un pequeño servidor, y se consulta su propio endpoint REST documentado (`assessOntologyFile`) —ya no hace falta el servicio público en línea, cuyo contrato REST nunca se documentó de forma fiable. Puntuación obtenida: **0,79 sobre 1,0** (Interoperable 3/3, Encontrable 3/4, Reutilizable 5/8; la dimensión Accesible no se evalúa en modo archivo local, exige una URI pública dereferenciable). El detalle completo, por dimensión, está en `validation/08-fair/README.md`.
+FAIR es un conjunto de principios (que un recurso sea fácil de encontrar, de consultar, de combinar con otros y de reutilizar) empleado en ciencia abierta. Esta prueba ahora se ejecuta de verdad, en local: se descarga y lanza el jar oficial de FOOPS! (versión 0.4.0) como un pequeño servidor, y se consulta su propio endpoint REST documentado (`assessOntologyFile`) —ya no hace falta el servicio público en línea, cuyo contrato REST nunca se documentó de forma fiable. Puntuación obtenida: **0,80 sobre 1,0** (Interoperable 3/3, Encontrable 3/4, Reutilizable 6/8; la dimensión Accesible no se evalúa en modo archivo local, exige una URI pública dereferenciable). Reutilizable subió de 5/8 a 6/8 el 14 de julio, al añadirse el DOI de Nakala de la ontología (`dcterms:identifier`). El detalle completo, por dimensión, está en `validation/08-fair/README.md`.
 
 ## Preguntas de competencia y documentación generada automáticamente
 
