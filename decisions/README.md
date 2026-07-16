@@ -19,7 +19,7 @@ claim against the source files. This is the project's primary evidence trail: no
 
 `fr/` is the primary, most complete set (all files, written first); `es/` carries the three ADRs
 plus a subset of the technical reports, translated or written independently. Not every file exists
-in both languages — see the table below for exactly which. The root `README.md` (section 7)
+in both languages — see the table below for exactly which. The root `README.md` (section 6)
 carries a longer description of each file's content; this table is a navigation aid, not a
 duplicate of that section.
 
@@ -33,12 +33,12 @@ duplicate of that section.
 | `informe-P14-roles-autorat.md` | ✅ | — | Justification (CIDOC-CRM SIG Encoding Rule 4, MARC Relator Terms, alternatives studied) for adding the authorship-role sub-properties |
 | `informe-activite-editoriale-scientifique.md` | ✅ | — | The "editorial activity" branch flagged by the paper as CAO_CRM's original differentiator — commercial vs. scientific editor distinction |
 | `auditoria-1-rdf.md`, `auditoria-2-documentacion-y-conformidad.md`, `auditoria-3-verificacion-final.md` | ✅ | — | Chain of 3 independent, successive audits — RDF term-by-term, then documentation/conceptual conformance, then final cross-check |
-| `informe-completitud-labels-domain-range.md` | ✅ | ✅ | Why some domains/ranges point outside the 29 classes chosen for this bounded module, and what that does and doesn't mean |
+| `informe-completitud-labels-domain-range.md` | ✅ | ✅ | Why some domains/ranges point outside the classes retained by this bounded module, and what that does and doesn't mean |
 | `informe-implementacion-RDF-modulo-acotado.md` | ✅ | ✅ | How the bounded module was actually built and integrated, term by term |
 | `informe-integracion-properties_extracted.md` | — | ✅ | Spanish-only report: reconciling `properties_extracted.csv` (the conceptual diagram's exported domain/range pairs) against the RDF module, term by term |
-| `informe-requisitos-publicacion-CAO_CRM.md` | — | ✅ | Spanish-only report on the publication requirements (namespace, versionIRI, Pages routing) later implemented identically for the GitHub repository |
+| `informe-requisitos-publicacion-CAO_CRM.md` | — | ✅ | Spanish-only report on the publication requirements (namespace, versionIRI, Pages routing) implemented for the GitHub repository |
 
-The `P3_has_note` typing case, initially documented as a fourth ADR, now lives inside
-`problemes-et-solutions.md` (Problem 1): it was never validated collectively by the team the way
-the three ADRs above were, so it stays in the general problem catalogue rather than under the ADR
-label, which implies an enacted team decision.
+The `P3_has_note` typing case lives inside `problemes-et-solutions.md` (Problem 1) rather than
+under the ADR label: it was not validated collectively by the team the way the three ADRs above
+were, and the ADR label implies an enacted team decision — so it stays in the general problem
+catalogue.
