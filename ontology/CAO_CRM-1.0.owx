@@ -75,7 +75,7 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</Literal
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:bibliographicCitation"/>
-        <Literal xml:lang="en">Echavarría Peláez, Andrés Felipe (2026). CAO_CRM (Corpus Author Ontology CRM), version 1.0. Consortium Huma-Num ARIANE. https://www.cao-crm.eu/ontology/1.0</Literal>
+        <Literal xml:lang="en">Echavarría Peláez, Andrés Felipe (2026). CAO_CRM (Corpus Author Ontology CRM), version 1.0. Consortium Huma-Num ARIANE. https://www.cao-crm.eu/ontology/1.0. Nakala dataset: https://doi.org/10.34847/NKL.AE3BV5JI</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
@@ -84,6 +84,10 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</Literal
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:description"/>
         <Literal xml:lang="en">CAO_CRM-2.5 (2026-07-06): adds 33 new terms in total -- 16 ROBOT-extracted CIDOC-CRM terms (P127_has_broader_term, E33_Linguistic_Object+P72_has_language, E22_Human-Made_Object+P54/P55_has_current_location, E1_CRM_Entity, E41_Appellation, E58_Measurement_Unit+P91_has_unit, and inverses), 6 LRMoo relation properties (R2/R2i, R75/R75i, R76/R76i _is_derivative_of/_incorporates), F32_Item_Production_Event and D9_Data_Object/D7_Digital_Machine_Event (CRMdig), and 3 manually-declared P14_carried_out_by subproperties (P14_a_pour_auteur_original/traducteur/abregeur, following CIDOC-CRM&apos;s own Encoding Rule 4 for &apos;.1&apos; properties). Restores XSD precision (xsd:dateTime/xsd:integer) and owl:propertyDisjointWith on P82a/P82b, present in Melanie Bouland&apos;s original file but lost in the 2.0 module extraction. See decisions/fr/problemes-et-solutions.md and complete-model.md for full justification of every term. Addendum (2026-07-07): adds R28_produced/R28i_was_produced_by (LRMoo) linking F32_Item_Production_Event directly to F5_Item, closing a gap found when comparing the Drawio diagram against the RDF (the diagram already used this official property; the ontology did not have it yet). Second addendum (2026-07-07): adds E72_Legal_Object, E2_Temporal_Entity, E4_Period, E70_Thing to restore the official rdfs:domain/rdfs:range that P4_has_time-span/P4i, P7_took_place_at/P7i, P16_used_specific_object/P16i and P104_is_subject_to/P104i lost when the module was first extracted (their official domain/range class was not yet part of the module&apos;s scope). Third addendum (2026-07-08): renames the 3 manually-declared P14_carried_out_by subproperties to English local names (P14_has_original_author/translator/abridger, replacing P14_a_pour_auteur_original/traducteur/abregeur) for consistency with every other native CIDOC-CRM/LRMoo/CRMdig term in this module, and adds 2 further subproperties following the same Encoding Rule 4 pattern: P14_has_scientific_editor (MARC &quot;edt&quot;) and P14_has_publisher (MARC &quot;pbl&quot;), closing a structural gap explicitly named by the project&apos;s own source paper as an original differentiator of CAO_CRM from plain LRMoo/CRMdig -- an &quot;activités éditoriales&quot; branch on Manifestation (and, similarly, Digital Object) signalling a scientific editor&apos;s intervention in establishing a manifested version of a work, distinct from the commercial publisher&apos;s role. See decisions/fr/informe-activite-editoriale-scientifique.md for full justification. Fourth addendum (2026-07-08): expands the rdfs:comment of all 5 P14_has_* subproperties with a concrete illustrative example (Stendhal, Henri Martineau, Le Divan, and LRMoo&apos;s own official translator/abridger examples), following the inline &quot;for example&quot; style CIDOC-CRM itself uses in class comments such as E3_Condition_State and E34_Inscription -- see documentation/{fr,es,en}/10-notas-de-aplicacion.md for the full set of application notes, including the controlled E55_Type values used throughout the model. Fifth addendum (2026-07-08): renumbers this file from its internal working label (&quot;CAO_CRM-2.5&quot;) to 1.0, following standard ontology-versioning practice: since no version of CAO_CRM had ever actually been published before this release, numbering it as a continuation of internal development labels (2.0, 2.5) would misleadingly imply prior public releases that never existed. &quot;CAO_CRM-2.0.rdf&quot; (retained internally for history, not part of the public release) was the first ROBOT-based reconstruction of Mélanie Bouland&apos;s original conceptual diagram -- an internal draft, not a release. &quot;CAO_CRM-2.5.rdf&quot; (also retained internally, frozen as of this same date) was the complete, corrected proposal produced by Andrés Echavarría before formal version numbering was applied -- itself never published as such. This file, CAO_CRM-1.0.rdf, is the exact continuation of that proposal, now formally released as version 1.0, the first public version of CAO_CRM.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:identifier"/>
+        <IRI>https://doi.org/10.34847/NKL.AE3BV5JI</IRI>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
@@ -569,6 +573,9 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</Literal
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:identifier"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
