@@ -33,9 +33,8 @@ python3 build_graph.py ../ontology/CAO_CRM-1.0.rdf CAO_CRM-1.0-graph.html
 - Pasar el cursor sobre cualquier nodo muestra su etiqueta en inglés y su IRI completa.
 - Arrastrar, hacer zoom (rueda del ratón) y usar los botones de navegación en la esquina inferior
   izquierda para explorar.
-- Un nodo sin ninguna arista de dominio/rango conectada (por ejemplo `P1_is_identified_by`) no es un
-  error: significa que su dominio y/o rango oficial apunta a una clase fuera de las 29 elegidas para
-  este módulo acotado — ver `../decisions/informe-completitud-labels-domain-range.md`, sección 2.1.
+- Sobre la cobertura de dominios y rangos dentro del módulo acotado, ver
+  `../decisions/es/informe-completitud-labels-domain-range.md`.
 
 **Nota:** este grafo visualiza únicamente la estructura de clases y propiedades del módulo (TBox);
 no incluye las instancias de ejemplo del grafo de datos real que sí existe en `../test-data/`,
