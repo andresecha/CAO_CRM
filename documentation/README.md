@@ -34,11 +34,9 @@ navigable HTML/PDF documentation under `docs/site/` (see `docs/README.md`).
 | `09-faq-errores.md` | Frequently asked questions and real incidents encountered during construction |
 | `10-notas-de-aplicacion.md` | Application notes (in the CIDOC-CRM sense) for the 5 `P14_has_*` role properties and the `E55_Type` controlled values used in the model, each with a concrete example |
 
-File names are kept in Spanish across all three language folders (historical — they were named
-before the English/French versions existed) so the same relative path always resolves to the
-matching section regardless of language.
+File names are identical across the three language folders — kept in Spanish — so the same
+relative path always resolves to the matching section regardless of language.
 
-Working translations for Italian, Romanian and Portuguese exist locally (`it/`, `ro/`, `pt/`) but
-are gitignored and not part of this repository yet — see the i18n deposit family in the separate
-`data-publication/` collection (datasets 06–08), which covers only the ontology's own terminology,
-not this pedagogical documentation.
+Terminology translations into Italian, Romanian and Portuguese are prepared as part of the
+separate Nakala research-data collection; they cover the ontology's own terminology, not this
+pedagogical documentation.
