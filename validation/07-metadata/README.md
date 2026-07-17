@@ -14,14 +14,15 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 **Checks:** required annotation properties are present on the ontology header (`owl:Ontology` node), per common publishing checklists (W3C best practice, DCAT, VANN).
 
 **Required (checked by `check.sh`):**
-- `owl:versionIRI` — present (`https://www.cao-crm.eu/ontology/1.0`, confirmed present; updated 2026-07-09 from the placeholder `http://www.CAO_CRM.org/ontology/1.0` once the real domain was acquired).
+- `owl:versionIRI` — present (`https://www.cao-crm.eu/ontology/1.0`).
 - `dc:creator` and/or `dc:description` — present.
-- `dc:rights` / license — present (`CC BY-NC-SA 4.0`, confirmed present).
+- `dc:rights` / license — present (`CC BY-NC-SA 4.0`).
 - `owl:versionInfo` — present for the ontology itself and its dependencies.
 
-**Known, accepted limitations (not defects):**
-- No explicit `dcterms:created` / `dcterms:modified` (dated timestamps) — only free-text version info (`owl:versionInfo`, `dcterms:description`). Would be a reasonable future addition, not required by any check currently in `check.sparql`.
-- No `owl:imports` for CIDOC-CRM/LRMoo/CRMdig — a deliberate design choice, not an oversight: CAO_CRM is a bounded, ROBOT-extracted, "vendored" composition rather than an `owl:imports`-based extension (see section 3 of the main `README.md`).
+The header additionally carries the full publication metadata set (`dcterms:created`, `dcterms:issued`, `dcterms:publisher`, `dcterms:source`, `dcterms:identifier` with the ontology's Nakala DOI, `dcterms:bibliographicCitation`, `vann:preferredNamespacePrefix`/`vann:preferredNamespaceUri`, `mod:status`) — assessed by the FAIR category, see `validation/08-fair/README.md`.
+
+**Known, accepted design choice (not a defect):**
+- No `owl:imports` for CIDOC-CRM/LRMoo/CRMdig: CAO_CRM is a bounded, ROBOT-extracted, "vendored" composition rather than an `owl:imports`-based extension (see section 3 of the main `README.md`).
 
 **Run:**
 ```bash
@@ -30,8 +31,6 @@ bash check.sh ../../ontology/CAO_CRM-1.0.rdf
 
 **Pass criteria:** every check in `check.sparql` returns its expected boolean (each query is preceded by a `# expect: true|false` directive — most require presence, the three "regression" queries below require *absence*).
 
-## Current state (2026-07-08): PASS 7/7
+## Current state: PASS 7/7
 
-All four required-presence checks pass, and all three regression checks (below) correctly return false.
-
-**Resolved history:** early in development (2026-07-02), the ontology header at `http://www.CAO_CRM.org/ontology` was found to carry, verbatim, annotation properties copy-pasted from **at least six other ontologies' own headers** (SKOS, CIDOC-CRM, CRMdig, LRMoo, CRMsci, CRMinf) — an artifact of how imports were flattened during an early Protégé export. Concretely: `terms:title` read `"SKOS Vocabulary"@en`, `terms:creator`/`terms:contributor` were attributed to SKOS's actual authors, and a ~200-line `rdfs:comment` was literally CIDOC-CRM's own release notes. This was fixed during the module's reconstruction as a pure, bounded composition (see `decisions/fr/informe-implementacion-RDF-modulo-acotado.md`), and the three regression `ASK` queries at the bottom of `check.sparql` exist specifically to catch any recurrence of this exact bug — don't relax them.
+All four required-presence checks pass, and all three header-purity checks correctly return false: the three `ASK` queries at the bottom of `check.sparql` verify that the ontology header carries only CAO_CRM's own metadata — never header metadata from any of the composed sources (a risk inherent to any workflow that flattens imports into a single file). Don't relax them.

@@ -25,8 +25,6 @@ bash check.sh ../../imports/merged.ttl
 
 **Pass criteria:** `robot diff` shows only additions (no modified/removed base axioms); manual review notes recorded in `out/conformance-notes.md` for every new subclass relationship.
 
-## Current state (2026-07-08): PASS (automated part)
+## Current state: PASS
 
 `bash check.sh ../../imports/merged.ttl` reports no base-ontology axioms modified beyond the known-harmless `OntologyID`/`versionIRI` merge artifact (an unavoidable byproduct of merging several `owl:Ontology` headers into one file for the reasoner, not a real conflict). Manual review of every `rdfs:subClassOf` relationship against the official scope notes is recorded in `out/conformance-notes.md`.
-
-**Resolved history:** the first run (2026-07-01) found `P3_has_note` declared as `owl:ObjectProperty` in an early draft, conflicting via punning with CIDOC-CRM's own untyped, datatype-oriented declaration (see `decisions/fr/problemes-et-solutions.md` (Problème 1) for the full resolution). Fixing this datatype mismatch also removed the resulting `robot diff`, which had previously shown 7 official CIDOC-CRM axioms dropped from the merged graph as a side effect.
