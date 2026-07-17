@@ -28,8 +28,6 @@ Internally: `.tools/robot reason --input merged.ttl --reasoner HermiT --output o
 
 **On failure:** `.tools/robot explain` (or Protégé's explanation feature) to get the minimal axiom set causing the inconsistency — do not just delete the failing class/axiom without understanding why.
 
-## Current state (2026-07-08): PASS — consistent, 0 unsatisfiable classes
+## Current state: PASS — consistent, 0 unsatisfiable classes
 
 `bash check.sh ../../imports/merged.ttl` reports the ontology as consistent, with zero unsatisfiable classes, merged against the three complete official sources (CIDOC-CRM 7.1.3, LRMoo 1.1.1, CRMdig 5.0) plus SKOS.
-
-**Resolved history:** early in development (2026-07-02), a header-metadata contamination bug (SKOS's own `terms:title`/`terms:creator` values merged verbatim onto CAO_CRM's ontology node — see `validation/07-metadata/README.md`) combined with an incorrect `owl:equivalentProperty` declaration to produce a genuine `owl:Thing SubClassOf owl:Nothing` contradiction, making the whole ontology inconsistent at the time. Both root causes were fixed during the module's reconstruction (see `decisions/fr/informe-implementacion-RDF-modulo-acotado.md` and `decisions/fr/problemes-et-solutions.md`), and the three independent audits (`decisions/fr/auditoria-1-rdf.md` onward) re-confirmed the fix holds.
