@@ -43,6 +43,12 @@ TOOLTIP = {
     "fr": "Traduction de travail de l'équipe CAO_CRM, absente des sources officielles CIDOC-CRM/LRMoo/CRMdig.",
     "es": "Traducción de trabajo del equipo CAO_CRM, ausente de las fuentes oficiales CIDOC-CRM/LRMoo/CRMdig.",
     "en": "Working translation by the CAO_CRM team, not present in the official CIDOC-CRM/LRMoo/CRMdig sources.",
+    # Romanian: no CIDOC-CRM/LRMoo/CRMdig term carries an official ro label, so on
+    # that page every single term is marked. The tooltip stays in English to match
+    # the English chrome the ro page is built with (see docs/build.sh's ro pass);
+    # the wording also states the stronger fact that applies here -- the Romanian
+    # text was reviewed by a native speaker, but it is still not an official source.
+    "ro": "Translation by the CAO_CRM team, reviewed by a native speaker; no official Romanian label or definition exists in the CIDOC-CRM/LRMoo/CRMdig sources.",
 }
 
 MARKER_TEMPLATE = '<sup class="i18n-overlay-marker" title="{tooltip}">&#8224;</sup>'
