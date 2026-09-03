@@ -1,0 +1,273 @@
+# Lote piloto (ro): cadena LRMoo Work -> Expression -> Manifestation -> Item, y los eventos/
+# propiedades que la conectan. Terminología anclada en glossary_crosswalk-ro.yaml (Lucrare/
+# Expresie/Manifestare/Exemplar), verificada contra la traducción oficial rumana del informe
+# final IFLA FRBR (CIMEC/Ministerul Culturii, http://www.cimec.ro/Metodologice/Catalogare/
+# FRBR-RaportRomana.pdf, secciones 3.2.1-3.2.4) -- ver la nota de esa entrada en el crosswalk.
+#
+# Los nombres de propiedad, códigos e IRIs dentro de las definiciones se dejan literalmente en
+# inglés entre backticks (`R16_created`, `F1_Work`...) -- son identificadores del modelo, no texto
+# a traducir.
+#
+# Las propiedades inversas (Ri_...) no tienen comentario oficial en inglés (CIDOC-CRM/LRMoo no
+# documentan las inversas por separado) -- por eso solo llevan label, sin comment.
+
+terms:
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F1_Work"
+    local_name: F1_Work
+    label:
+      ro: "Lucrare"
+    comment:
+      ro: >-
+        Această clasă, F1_Operă, cuprinde ideile intelectuale distincte transmise prin creații
+        artistice și intelectuale, precum poeme, povestiri sau compoziții muzicale. O „operă” este
+        rezultatul unui proces intelectual desfășurat de una sau mai multe persoane. Noțiunii de
+        „operă” îi este inerentă existența unor realizări recognoscibile ale sale sub forma uneia
+        sau mai multor expresii. Operele sunt adesea considerate încheiate și distincte, de exemplu
+        atunci când sunt declarate ca atare de creatorul lucrării sau pe baza elaborării ori a
+        coerenței logice a conținutului lor. Totuși, o operă poate fi recunoscută ca existentă chiar
+        dacă este neterminată, de exemplu atunci când creatorii ei, deliberat sau accidental, nu au
+        dus niciodată la capăt în mod explicit o anumită expresie, ci au lăsat în urmă expresii
+        parțiale. În absența unor informații explicite despre concepția inițială — rareori
+        disponibile —, prima expresie creată constituie mărturia începutului existenței unei opere.
+        O operă poate evolua în timp, de exemplu prin ediții revizuite. O operă poate fi elaborată
+        de unul sau mai mulți actanți, simultan, în paralel, sau succesiv în timp. Noi expresii ale
+        aceleiași opere pot continua să fie create de-a lungul timpului. Limitele unei opere nu au
+        nicio legătură cu valoarea realizării intelectuale, ci doar cu preeminența unui concept.
+        Scopul principal al acestei clase este să permită reunirea unor expresii echivalente din
+        punct de vedere intelectual, pentru a prezenta unui utilizator toate variantele disponibile
+        ale aceluiași conținut intelectual sau artistic.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"
+    local_name: F2_Expression
+    label:
+      ro: "Expresie"
+    comment:
+      ro: >-
+        Această clasă, F2_Expresie, cuprinde realizările intelectuale sau artistice ale lucrărilor
+        sub forma unor obiecte imateriale identificabile, precum texte, poeme, glume, notații
+        muzicale sau coregrafice, tipare de mișcare, tipare sonore, imagini, obiecte multimedia, sau
+        orice combinație a acestor forme. Substanța unei expresii este alcătuită din semne. O
+        expresie este rezultatul procesului intelectual sau creativ de realizare a unei opere. De-a
+        lungul timpului pot fi create instanțe ulterioare ale F2_Expresie care transmit aceeași
+        operă. Expresiile nu depind de un anumit suport fizic și pot exista simultan pe unul sau mai
+        multe suporturi. În ceea ce privește practica biblioteconomică, sunt luate în considerare
+        doar acele expresii exteriorizate pe suporturi fizice, altele decât creierul creatorului sau
+        al unui auditor. Forma unei expresii este o caracteristică inerentă acesteia. Diferențele de
+        formă implică expresii diferite (de exemplu, trecerea de la text la cuvântul rostit, sau
+        transcrierea unei înregistrări). În mod similar, diferențele de limbă sau de mijloc de
+        interpretare implică expresii diferite (de exemplu, traduceri sau aranjamente pentru
+        instrumente diferite). Astfel, dacă un text este revizuit sau modificat, rezultatul este
+        considerat o nouă instanță de F2_Expresie. Deși, teoretic, orice modificare a semnelor ar
+        produce o nouă expresie, contextul și uzul sunt cele care stabilesc, convențional, regulile
+        de distingere între expresii. O expresie care include text vorbit sau scris poate fi
+        instanțiată totodată și ca E33_Obiect_lingvistic. Aceasta permite asocierea clasei
+        E54_Limba, limba textului, cu F2_Expresie prin intermediul proprietății
+        P72_este_exprimată_în_limbă (P72i_limba_exprimă).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F3_Manifestation"
+    local_name: F3_Manifestation
+    label:
+      ro: "Manifestare"
+    comment:
+      ro: >-
+        Această clasă, F3_Manifestare, cuprinde produsele care redau una sau mai multe expresii. O
+        instanță de F3_Manifestare este definită atât prin conținutul global, cât și prin forma
+        prezentării sale. Substanța unei manifestări nu este alcătuită doar din semne, ci și din
+        modul în care acestea sunt prezentate pentru a fi receptate de utilizatori, inclusiv tipul
+        de suport adoptat. O manifestare este rezultatul unui proces de publicare în cadrul căruia
+        una sau mai multe expresii sunt pregătite pentru difuzare publică, dar poate fi și o formă
+        unică creată direct pe un suport material, fără intenția unei publicări formale. O
+        manifestare încorporează de regulă una sau mai multe expresii care reprezintă un conținut
+        logic distinct, precum și orice alt aport al editorului, cum ar fi machetarea textului sau
+        designul copertei. În plus, o manifestare poate fi identificată prin trăsăturile fizice
+        proprii mediului său de distribuție, atunci când este cazul. De exemplu, publicațiile în
+        ediții cartonate și în ediții broșate ar constitui două manifestări distincte, chiar dacă
+        conținutul de autor și cel editorial rămân altfel identice în ambele publicații. În cazul
+        produselor industriale, precum cărțile tipărite sau CD-urile muzicale, dar și al
+        materialelor digitale, o manifestare poate fi considerată prototipul tuturor exemplarelor
+        sale. În aceste cazuri, o manifestare specifică toate trăsăturile sau caracteristicile pe
+        care exemplarele trebuie să le prezinte pentru a fi copii ale unei anumite publicații. În
+        cazul produselor industriale, manifestările sunt de asemenea instanțe ale E99_Tip_de_produs,
+        în prezent identificate de regulă prin identificatori caracteristici precum numerele ISBN.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F5_Item"
+    local_name: F5_Item
+    label:
+      ro: "Exemplar"
+    comment:
+      ro: >-
+        Această clasă, F5_Exemplar, cuprinde obiectele fizice (cărți tipărite, partituri, CD-uri,
+        DVD-uri, CD-ROM-uri etc.) care au fost produse prin (P186i) un proces industrial ce implică
+        o anumită F3_Manifestare. Ca urmare, se așteaptă ca toate exemplarele asociate unei anumite
+        manifestări să poarte conținutul definit de acea manifestare, deși unele, sau chiar toate,
+        pot să poarte un conținut care diferă semnificativ de acesta, fie din cauza unui accident
+        survenit în cursul producției industriale, fie din cauza unei modificări sau degradări
+        fizice ulterioare. o instanță de F5_Exemplar alcătuit dintr-un obiect fizic sau un ansamblu
+        de obiecte cu limite fizice clare este de asemenea un E22_Obiect_creat_de_om. Un exemplar
+        păstrat pe o parte a unui suport fizic mai amplu (precum un fișier electronic printre altele
+        de pe un disc) poate fi considerat de asemenea o instanță de E25_Trăsătură_creată_de_om.
+        Noțiunea de exemplar este relevantă doar în raport cu procesul de producție, dintr-un punct
+        de vedere biblioteconomic. Unitățile fizice gestionate de instituțiile de patrimoniu
+        cultural în cadrul fondurilor lor reprezintă o noțiune distinctă: o unitate de fond poate,
+        desigur, să fie egală cu un exemplar, dar poate fi și „mai mare” decât unul (de exemplu,
+        atunci când două exemplare sunt legate împreună, în cazul cărților tipărite), sau „mai mică”
+        decât unul (de exemplu, în cazul fondurilor incomplete, atunci când se păstrează un singur
+        CD dintr-un set de două). Din punct de vedere operațional, instituțiile de patrimoniu
+        cultural nu gestionează de regulă exemplare, ci unități fizice de fond, instanțe de
+        E19_Obiect_material, deși pentru biblioteci acest lucru nu este de obicei semnificativ,
+        întrucât fiecare exemplar corespunde unei singure unități. Atunci când nu este așa, legătura
+        dintre exemplare și unitățile relevante pentru gestionarea colecției poate fi înregistrată
+        prin proprietatea P46_este_compus_din (face parte din) între un exemplar și un
+        E19_Obiect_material. Dacă este necesar, un E19 poate fi tipizat ca unitate prin proprietatea
+        P2_are_ca_tip (este tip de).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation"
+    local_name: F27_Work_Creation
+    label:
+      ro: "Crearea operei"
+    comment:
+      ro: >-
+        Această clasă, F27_Crearea_operei cuprinde activitățile prin care operele ajung să existe. O
+        creare a operei poate servi la documentarea perioadei în care o lucrare era în curs de a
+        ajunge să existe, precum și a circumstanțelor acesteia, atunci când sunt cunoscute. O creare
+        a operei marchează crearea inițială a unei lucrări prin expresii sau alte exteriorizări
+        suficient de elaborate încât identitatea conceptuală caracteristică a operei să poată fi
+        recunoscută ca existentă. În multe cazuri, aceasta va coincide cu prima exteriorizare
+        completă cunoscută a unei expresii a lucrării. În alte cazuri, crearea inițială a unei opere
+        poate fi dedusă din expresii multiple sau ulterioare, sau din alte forme de mărturie. De
+        exemplu, comandarea unei lucrări poate să fi fost convenită în mod explicit după prezentarea
+        unei elaborări deja complete și detaliate a lucrării, care nu fusese făcută publică.
+        Reprezentațiile pot preceda expresiile scrise, ca în cazul operelor lui Shakespeare. Opera,
+        ca ansamblu intelectual, poate evolua de la crearea sa inițială până la ultima sa expresie
+        cunoscută. Asocierea unui actant cu o operă se face prin următorul lanț de proprietăți:
+        F1_Operă → R16i_a_fost_creată_de → F27_Crearea_Operei → P14_a_fost_efectuat_de → E39_Actant.
+        E29 corespunde noțiunii de „creator” al lucrării. În situația în care o expresie a unei
+        opere servește drept material sursă pentru crearea primei expresii a unei noi opere, relația
+        directă dintre cele două opere este indicată prin proprietatea R2_este_derivată_din
+        (R2i_are_derivate) stabilită între cele două lucrări. Legătura către expresia sursă
+        specifică este indicată prin proprietatea P16_a_utilizat_ca_obiect_specific
+        (P16i_a_fost_utilizat_pentru), pe traseul: F1_Operă(1) → R3_este_realizată_în → F2_Expresie
+        (1) → P16i_a_fost_folosită_pentru → F27_Crearea_operei → R16_creată → F1_Operă(2).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F28_Expression_Creation"
+    local_name: F28_Expression_Creation
+    label:
+      ro: "Crearea expresiei"
+    comment:
+      ro: >-
+        Această clasă, F28_Crearea_Expresiei cuprinde activitățile care au drept rezultat apariția
+        expresiilor. O expresie este considerată creată atunci când este fixată pe un suport, altul
+        decât creierul creatorului. Deși o expresie este o entitate abstractă, un obiect conceptual,
+        crearea unei expresii afectează inevitabil și lumea fizică: atunci când se mâzgălește prima
+        ciornă a unui poem pe o foaie de hârtie, se produc totodată o F3_Manifestare și un
+        F5_Exemplar. Crearea expresiei este o subclasă a E12_Proces_de_producție, deoarece
+        înregistrarea expresiei provoacă o modificare fizică a E18_Lucrului_material care servește
+        drept suport. Crearea unei F2_Expresie coincide cu crearea primei instanțe de F3_Manifestare
+        care stabilește prin relația R4_încarnează (este încarnată în) acea instață de F2_Expresie.
+        Proprietatea P2_are_ca_tip (este tip de) poate fi folosită pentru a preciza tipul de
+        instanță F28_Crearea_expresiei (de exemplu, traducerea, revizuirea sau aranjarea unei piese
+        muzicale sunt tipuri de proces de creare). Tipul procesului este distinct de tipul
+        rezultatului său, deși tipologia frecvent utilizată pentru instanțele de F2_Expresie
+        rezultate poate sugera și categoria corespunzătoare de F28_Crearea_expresiei. O instanță de
+        F28_Crearea_expresiei poate folosi drept material sursă una sau mai multe instanțe specifice
+        de F2. Atunci când expresia sursă este documentată, aceasta se exprimă de asemenea prin
+        proprietatea R76_este_derivată_din (R76i_are_derivat).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F30_Manifestation_Creation"
+    local_name: F30_Manifestation_Creation
+    label:
+      ro: "Crearea manifestării"
+    comment:
+      ro: >-
+        Această clasă cuprinde activitățile de selectare, organizare și prezentare a uneia sau mai
+        multor expresii pe un suport sau pe alt mijloc de prezentare durabil, cu scopul de a le
+        comunica unui public. Include specificarea prezentării din punctul de vedere al impresiei
+        senzoriale (precum aspectul vizual sau redarea sonoră).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/F32_Item_Production_Event"
+    local_name: F32_Item_Production_Event
+    label:
+      ro: "Eveniment de producere a exemplarului"
+    comment:
+      ro: >-
+        Această clasă, F32_Eveniment_de_producere_a_exemplarului, cuprinde activitățile care au
+        drept rezultat apariția unuia sau mai multor instanțe de F5_Exemplar. Producerea unei serii
+        de obiecte fizice (cărți tipărite, partituri, CD-uri, DVD-uri, CD-ROM-uri etc.), producerea
+        unui exemplar unic (redactarea unui manuscris pe pergament, realizarea unei acuarele etc.),
+        precum și crearea unei noi copii a unui fișier pe un suport electronic sunt toate
+        considerate evenimente de producere a exemplarului. Pentru exemplarele produse în serie,
+        procesul de producție (fie că este vorba de o carte, o înregistrare sonoră, un DVD, o
+        resursă cartografică etc.) urmărește să producă exemplare cât mai asemănătoare posibil cu un
+        prototip care prezintă toate trăsăturile pe care trebuie să le prezinte și toate copiile
+        publicației, ceea ce se reflectă în proprietatea R27_Materializat în F3_Manifestare.
+
+  # --- Propiedades que conectan la cadena ---
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R16_created"
+    local_name: R16_created
+    label: {ro: "a creat"}
+    comment:
+      ro: >-
+        Această proprietate asociază crearea inițială a unei lucrări cu instanța de F1_Operă astfel
+        creată.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by"
+    local_name: R16i_was_created_by
+    label: {ro: "a fost creată de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in"
+    local_name: R3_is_realised_in
+    label: {ro: "se realizează în"}
+    comment:
+      ro: >-
+        Această proprietate, R3_se_realizează_în, asociază o instanță de F2_Expresie cu o instanță
+        de F1_Operă. Ea exprimă asocierea existentă între o expresie și opera pe care această
+        expresie o transmite. Cunoștințele noastre factuale despre modul în care o anumită operă s-a
+        realizat istoric în expresii sunt adesea limitate. Prin urmare, această proprietate permite
+        exprimarea asocierii dintre o expresie și opera pe care aceasta o transmite, fără a fi
+        necesară identificarea expresiilor particulare care au făcut parte dintr-un lanț de derivare
+        de la sursă.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R3i_realises"
+    local_name: R3i_realises
+    label: {ro: "realizează"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R4_embodies"
+    local_name: R4_embodies
+    label: {ro: "încarnează"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F3_Manifestare cu una sau mai multe instanțe de
+        F2_Expresie pe care această manifestare le redă. Manifestarea dă formă expresiei sau
+        expresiilor în modul în care acestea trebuie prezentate unui public, inclusiv prin
+        specificarea impresiei senzoriale urmărite (precum aspectul vizual sau redarea sonoră).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R4i_is_embodied_in"
+    local_name: R4i_is_embodied_in
+    label: {ro: "este încarnată în"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R27_materialized"
+    local_name: R27_materialized
+    label: {ro: "a materializat"}
+    comment:
+      ro: >-
+        Această proprietate asociază un F32_Eveniment_de_producere_a_exemplarului cu ansamblul de
+        semne furnizate de editor pentru a fi purtate de toate exemplarele produse, precum și cu
+        orice altă trăsătură fizică prevăzută ca parte integrantă a manifestării (instanță de
+        F3_Materializare) astfel materializate.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R27i_was_materialized_by"
+    local_name: R27i_was_materialized_by
+    label: {ro: "a fost materializată de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R28_produced"
+    local_name: R28_produced
+    label: {ro: "a produs"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F32_Eveniment_de_producere_a_exemplarului cu
+        oricare dintre exemplarele produse.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R28i_was_produced_by"
+    local_name: R28i_was_produced_by
+    label: {ro: "a fost produs de"}

@@ -1,0 +1,260 @@
+# Lote 7 (ro): 5 propiedades de datos + 12 pares de propiedades de objeto CIDOC-CRM (primera mitad
+# de las 48 propiedades de objeto restantes). Ninguna tiene etiqueta oficial en rumano; se completan
+# label + comment (donde exista comment_en) para las 29.
+
+terms:
+  # --- Propiedades de datos ---
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P3_has_note"
+    local_name: P3_has_note
+    label: {ro: "are drept_notă"}
+    comment:
+      ro: >-
+        Această proprietate, P3_are_drept_notă, este un container pentru toate descrierile informale
+        despre un obiect care nu au fost exprimate în termenii construcțiilor CIDOC CRM. În
+        particular, ea surprinde caracterizarea elementului însuși, structurile sale interne,
+        aspectul etc. La fel ca proprietatea P2_are_ca_tip (este_tip_de), această proprietate este o
+        consecință a domeniului de aplicare restrâns în mod deliberat al CIDOC CRM. Scopul nu este
+        de a surprinde, într-o formă structurată, tot ce se poate spune despre un element;
+        într-adevăr, formalismul CIDOC CRM nu este considerat suficient pentru a exprima tot ce se
+        poate spune. O bună practică impune folosirea unor câmpuri distincte pentru „a nota”
+        diferite aspecte ale unei caracterizări. Proprietatea P3.1_are_ca_tip, asociată proprietății
+        P3_are_notă, permite diferențierea unor note specifice, de exemplu „construcție”,
+        „decorație” etc. Un element poate avea multe note, dar o notă este atașată unui element
+        specific.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"
+    local_name: P82_at_some_time_within
+    label: {ro: "într-un timp determinat"}
+    comment:
+      ro: >-
+        Această proprietate, P82_într-un_timp_determinat, descrie perioada maximă în interiorul
+        căreia se situează un interval temporal E52_Interval_Temporal. Deoarece intervalele
+        temporale pot să nu aibă o întindere temporală cunoscută cu precizie, CIDOC CRM permite
+        formularea unor afirmații privind întinderile temporale minimă și maximă ale intervalelor
+        temporale. Această proprietate permite atribuirea unei valori de E61_Primitivă_temporală
+        întinderii temporale maxime a unui interval temporal (adică limita sa exterioară).
+        Primitivele temporale sunt tratate de CIDOC CRM ca intervale de date specifice unei
+        aplicații sau unui sistem și nu sunt analizate mai departe. Dacă sursele de dovezi justifică
+        întinderi maxime diferite, fără a se contrazice între ele, intersecția rezultată a tuturor
+        acestor întinderi va constitui cea mai bună estimare. Acest lucru trebuie luat în
+        considerare la integrarea informațiilor.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin"
+    local_name: P82a_begin_of_the_begin
+    label: {ro: "începutul începutului"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end"
+    local_name: P82b_end_of_the_end
+    label: {ro: "sfârșitul sfârșitului"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P90_has_value"
+    local_name: P90_has_value
+    label: {ro: "are ca valoare"}
+    comment:
+      ro: >-
+        Această proprietate, P90_are_ca_valoare, permite ca o instanță de E54_Dimensiune să fie
+        aproximată printr-o instanță de E60_Primitivă_numerică.
+
+  # --- Propiedades de objeto ---
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of"
+    local_name: P100_was_death_of
+    label: {ro: "a cauzat moartea lui"}
+    comment:
+      ro: >-
+        Această proprietate, P100_a_cauzat_moartea_lui, leagă o instanță de E69_Moarte de instanța
+        de E21_Persoană care a decedat. O instanță de E69_Moarte poate implica mai multe persoane,
+        de exemplu în cazul unei bătălii sau al unui dezastru. Aceasta nu este destinată utilizării
+        cu materiale generale de istorie naturală, ci doar cu persoane.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P100i_died_in"
+    local_name: P100i_died_in
+    label: {ro: "a murit în"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to"
+    local_name: P104_is_subject_to
+    label: {ro: "este supus la"}
+    comment:
+      ro: >-
+        Această proprietate, P104_este_supus_la, leagă o anumită instanță de E72_Obiect_juridic care
+        se supune instanțelor de E30_Drept. Dreptul este deținut de o instanță de E39_Actant, așa
+        cum este descris prin proprietatea P75_posedă_(este_posedat_de).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to"
+    local_name: P104i_applies_to
+    label: {ro: "se aplică la"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"
+    local_name: P106_is_composed_of
+    label: {ro: "este compus din"}
+    comment:
+      ro: >-
+        Această proprietate, P106_este_compus_din, asociază o instanță de E90_Obiect_simbolic cu o
+        parte a acesteia care este ea însăși o instanță de E90_Obiect_simbolic, precum fragmente de
+        text sau decupaje dintr-o imagine. Această proprietate este tranzitivă și asimetrică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"
+    local_name: P106i_forms_part_of
+    label: {ro: "face parte din"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"
+    local_name: P108_has_produced
+    label: {ro: "a produs"}
+    comment:
+      ro: >-
+        Această proprietate, P108_a_produs, identifică instanța de E24_Obiect_material creat de om
+        care a ajuns să existe ca urmare a instanței de E12_Proces_de_producție. Identitatea unei
+        instanțe de E24_Obiect_material creat de om nu este definită de materia sa, ci de existența
+        sa ca subiect al documentării. O instanță de E12_Proces_de_producție poate avea ca rezultat
+        crearea mai multor instanțe de E24_Obiect_material creat de om.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by"
+    local_name: P108i_was_produced_by
+    label: {ro: "a fost produs de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term"
+    local_name: P127_has_broader_term
+    label: {ro: "are drept termen generic"}
+    comment:
+      ro: >-
+        Această proprietate, P127_are_drept_termen_generic, asociază o instanță de E55_Tip cu o altă
+        instanță de E55_Tip care are o semnificație mai largă. Ea permite organizarea instanțelor de
+        E55_Tip în ierarhii. Acesta este sensul de „termen generic (BTG)”, așa cum este definit în
+        ISO 25964-2:2013 (Organizația Internațională de Standardizare, 2013). Această proprietate
+        este tranzitivă. Această proprietate este asimetrică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term"
+    local_name: P127i_has_narrower_term
+    label: {ro: "are ca termen specific"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"
+    local_name: P14_carried_out_by
+    label: {ro: "a fost efectuat de"}
+    comment:
+      ro: >-
+        Această proprietate, P14_a_fost_efectuat_de, descrie participarea activă a unei instanțe de
+        E39_Actant la o instanță de E7_Activitate. Ea implică o responsabilitate cauzală sau
+        juridică. Proprietatea P14.1_în_calitate_de, asociată acestei proprietăți, precizează natura
+        participării unui actor.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14i_performed"
+    local_name: P14i_performed
+    label: {ro: "a efectuat"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of"
+    local_name: P150_defines_typical_parts_of
+    label: {ro: "definește părți tipice din"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de E55_Tip „A” cu o instanță de E55_Tip „B”, atunci
+        când elementele de tip „A” formează de regulă o parte a elementelor de tip „B”, precum
+        „motoare de mașină” și „mașini”. Ea permite organizarea tipurilor în ierarhii bazate pe
+        faptul că un tip descrie o parte tipică a altuia. Această proprietate este echivalentă cu
+        „termen generic partitiv (BTP)”, așa cum este definit în ISO 2788, și cu „broaderPartitive”
+        în SKOS. Această proprietate nu este tranzitivă. Această proprietate este asimetrică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for"
+    local_name: P150i_defines_typical_wholes_for
+    label: {ro: "definește întregurile tipice pentru"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"
+    local_name: P16_used_specific_object
+    label: {ro: "a utilizat ca obiect specific"}
+    comment:
+      ro: >-
+        Această proprietate descrie folosirea unor lucruri materiale sau imateriale într-un mod
+        esențial pentru desfășurarea sau rezultatul unei instanțe de E7_Activitate. Această
+        proprietate se aplică de regulă uneltelor, instrumentelor, matrițelor, materiilor prime și
+        elementelor încorporate într-un produs. Ea implică faptul că prezența obiectului respectiv a
+        fost o condiție necesară pentru acțiune. De exemplu, activitatea de redactare a acestui text
+        a necesitat folosirea unui calculator. Un lucru imaterial poate fi folosit dacă cel puțin
+        unul dintre suporturile sale este prezent. De exemplu, instrumentele software de pe un
+        calculator. Un alt exemplu este folosirea unui anumit nume de către un anumit grup de
+        persoane, pe parcursul unei anumite perioade, pentru a identifica un lucru, precum o
+        așezare. În acest caz, suporturile fizice ale acestui nume sunt cel puțin persoanele care
+        înțeleg folosirea lui.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"
+    local_name: P16i_was_used_for
+    label: {ro: "a fost utilizat pentru"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"
+    local_name: P1_is_identified_by
+    label: {ro: "este identificat prin"}
+    comment:
+      ro: >-
+        Această proprietate descrie denumirea sau identificarea oricărui element din lumea reală
+        printr-un nume sau prin orice alt identificator. Această proprietate este destinată
+        identificatorilor de uz general, care fac parte din lumea pe care modelul intenționează să o
+        descrie, și nu doar identificatorilor interni de bază de date specifici unui sistem tehnic,
+        cu excepția cazului în care aceștia din urmă au de asemenea o utilizare mai generală în
+        afara contextului tehnic. Această proprietate include în special identificarea prin expresii
+        matematice, precum sistemele de coordonate folosite pentru identificarea instanțelor de
+        E53_Loc. Proprietatea nu dezvăluie nimic despre momentul, locul sau persoana care a folosit
+        acest identificator. O reprezentare mai detaliată poate fi realizată folosind traseul
+        complet dezvoltat (adică indirect) prin E15_Atribuire_de_identificator. Această proprietate
+        este o prescurtare pentru traseul de la E1_Entitate_CRM, prin P140i_a_fost_atribuit_de, la
+        E15_Atribuire_de_identificator, și prin P37_atribuit_la, la E42_Identificator. Este de
+        asemenea o prescurtare pentru traseul de la E1_Entitate_CRM, prin P1_este_identificat_prin,
+        la E41_Denumire, și prin P139_are_drept_formă_alternativă, la E41_Denumire.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P1i_identifies"
+    local_name: P1i_identifies
+    label: {ro: "identifică"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"
+    local_name: P21_had_general_purpose
+    label: {ro: "a avut ca scop general"}
+    comment:
+      ro: >-
+        Această proprietate descrie o relație intențională între o instanță de E7_Activitate și un
+        anumit scop sau obiectiv general, descris ca o instanță de E55_Tip. Aceasta poate implica
+        activități concepute ca pregătire pentru un anumit tip de activitate sau eveniment.
+        P21_a_avut_ca_scop_general (a fost scopul lui) diferă de P20_a_avut_ca_scop_specific (a fost
+        scopul lui) prin faptul că niciun eveniment specific nu este presupus drept scop.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"
+    local_name: P21i_was_purpose_of
+    label: {ro: "a fost în scopul de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
+    local_name: P2_has_type
+    label: {ro: "are drept tip"}
+    comment:
+      ro: >-
+        Această proprietate permite sub-tipizarea entităților CIDOC CRM — o formă de specializare —
+        prin folosirea unei ierarhii terminologice, sau a unui tezaur. CIDOC CRM își propune să se
+        concentreze pe entitățile și relațiile de nivel înalt necesare pentru a descrie structuri de
+        date. În consecință, nu specializează entitățile mai mult decât este necesar pentru acest
+        scop imediat. Totuși, entitățile din ierarhia isA a CIDOC CRM pot fi specializate într-un
+        număr oarecare de subentități, care pot fi definite în ierarhia de E55_Tip. E41_Denumire, de
+        exemplu, poate fi specializat în „adresă de e-mail”, „număr de telefon”, „căsuță poștală”,
+        „URL” etc., niciuna dintre acestea nefiind prezentă explicit în ierarhia de clase a CIDOC
+        CRM. O explicație cuprinzătoare privind rafinarea conceptelor CIDOC CRM prin E55_Tip este
+        oferită în secțiunea „Despre tipuri” din secțiunea „Construcții specifice de modelare” a
+        acestui document. Această proprietate este o prescurtare pentru traseul de la
+        E1_Entitate_CRM, prin P41i_a_fost_clasificat_de, la E17_Atribuire_de_tip, și prin
+        P42_atribuit_la, la E55_Tip.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"
+    local_name: P2i_is_type_of
+    label: {ro: "este tipul pentru"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension"
+    local_name: P43_has_dimension
+    label: {ro: "are ca dimensiune"}
+    comment:
+      ro: >-
+        Această proprietate înregistrează o instanță de E54_Dimensiune a unei anumite instanțe de
+        E70_Lucru. În cazul în care proprietatea înregistrată este rezultatul unei măsurători a unei
+        instanțe de E18_Lucru_material, această proprietate este o prescurtare a traseului mai
+        dezvoltat de la E18_Lucru_material, prin P39i_a_fost_măsurat_prin, la E16_Măsurătoare, și
+        prin P40_dimensiune_observată, la E54_Dimensiune. Ea nu oferă nicio informație despre modul
+        și momentul în care a fost stabilită o instanță de E54_Dimensiune, nici despre cine a
+        stabilit-o. Cunoașterea unei instanțe de E54_Dimensiune nu trebuie neapărat să fie
+        rezultatul unei măsurători; poate fi rezultatul evaluării unor date sau a altor informații,
+        ceea ce trebuie documentat ca o instanță de E13_Atribuire_de_atribut. O instanță de
+        E54_Dimensiune este specifică unei instanțe de E70_Lucru.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of"
+    local_name: P43i_is_dimension_of
+    label: {ro: "este dimensiune a"}

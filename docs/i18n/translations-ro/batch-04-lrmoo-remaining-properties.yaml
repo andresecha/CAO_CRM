@@ -1,0 +1,104 @@
+# Lote 4 (ro): el resto de propiedades LRMoo del módulo (13 términos), completando la familia
+# LRMoo (31 términos en total, junto con las 8 clases + 10 propiedades ya cubiertas en batch-01).
+
+terms:
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17_created"
+    local_name: R17_created
+    label: {ro: "a creat"}
+    comment:
+      ro: >-
+        Această proprietate, R17_a_creat, asociază o instanță de F2_Expresie exteriorizată în cursul
+        unei anumite instanțe de F28_Crearea_expresiei cu acel eveniment de creare concret. O creare
+        a expresiei creează o instanță de F2_Expresie, precum și orice expresie care face parte din
+        aceasta.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by"
+    local_name: R17i_was_created_by
+    label: {ro: "a fost creată de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24_created"
+    local_name: R24_created
+    label: {ro: "a creat"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F3_Manifestare apărută pe parcursul unei instanțe
+        de F30_Manifestarea_creației.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through"
+    local_name: R24i_was_created_through
+    label: {ro: "a fost creată prin"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of"
+    local_name: R2_is_derivative_of
+    label: {ro: "este derivată din"}
+    comment:
+      ro: >-
+        Această proprietate asociază o lucrare care modifică conținutul unei alte lucrări cu aceasta
+        din urmă. Această proprietate este tranzitivă, asimetrică și nereflexivă. Este echivalentă
+        cu traseul: F1_Operă(1) → R3_este_realizată_în → F2_Expresie(1) → R17i_a_fost_creată_de →
+        F28_Crearea_Expresiei → P16_a_utilizat_ca_obiect_specific → F2_Expresie(2) → R3i_realizeză →
+        F1_Operă(2). Adică F1_Operă(1) → R2_este_derivată_din → F1_Operă(2), fără a fi necesar să se
+        precizeze expresiile concrete implicate în derivare.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative"
+    local_name: R2i_has_derivative
+    label: {ro: "are ca derivat"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71_has_part"
+    local_name: R71_has_part
+    label: {ro: "are ca parte"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F3_Manifestare cu o parte structurală a acesteia,
+        care este ea însăși o F3_Manifestare. Această proprietate este tranzitivă, asimetrică și
+        nereflexivă.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of"
+    local_name: R71i_is_part_of
+    label: {ro: "face parte din"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates"
+    local_name: R75_incorporates
+    label: {ro: "încorporează"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F2_Expresie cu o altă instanță de F2_Expresie
+        care face parte integrantă din prima, dar în care aceasta din urmă realizează o operă
+        (instanță de F1_Operă) diferită de prima. Această proprietate este tranzitivă, asimetrică și
+        nereflexivă.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in"
+    local_name: R75i_is_incorporated_in
+    label: {ro: "este încorporată în"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of"
+    local_name: R76_is_derivative_of
+    label: {ro: "este derivată din"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F2_Expresie cu o altă instanță de F2_Expresie
+        care i-a servit drept sursă sau a constituit una dintre sursele sale. Această proprietate nu
+        este tranzitivă. Este asimetrică și nereflexivă. Constituie de asemenea o prescurtare a
+        traseului complet: F2_Expresie(1) → P16i_a_fost_folosit_pentru → F28_Crearea_Expresiei →
+        R17_creat → F2_Expresie(2).
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative"
+    local_name: R76i_has_derivative
+    label: {ro: "are ca derivat"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate"
+    local_name: R78_has_alternate
+    label: {ro: "are ca alternativă"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de F3_Manifestare cu o altă instanță F3_Manifestare
+        care exemplifică aceeași F2_Expresie, atunci când cele două manifestări pot fi folosite una
+        în locul celeilalte drept alternative în anumite cazuri de utilizare. Această proprietate
+        este tranzitivă și simetrică. Este nereflexivă. Manifestările alternative pot avea aceeași
+        formă fizică, de exemplu publicații simultane pe piețe diferite. Mai frecvent, însă, relația
+        de alternativă se stabilește atunci când manifestările alternative au forme fizice diferite,
+        concepute pentru a permite utilizarea aceluiași conținut cu echipamente de redare diferite
+        (precum o versiune pe DVD și o versiune pe Blu-ray a aceleiași înregistrări video). Această
+        proprietate constituie o prescurtare pentru traseul care leagă o manifestare de o altă
+        manifestare, ambele legate, prin proprietatea R4_încarnează (este încarnată în) și inversa
+        sa, de aceeași expresie.

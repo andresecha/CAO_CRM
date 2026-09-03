@@ -1,0 +1,231 @@
+# Lote 8 (final, ro): los 12 pares de propiedades de objeto CIDOC-CRM restantes del módulo.
+# Completa los 130 términos. P44_has_condition usa "are stare materială" (label del sujeto E3, ver
+# glossary_crosswalk-ro.yaml), consistente con la elección de "Stare materială" para E3_Condition_State
+# en batch-06, en vez de calcar el "tiene estado de conservación" del es.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P44_has_condition"
+    local_name: P44_has_condition
+    label: {ro: "are ca stare materială"}
+    comment:
+      ro: >-
+        Această proprietate înregistrează o E3_Stare_materială pentru o anumită instanță de
+        E18_Lucru_material. Această proprietate este o prescurtare a traseului mai dezvoltat de la
+        E18_Lucru_material, prin P34i_a_fost_evaluat_prin, la E14_Evaluare_a_stării, sau prin
+        P35_a_identificat_drept, la E3_Stare_materială. Ea nu oferă nicio informație despre modul și
+        momentul în care a fost stabilită E3_Stare_materială, nici despre cine a stabilit-o. O
+        instanță de E3_Stare_materială este specifică unei instanțe de E18_Lucru_material.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of"
+    local_name: P44i_is_condition_of
+    label: {ro: "are drept stare materială"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P45_consists_of"
+    local_name: P45_consists_of
+    label: {ro: "constă din"}
+    comment:
+      ro: >-
+        Această proprietate identifică instanțele de E57_Material din care este alcătuită o instanță
+        de E18_Lucru_material. Toate obiectele materiale sunt alcătuite din materiale fizice.
+        P45_constă_din (este încorporat în) permite înregistrarea diferitelor materiale.
+        P45_constă_din (este încorporat în) se referă aici la materialul observat, spre deosebire de
+        materia primă consumată. Un material, precum un aliaj teoretic, poate să nu aibă nicio
+        instanță fizică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in"
+    local_name: P45i_is_incorporated_in
+    label: {ro: "este încorporat în"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of"
+    local_name: P46_is_composed_of
+    label: {ro: "este compus din"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de E18_Lucru_material cu o altă instanță de
+        E18_Lucru_material care face parte din aceasta. Întinderea spațială a părții componente este
+        inclusă în întinderea spațială a întregului. Elementele componente, fiind ele însele
+        instanțe de E18_Lucru_material, pot fi la rândul lor analizate în subcomponente, creând
+        astfel o ierarhie de descompunere în părți. O instanță de E18_Lucru_material poate fi
+        împărțită între mai multe întreguri: de exemplu, două clădiri pot avea în comun un perete.
+        Această proprietate nu precizează când și pentru cât timp un element component a făcut parte
+        în întregul respectiv. Dacă o componentă nu face parte dintr-un întreg de la începutul
+        existenței acestuia, sau până la sfârșitul ei, clasele E79_Adăugare_de_parte și
+        E90_Îndepărtare_de_parte pot fi folosite pentru a documenta momentul în care o componentă a
+        devenit parte a unui anumit întreg și/sau momentul în care a încetat să mai facă parte din
+        acesta. Pe durata în care face parte din întregul respectiv, componenta este complet
+        conținută în spațiul pe care îl ocupă întregul. Această proprietate este destinată să
+        descrie componente specifice, documentate individual, mai degrabă decât aspecte generale.
+        Descrierile de ansamblu ale structurii unei instanțe de E18_Lucru_material sunt surprinse
+        prin proprietatea P3_are_drept_notă. Instanțele de E57_Material din care este alcătuită o
+        instanță de E18_Lucru_material trebuie documentate prin proprietatea P45_constă_din (este
+        încorporat în). Această proprietate este tranzitivă și asimetrică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of"
+    local_name: P46i_forms_part_of
+    label: {ro: "face parte din"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"
+    local_name: "P4_has_time-span"
+    label: {ro: "are ca interval temporal"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de E2_Entitate_temporală cu instanța de
+        E52_Interval_temporal pe parcursul căreia aceasta s-a desfășurat. Instanța de
+        E52_Interval_temporal asociată este înțeleasă ca intervalul de timp real în care fenomenele
+        care alcătuiesc instanța de entitate temporală au fost active. Mai multe instanțe de
+        E2_Entitate_temporală pot avea în comun aceeași instanță de E52_Interval_temporal doar dacă
+        apar și încetează să existe din cauza unor declarații sau evenimente identice.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of"
+    local_name: "P4i_is_time-span_of"
+    label: {ro: "este intervalul temporal al"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location"
+    local_name: P54_has_current_permanent_location
+    label: {ro: "are în prezent ca locație permanentă"}
+    comment:
+      ro: >-
+        Această proprietate înregistrează locația permanentă prevăzută a unei instanțe de
+        E19_Obiect_fizic la momentul valabilității înregistrării sau bazei de date care conține
+        afirmația ce folosește această proprietate. P54_are_în_prezent_ca_locație_permanentă (este
+        locația permanentă actuală a) este similară cu P55_are_în_prezent_ca_locație (deține în
+        prezent locația). Totuși, ea indică E53_Locul, rezervat în prezent pentru un obiect, precum
+        locul de depozitare permanentă sau un loc de expunere permanentă. Obiectul poate fi retras
+        temporar din locația permanentă, de exemplu atunci când este folosit în expoziții temporare
+        sau împrumutat unei alte instituții. Este posibil ca obiectul să nu se afle niciodată
+        efectiv la locația sa permanentă.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of"
+    local_name: P54i_is_current_permanent_location_of
+    label: {ro: "este locația permanentă actuală a"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location"
+    local_name: P55_has_current_location
+    label: {ro: "are în prezent ca locație"}
+    comment:
+      ro: >-
+        Această proprietate înregistrează locația unei instanțe de E19_Obiect_fizic la momentul în
+        care sunt considerate valabile înregistrarea sau baza de date care conține afirmația ce
+        folosește această proprietate. Această proprietate este o specializare a
+        P53_a_avut_ca_locație anterioară_sau_actuală (a fost locația anterioară sau actuală a). Ea
+        indică faptul că instanța de E53_Loc asociată instanței de E19_Obiect_fizic rezultă în
+        locația actuală a obiectului. Proprietatea nu permite indicarea perioadei de timp în care
+        obiectul s-a aflat la locația actuală. Această proprietate este o prescurtare. O
+        reprezentare mai detaliată poate folosi traseul complet dezvoltat (adică indirect) de la
+        E19_Obiect_fizic, utilizând proprietatea P25i_mutat_de, la E9_Mutare, sau trecând prin
+        proprietatea P26_mutat_la, spre E53_Loc, dacă și numai dacă această E9_Mutare este cea mai
+        recentă.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds"
+    local_name: P55i_currently_holds
+    label: {ro: "este în prezent localizarea a"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+    local_name: P67_refers_to
+    label: {ro: "se referă la"}
+    comment:
+      ro: >-
+        Această proprietate documentează faptul că o instanță de E89_Obiect_propozițional formulează
+        o afirmație despre o instanță de E1_Entitate_CRM. P67_se_referă_la (este menționat de) face
+        legătura cu P67.1_are_ca_tip către o instanță de E55 Tip. Aceasta este menită să permită o
+        descriere mai detaliată a tipului de referință. Acest lucru diferă de P129_tratează_despre
+        (este subiectul lui), care descrie subiectul sau subiectele principale ale instanței de
+        E89_Obiect_propozițional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by"
+    local_name: P67i_is_referred_to_by
+    label: {ro: "este menționat de"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P72_has_language"
+    local_name: P72_has_language
+    label: {ro: "are ca limbă"}
+    comment:
+      ro: >-
+        Această proprietate asociază una sau mai multe instanțe de E33_Obiect_lingvistic cu o
+        instanță de E56_Limbă în care acestea sunt exprimate, cel puțin parțial. Obiectele
+        lingvistice sunt alcătuite în una sau mai multe limbi umane. Această proprietate permite
+        documentarea acestor limbi.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of"
+    local_name: P72i_is_language_of
+    label: {ro: "este limba lui"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at"
+    local_name: P7_took_place_at
+    label: {ro: "s-a petrecut la"}
+    comment:
+      ro: >-
+        Această proprietate descrie locația spațială a unei instanțe de E4_Perioadă. Instanța de
+        E53_Loc asociată trebuie înțeleasă ca o aproximare mai largă a zonei geometrice în
+        interiorul căreia s-au produs fenomenele care caracterizează perioada respectivă, a se vedea
+        mai jos. P7_s-a_petrecut_la (a fost martor al) nu vehiculează altceva decât poziționarea
+        spațială (adesea pe suprafața pământului). De exemplu, se poate spune că perioada „Revoluția
+        franceză” s-a petrecut în „Franța în 1789”; se poate spune că perioada „victoriană” s-a
+        petrecut în „Marea Britanie între 1837 și 1901” și în coloniile sale, precum și în alte
+        părți ale Europei și ale Americii de Nord. O instanță de E4_Perioadă se poate petrece în mai
+        multe locuri necontigue și fără suprapunere. Orice loc în care s-a produs ceva include
+        proiecția spațială a acelui eveniment, dată în același sistem de referință geometric. De
+        exemplu, H.M.S. Victory, ca loc al morții lordului Nelson, include poziția corpului său față
+        de coca vasului H.M.S. Victory la momentul morții sale, ca fiind cel mai precis loc al
+        decesului său. Cu ajutorul proprietății P161_are_ca_proiecție_spațială, o instanță de
+        E4_Perioadă se petrece în toate proiecțiile sale spațiale din sistemele de referință
+        respective, adică instanțe de E53_Loc. Prin urmare, această proprietate implică traseul mai
+        dezvoltat de la E4_Perioadă, prin proprietatea P161_are_proiecție_spațială, la E53_Loc, sau
+        prin proprietatea P89_se_încadrează_în, la entitatea E53_Loc, unde ambele locuri sunt
+        definite în același sistem de referință geometric. Relația dintre o instanță de E53_Loc și
+        sistemul său de referință poate fi documentată convenabil prin proprietatea
+        P157_este_în_repaus_relativ_la (oferă spațiul de referință pentru). Ceva ce s-a petrecut
+        într-un anumit loc poate fi de asemenea considerat că s-a petrecut într-un loc mai mic aflat
+        în interiorul acestuia: de exemplu, este rezonabil să se spună că asasinarea lui Cezar a
+        avut loc la Roma, dar și în Forumul Roman, și, mai precis, în Curie. Este caracteristic ca
+        surse istorice diferite să folosească precizii variabile în asemenea afirmații, fără a se
+        contrazice reciproc. Acest lucru se poate datora lipsei de cunoștințe sau a relevanței
+        preciziei în îndeplinirea scopului comunicării. În integrarea informațiilor, afirmația mai
+        precisă îmbogățește cunoașterea de ansamblu.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed"
+    local_name: P7i_witnessed
+    label: {ro: "a fost martor al"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within"
+    local_name: P86_falls_within
+    label: {ro: "se încadrează în"}
+    comment:
+      ro: >-
+        Această proprietate descrie relația de includere dintre două instanțe de
+        E52_Interval_temporal. Ea susține ideea că întinderea temporală a unei instanțe de
+        E52_Interval_temporal se încadrează în întinderea temporală a unei alte instanțe de
+        E52_Interval_temporal. Se referă doar la conținerea temporală, fără a implica nicio legătură
+        contextuală între cele două instanțe de E52_Interval_temporal. Proprietatea
+        P86_se_încadrează_în este tranzitivă și reflexivă.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P86i_contains"
+    local_name: P86i_contains
+    label: {ro: "conține"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"
+    local_name: P91_has_unit
+    label: {ro: "are ca unitate de măsură"}
+    comment:
+      ro: >-
+        Această proprietate indică tipul de unitate în care a fost exprimată o instanță de
+        E54_Dimensiune.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of"
+    local_name: P91i_is_unit_of
+    label: {ro: "este unitatea de măsură a"}
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life"
+    local_name: P98_brought_into_life
+    label: {ro: "a adus pe lume"}
+    comment:
+      ro: >-
+        Această proprietate leagă o instanță a evenimentului E67_Naștere de o instanță de
+        E21_Persoană, în rolul de urmaș. Gemenii, tripleții etc. sunt aduși pe lume de aceeași
+        instanță de E67_Naștere. Această proprietate nu este destinată utilizării generale, pentru
+        tot câmpul istoriei naturale, ci doar pentru persoane. Nu există o metodă explicită de a
+        modela concepția și gestația, decât prin extensii.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P98i_was_born"
+    local_name: P98i_was_born
+    label: {ro: "s-a născut"}

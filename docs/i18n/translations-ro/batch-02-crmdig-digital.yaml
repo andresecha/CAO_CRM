@@ -1,0 +1,126 @@
+# Lote 2 (ro): los 13 términos CRMdig del módulo (5 clases D*, 4 pares de propiedades L*).
+# Terminología anclada en glossary_crosswalk-ro.yaml (Obiect digital, Proces de digitalizare
+# -- se prefiere "digitalizare" a "digitizare", ver nota en el crosswalk).
+
+terms:
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"
+    local_name: D1_Digital_Object
+    label: {ro: "Obiect digital"}
+    comment:
+      ro: >-
+        Această clasă, D1_Obiect_digital, cuprinde elemente imateriale identificabile care pot fi
+        reprezentate ca ansambluri de secvențe de biți, precum seturi de date, texte electronice,
+        imagini, elemente audio sau video, programe informatice etc., și care sunt documentate ca
+        unități unice. Orice modificare a secvenței de biți produce o nouă instanță de
+        D1_Obiect_digital. Orice agregare de obiecte digitale într-un ansamblu tratat ca o unitate
+        unică este de asemenea considerată o nouă instanță de D1_Obiect_digital. Aceasta înseamnă
+        că, de exemplu, conținutul unui DVD, un fișier XML aflat pe acesta și un element al acestui
+        fișier sunt considerate obiecte digitale distincte, legate între ele prin proprietatea
+        P46_este_compus_din (face parte din). În cazul metadatelor incluse, documentaristul trebuie
+        să aibă grijă să distingă identitatea obiectului care include metadatele de identitatea
+        conținutului inclus pe care aceste metadate îl descriu. Un obiect digital nu depinde de un
+        anumit suport fizic și poate exista simultan pe unul sau mai multe suporturi.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"
+    local_name: D2_Digitization_Process
+    label: {ro: "Proces de digitalizare"}
+    comment:
+      ro: >-
+        Această clasă cuprinde evenimentele care au drept rezultat crearea unor obiecte de date ce
+        reprezintă aspectul (de exemplu, proprietățile de reflexie a luminii), forma sau structura
+        internă înregistrată a unei instanțe de E18_Lucru_material, precum un document pe hârtie, o
+        statuie, o clădire, o pictură, un obiect biologic etc. Astfel de metode sunt denumite de
+        regulă „tehnici de imagistică”. Un caz particular îl constituie conversia analog-digitală a
+        materialului audiovizual. Această clasă reprezintă trecerea de la o instanță de
+        E19_Obiect_material la o reprezentare imaterială a unei distribuții spațiale relevante a
+        proprietăților fizice locale ale acelui obiect material (în cazul unui obiect material
+        sonor, și de-a lungul benzii sonore corespunzătoare). Etapele ulterioare de prelucrare a
+        rezultatului proceselor de digitalizare, care păstrează sau îmbunătățesc corelațiile
+        spațiale relevante cu obiectul digitalizat sau cu o parte a acestuia, sunt considerate
+        instanțe de D3_Derivare_formală.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"
+    local_name: D7_Digital_Machine_Event
+    label: {ro: "Eveniment de dispozitiv digital"}
+    comment:
+      ro: >-
+        Această clasă cuprinde evenimentele care au loc pe dispozitive digitale fizice, în urma unei
+        activități umane care i-a provocat în mod intenționat declanșarea, imediată sau amânată, și
+        care au drept rezultat crearea unui nou obiect digital în numele actantului uman. Datele de
+        intrare ale unui eveniment de dispozitiv digital pot fi reglaje de parametri și/sau date
+        care urmează a fi prelucrate. Unele evenimente de dispozitiv digital pot face parte dintr-un
+        eveniment de creare mai amplu. În acest caz, toate output-urile evenimentelor parțiale sunt
+        considerate ca ținând de crearea activității de ansamblu.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object"
+    local_name: D9_Data_Object
+    label: {ro: "Obiect de date"}
+    comment:
+      ro: >-
+        Această clasă. D9_Obiect_de_date, cuprinde obiectele digitale care rezultă din măsurători
+        sau din alte observații și/sau din evaluarea lor algoritmică sub forma unor date
+        structurate, precum propoziții formale codificate, fișiere CSV („valori separate prin
+        virgulă”) sau reprezentări echivalente. Dacă un obiect digital conține setul de valori al
+        unei E54_Dimensiuni, precum datele primare provenite dintr-o S21_Măsurătoare, această
+        asociere poate fi documentată prin proprietatea L61_conține_setul_de_valori_al
+        (L61i_are_ca_reprezentare_a_setului_de_valori).
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier"
+    local_name: D13_Digital_Information_Carrier
+    label: {ro: "Suport de informație digitală"}
+    comment:
+      ro: >-
+        Această clasă cuprinde toate instanțele de E84_Suport_de_informație concepute în mod
+        explicit pentru a fi utilizate ca suporturi fizice digitale persistente pentru obiecte
+        digitale. Un suport de informație digitală poate conține sau nu informație, de exemplu o
+        dischetă goală.
+
+  # --- Propiedades ---
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11_had_output"
+    local_name: L11_had_output
+    label: {ro: "a avut ca output"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță D7_Eveniment_de_dispozitiv_digital cu instanța de
+        D1_Obiect_digital care constituie rezultatul acestei activități.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of"
+    local_name: L11i_was_output_of
+    label: {ro: "a fost output-ul lui"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19_stores"
+    local_name: L19_stores
+    label: {ro: "stochează"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de D13_Suport_de_informație_digitală cu instanța de
+        D1_Obiect_digital stocat pe acesta.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on"
+    local_name: L19i_is_stored_on
+    label: {ro: "este stocat pe"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1_digitized"
+    local_name: L1_digitized
+    label: {ro: "a digitalizat"}
+    comment:
+      ro: >-
+        Această proprietate asociază o instanță de D2_Proces_de_digitalizare cu E18_Lucrul_material
+        care face obiectul acestuia.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by"
+    local_name: L1i_was_digitized_by
+    label: {ro: "a fost digitalizat de"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of"
+    local_name: L61_contains_value_set_of
+    label: {ro: "conține setul de valori al"}
+    comment:
+      ro: >-
+        Această proprietate asociază un D9_Obiect_de_date cu o instanță de E54_Dimensiune, atunci
+        când obiectul de date conține setul de valori al acelei dimensiuni în format digital.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation"
+    local_name: L61i_has_value_set_representation
+    label: {ro: "are ca reprezentare a setului de valori"}

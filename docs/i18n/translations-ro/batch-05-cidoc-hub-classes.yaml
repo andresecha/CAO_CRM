@@ -1,0 +1,186 @@
+# Lote 5 (ro): las clases "eje" de CIDOC-CRM que sirven de raíz o de conector estructural a decenas
+# de otras clases del módulo (Entity, Temporal Entity, Period, Activity, Thing, Actor, Person,
+# Physical Thing, Human-Made Object, Legal Object). Ninguna tiene etiqueta oficial en rumano
+# (confirmado: "ro" nunca aparece en official_languages_label), por lo que aquí se completan
+# label + comment en rumano para las 10.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"
+    local_name: E1_CRM_Entity
+    label: {ro: "Entitate CRM"}
+    comment:
+      ro: >-
+        Această clasă cuprinde toate lucrurile din universul de discurs al CIDOC Conceptual
+        Reference Model. E1_Entitate_CRM este un concept abstract care oferă trei proprietăți
+        generale: identificarea prin nume sau denumire, și în special printr-un identificator
+        preferat; clasificarea prin tip, care permite rafinarea suplimentară a subclasei specifice
+        căreia îi aparține o instanță; atașarea de text liber și de alte date nestructurate pentru
+        exprimarea a orice nu este surprins prin proprietățile formale. Toate celelalte clase din
+        cadrul CIDOC CRM sunt, direct sau indirect, specializări ale E1_Entitate_CRM.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"
+    local_name: E2_Temporal_Entity
+    label: {ro: "Entitate temporală"}
+    comment:
+      ro: >-
+        Această clasă cuprinde toate fenomenele, precum instanțele de E4_Perioadă și E5_Eveniment,
+        care se produc pe o perioadă limitată. Această secvență de timp trebuie să fie contiguă,
+        adică fără întreruperi. În cazul în care tipurile de fenomene definitorii pentru o instanță
+        de entitate temporală încetează să se producă, iar apoi reapar mai târziu, într-un alt
+        moment, se consideră că instanța anterioară de entitate temporală s-a încheiat și că a
+        apărut o nouă instanță. În termeni mai intuitivi, același eveniment nu se poate petrece de
+        două ori. În unele contexte, astfel de fenomene sunt de asemenea numite „perdurante” (i.e.
+        persistente doar prin anumite elemente temporale). Această clasă este disjunctă de
+        E77_Element_persistent, reprezentând o clasă abstractă care de regulă nu are instanțe
+        directe. E2_Entitate_temporală se specializează în E4_Perioadă, care se aplică unei anumite
+        zone geografice (definită cu un grad mai mare sau mai mic de precizie), și în
+        E3_Stare_materială, care se aplică instanțelor de E18_Lucru_material.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E4_Period"
+    local_name: E4_Period
+    label: {ro: "Perioadă"}
+    comment:
+      ro: >-
+        Această clasă, E4_Perioadă, cuprinde ansambluri de fenomene coerente sau de manifestări
+        culturale care se produc în timp și spațiu. Coerența socială sau fizică a acestor fenomene
+        este cea care identifică o instanță drept „Perioadă”, și nu cuprinderea sa spațio-temporală.
+        Această cuprindere reprezintă doar „terenul” sau spațiul, în sens fizic abstract, pe care
+        l-a acoperit procesul efectiv de creștere, extindere și retragere. În consecință, perioade
+        diferite se pot suprapune și pot coexista în timp și spațiu, ca atunci când o cultură nomadă
+        există în aceeași zonă și în același timp cu o cultură sedentară. Aceasta înseamnă de
+        asemenea că drepturile de folosință a pământului care se suprapun, frecvente la primele
+        națiuni, echivalează cu perioade care se suprapun. Adesea, această clasă este folosită
+        pentru a descrie perioade preistorice sau istorice, precum „Perioada neolitică”, „Dinastia
+        Ming” sau „Epoca McCarthy”, dar și unitățile geopolitice și activitățile așezărilor sunt
+        considerate cazuri speciale de perioadă. Totuși, nu se fac presupuneri privind amploarea
+        fenomenelor asociate. În special, toate evenimentele sunt văzute ca procese sintetice
+        alcătuite din fenomene coerente. Prin urmare, perioada este o superclasă a „Evenimentului”.
+        De exemplu, o naștere clinică modernă, o instanță de E67_Naștere, poate fi văzută atât ca un
+        singur eveniment, adică o instanță de E5_Eveniment, cât și ca o perioadă extinsă, adică o
+        instanță de E4_Perioadă, alcătuită din mai multe procese fizice și activități complementare
+        desfășurate de mai mulți actanți. Perioada este o subclasă atât a E2_Entitate_temporală, cât
+        și a E92_Volum_spațio-temporal. Acesta din urmă este conceput ca un volum spațio-temporal
+        fenomenal, așa cum este definit în CIDOC CRMgeo (Doerr & Hiebel, 2013). În virtutea acestei
+        moșteniri multiple, este posibil să se discute despre întinderea unei perioade fără a fi
+        necesar ca fiecare instanță a acesteia să fie reprezentată împreună cu o instanță a
+        volumului său spațio-temporal asociat. Acest model combină două tipuri destul de diferite de
+        substanță: o perioadă este un fenomen, în timp ce un volum spațio-temporal este o agregare
+        de puncte în spațiu-timp. Totuși, întinderea spațio-temporală reală a unei perioade este
+        considerată unică pentru aceasta, datorită tuturor detaliilor și impreciziei sale;
+        identitatea și existența ei depind exclusiv de identitatea E4_Perioadă. Prin urmare, această
+        moștenire multiplă este lipsită de ambiguitate și eficace, și corespunde, în plus,
+        intuițiilor limbajului natural. Utilizarea tipică a acestei clase în domeniul patrimoniului
+        cultural este pentru documentarea perioadelor culturale și artistice. De pildă, există două
+        moduri diferire de a conceptualiza „stilul artistic”: fie prin trăsături fizice, fie prin
+        context istoric. Și mai precis, „Impresionismul” poate fi văzut ca o perioadă, în sfera de
+        influență europeană, care durează de la aproximativ 1870 până la 1905, în cursul căreia
+        picturi cu caracteristici particulare au fost produse de un grup de artiști care i-a inclus,
+        printre alții, pe Monet, Renoir, Pissarro, Sisley și Degas. Alternativ, poate fi considerat
+        un stil aplicabil tuturor picturilor care împărtășesc caracteristicile operelor produse de
+        pictorii impresioniști, indiferent de contextul istoric. Prima interpretare este o instanță
+        de E4_Perioadă, iar a doua definește tipuri morfologice de obiecte care se încadrează la
+        E55_Tip. O unitate geopolitică, ca un caz particular al unei instanțe de E4_Perioadă, este
+        ansamblul activităților și fenomenelor legate de revendicarea puterii, de consecințele
+        apartenenței la o zonă jurisdicțională și de un sistem administrativ care instituie o
+        unitate geopolitică. Exemple din perioada modernă sunt țările sau zonele administrative ale
+        țărilor, precum districtele, ale căror acțiuni și structuri definesc activități și fenomene
+        în zona pe care intenționează să o guverneze. Frontierele unităților geopolitice sunt adesea
+        definite în contracte sau tratate, deși pot să difere de practica efectivă. Proprietățile
+        spațio-temporale ale unităților geopolitice pot fi modelate prin proprietățile moștenite de
+        la E92_Volumul_spațio-temporal. Un alt caz particular al unei instanțe de E4_Perioadă este
+        întinderea reală a ansamblului de activități și fenomene, atestată de urmele lor materiale,
+        care definește o așezare, precum perioada de locuire a Ninivei.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E7_Activity"
+    local_name: E7_Activity
+    label: {ro: "Activitate"}
+    comment:
+      ro: >-
+        Această clasă, E7_Activitate, cuprinde acțiunile desfășurate în mod intenționat de instanțe
+        de E39_Actant, care au ca rezultat schimbări de stare în sistemele culturale, sociale sau
+        fizice documentate. Această noțiune include acțiuni complexe, compuse și de lungă durată,
+        precum construirea unei așezări sau un război, precum și acțiuni simple, de scurtă durată,
+        precum deschiderea unei uși.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E70_Thing"
+    local_name: E70_Thing
+    label: {ro: "Lucru"}
+    comment:
+      ro: >-
+        Această clasă, E70_Lucru generală cuprinde instanțe discrete, identificabile, de
+        E77_Element_persistent, care sunt documentate ca unități unice, care fie sunt constituite
+        din materie, fie sunt purtate de materie, și care se caracterizează printr-o stabilitate
+        relativă. E70_Lucru pot fi produse intelectuale sau obiecte materiale. Ele pot avea, de
+        exemplu, o formă fizică solidă, o codificare electronică, sau pot fi un concept ori o
+        structură logică.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
+    local_name: E39_Actor
+    label: {ro: "Actant"}
+    comment:
+      ro: >-
+        Această clasă, E39_Actant, cuprinde persoane, fie individual, fie în grupuri, care au
+        potențialul de a îndeplini acțiuni intenționate pentru care pot fi făcute responsabile.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E21_Person"
+    local_name: E21_Person
+    label: {ro: "Persoană"}
+    comment:
+      ro: >-
+        Această clasă cuprinde persoanele reale care trăiesc sau despre care se presupune că au
+        trăit. Figurile legendare care este posibil să fi existat, precum Ulise sau regele Arthur,
+        se încadrează în E21_Persoană dacă documentația se referă la ele drept personaje istorice.
+        În cazurile în care există îndoieli privind suprapunerea identităților mai multor persoane,
+        pot fi create mai multe instanțe de E21_Persoană și legate între ele pentru a indica relația
+        lor. CIDOC CRM nu propune o formă specifică pentru a raționa asupra identității posibile.
+        Într-un context bibliografic, se va presupune că un nume prezentat conform convențiilor
+        utilizate în mod obișnuit pentru numele de persoane corespunde unei persoane reale efective
+        (o instanță de persoană), cu excepția cazului în care există dovezi care indică altfel.
+        Faptul că un personaj (persona) poate fi clasificat eronat drept o instanță de E21_Persoană
+        nu implică și faptul că această entitate ar include și „personae”.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"
+    local_name: E18_Physical_Thing
+    label: {ro: "Obiect material"}
+    comment:
+      ro: >-
+        Această clasă cuprinde toate obiectele materiale persistente într-o formă relativ stabilă,
+        create de om sau naturale. În funcție de existența unor limite naturale ale acestor lucruri,
+        CIDOC CRM face distincția între instanțele E19_Obiect_material și E26_Trăsătură_fizică,
+        precum găuri, râuri, parcele de teren etc. Majoritatea instanțelor de E19_Obiect_material
+        sunt deplasabile (dacă nu sunt prea grele), în timp ce „trăsăturile” sunt parte integrantă a
+        materiei înconjurătoare. O instanță de „Obiect material” ocupă nu doar un spațiu geometric
+        particular în fiecare moment al existenței sale, dar formează de asemenea, pe parcursul
+        existenței sale, o traiectorie prin spațiu-timp, care ocupă un volum real, adică fenomenal,
+        în spațiu-timp. Includem în spațiul ocupat spațiul umplut de materia lucrului fizic, precum
+        și toate spațiile sale interioare, de pildă, interiorul unei cutii. Pentru a permite
+        descrieri mai detaliate ale prezenței în spațiu și timp a unei instanțe de „obiect
+        material”, aceasta poate fi asociată cu o instanță de E92_Volum_spațio-temporal și cu
+        proprietatea P196_definește (este definit de...). CIDOC CRM nu se ocupă, în general, de
+        cantități de materie în stare fluidă sau gazoasă, atât timp cât acestea nu sunt limitate
+        într-un mod identificabil pentru un interval de timp minim identificabil.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"
+    local_name: E22_Human-Made_Object
+    label: {ro: "Obiect creat de om"}
+    comment:
+      ro: >-
+        Această clasă cuprinde toate obiectele materiale persistente, de orice dimensiune, create în
+        mod intenționat prin activitate umană și care au limite fizice ce le separă complet, în mod
+        obiectiv, de alte obiecte. E22_Obiect_creat_de_om include de asemenea toate agregatele de
+        obiecte create în scopuri funcționale de orice fel, independent de coerența lor fizică, de
+        pildă, un set de piese de șah.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"
+    local_name: E72_Legal_Object
+    label: {ro: "Obiect juridic"}
+    comment:
+      ro: >-
+        Această clasă, E72_Obiect_juridic, cuprinde acele elemente materiale sau imateriale cărora
+        li se pot aplica instanțe de E30_Drept, precum dreptul de proprietate sau de folosință.
+        Acest lucru este valabil, în general, pentru toate instanțele de E18_Lucru_material. În
+        cazul instanțelor de E28_Obiect_conceptual, însă, identitatea unei instanțe de obiect
+        conceptual sau modul în care este utilizată poate fi prea ambiguă pentru a stabili în mod
+        fiabil instanțe de E30_Drept, precum în cazul taxonilor și al surselor de inspirație.
+        Proprietatea morală este considerată în prezent ca fiind în afara sferei de aplicare a CIDOC
+        CRM.

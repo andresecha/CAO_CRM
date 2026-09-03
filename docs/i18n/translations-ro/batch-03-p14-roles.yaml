@@ -1,0 +1,87 @@
+# Lote 3 (ro): las 5 subpropiedades de rol P14_has_* -- la única excepción al principio de
+# composición pura de CAO_CRM (creadas por el propio proyecto, ver docs/intro.html "Justificación
+# del diseño"). No tienen ninguna etiqueta ni comentario oficial en ningún idioma (son extensiones
+# propias de CAO_CRM), por lo que en rumano requieren label + comment completos, igual que en es.
+# Nombres propios (Stendhal, Le Divan, Henri Martineau), títulos de obra y códigos MARC Relator se
+# dejan sin traducir, igual que en las versiones fr/es ya existentes.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_original_author"
+    local_name: P14_has_original_author
+    label: {ro: "are ca autor original"}
+    comment:
+      ro: >-
+        Subproprietate a P14_a_fost_efectuat_de, restrânsă la rolul de autor al textului original
+        (MARC Relator „aut” — http://id.loc.gov/vocabulary/relators/aut). Declarată urmând metoda
+        oficială proprie a CIDOC-CRM pentru proprietățile „.1” (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). De exemplu, instanța de F27_Crearea_Operei
+        corespunzătoare conceperii romanului „Le Rouge et le Noir” are ca autor original pe Stendhal
+        — o responsabilitate care rămâne unică și nu se repetă pentru fiecare F2_Expresie sau
+        F3_Manifestare ulterioare ale lucrării.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_translator"
+    local_name: P14_has_translator
+    label: {ro: "are ca traducător"}
+    comment:
+      ro: >-
+        Subproprietate a P14_a_fost_efectuat_de, restrânsă la rolul de traducere (MARC Relator „trl”
+        — http://id.loc.gov/vocabulary/relators/trl). Declarată urmând metoda oficială proprie a
+        CIDOC-CRM pentru proprietățile „.1” (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf).
+        De exemplu, instanța de F28_Creare_a_ expresiei care produce versiunea germană „Mord im
+        Orientexpress” a unui roman de Agatha Christie (exemplul oficial al propriului LRMoo) are ca
+        traducător persoana care a realizat acea traducere — distinctă de autorul original al
+        textului în limba engleză.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_abridger"
+    local_name: P14_has_abridger
+    label: {ro: "are drept abreviator"}
+    comment:
+      ro: >-
+        Subproprietate a P14_a_fost_efectuat_de, restrânsă la rolul de prescurtare a unui text (MARC
+        Relator „abr” — http://id.loc.gov/vocabulary/relators/abr). Declarată urmând metoda oficială
+        proprie a CIDOC-CRM pentru proprietățile „.1” (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). De exemplu, instanța de F28_Creare_a_expresiei care
+        produce versiunea engleză prescurtată/ abreviată a romanului „Murder on the Orient Express”
+        (așa cum a fost publicată de HarperCollins, exemplul oficial al propriului LRMoo) are ca
+        abreviator persoana care a realizat acea versiune redusă, ceea ce reprezintă un rol distinct
+        de cel al autorului original al textului integral.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_scientific_editor"
+    local_name: P14_has_scientific_editor
+    label: {ro: "are drept editor științific"}
+    comment:
+      ro: >-
+        Subproprietate a P14_a_fost_efectuat_de, restrânsă la rolul de responsabilitate științifică
+        în stabilirea editorială a unei versiuni a unei lucrări (revizuirea textului, redactarea
+        unei prefețe sau a unui aparat critic) (MARC Relator „edt” —
+        http://id.loc.gov/vocabulary/relators/edt, verificat la 8 iulie 2026: „A person, family, or
+        organization contributing to a resource by revising or elucidating the content, e.g., adding
+        an introduction, notes, or other critical matter. An editor may also prepare a resource for
+        production, publication, or distribution.”). Declarată urmând metoda oficială proprie a
+        CIDOC-CRM pentru proprietățile „.1” (Encoding Rule 4, imports/vendor/cidoc-crm-7.1.3.rdf).
+        Se aplică, prin subsumare de domeniu (E7_Activitate), la F30_Manifestare_creație și la orice
+        E7_Activitate independentă legată de F5_Exemplar/D1_Object_Digital prin
+        P16_a_utilizat_ca_object_specific. De exemplu, instanța de F30_Manifestare_creație care
+        stabilește ediția critică din 1927 a romanului „Le Rouge et le Noir” de Stendhal are ca
+        editor științific pe Henri Martineau, care a revizuit textul și a redactat prefața —
+        distinct de editorul comercial (a se vedea P14_are_drept_editor_comercial), responsabil
+        comercial și material al aceleiași manifestări — a se vedea
+        decisions/fr/informe-activite-editoriale-scientifique.md.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_has_publisher"
+    local_name: P14_has_publisher
+    label: {ro: "are drept editor comercial"}
+    comment:
+      ro: >-
+        Subproprietate a P14_a_fost_efectuat_de, restrânsă la rolul de editor/tipograf comercial
+        responsabil de publicarea sau producerea unei manifestări sau a unui exemplar (MARC Relator
+        „pbl” — http://id.loc.gov/vocabulary/relators/pbl, verificat la 8 iulie 2026: „A person or
+        organization responsible for publishing, releasing, or issuing a resource.”). Declarată
+        urmând metoda oficială proprie a CIDOC-CRM pentru proprietățile „.1” (Encoding Rule 4,
+        imports/vendor/cidoc-crm-7.1.3.rdf). Distinctă de P14_are_drept_editor_științific: această
+        proprietate acoperă responsabilitatea comercială/materială a publicării, cealaltă
+        responsabilitatea intelectuală asupra conținutului textului. Se aplică la
+        F30_Manifestare_creație și F32_Eveniment_producător_de_item. De exemplu, instanța de
+        F30_Manifestare_creație care stabilește ediția critică din 1927 a romanului „Le Rouge et le
+        Noir” de Stendhal are ca editor comercial pe „Le Divan”, editura pariziană responsabilă de
+        publicare și tipărire — a se vedea decisions/fr/informe-activite-editoriale-scientifique.md.
