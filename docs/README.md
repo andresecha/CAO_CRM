@@ -27,6 +27,14 @@ bash docs/build.sh ontology/CAO_CRM-1.0.rdf
 
 **Published via GitHub Pages:** see `.github/workflows/pages.yml` at the repo root — it copies `docs/site/` verbatim into `public/` on every push to the default branch; it does not rebuild via Widoco in CI (no JDK needed there), so the committed `docs/site/` must already be current. (The GitLab CI/CD equivalent, `.gitlab-ci.yml`, applies to the institutional GitLab copy — see README.md section 5.)
 
+## Pending reviews: how to resume each one
+
+Three language editions are waiting on a colleague's review, and each will be resumed in a session
+that remembers nothing of the ones before it. `prompts/` holds one self-contained document per
+pending review — what arrives, where it goes, what to wire, how to verify it, what gets deposited on
+Nakala, and what must never be done. See [`prompts/README.md`](prompts/README.md); the three are
+independent of one another and of the order in which the reviews come back.
+
 ## Build design notes
 
 - **Self-contained output (`-uniteSections`, `-includeAnnotationProperties`):** each language builds to a single, fully self-contained HTML file, viewable directly via `file://`. Without `-uniteSections`, Widoco splits content across separate `sections/*.html` files stitched together client-side via jQuery AJAX — which silently fails to load on local files (same-origin restrictions), leaving the documentation apparently empty when opened directly.
@@ -61,7 +69,7 @@ Each language has its own hand-written, hand-translated Introduction and its own
 
 ### Romanian: Romanian content in an English frame
 
-Widoco 1.4.25 ships UI-string bundles for **en, es, fr, it, pt, de, nl, cs only** — there is no `ro.properties` in the jar. `-lang ro` therefore makes Widoco log `Language file not found for ro!! Loading english by default` and render its own section headings, cross-reference labels and legend in English, while still selecting the `@ro` labels and definitions from the overlay. The Romanian edition is an English frame around fully Romanian content: Introduction, Status of this document, abstract, description, acknowledgments and all 130 term labels/definitions are Romanian; the surrounding chrome is not.
+Widoco 1.4.25 ships UI-string bundles for **en, es, fr, it, pt, de, nl, cs only** — there is no `ro.properties` in the jar. `-lang ro` therefore makes Widoco log `Language file not found for ro!! Loading english by default` and render its own section headings, cross-reference labels and legend in English, while still selecting the `@ro` labels and definitions from the overlay. The Romanian edition is an English frame around fully Romanian content: Introduction, Status of this document, abstract, description, acknowledgments and all 130 term labels/definitions are Romanian; the surrounding chrome is not. Those labels and definitions were reviewed and corrected on 2026-09-01 by **[Roxana Patras](https://dhl.uaic.ro/taqwa/elementor-page-2114/members-2/)** (Universitatea „Alexandru Ioan Cuza”, Iaşi, Romania), a native speaker: 34 labels and 88 definitions corrected, and 6 entries of the pivot glossary settled. She is credited as a co-author of the corresponding Nakala deposits for it.
 
 Three consequences the build depends on, all verified against a real `-lang ro` run rather than assumed:
 
