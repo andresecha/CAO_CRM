@@ -42,6 +42,19 @@ SUBTITLES = {
         "organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los "
         "metadatos que describen los corpus textuales"
     ),
+    # Romanian deliberately reuses the English sentence. This subtitle was the one
+    # piece of front-matter prose left out of the Romanian review (which covered the
+    # acknowledgments, the introduction, the abstract, the description and the 130
+    # glossary terms), and the Romanian edition already carries Widoco's English
+    # chrome anyway -- so an unreviewed machine translation would be the only thing
+    # on the page nobody had checked. Replace this with the Romanian sentence, and
+    # add the matching subtitle line to the ro entry of the landing page in
+    # docs/build.sh, once it comes back reviewed.
+    "ro": (
+        "A semantic framework developed by the &ldquo;Metadata&rdquo; working group of the "
+        "Consortium-HN ARIANE to structure the organization, description, and "
+        "interoperability of metadata describing textual corpora"
+    ),
 }
 
 TITLE_PAGE_TEMPLATE = """<div class="cover-title-page">

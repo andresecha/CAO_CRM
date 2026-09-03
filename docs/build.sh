@@ -41,6 +41,13 @@ fi
 # without check-watermark.sh catching it (see that script's own history).
 python3 "$ROOT/scripts/reserialize-ontology.py"
 
+# Every temporary artefact created below is registered here and removed by a
+# single EXIT trap. Separate `trap ... EXIT` calls would silently replace one
+# another -- only the last one registered would ever run, leaking the rest.
+TMPFILES=()
+cleanup() { [ ${#TMPFILES[@]} -eq 0 ] || rm -rf "${TMPFILES[@]}"; }
+trap cleanup EXIT
+
 # CIDOC-CRM only ever translates rdfs:label (never rdfs:comment, in ANY
 # language, not even for its own native terms -- verified empirically,
 # 2026-07-09), and LRMoo/CRMdig never translate anything at all outside
@@ -51,45 +58,86 @@ python3 "$ROOT/scripts/reserialize-ontology.py"
 # below happens only in this throwaway temp file, fed to Widoco instead of the
 # canonical RDF; regenerate i18n/CAO_CRM-1.0-i18n.ttl from i18n/translations/*.yaml
 # with i18n/compile_i18n_overlay.py if the module's terms or translations change.
-DOC_ONTFILE="$ROOT/$FILE"
-if [ -f i18n/CAO_CRM-1.0-i18n.ttl ]; then
-  MERGED_RDF="$(mktemp --suffix=.rdf)"
-  trap 'rm -f "$MERGED_RDF"' EXIT
+#
+# Romanian lives in its own overlay (CAO_CRM-1.0-i18n-ro.ttl, compiled from
+# i18n/translations-ro/) and gets its own merged temp file, deliberately NOT
+# folded into the one above: the en/fr/es passes must keep receiving exactly
+# the input they received before Romanian existed, so adding a language can
+# never perturb the three pages already published.
+merge_overlay() {
+  # $1 = overlay .ttl to merge, $2 = destination .rdf
   python3 -c "
 import rdflib
 g = rdflib.Graph()
 g.parse('$ROOT/$FILE', format='xml')
 before = len(g)
-g.parse('i18n/CAO_CRM-1.0-i18n.ttl', format='turtle')
-g.serialize(destination='$MERGED_RDF', format='xml')
-print(f'i18n overlay merged for doc build only: {before} -> {len(g)} triples ({len(g)-before} added, ontology/*.rdf itself untouched)')
+g.parse('$1', format='turtle')
+g.serialize(destination='$2', format='xml')
+print(f'i18n overlay $1 merged for doc build only: {before} -> {len(g)} triples ({len(g)-before} added, ontology/*.rdf itself untouched)')
 "
+}
+
+DOC_ONTFILE="$ROOT/$FILE"
+if [ -f i18n/CAO_CRM-1.0-i18n.ttl ]; then
+  MERGED_RDF="$(mktemp --suffix=.rdf)"
+  TMPFILES+=("$MERGED_RDF")
+  merge_overlay i18n/CAO_CRM-1.0-i18n.ttl "$MERGED_RDF"
   DOC_ONTFILE="$MERGED_RDF"
 fi
 
-# Three separate Widoco passes, one per language, deliberately NOT combined
-# into one `-lang en-fr-es` call: each language now has its own hand-authored
-# Introduction/Status-of-this-document content (intro-en.html, intro.html for
-# fr, intro-es.html) and its own translated abstract/description/status
-# (config-en.properties, config-fr.properties, config-es.properties),
-# injected via -confFile + pathToIntro. -confFile and -getOntologyMetadata
-# are mutually exclusive in Widoco itself, so none of the three passes can
-# fall back to re-extracting abstract/description from the RDF's own
-# language-tagged literals -- see docs/README.md for the regeneration
-# procedure if the RDF header changes and these three config files need
-# re-syncing with it.
-TMP_CONF="$(mktemp)"
-trap 'rm -f "$TMP_CONF"' EXIT
+# Languages with a full documentation build. Everything downstream of the
+# Widoco passes -- code prefixes, bibliography, acknowledgments, title page,
+# i18n daggers, PDF export, landing page -- iterates over this list, so a
+# language is wired in exactly once, here.
+LANGS="en fr es ro"
 
-for lang in en fr es; do
+# Separate Widoco passes, one per language, deliberately NOT combined into one
+# `-lang en-fr-es` call: each language has its own hand-authored
+# Introduction/Status-of-this-document content (intro-en.html, intro.html for
+# fr, intro-es.html, intro-ro.html) and its own translated
+# abstract/description/status (config-<lang>.properties), injected via
+# -confFile + pathToIntro. -confFile and -getOntologyMetadata are mutually
+# exclusive in Widoco itself, so no pass can fall back to re-extracting
+# abstract/description from the RDF's own language-tagged literals -- see
+# docs/README.md for the regeneration procedure if the RDF header changes and
+# these config files need re-syncing with it.
+TMP_CONF="$(mktemp)"
+TMPFILES+=("$TMP_CONF")
+
+for lang in $LANGS; do
+  # Romanian is fed the Romanian overlay instead of the fr/es one.
+  ont="$DOC_ONTFILE"
+  if [ "$lang" = ro ]; then
+    [ -f i18n/CAO_CRM-1.0-i18n-ro.ttl ] && [ -f config-ro.properties ] && [ -f intro-ro.html ] || {
+      echo "NOTE: Romanian inputs incomplete (need i18n/CAO_CRM-1.0-i18n-ro.ttl, config-ro.properties, intro-ro.html) -- skipping the ro pass."
+      continue
+    }
+    MERGED_RDF_RO="$(mktemp --suffix=.rdf)"
+    TMPFILES+=("$MERGED_RDF_RO")
+    merge_overlay i18n/CAO_CRM-1.0-i18n-ro.ttl "$MERGED_RDF_RO"
+    ont="$MERGED_RDF_RO"
+  fi
+
   sed "s|^pathToIntro=.*|pathToIntro=$(pwd)/intro-${lang}.html|" "config-${lang}.properties" > "$TMP_CONF"
   if [ "$lang" = fr ]; then
     # French keeps its historical bare filename (intro.html, not intro-fr.html).
     sed -i "s|pathToIntro=$(pwd)/intro-fr.html|pathToIntro=$(pwd)/intro.html|" "$TMP_CONF"
   fi
 
+  # Romanian runs with Widoco's English chrome, by design. Widoco 1.4.25 ships
+  # UI-string bundles for en/es/fr/it/pt/de/nl/cs only -- there is no ro.properties
+  # in the jar (verified against the pinned 1.4.25 asset), so `-lang ro` makes it
+  # log "Language file not found for ro!! Loading english by default" and render
+  # its own section headings, cross-reference labels and legend in English, while
+  # still selecting the @ro labels and definitions from the overlay above. The
+  # result is an English frame around fully Romanian content, which is the agreed
+  # trade-off until a ro bundle exists upstream. Two consequences worth knowing:
+  # the output file is still named index-ro.html (no collision with the English
+  # page, so this pass can share site/ with the others), and LODE emits one
+  # recoverable "ro.xml not found" XSLT warning that is absorbed by the same
+  # English fallback -- the generated section structure is identical to index-en.html.
   java -jar .tools/widoco.jar \
-    -ontFile "$DOC_ONTFILE" \
+    -ontFile "$ont" \
     -outFolder site \
     -rewriteAll \
     -confFile "$TMP_CONF" \
@@ -100,7 +148,7 @@ done
 
 # Widoco has been observed to sometimes nest its output under site/doc/ instead of
 # site/ directly (behavior seems to vary by version), even with -uniteSections.
-# Flatten it so the documented paths (site/index-{en,fr,es}.html) always land there.
+# Flatten it so the documented paths (site/index-{en,fr,es,ro}.html) always land there.
 # Always overwrite (not just "if the target is missing") -- a stale file from a
 # previous run must not silently shadow a fresh nested build.
 if [ -d site/doc ]; then
@@ -112,26 +160,31 @@ fi
 # code (e.g. "E7 — Activity"), extracted from each term's own IRI. Runs on
 # every build automatically -- no RDF edit, nothing to keep in sync by hand.
 # Language-agnostic (keys off the IRI, not the label text), so it applies the
-# same way to all three generated files.
-for f in site/index-en.html site/index-fr.html site/index-es.html; do
+# same way to every generated file.
+for lang in $LANGS; do
+  f="site/index-${lang}.html"
   [ -f "$f" ] && python3 postprocess_codes.py "$f"
 done
 
 # Widoco has no config option for real References content (unlike pathToIntro
 # for the Introduction) -- it always emits a fixed placeholder sentence per
 # language. Substitute it with the verified bibliography (bibliography.html,
-# shared across all three languages -- citations to official sources stay in
+# shared across all languages -- citations to official sources stay in
 # their original language, English, matching project convention).
 if [ -f bibliography.html ]; then
-  for f in site/index-en.html site/index-fr.html site/index-es.html; do
+  for lang in $LANGS; do
+    f="site/index-${lang}.html"
     [ -f "$f" ] && python3 postprocess_references.py "$f" bibliography.html
   done
 fi
 
 # Same idea for Acknowledgments: Widoco's own paragraph there (thanking the
 # LODE/Widoco developers) is fixed, not configurable -- our own project
-# acknowledgments are inserted just before it.
-for lang in en fr es; do
+# acknowledgments are inserted just before it. The insertion point is matched
+# on Widoco's own opening words in that paragraph, so `ro` is anchored on the
+# English string -- the Romanian page carries Widoco's English chrome (see the
+# ro pass above), while the inserted acknowledgments themselves are Romanian.
+for lang in $LANGS; do
   f="site/index-${lang}.html"
   [ -f "$f" ] && python3 postprocess_acknowledgments.py "$f" "$lang"
 done
@@ -142,9 +195,10 @@ done
 # untranslated fallback string "Date issued" regardless of the `issued=`
 # value actually set in config-{lang}.properties. Patched here rather than
 # left broken -- ISSUED_DATE must be kept in sync with `issued=` in the
-# three config files by hand.
+# config files by hand.
 ISSUED_DATE="2026-07-08"
-for f in site/index-en.html site/index-fr.html site/index-es.html; do
+for lang in $LANGS; do
+  f="site/index-${lang}.html"
   [ -f "$f" ] && sed -i "s|<dd>Date issued</dd>|<dd>${ISSUED_DATE}</dd>|" "$f"
 done
 
@@ -153,7 +207,8 @@ done
 # target/rel -- unlike every other occurrence of this same link, which we
 # author ourselves directly in HTML. Patched here since this specific tag is
 # generated by Widoco, not written by us.
-for f in site/index-en.html site/index-fr.html site/index-es.html; do
+for lang in $LANGS; do
+  f="site/index-${lang}.html"
   [ -f "$f" ] && sed -i 's|<a href="https://cachetown.fr/">|<a href="https://cachetown.fr/" target="_blank" rel="noopener noreferrer">|' "$f"
 done
 
@@ -161,7 +216,7 @@ done
 # metadata header, to their personal/professional pages. Runs after the
 # authorsURI sed fix-up above, since it matches the already-patched
 # (target/rel-bearing) Andrés Echavarría Peláez link.
-for lang in en fr es; do
+for lang in $LANGS; do
   f="site/index-${lang}.html"
   [ -f "$f" ] && python3 postprocess_people_links.py "$f"
 done
@@ -174,7 +229,7 @@ done
 mkdir -p site/logos
 cp -f logos/ARIANE.svg site/logos/ARIANE.svg
 cp -f logos/ARIANE-dark.svg site/logos/ARIANE-dark.svg
-for lang in en fr es; do
+for lang in $LANGS; do
   f="site/index-${lang}.html"
   [ -f "$f" ] && python3 postprocess_titlepage.py "$f" "$lang"
 done
@@ -182,13 +237,16 @@ done
 # Marks, with a small tooltipped dagger, exactly the labels/definitions that
 # came from the i18n working-translation overlay above (not from Widoco's own
 # language rendering) -- so a reader can always tell official content from
-# CAO_CRM's own translations. No-op if the overlay file isn't present.
-if [ -f i18n/CAO_CRM-1.0-i18n.ttl ]; then
-  for lang in en fr es; do
-    f="site/index-${lang}.html"
-    [ -f "$f" ] && python3 postprocess_i18n_marker.py "$f" "$lang" i18n/CAO_CRM-1.0-i18n.ttl
-  done
-fi
+# CAO_CRM's own translations. Each language is checked against the overlay it
+# was actually built from; a language whose overlay carries no literals in that
+# language (en against the fr/es overlay) simply marks nothing. No-op if the
+# overlay file isn't present.
+for lang in $LANGS; do
+  f="site/index-${lang}.html"
+  overlay="i18n/CAO_CRM-1.0-i18n.ttl"
+  [ "$lang" = ro ] && overlay="i18n/CAO_CRM-1.0-i18n-ro.ttl"
+  [ -f "$f" ] && [ -f "$overlay" ] && python3 postprocess_i18n_marker.py "$f" "$lang" "$overlay"
+done
 
 # PDF export, one per language, from the same final HTML Widoco produced (post
 # code-prefixing above) -- so the PDF and the HTML never drift out of sync with
@@ -221,8 +279,8 @@ for candidate in google-chrome google-chrome-stable chromium chromium-browser; d
 done
 if [ -n "$CHROME_BIN" ] && python3 -c "import weasyprint" >/dev/null 2>&1; then
   DOM_TMP="$(mktemp -d)"
-  trap 'rm -rf "$DOM_TMP"' EXIT
-  for lang in en fr es; do
+  TMPFILES+=("$DOM_TMP")
+  for lang in $LANGS; do
     html="site/index-${lang}.html"
     pdf="site/CAO_CRM-${ONTOLOGY_VERSION}-${lang}.pdf"
     rendered="$DOM_TMP/index-${lang}.rendered.html"
@@ -238,10 +296,18 @@ else
 fi
 
 # Widoco has no notion of a shared, language-neutral landing page -- it only
-# writes index-{en,fr,es}.html. Generate site/index.html ourselves so that
+# writes index-{en,fr,es,ro}.html. Generate site/index.html ourselves so that
 # visiting the bare site root (in particular the GitLab/GitHub Pages URL,
 # which serves exactly public/index.html) lands somewhere useful instead of
 # 404ing. Regenerated in full on every build, not hand-maintained.
+#
+# The Romanian entry deliberately carries no italic subtitle, unlike the other
+# three: that one sentence is the only piece of front-matter prose left out of
+# the Romanian review (which covered the acknowledgments, the introduction, the
+# abstract, the description and the 130 glossary terms). Shipping an unreviewed
+# translation, or repeating the English sentence verbatim under a Romanian flag,
+# would both be worse than leaving it out. Add it below, and in SUBTITLES["ro"]
+# in docs/postprocess_titlepage.py, once it comes back reviewed.
 cat > site/index.html <<HTMLEOF
 <!doctype html>
 <html>
@@ -283,12 +349,16 @@ cat > site/index.html <<HTMLEOF
     <p class="subtitle">Un marco sem&aacute;ntico desarrollado por el grupo de trabajo &laquo;Metadatos&raquo; del Consorcio-HN ARIANE para estructurar la organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los metadatos que describen los corpus textuales.</p>
     <a class="lang" href="index-es.html">🇪🇸 Español</a>
   </li>
+  <li>
+    <a class="lang" href="index-ro.html">🇷🇴 Română</a>
+  </li>
 </ul>
 <p class="meta">Version PDF / PDF version / versión PDF :</p>
 <ul>
   <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-fr.pdf">🇫🇷 PDF</a></li>
   <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-en.pdf">🇬🇧 PDF</a></li>
   <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-es.pdf">🇪🇸 PDF</a></li>
+  <li><a class="lang" href="CAO_CRM-${ONTOLOGY_VERSION}-ro.pdf">🇷🇴 PDF</a></li>
 </ul>
 <p class="meta">Version ${ONTOLOGY_VERSION} — Consortium HN Ariane / projet AMIS.</p>
 <picture>
@@ -299,4 +369,4 @@ cat > site/index.html <<HTMLEOF
 </html>
 HTMLEOF
 
-echo "Documentation built -> docs/site/index.html (landing) + index-{en,fr,es}.html"
+echo "Documentation built -> docs/site/index.html (landing) + index-{$(echo $LANGS | tr ' ' ',')}.html"

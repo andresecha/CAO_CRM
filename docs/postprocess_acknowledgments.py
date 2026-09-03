@@ -21,6 +21,11 @@ ANCHORS = {
     "fr": "Les auteurs voudraient remercier",
     "en": "The authors would like to thank",
     "es": "Los autores agradecen a",
+    # Romanian is anchored on the English string on purpose: Widoco 1.4.25 has
+    # no ro language bundle, so the ro pass in docs/build.sh runs with Widoco's
+    # English chrome and this fixed tool-credits paragraph comes out in English.
+    # Verified against a real `-lang ro` run, not assumed.
+    "ro": "The authors would like to thank",
 }
 
 PARAGRAPHS = {
@@ -88,34 +93,40 @@ PARAGRAPHS = {
         "valiosos consejos, recomendaciones e intercambios a lo largo de la elaboración de "
         "esta ontología.",
     ),
-    # Working (unofficial) Romanian/Italian/Portuguese translations, produced by dedicated
-    # translation agents (2026-07-13), not yet vetted by the working group. No ANCHORS
-    # entry yet for these three: Widoco has never been run with lang=ro/it/pt for this
-    # project (these languages aren't in docs/build.sh's language loop -- see
-    # docs/config-{ro,it,pt}.properties, currently unwired/gitignored pending publication
-    # decision), so the exact wording of Widoco's own fixed tool-credits paragraph in these
-    # languages has never been observed and must not be guessed. Add the real ANCHORS
-    # entry (copy the fixed opening words from an actual generated index-{ro,it,pt}.html)
-    # before wiring these languages into main()'s ANCHORS check.
+    # Romanian: reviewed by a native speaker (2026-09-01) and wired into
+    # docs/build.sh's language loop -- see ANCHORS above for why its insertion
+    # point is the English string.
+    #
+    # Italian and Portuguese remain working (unofficial) translations produced by
+    # dedicated translation agents (2026-07-13), not yet vetted by the working group,
+    # and are still unwired/gitignored pending a publication decision. They have no
+    # ANCHORS entry: Widoco *does* ship it/pt bundles, so their tool-credits paragraph
+    # would come out translated, and its exact wording has never been observed for this
+    # project. Copy the fixed opening words from an actual generated index-{it,pt}.html
+    # rather than guessing them, before wiring either language in.
     "ro": (
-        "Grupul de lucru «Metadate» al Consorțiului Huma-Num ARIANE dorește să le "
-        "mulțumească călduros lui Andrés Echavarría Peláez și Mélanie Bouland pentru "
-        "implicarea lor remarcabilă în conceperea, coordonarea și dezvoltarea acestei "
-        "ontologii.",
-        "De asemenea, mulțumește infrastructurii de cercetare IR* Huma-Num pentru "
-        "sprijinul acordat și, în mod special, lui Fatiha Idmhand, Ioana Galleron și "
-        "Sabine Loudcher pentru implicarea lor ca și coordonatoare ale Consorțiului ARIANE "
-        "în perioada 2023-2026, precum și pentru rolul lor de responsabile și membre "
-        "active ale grupului de lucru.",
-        "Adresează, de asemenea, sincere mulțumiri tuturor persoanelor implicate în "
-        "proiectul AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni "
-        "Guizani, Roxana Patras, Amelia Sanz și Simone Rebora, a căror atenție, observații "
-        "și schimburi de idei au contribuit la îmbogățirea acestei lucrări, situată la "
-        "intersecția dintre modelarea cunoașterii, tehnologiile Web-ului semantic, "
-        "umanioarele digitale și studiile de literatură comparată.",
-        "Grupul de lucru dorește de asemenea să mulțumească membrilor consorțiului "
-        "Huma-Num MASAPlus, și în mod special lui Florian Hivert și Olivier Marlet, "
-        "pentru sfaturile lor avizate, recomandările și schimburile de idei pe parcursul "
+        "Grupul de lucru „Metadate” al Consorțiului Huma-Num ARIANE dorește să "
+        "le mulțumească călduros D-lui Dr. Andrés Echavarría Peláez și D-nei "
+        "Dr. Mélanie Bouland pentru implicarea lor remarcabilă în conceperea, "
+        "coordonarea și dezvoltarea acestei ontologii.",
+        "De asemenea, Grupul de lucru „Metadate” mulțumește infrastructurii de "
+        "cercetare IR* Huma-Num pentru sprijinul acordat și, în mod special, "
+        "Doamnelor Profesoare Fatiha Idmhand, Ioana Galleron și Sabine Loudcher "
+        "pentru implicarea lor în calitate de coordonatoare ale Consorțiului "
+        "ARIANE în perioada 2023-2026, precum și pentru rolul lor de "
+        "responsabile și membre active.",
+        "Grupul de lucru „Metadate” adresează, de asemenea, sincere mulțumiri "
+        "tuturor persoanelor implicate în proiectul AMIS (Advanced Metadata "
+        "Intelligent System), Dr. Ala Eddine Laouir, Dr. Ameni Guizani, Prof. "
+        "Univ. Dr. Roxana Patras, Prof. Univ. Dr. Amelia Sanz și Conf. Univ. "
+        "Dr. Simone Rebora, a căror atenție, observații și schimburi de idei au "
+        "contribuit la îmbogățirea acestui demers, situat la intersecția dintre "
+        "modelarea cunoașterii, tehnologiile Web-ului semantic, științele "
+        "umaniste digitale și studiile de literatură comparată.",
+        "Grupul de lucru dorește de asemenea să mulțumească membrilor "
+        "consorțiului Huma-Num MASAPlus, în mod special D-lui Dr. Florian "
+        "Hivert și Dr. Olivier Marlet, pentru sfaturile lor avizate, "
+        "recomandările și schimburile de cunoaștere mobilizate pe parcursul "
         "elaborării acestei ontologii.",
     ),
     "it": (
