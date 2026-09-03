@@ -60,8 +60,8 @@ Ce document est le point d'entrée. La documentation pédagogique existe **en fr
 | `documentation/fr/`, `documentation/es/`, `documentation/en/` | Dix sections rédigées pour un public **non expert** en ontologies — de « qu'est-ce que CAO_CRM » jusqu'au glossaire et aux notes d'application des propriétés `P14_has_*`/valeurs `E55_Type` — alignées sur l'état publié du modèle (1.0), dans les trois langues. |
 | `validation/` | Les huit catégories de tests de validation (syntaxe, cohérence logique, SHACL, qualité, métriques, conformité, métadonnées, FAIR) — chacune avec son propre `README.md`. |
 | `imports/` | Scripts pour récupérer les versions officielles exactes de CIDOC-CRM/LRMoo/CRMdig/SKOS (`fetch.sh`, avec sommes de contrôle dans `vendor/CHECKSUMS.txt`), les fusionner avec l'ontologie (`merge.sh`), et **`module-terms.txt`** — la liste exacte des 130 termes (IRI complètes) qui a servi à extraire ce module avec ROBOT. |
-| `docs/site/index-{en,fr,es}.html` | Documentation HTML navigable générée par Widoco, dans les trois langues, à partir du RDF canonique — en fusionnant à la volée la couche de traduction de travail `docs/i18n/CAO_CRM-1.0-i18n.ttl` pour les termes LRMoo/CRMdig et les définitions sans traduction officielle (marqués comme tels dans le HTML, voir section 7), et avec une introduction propre à chaque langue (`docs/intro-en.html`, `docs/intro.html`, `docs/intro-es.html`). `docs/site/index.html` est la page d'accueil de choix de langue servie par GitHub Pages. |
-| `docs/site/CAO_CRM-1.0-{en,fr,es}.pdf` | La même documentation, exportée en PDF (une par langue), générée automatiquement à partir du HTML final par `docs/build.sh` (Chrome/Chromium headless) — liens disponibles directement depuis `docs/site/index.html`. |
+| `docs/site/index-{en,fr,es,ro}.html` | Documentation HTML navigable générée par Widoco, dans les quatre langues, à partir du RDF canonique — en fusionnant à la volée la couche de traduction `docs/i18n/CAO_CRM-1.0-i18n.ttl` (fr/es) ou `docs/i18n/CAO_CRM-1.0-i18n-ro.ttl` (ro) pour les termes LRMoo/CRMdig et les définitions sans traduction officielle (marqués comme tels dans le HTML, voir `docs/i18n/README.md`), et avec une introduction propre à chaque langue (`docs/intro-en.html`, `docs/intro.html`, `docs/intro-es.html`, `docs/intro-ro.html`). Le roumain est rendu dans un habillage anglais — Widoco 1.4.25 ne fournit pas de paquet de langue `ro` — avec un contenu intégralement roumain, relu par une locutrice native ; voir `docs/README.md`. `docs/site/index.html` est la page d'accueil de choix de langue servie par GitHub Pages. |
+| `docs/site/CAO_CRM-1.0-{en,fr,es,ro}.pdf` | La même documentation, exportée en PDF (une par langue), générée automatiquement à partir du HTML final par `docs/build.sh` (Chrome/Chromium headless pour le rendu, WeasyPrint pour la compilation) — liens disponibles directement depuis `docs/site/index.html`. |
 | `scripts/` | Scripts transversaux du dépôt : installation des outils (`install-tools.sh`), exécution des questions de compétence, vérification des en-têtes de licence, resérialisation de l'ontologie. |
 | `competency-questions/`, `sparql/`, `test-data/` | Le banc d'essai sur données réelles : un graphe d'instance vérifié et non synthétique (`test-data/stendhal-le-rouge-et-le-noir.ttl` — l'édition Martineau/Gallica et la traduction Scott Moncrieff/Internet Archive), 5 questions de compétence formelles et 2 vérifications de cardinalité (`competency-questions/CQ-001-a-005-stendhal.md`), traduites en requêtes SPARQL (`sparql/ask/`, `sparql/select/`) suivant la méthodologie W3C HCLS *Compiling to SPARQL*. Exécutées par `make cq`. |
 | `Makefile` | Point d'entrée unique : `make validate` exécute les huit catégories automatisées **plus `cq`** dans l'ordre (voir section 4 pour le détail de chacune). |
@@ -105,10 +105,11 @@ Les 177 fichiers suivis par Git, dossier par dossier (les fichiers ignorés — 
 ├── docs/
 │   ├── bibliography.html
 │   ├── build.sh
-│   ├── config-{en,es,fr}.properties
+│   ├── config-{en,es,fr,ro}.properties
 │   ├── i18n/
-│   │   ├── CAO_CRM-1.0-i18n.ttl
-│   │   ├── glossary_crosswalk.yaml
+│   │   ├── CAO_CRM-1.0-i18n.ttl        (couche fr/es)
+│   │   ├── CAO_CRM-1.0-i18n-ro.ttl     (couche ro)
+│   │   ├── glossary_crosswalk{,-ro}.yaml
 │   │   ├── README.md
 │   │   ├── scripts/
 │   │   │   ├── build_review_doc.py
@@ -117,10 +118,11 @@ Les 177 fichiers suivis par Git, dossier par dossier (les fichiers ignorés — 
 │   │   │   ├── extract_inventory.py
 │   │   │   └── prepend_review_frontmatter.py
 │   │   ├── term_inventory.json
-│   │   └── translations/               (8 lots thématiques .yaml)
-│   ├── intro{-en,-es,}.html
+│   │   ├── translations/               (8 lots thématiques .yaml, fr/es)
+│   │   └── translations-ro/            (les mêmes 8 lots, ro)
+│   ├── intro{-en,-es,-ro,}.html
 │   ├── logos/ARIANE{-dark,}.svg
-│   ├── postprocess_*.py                (5 scripts de post-traitement Widoco)
+│   ├── postprocess_*.py                (6 scripts de post-traitement Widoco)
 │   ├── README.md
 │   └── site/                           (documentation HTML/PDF générée, publiée sur GitHub Pages)
 ├── documentation/
@@ -249,7 +251,7 @@ Le cœur documentaire du projet. Chaque fichier peut être lu isolément ; ensem
 | `informe-activite-editoriale-scientifique.md` | La branche « activités éditoriales » signalée par le paper comme différenciateur original de CAO_CRM (Manifestation, Item, Objet numérique) — distinction entre éditeur commercial (`P14_has_publisher`) et éditeur scientifique (`P14_has_scientific_editor`), avec citation intégrale du paper et justification de l'asymétrie entre niveaux. |
 | `auditoria-1-rdf.md`, `auditoria-2-documentacion-y-conformidad.md`, `auditoria-3-verificacion-final.md` | Chaîne de 3 audits successifs et indépendants entre eux — RDF terme par terme, puis documentation et conformité conceptuelle, puis vérification croisée finale. Verdict final : 0 défaut critique restant. |
 | `ADR-001-disjointness.md` | Pourquoi CAO_CRM ne déclare aucune condition `owl:disjointWith` — suit le même choix délibéré que CIDOC-CRM/LRMoo/CRMdig eux-mêmes. |
-| `ADR-002-idiomas-LRMoo-CRMdig.md` | Pourquoi les termes de LRMoo/CRMdig qui n'existent qu'en anglais dans les sources officielles ne sont pas traduits dans le RDF canonique (la traduction de travail vit séparément, voir section 7 et `docs/i18n/`). |
+| `ADR-002-idiomas-LRMoo-CRMdig.md` | Pourquoi les termes de LRMoo/CRMdig qui n'existent qu'en anglais dans les sources officielles ne sont pas traduits dans le RDF canonique (la couche de traduction vit séparément, voir `docs/i18n/README.md`). |
 | `ADR-003-autoria-y-procedencia.md` | Attribution de l'auteur du modèle conceptuel (Mélanie Bouland), de l'implémentation RDF/OWL (Andrés Echavarría) et des outils cités dans l'en-tête — voir aussi section 8. |
 | `informe-completitud-labels-domain-range.md`, `informe-implementacion-RDF-modulo-acotado.md` | Rapports techniques d'implémentation et d'intégration du diagramme source — voir section 3. |
 

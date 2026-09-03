@@ -30,27 +30,29 @@ docs/site/ontology.jsonld
 # meant to be committed itself.
 public/
 
-# Documentation in Romanian, Italian, and Portuguese: AI-assisted draft translations,
-# not yet reviewed by native speakers or by the consortium's partners. Not wired into
-# docs/build.sh's language loop or config, and not committed until the team validates
-# them and decides to publish. Do not delete -- this is deliberate work in progress,
-# not dead weight.
-documentation/ro/
+# Italian and Portuguese: AI-assisted draft translations, not yet reviewed by native
+# speakers or by the consortium's partners. Not wired into docs/build.sh's language
+# loop, and not committed until the team validates them and decides to publish.
+# Do not delete -- this is deliberate work in progress, not dead weight.
 documentation/it/
 documentation/pt/
-docs/intro-ro.html
 docs/intro-it.html
 docs/intro-pt.html
-docs/config-ro.properties
 docs/config-it.properties
 docs/config-pt.properties
-docs/i18n/translations-ro/
 docs/i18n/translations-it/
 docs/i18n/translations-pt/
-docs/i18n/glossary_crosswalk-ro.yaml
 docs/i18n/glossary_crosswalk-it.yaml
 docs/i18n/glossary_crosswalk-pt.yaml
-docs/i18n/CAO_CRM-1.0-i18n-ro.ttl
 docs/i18n/CAO_CRM-1.0-i18n-it.ttl
 docs/i18n/CAO_CRM-1.0-i18n-pt.ttl
+
+# Romanian is published: its translation layer was reviewed by a native speaker
+# (2026-09-01) and is wired into docs/build.sh, so everything the ro build consumes
+# is tracked. Two Romanian exceptions stay ignored, on purpose:
+#   - documentation/ro/, the ten pedagogical .md files, was explicitly left out of
+#     that review and is still an unreviewed AI-assisted draft;
+#   - docs/i18n/review/, the round-trip review documents themselves (including the
+#     corrected review2-ro.md), which are working material, not a published artifact.
+documentation/ro/
 docs/i18n/review/
