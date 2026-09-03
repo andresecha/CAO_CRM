@@ -1,0 +1,130 @@
+# Crosswalk terminológico EN -> ro para los conceptos CIDOC-CRM/LRMoo/CRMdig que se repiten
+# en decenas de etiquetas y definiciones distintas. Construir esto UNA vez, antes de traducir
+# ninguna entrada individual, es lo que evita que "Actor" salga traducido de dos formas distintas
+# en dos fichas distintas.
+#
+# ro: no existe NINGUNA etiqueta oficial en rumano en ningún estándar fuente (verificado: cero
+#     rdfs:label@ro en los 130 términos del módulo -- "ro" nunca aparece en official_languages_label
+#     de term_inventory.json). Por tanto casi todas las entradas están marcadas source: cao_crm_working.
+#     La única excepción es la cadena LRMoo Work/Expression/Manifestation/Item, verificada contra una
+#     fuente bibliotecaria real (ver nota en esas entradas): source: official_bibliographic (no es una
+#     etiqueta CIDOC-CRM oficial, pero sí una traducción bibliotecaria oficial verificada, distinta de
+#     una decisión de trabajo nuestra).
+#
+# Cada entrada anota su razonamiento breve para que una revisión futura no tenga que re-derivarlo.
+
+concepts:
+
+  # --- Núcleo CIDOC-CRM (raíces que aparecen en decenas de comentarios) ---
+  Entity:
+    ro: {text: "Entitate", source: cao_crm_working, note: "cognado directo del latín, sin ambigüedad"}
+  Thing:
+    ro: {text: "Lucru", source: cao_crm_working, note: "palabra común rumana para 'cosa/cosa en general', paralela a 'Chose'/'Cosa'"}
+  Physical Thing:
+    ro: {text: "Obiect material", source: native_review, note: "la revisión nativa prefirió 'Obiect material' a 'Lucru fizic'; sigue distinguiéndose de Obiect creat de om (E22, más específico)"}
+  Human-Made Object:
+    ro: {text: "Obiect creat de om", source: cao_crm_working, note: "'creat de om' es más natural en rumano que un calco literal de 'élaboré par l'humain'"}
+  Temporal Entity:
+    ro: {text: "Entitate temporală", source: cao_crm_working}
+  Period:
+    ro: {text: "Perioadă", source: cao_crm_working}
+  Activity:
+    ro: {text: "Activitate", source: cao_crm_working}
+  Actor:
+    ro: {text: "Actant", source: native_review, note: "la revisión nativa descartó 'Actor' por su connotación teatral en rumano y adoptó 'Actant', igual que el francés"}
+  Person:
+    ro: {text: "Persoană", source: cao_crm_working}
+  Right:
+    ro: {text: "Drept", source: cao_crm_working}
+  Legal Object:
+    ro: {text: "Obiect juridic", source: cao_crm_working, note: "calca con precisión 'objet juridique'/'objeto jurídico'"}
+  Linguistic Object:
+    ro: {text: "Obiect lingvistic", source: cao_crm_working}
+  Propositional Object:
+    ro: {text: "Obiect propozițional", source: cao_crm_working}
+  Symbolic Object:
+    ro: {text: "Obiect simbolic", source: cao_crm_working}
+  Title:
+    ro: {text: "Titlu", source: cao_crm_working}
+  Appellation:
+    ro: {text: "Denumire", source: native_review, note: "la revisión nativa prefirió 'Denumire' a 'Apelativ'; sigue distinguiéndose de Titlu"}
+  Identifier:
+    ro: {text: "Identificator", source: cao_crm_working}
+  Time-Span:
+    ro: {text: "Interval temporal", source: cao_crm_working, note: "misma fórmula que fr 'Intervalle temporel'/es 'Intervalo temporal'"}
+  Place:
+    ro: {text: "Loc", source: cao_crm_working}
+  Type:
+    ro: {text: "Tip", source: cao_crm_working}
+  Dimension:
+    ro: {text: "Dimensiune", source: cao_crm_working}
+  Language:
+    ro: {text: "Limbă", source: cao_crm_working}
+  Material:
+    ro: {text: "Material", source: cao_crm_working}
+  Measurement Unit:
+    ro: {text: "Unitate de măsură", source: cao_crm_working}
+  Production:
+    ro: {text: "Proces de producție", source: native_review}
+  Birth:
+    ro: {text: "Naștere", source: cao_crm_working}
+  Death:
+    ro: {text: "Moarte", source: cao_crm_working, note: "mismo registro directo que fr 'Mort'/es 'Muerte', no 'Deces' (más notarial/administrativo, paralelo al 'Defunción' que el crosswalk es descartó explícitamente)"}
+  Condition State:
+    ro: {text: "Stare materială", source: cao_crm_working, note: "traducción literal cercana a la etiqueta oficial fr 'État matériel', preferida sobre un equivalente de 'Stare de conservare' (paralelo al es 'Estado de conservación') porque el comentario EN completo define un estado físico observable general (ej. 'wrecked'), no necesariamente ligado a conservación patrimonial -- se prioriza fidelidad al EN/fr oficiales sobre la convención es"}
+
+  # --- Cadena LRMoo Work -> Item ---
+  # Verificado contra una fuente bibliotecaria real: la traducción oficial al rumano del informe final
+  # IFLA FRBR (1998), publicada por CIMEC (Institutul Naţional al Patrimoniului, bajo el Ministerio de
+  # Cultura de Rumanía) -- http://www.cimec.ro/Metodologice/Catalogare/FRBR-RaportRomana.pdf, secciones
+  # 3.2.1 "Lucrare", 3.2.2 "Expresie", 3.2.3 "Manifestare", 3.2.4 "Exemplar". LRMoo es el sucesor
+  # ontológico de FRBR (vía IFLA-LRM, 2017) y hereda directamente esta cadena de entidades, por lo que
+  # esta terminología bibliotecaria ya establecida se adopta aquí en vez de inventar una nueva.
+  # NOTA: "Lucrare" (no "Operă") es el término correcto -- algunas fuentes secundarias en línea usan
+  # "Operă" de forma informal, pero el documento oficial de referencia bibliotecaria usa "Lucrare"
+  # sistemáticamente en los 88 páginas del informe.
+  Work:
+    ro: {text: "Lucrare", source: official_bibliographic, note: "verificado contra FRBR-RaportRomana.pdf (CIMEC/IFLA), sección 3.2.1"}
+  Expression:
+    ro: {text: "Expresie", source: official_bibliographic, note: "verificado contra FRBR-RaportRomana.pdf (CIMEC/IFLA), sección 3.2.2; cognado directo del rumano"}
+  Manifestation:
+    ro: {text: "Manifestare", source: official_bibliographic, note: "verificado contra FRBR-RaportRomana.pdf (CIMEC/IFLA), sección 3.2.3; cognado directo del rumano"}
+  Item:
+    ro: {text: "Exemplar", source: official_bibliographic, note: "verificado contra FRBR-RaportRomana.pdf (CIMEC/IFLA), sección 3.2.4"}
+  Work Creation:
+    ro: {text: "Crearea operei", source: native_review, note: "OJO: la revisión nativa usó 'operă' aquí pero mantuvo 'Lucrare' como etiqueta de F1_Work -- ver informe de revisión"}
+  Expression Creation:
+    ro: {text: "Crearea expresiei", source: cao_crm_working}
+  Manifestation Creation:
+    ro: {text: "Crearea manifestării", source: cao_crm_working}
+  Item Production Event:
+    ro: {text: "Eveniment de producere a exemplarului", source: cao_crm_working}
+
+  # --- CRMdig ---
+  Digital Object:
+    ro: {text: "Obiect digital", source: cao_crm_working}
+  Data Object:
+    ro: {text: "Obiect de date", source: cao_crm_working}
+  Digitization Process:
+    ro: {text: "Proces de digitalizare", source: cao_crm_working, note: "'digitalizare' es el término rumano de uso corriente para 'digitization' (conversión analógico-digital), preferido sobre el calco 'digitizare', poco usado"}
+  Digital Machine Event:
+    ro: {text: "Eveniment de dispozitiv digital", source: native_review}
+  Digital Information Carrier:
+    ro: {text: "Suport de informație digitală", source: cao_crm_working, note: "'suport' fija la convención rumana para 'carrier', ver phrasing_conventions"}
+
+# Convenciones de fraseo recurrente (no son "conceptos" con IRI propia, pero aparecen decenas de
+# veces en las definiciones EN oficiales -- fijar una sola vez la traducción de estas fórmulas
+# evita variación involuntaria entre entradas traducidas en sesiones distintas).
+phrasing_conventions:
+  "This class comprises":
+    ro: "Această clasă cuprinde"
+  "This property":
+    ro: "Această proprietate"
+  "is documented":
+    ro: "se documentează"
+  "instance(s) of":
+    ro: "instanță(e) de"
+  "carrier":
+    ro: "suport"
+  "realisation / realization":
+    ro: "realizare"

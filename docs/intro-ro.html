@@ -1,0 +1,458 @@
+<!--
+-- CAO_CRM (Corpus Author Ontology CRM)
+-- Copyright (c) 2026 Andres Echavarria Pelaez
+-- Consortium Huma-Num ARIANE -- AMIS project (Advanced Metadata Intelligent System)
+-- Encoding carried out under the scientific direction and support of Fatiha Idmhand
+--
+-- This file is part of the CAO_CRM publication package, licensed under the
+-- Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+-- License (CC BY-NC-SA 4.0). To view a copy of this license, visit
+-- https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
+<style>
+  /* Full, explicit override of Widoco's own .backlink rule (resources/extra.css:
+     float:right, navy dotted border, background-color) -- both rules share equal
+     specificity, so relying on cascade order left a messy hybrid. Every
+     conflicting property is reset here rather than only adding new ones. */
+  .backlink { font-size: 0.55em !important; font-weight: normal !important; color: #888 !important; vertical-align: middle !important; margin-left: 0.8em !important; white-space: nowrap !important; float: none !important; text-align: left !important; border: none !important; background-color: transparent !important; padding: 0 !important; }
+  .backlink a { color: #888 !important; text-decoration: none !important; border-bottom: 1px dotted #888 !important; }
+  .backlink a:hover { color: #555 !important; border-bottom-style: solid !important; }
+  .backlink::before { content: "↑ "; }
+
+  /* Print/PDF-only cover page: turns Widoco's own metadata block (title,
+     version, authors, license -- everything inside <div class="head">) into
+     a proper title page instead of looking like a printed webpage. Invisible
+     on screen; only applies when generating the PDF (see docs/build.sh). */
+  @media print {
+    @page {
+      size: A4;
+      margin: 2.6cm 2cm 2.2cm 2cm;
+      @top-center { content: "CAO_CRM (Corpus Author Ontology CRM)"; font-size: 8pt; color: #888; }
+      @bottom-center { content: counter(page) " / " counter(pages); font-size: 8pt; color: #888; }
+    }
+    /* No running header/footer on the cover page itself. */
+    @page :first {
+      @top-center { content: ""; }
+      @bottom-center { content: ""; }
+    }
+    body { font-size: 10.5pt; line-height: 1.45; }
+    /* Widoco's dark/light mode toggle: its custom element (resources/dark-mode-
+       toggle.mjs) relocates its host <div class="darkmode"> to the very start
+       of <body> once the browser's JS runs (a common "portal" pattern for
+       fixed-position UI). In paged/print media this fixed-position element
+       was producing a spurious blank first page -- meaningless on paper
+       anyway, so it's hidden outright rather than merely repositioned. */
+    .darkmode, dark-mode-toggle { display: none !important; }
+    .backlink, #toc, .container > .head > div[style*="float:right"] { display: none !important; }
+    a[href*="provenance/"] { display: none !important; }
+    a { color: #333 !important; }
+    pre, code { white-space: pre-wrap; overflow-wrap: break-word; }
+    /* Widoco's own .type-c/.type-op/.type-dp classes (the small superscript
+       markers after every class/property name) only set color, not size --
+       browsers apply their own default <sup> sizing, which prints too large.
+       Forced down to about half here. */
+    sup.type-c, sup.type-op, sup.type-dp, sup.type-ap { font-size: 0.5em; }
+
+    .container > .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 24cm;
+      page-break-after: always;
+      border-bottom: none !important;
+    }
+    .container > .head::before {
+      content: "";
+      display: block;
+      width: 5em;
+      height: 0.2em;
+      background: #1a1a1a;
+      margin: 0 auto 1.5em auto;
+    }
+    .container > .head h1 { font-size: 2.2em; margin-bottom: 0.1em; }
+    .container > .head h2 { font-size: 1.1em; font-weight: normal; color: #555; margin-top: 0; }
+    .container > .head dl { text-align: left; max-width: 28em; margin: 2em auto 0 auto; font-size: 0.9em; }
+    .container > .head dt { font-weight: bold; margin-top: 0.6em; }
+    .container > .head dd { margin-left: 0; color: #333; }
+    .container > .head hr { display: none; }
+    #abstract { page-break-after: always; }
+  }
+</style>
+<h2 id="status">Starea acestui document <span class="backlink"> înapoi la <a href="#toc">cuprins</a></span></h2>
+<span class="markdown">
+
+Acest document descrie **CAO_CRM** (Corpus Author Ontology CRM), un modul ontologic dezvoltat în
+cadrul Consorțiului Huma-Num ARIANE (Analyses, Recherches, Intelligence Artificielle et Nouvelles
+Éditions numériques) pentru a descrie metadatele corpusurilor textuale și, în mod particular, ale
+obiectelor literare.
+
+**Versiunea 1.0.** Această primă versiune a fost publicată pe 8 iulie 2026.
+
+Modulul cuprinde 41 de clase, 84 de proprietăți de obiect și 5 proprietăți de date (1165 tripleți în
+total). A fost verificat la fiecare etapă printr-un lanț de validare automatizată (`make validate`)
+care acoperă sintaxa, consistența logică, restricțiile SHACL, conformitatea, metadatele și calitatea
+design-ului, principiile FAIR (FOOPS!) și întrebările de competență pe date reale (opt categorii
+complet validate, plus întrebările de competență), și apoi supus la trei audituri independente și
+succesive. Fiecare dintre aceste audituri a fost realizat fără a presupune validitatea celui anterior,
+și a constat în verificarea fiecărei afirmații direct pornind de la fișierele sursă, și nu pornind de
+la rezumate.
+
+**Cod sursă și depozit:** [https://github.com/andresecha/CAO_CRM](https://github.com/andresecha/CAO_CRM)
+(copie instituțională de referință pe GitLab:
+[https://gitlab.huma-num.fr/consortiumariane/cao_crm](https://gitlab.huma-num.fr/consortiumariane/cao_crm)).
+
+Acest document nu angajează nici CIDOC CRM Special Interest Group (CRM-SIG), nici consorțiul IFLA,
+responsabil de LRMoo, nici FORTH-ICS, responsabil de CRMdig. CAO_CRM este o propunere a grupului de
+lucru „Metadate" al Consorțiului Huma-Num ARIANE, o operă derivată independentă care compune un
+subset selectat al acestor trei modele, fără a pretinde că le reprezintă în întregime și fără a le
+modifica. Întrebările și comentariile referitoare la acest document pot fi adresate Consorțiului
+Huma-Num ARIANE (consortium.ariane@gmail.com).
+
+**Autori:** <a href="https://cachetown.fr/" target="_blank" rel="noopener noreferrer">Andrés Echavarría Peláez</a> și <a href="https://www.linkedin.com/in/melanie-bouland" target="_blank" rel="noopener noreferrer">Mélanie Bouland</a>.
+
+**Contribuitori:** <a href="https://fatihaidmhand.ovh/" target="_blank" rel="noopener noreferrer">Fatiha Idmhand</a>, <a href="https://www.sorbonne-nouvelle.fr/mme-galleron-ioana-468922.kjsp" target="_blank" rel="noopener noreferrer">Ioana Galleron</a>, <a href="https://eric.univ-lyon2.fr/sabine/" target="_blank" rel="noopener noreferrer">Sabine Loudcher</a>, <a href="https://alaeddinelaouir.github.io/homepage/" target="_blank" rel="noopener noreferrer">Ala Eddine Laouir</a> și <a href="https://www.linkedin.com/in/guizani-ameni-5b431b220" target="_blank" rel="noopener noreferrer">Ameni Guizani</a>.
+
+**Autorii.** Mélanie Bouland a elaborat un model conceptual care sintetizează numeroasele discuții
+purtate, întâi în cadrul grupului de lucru „Metadate" al Consorțiului Huma-Num ARIANE, iar apoi, în
+cadrul echipei științifice implicate în dezvoltarea asistentului AMIS. Această muncă a avut ca rezultat
+un model conceptual pe care prezentul modul îl preia și îl adaptează pentru a-l face conform cu
+standardele CIDOC CRM, LRMoo și CRMdig.
+
+Codificarea RDF/OWL a fost realizată de Andrés Echavarría Peláez conform unei metode reproductibile și
+documentate. Cele trei modele oficiale complete au fost fuzionate mai întâi într-un singur graf.
+Clasele și proprietățile reținute (documentate în `imports/module-terms.txt`) au fost extrase apoi,
+într-o singură trecere combinată cu instrumentul ROBOT, cu scopul de a păstra relațiile care traversează
+cele trei modele sursă. Rezultatul a fost supus raționatorului OWL HermiT pentru a-i confirma
+consistența logică, și a fost validat vizual în Protégé.
+
+</span>
+
+<h2 id="introduction-detail">Introducere <span class="backlink"> înapoi la <a href="#toc">cuprins</a></span></h2>
+<span class="markdown">
+
+### Context și motivație
+
+Un text literar nu este un obiect univoc. Poate fi înțeles ca o operă intelectuală care aparține
+ordinii ideilor, ca un artefact material (manuscris, tipăritură, ediție), ca o resursă lingvistică cu
+grade variabile de stabilizare, sau ca un obiect digital supus unor transformări continue (codificare,
+adnotare, procesare algoritmică). Această pluralitate a regimurilor de existență, deja identificată de
+Galleron, Idmhand și Meynard (2018) în lucrările lor despre modelarea obiectelor literare, ridică o
+problemă centrală: cum să reprezinți, într-un cadru semantic coerent, o entitate care aparține în
+același timp creației intelectuale, materialității documentare, interpretării literare și mediului
+digital?
+
+Această întrebare s-a pus cu o urgență deosebită în cadrul proiectului AMIS, al cărui obiectiv este să
+faciliteze, prin modele de inteligență artificială (recunoașterea entităților numite, clasificare,
+rezumare automată, analiză de dependențe), crearea și îmbogățirea metadatelor resurselor textuale
+digitale. Standardele existente (antetul XML-TEI, Dublin Core) s-au dovedit insuficiente, pentru că nu
+permit să se distingă în mod fiabil ce corespunde operei, manifestării, exemplarului fizic sau
+obiectului digital: aceeași dată (o dată calendaristică, un nume, de exemplu) poate de fapt să se
+refere la entități de natură fundamental diferită.
+
+CAO_CRM răspunde acestei nevoi construind, pornind de la standardele CIDOC-CRM, LRMoo și CRMdig, un
+model integrat capabil să dea seamă de întregul ciclu de viață al obiectelor textuale, de la crearea
+operei până la formele ei editoriale, materiale și digitale contemporane.
+
+### Viziune de ansamblu asupra CAO_CRM
+
+CAO_CRM preia ierarhia LRMoo și organizează descrierea conform unei progresii care merge de la operă,
+ca și concept abstract, până la formele ei materiale sau digitale diferite:
+
+- `F1_Work` — opera în dimensiunea ei pur conceptuală, independentă de orice realizare materială.
+  Dreptul moral, inalienabil, se leagă de acest nivel prin drumul `F1_Work → F27_Work_Creation →
+  P14_has_original_author → Persoană`.
+- `F2_Expression` — o punere în formă identificabilă a acestei idei. Orice schimbare substanțială a
+  conținutului intelectual dă naștere unei noi expresii. Această entitate este co-tipată
+  `E33_Linguistic_Object` pentru a purta informația referitoare la limbă (`P72_has_language`) și la
+  sistemul de scriere.
+- `F3_Manifestation` — forma materială generică sub care opera devine accesibilă (de exemplu, o carte
+  tipărită sau o ediție audiovizuală). O manifestare poate da naștere unuia sau mai multor exemplare
+  prin `F32_Item_Production_Event`.
+- `F5_Item` — un exemplar material particular, adică obiectul fizic efectiv consultat sau manipulat.
+  Este co-tipat `E22_Human-Made_Object` pentru a permite reprezentarea localizării lui actuale.
+- `D1_Digital_Object` (CRMdig) — orice fișier digital asociat unei expresii. Este co-tipat
+  `D9_Data_Object` atunci când are o dimensiune măsurabilă. Poate proveni din digitizarea unui obiect
+  fizic preexistent (proces documentat de `D2_Digitization_Process`), sau poate fi produs nativ în
+  format digital (proces documentat de `D7_Digital_Machine_Event`).
+
+Pentru fiecare entitate, modelul organizează metadatele posibile conform a patru categorii
+transversale: „Caracteristici" (identificatori, titluri, dimensiuni, materiale, formate, limbi, adică
+elementele care permit distingerea și identificarea univocă a unei resurse), „Procese" (actori, date
+calendaristice, locuri și operațiuni care au condus la existența sau la transformarea resursei),
+„Statut" (drepturi aplicabile, informații de conservare și loc de depozitare), și „Relație" (legături
+către alte resurse din model, în special între expresii și între opere prin `R75`, `R76` și `R2`).
+
+### CAO_CRM, RDF și OWL
+
+CAO_CRM se publică în RDF/OWL, cu serializări disponibile în RDF/XML, Turtle, N-Triples și JSON-LD.
+Modulul a fost construit conform unei metode reproductibile și documentate: cele trei modele oficiale
+complete (CIDOC-CRM 7.1.3, LRMoo 1.1.1 și CRMdig 5.0) sunt fuzionate mai întâi. Clasele și
+proprietățile reținute (documentate în `imports/module-terms.txt`, 130 de termeni) sunt extrase apoi
+într-o singură operațiune combinată cu instrumentul <a href="http://robot.obolibrary.org/">ROBOT</a>.
+Această metodă permite păstrarea relațiilor care traversează cele trei modele sursă în perimetrul
+selectat.
+
+Spre deosebire de un `owl:imports` clasic, CAO_CRM constituie un modul autonom (*vendorizat*): nu mai
+depinde de fișierele sursă externe în timpul execuției.
+
+Principiul director al CAO_CRM este cel al unei **compoziții pure**: modulul nu definește nicio clasă
+și nicio proprietate proprie, cu o singură excepție metodologică, autorizată explicit de chiar
+CIDOC-CRM. Este vorba de cele cinci subproprietăți de rol:
+
+- `P14_has_original_author`;
+- `P14_has_translator`;
+- `P14_has_abridger`;
+- `P14_has_scientific_editor`;
+- `P14_has_publisher`.
+
+Aceste subproprietăți sunt declarate conform *Encoding Rule 4* din preambulul oficial al CIDOC-CRM
+(vezi „Justificarea design-ului" mai jos).
+
+În afara acestui caz particular, orice entitate prezentă în modul provine direct din CIDOC-CRM, din
+LRMoo sau din CRMdig, cu păstrarea axiomelor ei de origine (domenii, game, etichete și comentarii).
+
+### Consistență și integritate
+
+Ontologia este verificată la fiecare modificare printr-un lanț de instrumente reproductibil
+(`make validate`) care cuprinde:
+
+- validarea sintaxei RDF/XML (`rapper`, `riot`, `rdflib`);
+- raționamentul logic (raționatorul HermiT prin ROBOT, aplicat modelului fuzionat care integrează
+  cele trei surse oficiale complete);
+- verificarea restricțiilor SHACL;
+- controlul conformității cu adnotările de metadate cerute;
+- alinierea structurală cu sursele oficiale (`robot diff`);
+- detectarea posibilelor erori de design (OOPS!).
+
+La data publicării, modulul este consistent logic: raționatorul nu detectează nicio clasă
+nesatisfiabilă, iar cele opt categorii de validare, inclusiv evaluarea FAIR (executată local, scor
+0,79/1,0), se execută cu succes, fără excepție.
+
+Această consistență nu constituie un simplu rezultat automat: este rezultatul unui proces de
+verificare exhaustiv. Detaliul complet al acestui proces, care include fiecare decizie de modelare
+netrivială împreună cu justificarea ei bazată pe referințe oficiale, este prezentat în secțiunea
+următoare.
+
+### Inferență, dependență și ipoteza lumii deschise
+
+Ca orice model RDF/OWL, CAO_CRM adoptă **ipoteza lumii deschise** (*Open World Assumption*): absența
+unui tripleț din date nu înseamnă niciodată că acesta este fals; indică doar că nu a fost, sau nu a
+fost încă, afirmat. Acest principiu este deosebit de important pentru interpretarea acestui modul,
+pentru două motive concrete:
+
+1. **Domeniile și gamele absente în mod deliberat nu constituie erori.** Mai multe proprietăți
+   oficiale ale CIDOC-CRM au, în modelul lor complet, un domeniu sau o gamă care face referire la o
+   clasă exclusă deliberat din perimetrul ales (de exemplu, `E1_CRM_Entity`, rădăcina ierarhiei).
+   Modulul nu înlocuiește sistematic aceste referințe cu o clasă de substituție: în majoritatea
+   cazurilor, lasă pur și simplu acel domeniu sau gamă nespecificate. În câteva situații precise
+   (în special `P54_has_current_location` și `P55_has_current_location`, restrânse la
+   `E22_Human-Made_Object`), a fost introdusă o restricție explicită după verificarea faptului că nu
+   provoacă nicio pierdere de validitate pentru celelalte utilizări ale modulului.
+2. **Raționatorul HermiT confirmă consistența; nu creează faptele care lipsesc.** Faptul că modulul
+   este consistent înseamnă că nu a fost detectată nicio contradicție logică în axiomele declarate.
+   Aceasta nu înseamnă că toate relațiile pertinente sunt automat inferate sau completate. Orice
+   relație trebuie exprimată explicit în date pentru a putea fi exploatată.
+
+Astfel, modulul nu depinde, în timpul execuției, de niciun fișier extern (vezi „CAO_CRM, RDF și OWL"
+mai sus). Corectitudinea lui, în schimb, se sprijină pe fidelitatea extracției realizate pornind de la
+fișierele sursă oficiale, fidelitate care este verificată printr-o comparație sistematică
+(`robot diff`).
+
+### Justificarea design-ului
+
+Decizia directoare — **zero clase sau proprietăți native, compoziție pură a unui subset din
+CIDOC-CRM, LRMoo și CRMdig** — răspunde voinței de a nu mobiliza integralitatea celor trei modele
+combinate, a căror utilizare completă ar fi greu practicabilă, în special pentru utilizatorii
+nespecialiști în ontologii.
+
+CAO_CRM face deci alegerea deliberată a unui subset limitat și controlat, chiar cu riscul de a lăsa
+anumite nevoi descriptive fără răspuns imediat, mai degrabă decât să dezvolte extensii proprii. Această
+exigență de rigoare a condus, pe parcursul construirii modulului, la următoarele decizii de modelare.
+
+**Tipizarea descrierii unui obiect cu `P3_has_note`.** Diagrama conceptuală de origine făcea ca
+descrierea liberă a unui obiect să treacă printr-un lanț artificial (`E55_Type` urmată de
+`E62_String`), în condițiile în care `E62_String`, la fel ca `E60_Number`, nu are oficial nicio clasă
+URI în CIDOC-CRM. Aceste două noțiuni corespund unor „valori primitive" pe care chiar norma le
+prescrie să fie reprezentate direct sub formă de literali (`rdfs:Literal`), și nu ca entități cu
+identitate proprie. În consecință, `P3_has_note` a fost declarată `owl:DatatypeProperty`, cu o gamă
+fixată la `rdfs:Literal`, reproducând exact convenția aplicată de CIDOC-CRM pentru `P90_has_value`.
+
+**Absența voluntară a disjuncției între clase.** Nu s-a adăugat nicio declarație `owl:disjointWith`
+între clasele modulului. Această decizie urmează fidel cele trei fișiere oficiale complete ale
+CIDOC-CRM, LRMoo și CRMdig, dintre care niciunul nu declară nici el vreo disjuncție de clase.
+Consorțiul CIDOC-CRM alege într-adevăr să lase definirea eventualelor disjuncții la nivelul
+implementărilor concrete, în loc să le impună în modelul generic. Introducerea aici a unor restricții
+logice pe care modelele sursă le evită voluntar ar fi constituit o decizie de modelare proprie
+CAO_CRM, contrară principiului de compoziție pură.
+
+**Absența traducerii oficiale pentru termenii LRMoo și CRMdig, și pentru definițiile chiar ale
+CIDOC-CRM.** Clasele și proprietățile LRMoo și CRMdig folosite de CAO_CRM dispun, în sursele lor
+oficiale, doar de `rdfs:label` în engleză — spre deosebire de CIDOC-CRM, ai cărui termeni sunt în
+majoritate disponibili în mai multe limbi (până la șapte, după caz). O verificare exhaustivă
+relevă în plus faptul că chiar CIDOC-CRM nu-și traduce niciodată definițiile lungi (`rdfs:comment`),
+în nicio limbă, nici măcar pentru propriii lui termeni nativi (de exemplu, `E39_Actor` are un
+`label@fr`, dar un `comment` doar în engleză).
+
+A adăuga traduceri în franceză sau în spaniolă ale acestor termeni sau ale acestor definiții chiar în
+fișierul `ontology/CAO_CRM-1.0.rdf` ar constitui, prin definiție, conținut creat de chiar CAO_CRM și
+nu conținut preluat dintr-o sursă oficială — fișierul RDF publicat rămâne deci, în acest sens, riguros
+fidel surselor: acești 130 de termeni au oficial o traducere doar acolo unde CIDOC-CRM o oferă
+(etichetele scurte, niciodată definițiile).
+
+Pentru ca documentația în sine să rămână totuși utilizabilă în franceză și în spaniolă, un strat de
+traducere de lucru independent (`docs/i18n/`) furnizează cele 44 de etichete și cele 130 de definiții
+care lipsesc în franceză, precum și cele 130 de etichete și cele 130 de definiții care lipsesc în
+spaniolă — fuzionat doar într-o copie temporară a grafului în momentul generării HTML-ului și
+PDF-ului, niciodată în fișierul publicat. Fiecare etichetă sau definiție produsă astfel poartă, în
+documentația generată, un mic marcaj (†) însoțit de o informație contextuală care precizează natura
+ei de traducere de lucru, neoficială.
+
+**Opt probleme structurale, identificate comparând diagrama conceptuală cu modelele oficiale
+complete, pagină cu pagină.** Fiecare a fost rezolvată cu citat oficial complet:
+
+1. *Descriere și sistem de scriere.* Diagrama făcea ca aceste două caracteristici să treacă prin
+   aceeași construcție (`E55_Type` și apoi `E62_String`), deși răspund unor nevoi opuse: text liber
+   pentru descriere, categorie controlată pentru sistemul de scriere. Descrierea este purtată acum
+   direct prin `P3_has_note`; sistemul de scriere, printr-o valoare `E55_Type` legată prin
+   `P2_has_type`, cu `P127_has_broader_term` pentru a organiza valorile înrudite atunci când coexistă
+   mai multe fațete controlate (sistem de scriere, mod de producere, tip de drept).
+2. *Limba unei expresii.* Proprietatea `P150_defines_typical_parts_of` era deturnată de la uzul ei
+   oficial și lega limba de `F3_Manifestation`, în condițiile în care chiar comentariul oficial al
+   LRMoo situează explicit această informație la Expresie: *"An instance of F2 Expression which
+   includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic
+   Object."* Limba este purtată deci acum prin `F2_Expression`, co-tipată `E33_Linguistic_Object`,
+   prin `P72_has_language`.
+3. *Localizarea unui exemplar.* `P7_took_place_at` era folosită pe `E3_Condition_State`, care nu este
+   o subclasă legală a lui `E4_Period`, singurul domeniu oficial al acestei proprietăți. Această
+   verificare a relevat în plus o lacună reală: nicio proprietate nu permitea localizarea lui
+   `F5_Item` în diagramă. Soluția adoptată co-tipizează exemplarul ca `E22_Human-Made_Object` — o
+   practică pe care comentariul oficial al lui `F5_Item` o sancționează explicit — pentru a-i permite
+   `P54`/`P55_has_current_location`.
+4. *Drepturile.* `P104_is_subject_to` era folosită pe șapte clase deodată, trei dintre ele
+   incompatibile categorial (`F1_Work`, `E7_Activity`, `D2_Digitization_Process`): gama oficială a
+   acestei proprietăți cere `E72_Legal_Object`, care nu include nici operele abstracte, nici
+   procesele. Rezolvarea completă a acestui punct este detaliată mai jos, la „Drepturi morale și
+   drepturi patrimoniale".
+5. *Producerea unui exemplar.* `R27_materialized` lega `E12_Production` de `F3_Manifestation`, în
+   condițiile în care domeniul oficial cere `F32_Item_Production_Event`, o subclasă precisă a lui
+   `E12_Production` prevăzută exact pentru acest uz. Nimic nu se pierde în această corecție:
+   `F32_Item_Production_Event` moștenește toate axiomele clasei ei mamă.
+6. *Obiectul digital purtător al unei dimensiuni.* Aceeași schemă ca la punctul anterior:
+   `L61_contains_value_set_of` cere `D9_Data_Object`, o subclasă precisă a lui `D1_Digital_Object`,
+   în loc de `D1_Digital_Object` însuși.
+7. *Unitatea de măsură.* `P90_has_value` cere o gamă `rdfs:Literal`, nu `E60_Number` (un alt
+   „Primitive Value" fără URI oficial); `P91_has_unit`, care leagă o dimensiune de unitatea ei de
+   măsură prin `E58_Measurement_Unit`, lipsea total din diagramă și a fost adăugată.
+8. *Precizia datelor calendaristice.* Prima extracție a modulului pierduse tipizarea XSD precisă
+   (`xsd:dateTime`, `xsd:integer`) pe care fișierul original al lui Mélanie Bouland o aplica corect
+   la `P82`/`P82a`/`P82b`/`P90_has_value` — norma oficială se mulțumește, mai generic, cu
+   `rdfs:Literal`. Această precizie a fost restaurată fără a înlătura nimic din ce avea deja modulul.
+
+Un al nouălea caz, mai subtil, a cerut revizuirea unei concluzii anterioare: o ramură a diagramei
+distingea digitizarea unui obiect fizic existent de producerea direct digitală, fără suport fizic
+prealabil, dar o implementa cu o clasă care cere un obiect fizic de intrare (`D2_Digitization_Process`,
+care presupune `E18_Physical_Thing`). Nu era vorba de o eroare de eliminat, ci de o distincție cu
+adevărat dorită de echipă: este purtată acum prin `D7_Digital_Machine_Event`, clasa mai generală a
+CRMdig din care `D2_Digitization_Process` este doar o specializare, și care nu cere niciun obiect
+fizic prealabil.
+
+**Completarea matricei celor patru categorii transversale.** O revizuire exhaustivă a acestei matrice
+pentru cele cinci clase principale a permis adăugarea a trei relații care lipseau, toate trei
+oficiale și fără a introduce nicio clasă nouă: `R75_incorporates` și `R76_is_derivative_of` între
+două instanțe de `F2_Expression` (pentru a documenta, de exemplu, o traducere sau o versiune
+prescurtată derivată dintr-o expresie originală), `R2_is_derivative_of` între două instanțe de
+`F1_Work` (pentru a documenta o adaptare sau o continuare derivată dintr-o operă sursă), și
+`R28_produced`, care leagă direct un eveniment de producție de exemplarul pe care îl produce.
+
+**Drept moral și drepturi patrimoniale.** Dreptul moral, inalienabil, incesionabil, legat de persoana
+autorului și de opera însăși, independent de orice expresie particulară, ridică o problemă
+structurală de modelare. Proprietatea `P104_is_subject_to` cere o instanță de `E72_Legal_Object`, a
+cărei notă de acoperire oficială exclude explicit obiectele conceptuale precum `F1_Work` (*"the
+identity of an instance of E28 Conceptual Object [...] may be too ambiguous to reliably establish
+instances of E30 Right"*).
+
+Această excludere a fost confirmată de chiar discuția oficială a CIDOC-CRM SIG consacrată modelului
+drepturilor (Issue 328, 2017), care tratează exact cazul dreptului moral și conchide că niciun
+mecanism nu permite în prezent transferarea sau legarea directă a acestui tip de drept de un obiect
+de această natură.
+
+Soluția adoptată distinge două mecanisme deja prezente în modul, fiecare folosit pentru a reprezenta
+realitatea juridică căreia i se potrivește cel mai bine.
+
+Pentru a răspunde, în mod unic și fără ambiguitate, la întrebarea „cine este autorul moral al acestei
+opere?", drumul potrivit este: `F1_Work → R16i_was_created_by → F27_Work_Creation →
+P14_has_original_author → Persoană`, pe care chiar LRMoo îl descrie explicit ca fiind „noțiunea de
+creator al operei".
+
+Pentru a documenta regimul juridic formal, precum și drepturile patrimoniale cesionabile (drepturi de
+traducere, drepturi de ediție), proprii unei Expresii sau unei Manifestări concrete, mecanismul
+potrivit este: `P104_is_subject_to` către o instanță de `E30_Right`, tipizată prin `P2_has_type` (de
+exemplu, „drept moral" sau „proprietate intelectuală inalienabilă").
+
+Această dublă interpretare nu introduce niciun termen nou: articulează explicit două mecanisme deja
+furnizate de LRMoo și CIDOC-CRM, fiecare folosit pentru a reprezenta realitatea juridică ce îi
+corespunde.
+
+**Cinci subproprietăți de rol: singura excepție de la principiul compoziției pure.** Nicio
+proprietate oficială nu permite distingerea diferitelor roluri ale actorilor care intervin în jurul
+aceluiași text: `P14_carried_out_by` acoperă nediferențiat orice rol în orice activitate. Totuși,
+CIDOC-CRM autorizează explicit, chiar în preambulul lui, crearea de subproprietăți cu nume propriu
+pentru a specializa un rol, conform mecanismului desemnat drept *Encoding Rule 4*.
+
+Trei roluri de autorat sunt astfel distinse la nivelul Expresiei, fiecare aliniată cu vocabularul
+internațional MARC Relator Terms:
+
+- `P14_has_original_author` (autor original, cod `aut`);
+- `P14_has_translator` (traducător, cod `trl`);
+- `P14_has_abridger` (responsabil de realizarea unei versiuni prescurtate, cod `abr`).
+
+Același principiu se aplică la nivelul Manifestării, unde articolul de origine al CAO_CRM identifică
+explicit, ca element distinctiv al modelului față de LRMoo pur, o ramură de „activități editoriale"
+care distinge responsabilitatea editorului comercial (cel care publică și tipărește) de cea a
+editorului științific (cel care stabilește textul critic și redactează prefața).
+
+Aceste două roluri sunt reprezentate respectiv de:
+
+- `P14_has_publisher` (cod MARC `pbl`);
+- `P14_has_scientific_editor` (cod MARC `edt`);
+
+ambele aplicate aceluiași eveniment `F30_Manifestation_Creation`.
+
+Această ultimă proprietate se aplică, de asemenea, în mod distinct, Item-ului și Obiectului digital,
+de fiecare dată când o activitate științifică specifică (colaționarea unui exemplar, decizii
+editoriale asupra unei ediții digitale, de exemplu) angajează responsabilitatea unui specialist
+independent de procesul material de producere.
+
+### Cum se citește acest document
+
+Acest document urmează structura clasică a unei specificații de ontologie. După această introducere,
+prezintă o viziune de ansamblu asupra modulului (lista claselor și proprietăților), urmată de o
+secțiune de referință încrucișată care descrie, termen cu termen, fiecare clasă și fiecare
+proprietate, cu eticheta ei, comentariile ei multilingve, domeniul și gama ei.
+
+Fiecare termen este identificat prin codul lui de origine provenind din CIDOC-CRM, LRMoo sau CRMdig
+(de exemplu, `E7` pentru *Activity*, `P2` pentru *has type*, `F1` pentru *Work*). Acest cod, prezent
+și în IRI-ul complet al fiecărui termen, permite localizarea directă a definiției lui în
+specificațiile oficiale corespunzătoare.
+
+Pentru o lectură netehnică a modelului, vezi mai degrabă `documentation/ro/` (zece fișe pedagogice, de
+la „Ce este CAO_CRM" până la un glosar și o secțiune de întrebări frecvente, disponibile și în franceză,
+spaniolă și engleză), vizualizarea interactivă `graph/CAO_CRM-1.0-graph.html`, ghidul practic Protégé
+`documentation/ro/07-guia-protege.md`, și notele de aplicare detaliate ale fiecărui rol `P14_has_*` și
+ale fiecărei valori `E55_Type` din model, fiecare cu un exemplu concret, în
+`documentation/ro/10-notas-de-aplicacion.md`.
+
+### Conformitate
+
+CAO_CRM este exprimat în OWL 2 și RDF Schema. Cu singura excepție a celor cinci subproprietăți
+`P14_has_*`, prezentate și justificate în secțiunea „Justificarea design-ului", fiecare clasă și
+fiecare proprietate a modulului corespund exact unei clase sau unei proprietăți declarate în una
+dintre cele trei versiuni oficiale următoare:
+
+- CIDOC-CRM 7.1.3 (*RDFS Implementation*, februarie 2024);
+- LRMoo 1.1.1 (noiembrie 2025), extensie a modelului IFLA LRM;
+- CRMdig 5.0 (octombrie 2025).
+
+</span>
