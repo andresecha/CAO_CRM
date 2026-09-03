@@ -53,7 +53,7 @@ jobs:
       - name: make validate (all 8 categories + cq)
         run: make validate
 
-      - name: Build documentation (Widoco, all 3 languages)
+      - name: Build documentation (Widoco, all 4 languages)
         run: make docs
 
       - uses: actions/upload-artifact@v4
