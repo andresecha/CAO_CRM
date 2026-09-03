@@ -36,8 +36,13 @@ this overlay carries a small dagger (†) with a tooltip saying so.
   role subproperties) rather than alphabetically, so related terms were
   translated together with maximum shared context.
 - `translations-ro/*.yaml` -- the same 130 terms in Romanian, in the same eight
-  batches. Reviewed and corrected by a native speaker (2026-09-01); the
-  corrected source document is archived in `review/review2-ro.md`.
+  batches. **Reviewed and corrected on 2026-09-01 by [Roxana Patras](https://dhl.uaic.ro/taqwa/elementor-page-2114/members-2/)**
+  (Universitatea „Alexandru Ioan Cuza”, Iaşi, Romania), a native speaker: 34 labels
+  and 88 definitions corrected, and 6 entries of `glossary_crosswalk-ro.yaml` settled
+  (they carry `source: native_review`). The corrected document she returned is
+  archived in `review/review2-ro.md`. She is credited as a co-author of the Nakala
+  deposit of this layer for it.
+
 - `translations-it/`, `translations-pt/` -- Italian and Portuguese drafts, not
   yet reviewed, not wired into `docs/build.sh`, gitignored.
 - `glossary_crosswalk.yaml`, `glossary_crosswalk-ro.yaml` -- the ~35 recurring
