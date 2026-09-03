@@ -17,6 +17,7 @@ physically first in document order -- CSS alone cannot reorder it before
 Widoco's own <div class="head"> block, which is itself turned into the
 second page (see the print CSS in intro.html).
 """
+import base64
 import os
 import sys
 
@@ -101,12 +102,25 @@ def main():
         print(f"postprocess_titlepage.py: title page already present in {path}, skipping")
         return
 
-    # Absolute file:// path, not a relative one: the PDF pipeline (docs/build.sh)
-    # runs WeasyPrint on a *copy* of this file dumped into a different temp
-    # directory by Chrome --dump-dom, so a relative "logos/ARIANE.svg" path
-    # would resolve against the wrong base directory and silently fail to load.
-    logo_abs = os.path.join(os.path.dirname(os.path.abspath(path)), "logos", "ARIANE.svg")
-    title_page = TITLE_PAGE_TEMPLATE.replace("__LOGO_PATH__", "file://" + logo_abs)
+    # The logo is embedded as a data: URI rather than linked by path, because no
+    # path works in every place this markup has to render:
+    #   - a relative "logos/ARIANE.svg" breaks the PDF. The pipeline in
+    #     docs/build.sh runs WeasyPrint on a *copy* of this file that Chrome
+    #     --dump-dom writes into a temp directory, so the relative path would
+    #     resolve against the wrong base directory and silently load nothing.
+    #   - an absolute "file:///.../docs/site/logos/ARIANE.svg" fixes the PDF but
+    #     bakes the build machine's own filesystem path into a file that is then
+    #     committed, published on the web, and deposited on Nakala as a citable
+    #     artifact -- where it identifies the person who ran the build and
+    #     resolves on no other machine.
+    # A data: URI carries no path at all, so it renders identically in the
+    # browser, in the temp copy WeasyPrint reads, and in any downstream copy.
+    # (The one cost is ~13 KB per page; the external stylesheets are unaffected
+    # -- they are media="screen", so the PDF never used them either way.)
+    logo_path = os.path.join(os.path.dirname(os.path.abspath(path)), "logos", "ARIANE.svg")
+    with open(logo_path, "rb") as f:
+        logo_uri = "data:image/svg+xml;base64," + base64.b64encode(f.read()).decode("ascii")
+    title_page = TITLE_PAGE_TEMPLATE.replace("__LOGO_PATH__", logo_uri)
     title_page = title_page.replace("__SUBTITLE__", SUBTITLES[lang])
 
     html = html.replace(marker, marker + "\n" + title_page, 1)

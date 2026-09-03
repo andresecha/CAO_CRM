@@ -155,6 +155,16 @@ if [ -d site/doc ]; then
   cp -rf site/doc/. site/
   rm -rf site/doc
 fi
+# Widoco writes the "back to documentation" link of every provenance page with a
+# Windows path separator ("..\index-<lang>.html"), which no other platform
+# resolves -- the link is simply dead when the page is opened on Linux or macOS,
+# in all four languages. Repaired here rather than reported upstream and waited
+# on, since these pages are published and deposited as citable artifacts.
+for lang in $LANGS; do
+  f="site/provenance/provenance-${lang}.html"
+  [ -f "$f" ] && sed -i 's|href="\.\.\\index-|href="../index-|g' "$f"
+done
+
 
 # Prefix every visible class/property label with its CIDOC-CRM/LRMoo/CRMdig
 # code (e.g. "E7 — Activity"), extracted from each term's own IRI. Runs on

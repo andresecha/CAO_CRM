@@ -35,6 +35,15 @@ bash docs/build.sh ontology/CAO_CRM-1.0.rdf
 
 - **Widoco constraints handled by `build.sh`:** `-confFile` and `-getOntologyMetadata` are mutually exclusive (Widoco's own stated restriction) — using `pathToIntro` therefore means metadata (abstract, license, authors...) is not auto-extracted from the RDF at build time and must live in each config file. And `pathToIntro` only accepts an **absolute** path (it is not resolved relative to the working directory or to the config file's folder) — `build.sh` substitutes an absolute path into a throwaway temp copy of each `config-{lang}.properties` at build time, so the committed config files stay portable (relative paths, no machine-specific paths committed).
 
+- **Nothing machine-specific, nothing platform-specific, in the committed output:** `docs/site/` is
+committed, published and deposited on Nakala as a citable artifact, so a path that only resolves on
+the build machine is a defect, not a detail. Two are handled: the print cover's ARIANE logo is
+embedded as a `data:` URI rather than linked (a relative path breaks the PDF, since WeasyPrint reads
+a copy of the page from a temp directory, and an absolute one bakes in the builder's own filesystem
+path — see `postprocess_titlepage.py`), and Widoco's `..\index-<lang>.html` back-link on every
+provenance page, written with a Windows separator, is normalized to `../` right after the Widoco
+passes.
+
 - **Division of responsibility:** `-confFile` supplies only content Widoco cannot source from the RDF (the Introduction, the per-language abstract/description/status) — never to override anything the RDF header already states. If a header value is wrong, fix it in `ontology/CAO_CRM-1.0.rdf` itself: every other consumer of the header (catalogs, FAIR harvesters) reads the same triples.
 
 ## Multi-language build: en/fr/es/ro, four separate files, four custom introductions
