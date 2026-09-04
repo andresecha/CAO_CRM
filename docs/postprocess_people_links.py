@@ -37,7 +37,16 @@ PEOPLE_LINKS = {
 
 
 def link(name):
-    url = PEOPLE_LINKS[name]
+    """Wrap a name in its personal link, or leave it bare if we don't have one.
+
+    Not every contributor has given us a page to link to -- Ana Salgado, who
+    reviewed the Portuguese, has not sent one yet -- and a missing link is not a
+    reason to leave someone out of the credits. Fill PEOPLE_LINKS in when it
+    arrives and the link appears on the next build, with nothing else to change.
+    """
+    url = PEOPLE_LINKS.get(name)
+    if not url:
+        return name
     return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}</a>'
 
 
@@ -67,34 +76,46 @@ CONTRIBUTORS = [
     ("Simone Rebora", "Verona University, Verone, Italie"),
 ]
 
-CONTRIBUTOR_DD = "".join(
-    f"<dd>{name} ({aff})</dd>" if i == 0 else f"<dd> {name} ({aff})</dd>"
-    for i, (name, aff) in enumerate(CONTRIBUTORS)
-)
-CONTRIBUTOR_DD_LINKED = "".join(
-    (f"<dd>{link(name)} ({aff})</dd>" if i == 0 else f"<dd> {link(name)} ({aff})</dd>")
-    for i, (name, aff) in enumerate(CONTRIBUTORS)
-)
+# Contributors that belong to one language edition only, because what they
+# contributed *is* that edition. Ana Salgado reviewed the Portuguese text and is
+# credited on the Portuguese page for it; she is not a contributor to the model
+# itself, so she does not appear in the RDF's dc:contributor nor on the other
+# four pages. The list here has to match config-<lang>.properties exactly, since
+# that is what Widoco renders and what this script matches against.
+CONTRIBUTORS_EXTRA = {
+    "pt": [("Ana Salgado", "revisão linguística e terminológica da versão portuguesa")],
+}
+
+
+def contributor_dd(lang, linked):
+    people = CONTRIBUTORS + CONTRIBUTORS_EXTRA.get(lang, [])
+    render = link if linked else (lambda n: n)
+    return "".join(
+        (f"<dd>{render(name)} ({aff})</dd>" if i == 0 else f"<dd> {render(name)} ({aff})</dd>")
+        for i, (name, aff) in enumerate(people)
+    )
 
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit("usage: postprocess_people_links.py <index.html>")
-    path = sys.argv[1]
+    if len(sys.argv) != 3:
+        sys.exit("usage: postprocess_people_links.py <index.html> <lang>")
+    path, lang = sys.argv[1], sys.argv[2]
+    contributor_plain = contributor_dd(lang, linked=False)
+    contributor_linked = contributor_dd(lang, linked=True)
     with open(path, encoding="utf-8") as f:
         html = f.read()
 
-    if CREATOR_DD_LINKED in html and CONTRIBUTOR_DD_LINKED in html:
+    if CREATOR_DD_LINKED in html and contributor_linked in html:
         print(f"postprocess_people_links.py: already present in {path}, skipping")
         return
 
     if CREATOR_DD not in html:
         sys.exit(f"postprocess_people_links.py: creator <dd> block not found in {path}")
-    if CONTRIBUTOR_DD not in html:
+    if contributor_plain not in html:
         sys.exit(f"postprocess_people_links.py: contributor <dd> block not found in {path}")
 
     html = html.replace(CREATOR_DD, CREATOR_DD_LINKED, 1)
-    html = html.replace(CONTRIBUTOR_DD, CONTRIBUTOR_DD_LINKED, 1)
+    html = html.replace(contributor_plain, contributor_linked, 1)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(html)

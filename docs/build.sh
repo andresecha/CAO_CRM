@@ -233,7 +233,7 @@ done
 # (target/rel-bearing) Andrés Echavarría Peláez link.
 for lang in $LANGS; do
   f="site/index-${lang}.html"
-  [ -f "$f" ] && python3 postprocess_people_links.py "$f"
+  [ -f "$f" ] && python3 postprocess_people_links.py "$f" "$lang"
 done
 
 # Print-only title page (model name + authors + ARIANE logo), inserted right
