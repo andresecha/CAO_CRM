@@ -30,22 +30,24 @@ docs/site/ontology.jsonld
 # meant to be committed itself.
 public/
 
-# Italian and Portuguese: AI-assisted draft translations, not yet reviewed by native
-# speakers or by the consortium's partners. Not wired into docs/build.sh's language
-# loop, and not committed until the team validates them and decides to publish.
-# Do not delete -- this is deliberate work in progress, not dead weight.
+# Italian: AI-assisted draft translation, not yet reviewed by a native speaker.
+# Not wired into docs/build.sh's language loop, and not committed until Simone
+# Rebora returns docs/i18n/review/review-it.md and the corrections are carried in.
+# Do not delete -- this is deliberate work in progress, not dead weight. The step
+# by step is in docs/prompts/RETOMAR-it-publicacion.md.
 documentation/it/
-documentation/pt/
 docs/intro-it.html
-docs/intro-pt.html
 docs/config-it.properties
-docs/config-pt.properties
 docs/i18n/translations-it/
-docs/i18n/translations-pt/
 docs/i18n/glossary_crosswalk-it.yaml
-docs/i18n/glossary_crosswalk-pt.yaml
 docs/i18n/CAO_CRM-1.0-i18n-it.ttl
-docs/i18n/CAO_CRM-1.0-i18n-pt.ttl
+
+# Portuguese is published: its translation layer was reviewed by Ana Salgado
+# (2026-09-04) and is wired into docs/build.sh, so everything the pt build consumes
+# is tracked. One Portuguese exception stays ignored, on purpose: documentation/pt/,
+# the ten pedagogical .md files, was not part of that review -- it is still an
+# unreviewed AI-assisted draft, exactly as with Romanian.
+documentation/pt/
 
 # Romanian is published: its translation layer was reviewed by a native speaker
 # (2026-09-01) and is wired into docs/build.sh, so everything the ro build consumes

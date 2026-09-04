@@ -1,0 +1,187 @@
+# Lote 5 (pt): clases "hub" de CIDOC-CRM con label oficial en pt (needs_label_pt=false para 9 de
+# los 10 -- solo E22_Human-Made_Object carece de traducción oficial). Solo se añade comment; el
+# label oficial pt (verificado contra ontology/CAO_CRM-1.0.rdf, rdfs:label@pt) no se toca ni se
+# duplica aquí -- se recupera directamente del propio módulo en tiempo de build.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"
+    local_name: E1_CRM_Entity
+    comment:
+      pt: >-
+        Esta classe compreende todas as coisas no universo de discurso do Modelo Concetual de
+        Referência do CIDOC. É um conceito abstrato que fornece três propriedades gerais:
+        identificação por nome ou designação, e em particular por um identificador preferencial;
+        classificação por tipo, permitindo um refinamento adicional da subclasse específica a que
+        uma instância pertence; anexação de texto livre e outros dados não estruturados para
+        exprimir tudo o que não seja captado por propriedades formais. Todas as demais classes do
+        CIDOC CRM são, direta ou indiretamente, especializações de E1 Entidade CRM.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity"
+    local_name: E2_Temporal_Entity
+    comment:
+      pt: >-
+        Esta classe compreende todos os fenómenos, tais como as instâncias de E4 Período e E5
+        Evento, que ocorrem numa extensão limitada no tempo. Esta extensão temporal deve ser
+        contígua, isto é, sem lacunas. Caso os tipos de fenómenos que definem uma instância de E2
+        Entidade Temporal deixem de ocorrer, e voltem a ocorrer mais tarde noutro momento,
+        considera-se que a instância anterior de E2 Entidade Temporal terminou e que surgiu uma nova
+        instância. Em termos mais intuitivos, o mesmo evento não pode acontecer duas vezes. Nalguns
+        contextos, estes fenómenos são também designados «perdurantes» (perdurants). Esta classe é
+        disjunta de E77 Item Persistente e é uma classe abstrata que tipicamente não tem instâncias
+        diretas. E2 Entidade Temporal especializa-se em E4 Período, que se aplica a uma área
+        geográfica particular (definida com maior ou menor precisão), e em E3 Estado Material, que
+        se aplica a instâncias de E18 Coisa Física.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E4_Period"
+    local_name: E4_Period
+    comment:
+      pt: >-
+        Esta classe compreende conjuntos de fenómenos coerentes ou manifestações culturais que
+        ocorrem no tempo e no espaço. É a coerência social ou física destes fenómenos que identifica
+        uma instância de E4 Período, e não a extensão espácio-temporal associada. Esta extensão é
+        apenas o «terreno» ou espaço, num sentido físico abstrato, que o processo real de
+        crescimento, difusão e recuo cobriu. Consequentemente, diferentes períodos podem
+        sobrepor-se e coexistir no tempo e no espaço, como quando uma cultura nómada existe na
+        mesma área e no mesmo tempo que uma cultura sedentária. Isto significa também que direitos
+        de uso da terra sobrepostos, comuns entre povos indígenas, equivalem a períodos sobrepostos.
+
+
+        Frequentemente, esta classe é usada para descrever períodos pré-históricos ou históricos,
+        como o «Período Neolítico», a «Dinastia Ming» ou a «Era McCarthy», mas também unidades
+        geopolíticas e atividades de povoamentos são consideradas casos especiais de E4 Período. No
+        entanto, não há pressupostos sobre a escala dos fenómenos associados. Em particular, todos
+        os eventos são vistos como processos sintéticos constituídos por fenómenos coerentes. Por
+        isso, E4 Período é uma superclasse de E5 Evento. Por exemplo, um nascimento clínico moderno,
+        uma instância de E67 Nascimento, pode ser visto tanto como um evento único, isto é, uma
+        instância de E5 Evento, quanto como um período alargado, isto é, uma instância de E4
+        Período, constituído por múltiplos processos físicos e atividades complementares realizadas
+        por várias instâncias de E39 Agente.
+
+
+        E4 Período é uma subclasse de E2 Entidade Temporal e de E92 Volume Espácio-Temporal. Este
+        último entende-se como um volume espácio-temporal fenomenal, tal como definido em CIDOC
+        CRMgeo (Doerr & Hiebel, 2013). Em virtude desta herança múltipla, é possível discutir a
+        extensão física de uma instância de E4 Período sem ter de representar cada instância dela em
+        conjunto com uma instância do seu volume espácio-temporal associado. Este modelo combina
+        dois tipos de substância bastante diferentes: uma instância de E4 Período é um fenómeno,
+        enquanto uma instância de E92 Volume Espácio-Temporal é uma agregação de pontos no
+        espaço-tempo. No entanto, considera-se que a extensão espácio-temporal real de uma instância
+        de E4 Período lhe é própria, devido a todos os seus pormenores e à sua imprecisão; a sua
+        identidade e existência dependem unicamente da identidade da instância de E4 Período. Por
+        isso, esta herança múltipla não é ambígua e é eficaz, correspondendo além disso às
+        intuições da linguagem natural.
+
+
+        O uso típico desta classe na documentação do património cultural é para documentar períodos
+        culturais e artísticos. Existem duas conceptualizações diferentes de «estilo artístico»,
+        definidas quer por características físicas, quer por contexto histórico. Por exemplo, o
+        «Impressionismo» pode ser visto como um período na esfera de influência europeia que durou
+        aproximadamente de 1870 a 1905, durante o qual foram produzidas pinturas com características
+        particulares por um grupo de artistas que incluía (entre outros) Monet, Renoir, Pissarro,
+        Sisley e Degas. Alternativamente, pode ser considerado um estilo aplicável a todas as
+        pinturas que partilham as características das obras produzidas pelos pintores
+        impressionistas, independentemente do contexto histórico. A primeira interpretação é uma
+        instância de E4 Período, e a segunda define tipos de objeto morfológicos que se enquadram
+        em E55 Tipo.
+
+
+        Uma unidade geopolítica, como caso específico de uma instância de E4 Período, é o conjunto
+        de atividades e fenómenos relacionados com a reivindicação de poder, as consequências de
+        pertencer a uma área jurisdicional e um sistema administrativo que estabelece uma unidade
+        geopolítica. Exemplos do período moderno são países ou áreas administrativas de países,
+        como distritos, cujas ações e estruturas definem atividades e fenómenos na área que
+        pretendem governar. As fronteiras das unidades geopolíticas são frequentemente definidas em
+        contratos ou tratados, ainda que possam divergir da prática real. As propriedades
+        espácio-temporais das unidades geopolíticas podem ser modeladas através das propriedades
+        herdadas de E92 Volume Espácio-Temporal.
+
+
+        Outro caso específico de uma instância de E4 Período é a extensão real do conjunto de
+        atividades e fenómenos, tal como evidenciado pelos seus vestígios físicos, que define um
+        povoamento, como o período de ocupação de Nínive.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E7_Activity"
+    local_name: E7_Activity
+    comment:
+      pt: >-
+        Esta classe compreende ações realizadas intencionalmente por instâncias de E39 Agente que
+        resultam em mudanças de estado nos sistemas culturais, sociais ou físicos documentados. Esta
+        noção inclui ações complexas, compostas e de longa duração, como a construção de um
+        povoamento ou uma guerra, bem como ações simples e breves, como a abertura de uma porta.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E70_Thing"
+    local_name: E70_Thing
+    comment:
+      pt: >-
+        Esta classe geral compreende instâncias discretas e identificáveis de E77 Item Persistente
+        que são documentadas como unidades únicas, que consistem em matéria ou dependem de ser
+        suportadas por matéria, e que se caracterizam por uma estabilidade relativa. Podem ser
+        produtos intelectuais ou coisas físicas. Podem, por exemplo, ter uma forma física sólida,
+        uma codificação eletrónica, ou podem ser um conceito ou estrutura lógica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
+    local_name: E39_Actor
+    comment:
+      pt: >-
+        Esta classe compreende pessoas, individualmente ou em grupo, que têm o potencial de
+        realizar ações intencionais de tipos pelos quais podem ser responsabilizadas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E21_Person"
+    local_name: E21_Person
+    comment:
+      pt: >-
+        Esta classe compreende pessoas reais que vivem ou se presume que viveram. Figuras lendárias
+        que possam ter existido, como Ulisses e o rei Artur, enquadram-se nesta classe se a
+        documentação se lhes referir como figuras históricas. Nos casos em que existam dúvidas sobre
+        se várias pessoas são de facto a mesma, podem criar-se múltiplas instâncias ligadas entre si
+        para indicar essa relação. O CIDOC CRM não propõe uma forma específica para apoiar o
+        raciocínio sobre uma possível identidade. Num contexto bibliográfico, presume-se que um nome
+        apresentado segundo as convenções habitualmente usadas para nomes pessoais corresponde a uma
+        pessoa real (uma instância de E21 Pessoa), salvo se houver evidência de que não é o caso. O
+        facto de uma persona poder ser erradamente classificada como uma instância de E21 Pessoa não
+        implica que o conceito compreenda personas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing"
+    local_name: E18_Physical_Thing
+    comment:
+      pt: >-
+        Esta classe compreende todos os itens físicos persistentes com uma forma relativamente
+        estável, elaborados pelo ser humano ou naturais. Consoante a existência de limites
+        naturais de tais coisas, o CIDOC CRM distingue as instâncias de E19 Objeto Físico das
+        instâncias de E26 Característica Física, tais como buracos, rios, parcelas de terreno,
+        etc. A maioria das instâncias de E19 Objeto Físico pode ser deslocada (se não for
+        demasiado pesada), ao passo que as características são parte integrante da matéria
+        envolvente. Uma instância de E18 Coisa Física ocupa não só um espaço geométrico particular
+        em cada instante da sua existência, mas também forma, ao longo da sua existência, uma
+        trajetória através do espaço-tempo, que ocupa um volume real, isto é, fenomenal, no
+        espaço-tempo. Inclui-se no espaço ocupado o espaço preenchido pela matéria da coisa física
+        e todos os seus espaços interiores, como o interior de uma caixa. Para efeitos de
+        descrições mais detalhadas da presença de uma instância de E18 Coisa Física no espaço e no
+        tempo, esta pode ser associada à sua instância específica de E92 Volume Espácio-Temporal
+        por meio da propriedade P196 define (é definido por). O CIDOC CRM não se ocupa, em geral,
+        de quantidades de matéria em estados fluido ou gasoso, enquanto não estiverem confinadas
+        de forma identificável durante um período de tempo mínimo identificável.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"
+    local_name: E22_Human-Made_Object
+    label:
+      pt: "Objeto Elaborado pelo Ser Humano"
+    comment:
+      pt: >-
+        Esta classe compreende todos os objetos físicos persistentes, de qualquer dimensão, que são
+        criados propositadamente por atividade humana e que têm limites físicos que os separam
+        completamente de outros objetos, de forma objetiva. A classe inclui também todos os
+        agregados de objetos elaborados para fins funcionais de qualquer tipo, independentemente da
+        coerência física, como um conjunto de peças de xadrez.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object"
+    local_name: E72_Legal_Object
+    comment:
+      pt: >-
+        Esta classe compreende os itens materiais ou imateriais aos quais se podem aplicar
+        instâncias de E30 Direito, como o direito de propriedade ou de uso. Isto é geralmente válido
+        para todas as instâncias de E18 Coisa Física. No caso das instâncias de E28 Objeto
+        Concetual, contudo, a identidade de uma instância de E28 Objeto Concetual ou o modo do seu
+        uso pode ser demasiado ambígua para estabelecer com fiabilidade instâncias de E30 Direito,
+        como no caso dos táxones e das inspirações. A propriedade de sociedades é atualmente
+        considerada fora do âmbito do CIDOC CRM.

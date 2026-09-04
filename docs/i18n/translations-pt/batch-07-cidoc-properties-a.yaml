@@ -1,0 +1,245 @@
+# Lote 7 (pt): propiedades CIDOC-CRM (primera mitad alfabética). 27 de 29 términos ya tienen label
+# oficial pt -- no se toca ni se duplica. Solo P150_defines_typical_parts_of y
+# P150i_defines_typical_wholes_for carecen de traducción oficial pt (needs_label_pt=true; a
+# diferencia de fr/es, pt SÍ tiene traducción oficial para casi todas las propiedades inversas de
+# este lote, así que -- a diferencia de los ficheros fr/es -- las inversas puramente vacías (sin
+# comment_en, con label oficial pt ya existente: P82a/P82b/P100i/P104i/P106i/P108i/P127i/P14i/P16i/
+# P1i/P21i/P2i/P43i) se omiten aquí por no aportar ningún dato nuevo al overlay.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P3_has_note"
+    local_name: P3_has_note
+    comment:
+      pt: >-
+        Esta propriedade é um contentor para todas as descrições informais sobre um objeto que não
+        tenham sido expressas em termos de construções do CIDOC CRM.
+
+
+        Em particular, capta a caracterização do próprio item, as suas estruturas internas,
+        aparência, etc.
+
+
+        Tal como a propriedade P2 tem tipo (é tipo de), esta propriedade é consequência do foco
+        restrito do CIDOC CRM. O objetivo não é captar, de forma estruturada, tudo o que se pode
+        dizer sobre um item; de facto, o formalismo do CIDOC CRM não é considerado suficiente para
+        exprimir tudo o que se pode dizer. A boa prática exige o uso de campos de nota distintos
+        para diferentes aspetos de uma caracterização. A propriedade P3.1 tem tipo, de P3 tem nota,
+        permite diferenciar notas específicas, por exemplo, «construção», «decoração», etc.
+
+
+        Um item pode ter muitas notas, mas cada nota está associada a um item específico.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"
+    local_name: P82_at_some_time_within
+    comment:
+      pt: >-
+        Esta propriedade descreve o período de tempo máximo dentro do qual se enquadra um E52
+        Período de Tempo. Uma vez que os Períodos de Tempo podem não ter extensões temporais
+        precisamente conhecidas, o CIDOC CRM permite afirmações sobre as extensões temporais mínima
+        e máxima dos Períodos de Tempo. Esta propriedade permite atribuir à extensão temporal
+        máxima de um Período de Tempo (isto é, o seu limite exterior) um valor de E61 Primitivo
+        Temporal. Os Primitivos Temporais são tratados pelo CIDOC CRM como intervalos de datas
+        específicos de uma aplicação ou sistema, e não são analisados mais aprofundadamente. Se
+        fontes de evidência diferentes justificarem extensões máximas diferentes sem se
+        contradizerem entre si, a interseção resultante de todas essas extensões será a melhor
+        estimativa. Isto deve ser tido em conta na integração de informação.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P90_has_value"
+    local_name: P90_has_value
+    comment:
+      pt: "Esta propriedade permite que uma instância de E54 Dimensão seja aproximada por uma instância de E60 Primitivo Numérico."
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of"
+    local_name: P100_was_death_of
+    comment:
+      pt: >-
+        Esta propriedade liga uma instância de E69 Morte à instância de E21 Pessoa que morreu.
+
+
+        Uma instância de E69 Morte pode envolver várias pessoas, por exemplo no caso de uma batalha
+        ou de um desastre.
+
+
+        Não se destina a ser usada com material geral de história natural, apenas com pessoas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to"
+    local_name: P104_is_subject_to
+    comment:
+      pt: >-
+        Esta propriedade liga uma instância particular de E72 Objeto Jurídico às instâncias de E30
+        Direito a que está sujeita.
+
+
+        O Direito é detido por uma instância de E39 Agente, conforme descrito por P75 possui (é
+        possuído por).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"
+    local_name: P106_is_composed_of
+    comment:
+      pt: >-
+        Esta propriedade associa uma instância de E90 Objeto Simbólico a uma parte sua que é, ela
+        própria, uma instância de E90 Objeto Simbólico, como fragmentos de textos ou recortes de uma
+        imagem.
+
+
+        Esta propriedade é transitiva e assimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"
+    local_name: P108_has_produced
+    comment:
+      pt: >-
+        Esta propriedade identifica a instância de E24 Coisa Física Elaborada pelo Ser Humano que
+        veio a existir como resultado da instância de E12 Produção.
+
+
+        A identidade de uma instância de E24 Coisa Física Elaborada pelo Ser Humano não é definida
+        pela sua matéria, mas pela sua existência como sujeito de documentação. Uma E12 Produção
+        pode resultar na criação de várias instâncias de E24 Coisa Física Elaborada pelo Ser Humano.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term"
+    local_name: P127_has_broader_term
+    comment:
+      pt: >-
+        Esta propriedade associa uma instância de E55 Tipo a outra instância de E55 Tipo com um
+        significado mais genérico.
+
+
+        Permite organizar as instâncias de E55 Tipo em hierarquias. Corresponde ao sentido de
+        «termo mais genérico genérico (broader term generic, BTG)», tal como definido na ISO
+        25964-2:2013 (International Organization for Standardization 2013).
+
+
+        Esta propriedade é transitiva. Esta propriedade é assimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"
+    local_name: P14_carried_out_by
+    comment:
+      pt: >-
+        Esta propriedade descreve a participação ativa de uma instância de E39 Agente numa
+        instância de E7 Atividade.
+
+
+        Implica responsabilidade causal ou legal. A propriedade P14.1 no papel de, da propriedade,
+        especifica a natureza da participação de um Agente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of"
+    local_name: P150_defines_typical_parts_of
+    label:
+      pt: "define partes típicas de"
+    comment:
+      pt: >-
+        Esta propriedade associa uma instância de E55 Tipo «A» a uma instância de E55 Tipo «B»,
+        quando itens do tipo «A» tipicamente fazem parte de itens do tipo «B», tais como «motores
+        de automóvel» e «automóveis».
+
+
+        Permite organizar tipos em hierarquias com base num tipo que descreve uma parte típica de
+        outro. Esta propriedade equivale a «termo mais genérico partitivo (broader term partitive,
+        BTP)», tal como definido na ISO 2788, e a «broaderPartitive» em SKOS.
+
+
+        Esta propriedade não é transitiva. Esta propriedade é assimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for"
+    local_name: P150i_defines_typical_wholes_for
+    label:
+      pt: "define totalidades típicas para"
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"
+    local_name: P16_used_specific_object
+    comment:
+      pt: >-
+        Esta propriedade descreve o uso de coisas materiais ou imateriais de uma forma essencial
+        para a realização ou o resultado de uma instância de E7 Atividade.
+
+
+        Esta propriedade aplica-se tipicamente a ferramentas, instrumentos, moldes, matérias-primas
+        e itens incorporados num produto. Implica que a presença do objeto em questão era uma
+        condição necessária para a ação. Por exemplo, a atividade de escrever este texto exigiu o
+        uso de um computador. Uma coisa imaterial pode ser usada se pelo menos um dos seus suportes
+        estiver presente. Por exemplo, as ferramentas de software num computador.
+
+
+        Outro exemplo é o uso de um determinado nome por um determinado grupo de pessoas ao longo
+        de um período para identificar uma coisa, como um povoamento. Neste caso, os suportes
+        físicos desse nome são, no mínimo, as pessoas que compreendem o seu uso.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"
+    local_name: P1_is_identified_by
+    comment:
+      pt: >-
+        Esta propriedade descreve a atribuição de nome ou a identificação de qualquer item do mundo
+        real por um nome ou qualquer outro identificador.
+
+
+        Esta propriedade destina-se a identificadores de uso geral, que fazem parte do mundo que o
+        modelo pretende descrever, e não apenas a identificadores internos de base de dados
+        específicos de um sistema técnico, a menos que estes últimos tenham também um uso mais
+        geral fora do contexto técnico. Esta propriedade inclui, em particular, a identificação por
+        expressões matemáticas, como sistemas de coordenadas usados para identificar instâncias de
+        E53 Local. A propriedade não revela nada sobre quando, onde e por quem este identificador
+        foi usado. Pode fazer-se uma representação mais detalhada usando o percurso totalmente
+        desenvolvido (isto é, indireto) através de E15 Atribuição de Identificador.
+
+
+        Esta propriedade é um atalho para o percurso de E1 Entidade CRM através de P140i foi
+        atribuído por, E15 Atribuição de Identificador, P37 atribuído a E42 Identificador de Objeto.
+
+
+        É também um atalho para o percurso de E1 Entidade CRM através de P1 é identificado por, E41
+        Designação, P139 tem forma alternativa a E41 Designação.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"
+    local_name: P21_had_general_purpose
+    comment:
+      pt: >-
+        Esta propriedade descreve uma relação intencional entre uma instância de E7 Atividade e
+        algum objetivo ou finalidade geral, descrito como uma instância de E55 Tipo.
+
+
+        Isto pode envolver atividades concebidas como preparação para algum tipo de atividade ou
+        evento. P21 teve finalidade geral (foi finalidade de) difere de P20 teve finalidade
+        específica (foi finalidade de) no facto de não implicar nenhum evento específico como
+        finalidade.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
+    local_name: P2_has_type
+    comment:
+      pt: >-
+        Esta propriedade permite subtipificar entidades do CIDOC CRM — uma forma de especialização
+        — através do uso de uma hierarquia terminológica, ou tesauro.
+
+
+        O CIDOC CRM pretende concentrar-se nas entidades e relações de alto nível necessárias para
+        descrever estruturas de dados. Por conseguinte, não especializa as entidades para além do
+        que é necessário para esse propósito imediato. No entanto, as entidades na hierarquia isA do
+        CIDOC CRM podem ser especializadas em qualquer número de subentidades, que podem ser
+        definidas na hierarquia de E55 Tipo. E41 Designação, por exemplo, pode ser especializada em
+        «endereço de correio eletrónico», «número de telefone», «apartado postal», «URL», etc.,
+        nenhum dos quais figura explicitamente na hierarquia de classes do CIDOC CRM. Uma explicação
+        abrangente sobre o refinamento de conceitos do CIDOC CRM através de E55 Tipo é dada na
+        secção «About Types», dentro da secção «Specific Modelling Constructs» deste documento.
+
+
+        Esta propriedade é um atalho para o percurso de E1 Entidade CRM através de P41i foi
+        classificado por, E17 Atribuição de Tipo, P42 atribuído a E55 Tipo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension"
+    local_name: P43_has_dimension
+    comment:
+      pt: >-
+        Esta propriedade regista uma instância de E54 Dimensão de alguma instância de E70 Coisa.
+
+
+        No caso de a propriedade registada resultar de uma medição de uma instância de E18 Coisa
+        Física, esta propriedade é um atalho do percurso mais desenvolvido, de E18 Coisa Física
+        através de P39i foi medido por, E16 Medição, P40 dimensão observada, até E54 Dimensão.
+
+
+        Não fornece nenhuma informação sobre como e quando uma E54 Dimensão foi estabelecida, nem
+        por quem. O conhecimento sobre uma instância de E54 Dimensão não tem de ser resultado de
+        uma medição; pode ser o resultado da avaliação de dados ou de outra informação, o que deve
+        ser documentado como uma instância de E13 Atribuição de Atributo.
+
+
+        Uma instância de E54 Dimensão é específica de uma instância de E70 Coisa.

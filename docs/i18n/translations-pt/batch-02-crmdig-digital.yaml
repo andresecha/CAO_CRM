@@ -1,0 +1,124 @@
+# Lote 2 (pt): CRMdig, objetos digitais. Terminología anclada en glossary_crosswalk-pt.yaml.
+# Ninguno de estos 13 términos tiene traducción oficial (LRMoo/CRMdig no traducen fuera del
+# inglés) -- todos con needs_label_pt=true.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D1_Digital_Object"
+    local_name: D1_Digital_Object
+    label:
+      pt: "Objeto Digital"
+    comment:
+      pt: >-
+        Esta classe compreende itens imateriais identificáveis que podem ser representados como
+        conjuntos de sequências de bits, tais como conjuntos de dados, textos eletrónicos, imagens,
+        itens áudio ou vídeo, software, etc., e que são documentados como unidades únicas. Qualquer
+        alteração na sequência de bits resulta numa nova instância de Objeto Digital. Qualquer
+        agregação de instâncias de Objeto Digital num todo tratado como uma única unidade é também
+        considerada uma instância de Objeto Digital. Isto significa que, por exemplo, o conteúdo de
+        um DVD, um ficheiro XML nele contido e um elemento desse ficheiro são considerados
+        instâncias distintas de Objeto Digital, mutuamente relacionadas pela propriedade
+        `P106_is_composed_of` (`P106i_forms_part_of`). No caso de metadados incorporados, o
+        documentalista deve ter o cuidado de distinguir a identidade do objeto que inclui os
+        metadados da identidade do conteúdo incluído descrito por esses metadados. Um Objeto
+        Digital não depende de um suporte físico específico e pode existir em um ou vários
+        suportes simultaneamente.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D2_Digitization_Process"
+    local_name: D2_Digitization_Process
+    label:
+      pt: "Processo de Digitalização"
+    comment:
+      pt: >-
+        Esta classe compreende eventos que resultam na criação de instâncias de Objeto de Dados que
+        representam a aparência (por exemplo, propriedades de reflexão da luz), a forma ou a
+        estrutura interna registada de uma Coisa Física, tal como documentos em papel, estátuas,
+        edifícios, pinturas, objetos biológicos, etc. Estes métodos são tipicamente designados
+        «técnicas de imagiologia» (imaging techniques). Um caso particular é a conversão
+        analógico-digital de material audiovisual. Esta classe representa a transição de um item
+        material para uma representação imaterial de uma distribuição espacial relevante de
+        propriedades físicas locais sobre o item material (no caso de material áudio, também ao
+        longo da respetiva pista sonora). As etapas de processamento subsequentes do resultado dos
+        processos de digitalização que preservam ou melhoram as correlações espaciais relevantes com
+        o objeto digitalizado, ou com uma parte dele, são consideradas instâncias de D3 Derivação
+        Formal.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D7_Digital_Machine_Event"
+    local_name: D7_Digital_Machine_Event
+    label:
+      pt: "Evento de Máquina Digital"
+    comment:
+      pt: >-
+        Esta classe compreende eventos que ocorrem em dispositivos digitais físicos na sequência de
+        uma atividade humana que causou intencionalmente o seu início imediato ou diferido, e que
+        resultam na criação de uma nova instância de Objeto Digital em nome do agente humano. A
+        entrada de um Evento de Máquina Digital pode consistir em definições de parâmetros e/ou
+        dados a processar. Alguns Eventos de Máquina Digital podem fazer parte de um E65 Criação
+        mais amplo. Neste caso, toda a saída da máquina correspondente aos eventos parciais é
+        considerada como criação da atividade global.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D9_Data_Object"
+    local_name: D9_Data_Object
+    label:
+      pt: "Objeto de Dados"
+    comment:
+      pt: >-
+        Esta classe compreende instâncias de Objeto Digital que são o resultado de medições ou
+        outras observações e/ou da sua avaliação algorítmica sob a forma de dados estruturados,
+        tais como proposições formais codificadas, ficheiros CSV («comma separated values») ou
+        representações equivalentes. Se uma instância de Objeto Digital contiver o conjunto de
+        valores de uma instância de E54 Dimensão, como os dados primários de uma instância de S21
+        Medição, esta associação pode ser documentada por meio da propriedade
+        `L61_contains_value_set_of` (`L61i_has_value_set_representation`).
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/D13_Digital_Information_Carrier"
+    local_name: D13_Digital_Information_Carrier
+    label:
+      pt: "Suporte de Informação Digital"
+    comment:
+      pt: >-
+        Esta classe compreende todas as instâncias de E84 Suporte de Informação que são
+        explicitamente concebidas para serem usadas como suportes físicos digitais persistentes de
+        instâncias de Objeto Digital. Uma instância de Suporte de Informação Digital pode ou não
+        conter informação — por exemplo, uma disquete vazia.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11_had_output"
+    local_name: L11_had_output
+    label: {pt: "teve como saída"}
+    comment:
+      pt: "Esta propriedade associa um Evento de Máquina Digital a um Objeto Digital que é o resultado da atividade."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L11i_was_output_of"
+    local_name: L11i_was_output_of
+    label: {pt: "foi a saída de"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19_stores"
+    local_name: L19_stores
+    label: {pt: "armazena"}
+    comment:
+      pt: "Esta propriedade associa um Suporte de Informação Digital ao Objeto Digital que nele está armazenado."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L19i_is_stored_on"
+    local_name: L19i_is_stored_on
+    label: {pt: "está armazenado em"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1_digitized"
+    local_name: L1_digitized
+    label: {pt: "digitalizou"}
+    comment:
+      pt: "Esta propriedade associa um Processo de Digitalização a uma Coisa Física que é uma coisa material."
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L1i_was_digitized_by"
+    local_name: L1i_was_digitized_by
+    label: {pt: "foi digitalizada por"}
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61_contains_value_set_of"
+    local_name: L61_contains_value_set_of
+    label: {pt: "contém o conjunto de valores de"}
+    comment:
+      pt: >-
+        Esta propriedade associa um Objeto de Dados a uma E54 Dimensão, no caso de o primeiro
+        conter o conjunto de valores da respetiva dimensão em formato digital.
+
+  - iri: "http://www.cidoc-crm.org/extensions/crmdig/L61i_has_value_set_representation"
+    local_name: L61i_has_value_set_representation
+    label: {pt: "tem como representação do conjunto de valores"}

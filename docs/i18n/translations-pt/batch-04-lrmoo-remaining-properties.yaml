@@ -1,0 +1,100 @@
+# Lote 4 (pt): propiedades LRMoo restantes (derivación, incorporación, partes, manifestaciones
+# alternativas). Terminología: Obra/Expressão/Manifestação ya fijada en glossary_crosswalk-pt.yaml.
+
+terms:
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17_created"
+    local_name: R17_created
+    label: {pt: "criou"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Expressão que foi exteriorizada durante uma determinada
+        Criação da Expressão a esse evento de criação em particular. Uma Criação da Expressão cria
+        uma expressão e cria também quaisquer expressões que sejam partes dessa expressão.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R17i_was_created_by"
+    local_name: R17i_was_created_by
+    label: {pt: "foi criada por"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24_created"
+    local_name: R24_created
+    label: {pt: "criou"}
+    comment:
+      pt: >-
+        Esta propriedade associa a Manifestação que foi criada durante uma determinada Criação da
+        Manifestação a essa instância de Criação da Manifestação.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R24i_was_created_through"
+    local_name: R24i_was_created_through
+    label: {pt: "foi criada através de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2_is_derivative_of"
+    local_name: R2_is_derivative_of
+    label: {pt: "é derivada de"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Obra que modifica o conteúdo de outra Obra a esta última.
+        Esta propriedade é transitiva, assimétrica e irreflexiva. Esta propriedade é equivalente ao
+        percurso: `F1_Work(1) → R3_is_realised_in → F2_Expression(1) → R17i_was_created_by →
+        F28_Expression_Creation → P16_used_specific_object → F2_Expression(2) → R3i_realises →
+        F1_Work(2)`. Ou seja, `F1_Work(1) → R2_is_derivative_of → F1_Work(2)`, sem necessidade de
+        especificar as expressões concretas envolvidas na derivação.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R2i_has_derivative"
+    local_name: R2i_has_derivative
+    label: {pt: "tem como derivada"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71_has_part"
+    local_name: R71_has_part
+    label: {pt: "tem como parte"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Manifestação a uma parte estrutural sua que é, ela própria,
+        uma Manifestação. Esta propriedade é transitiva, assimétrica e irreflexiva.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R71i_is_part_of"
+    local_name: R71i_is_part_of
+    label: {pt: "faz parte de"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75_incorporates"
+    local_name: R75_incorporates
+    label: {pt: "incorpora"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Expressão a outra Expressão que é parte integrante da
+        primeira, mas em que esta segunda realiza uma Obra diferente da primeira. Esta propriedade
+        é transitiva, assimétrica e irreflexiva.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R75i_is_incorporated_in"
+    local_name: R75i_is_incorporated_in
+    label: {pt: "está incorporada em"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76_is_derivative_of"
+    local_name: R76_is_derivative_of
+    label: {pt: "é derivada de"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Expressão a outra Expressão que foi a sua fonte, ou uma das
+        suas fontes. Esta propriedade não é transitiva. É assimétrica e irreflexiva. Esta
+        propriedade é também um atalho para o percurso completo: `F2_Expression(1) →
+        P16i_was_used_for → F28_Expression_Creation → R17_created → F2_Expression(2)`.
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R76i_has_derivative"
+    local_name: R76i_has_derivative
+    label: {pt: "tem como derivada"}
+
+  - iri: "http://iflastandards.info/ns/lrm/lrmoo/R78_has_alternate"
+    local_name: R78_has_alternate
+    label: {pt: "tem como alternativa"}
+    comment:
+      pt: >-
+        Esta propriedade associa uma Manifestação a outra Manifestação que exemplifica a mesma
+        Expressão, quando as duas Manifestações podem ser usadas como alternativas entre si em
+        contextos de utilização concretos. Esta propriedade é transitiva e simétrica. É
+        irreflexiva. As manifestações alternativas podem ter a mesma forma física — por exemplo,
+        publicações simultâneas em mercados diferentes. Mais frequentemente, a relação de
+        alternativa estabelece-se quando as manifestações alternativas têm formas físicas
+        diferentes, concebidas para permitir a utilização do mesmo conteúdo com equipamento de
+        reprodução diferente (como uma versão em DVD e uma versão em Blu-ray da mesma gravação de
+        vídeo). Esta propriedade é um atalho para o percurso entre uma Manifestação e outra
+        Manifestação que estão ligadas através de `R4_embodies` (`R4i_is_embodied_in`) e do seu
+        inverso, à mesma Expressão.

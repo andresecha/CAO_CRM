@@ -1,0 +1,127 @@
+# Crosswalk terminológico EN -> pt para los conceptos CIDOC-CRM/LRMoo/CRMdig que se repiten en
+# decenas de etiquetas y definiciones distintas. Construir esto UNA vez, antes de traducir ninguna
+# entrada individual, es lo que evita que "Actor" salga traducido de dos formas distintas en dos
+# fichas distintas. Reconstruido a partir de las decisiones ya aplicadas en translations-pt/batch-01
+# a batch-05 para que quede consistente con lo ya escrito.
+#
+# pt: siempre que existe una traducción oficial verificable (ver term_inventory.json,
+#     official_languages_label incluye "pt"), es la etiqueta OFICIAL de CIDOC-CRM tal cual aparece
+#     en ontology/CAO_CRM-1.0.rdf (rdfs:label@pt) -- no una invención nuestra. Marcado source:
+#     official. Variante: PT-PT (portugués europeo), coherente con documentation/pt/, ya existente
+#     en el proyecto.
+# Para los 16 conceptos sin traducción oficial (Human-Made Object, Propositional Object, Symbolic
+#     Object, y toda la cadena LRMoo + CRMdig, que oficialmente jamás se traducen fuera del inglés):
+#     decisión de CAO_CRM, ancladas en la terminología ya fijada en documentation/pt/ (sobre todo
+#     03-jerarquia-ejemplo.md, que ya usa "obra/expressão/manifestação/exemplar/objeto digital" en
+#     prosa pedagógica) y verificada además contra la traducción oficial portuguesa del IFLA-LRM
+#     (Isabel C. A. da Silva Maringelli et al., 2020) para la cadena Work->Item. Marcado source:
+#     cao_crm_working.
+#
+# Cada entrada anota su razonamiento breve para que una revisión futura no tenga que re-derivarlo.
+
+concepts:
+
+  # --- Núcleo CIDOC-CRM (raíces que aparecen en decenas de comentarios) ---
+  Entity:
+    pt: {text: "Entidade", source: official, note: "etiqueta oficial completa es «Entidade CRM» (E1_CRM_Entity, rdfs:label@pt); se recorta «CRM» para el uso genérico recurrente en prosa, igual que el propio crosswalk fr recorta «Entité CRM» a «Entité»"}
+  Thing:
+    pt: {text: "Coisa", source: official, note: "E70_Thing"}
+  Physical Thing:
+    pt: {text: "Coisa Física", source: official, note: "E18_Physical_Thing; la etiqueta oficial pt literal es «Coisa Material» -- se prefiere «Coisa Física» en prosa para no colisionar con Condition State (E3, oficial pt «Estado Material»), paralelo a la distinción que ya hace fr (Chose matérielle) frente a état matériel; se preserva «Coisa Material» tal cual solo cuando se cita el label oficial de E18 literalmente"}
+  Human-Made Object:
+    pt: {text: "Objeto Elaborado pelo Ser Humano", source: cao_crm_working, note: "E22_Human-Made_Object, needs_label_pt=true; paralelo a fr Objet élaboré par l'humain / es Objeto elaborado por el ser humano"}
+  Temporal Entity:
+    pt: {text: "Entidade Temporal", source: official, note: "E2_Temporal_Entity"}
+  Period:
+    pt: {text: "Período", source: official, note: "E4_Period"}
+  Activity:
+    pt: {text: "Atividade", source: official, note: "E7_Activity"}
+  Actor:
+    pt: {text: "Agente", source: official, note: "E39_Actor; el pt oficial usa «Agente», no un cognado de «Ator» -- coherente con la connotación no teatral que también motivó «Actant» en fr"}
+  Person:
+    pt: {text: "Pessoa", source: official, note: "E21_Person"}
+  Right:
+    pt: {text: "Direito", source: official, note: "E30_Right; la etiqueta oficial pt literal es «Direitos» (plural) -- una particularidad de la traducción oficial portuguesa, ya que fr (Droit) y es (Derecho) son singulares. En prosa dentro de comentarios ('an instance of E30 Right') se usa el singular «direito», gramaticalmente necesario ('uma instância de E30 Direito'); se preserva «Direitos» solo si se cita el label oficial literal de la clase"}
+  Legal Object:
+    pt: {text: "Objeto Jurídico", source: official, note: "E72_Legal_Object"}
+  Linguistic Object:
+    pt: {text: "Objeto Lingüístico", source: official, note: "E33_Linguistic_Object; la etiqueta oficial pt conserva la grafía pre-Acordo Ortográfico con trema (\"Lingüístico\"), no \"Linguístico\" -- se preserva tal cual figura en el rdf, no se moderniza"}
+  Propositional Object:
+    pt: {text: "Objeto Proposicional", source: cao_crm_working, note: "E89_Propositional_Object, needs_label_pt=true; cognado directo, paralelo a fr/es"}
+  Symbolic Object:
+    pt: {text: "Objeto Simbólico", source: cao_crm_working, note: "E90_Symbolic_Object, needs_label_pt=true"}
+  Title:
+    pt: {text: "Título", source: official, note: "E35_Title"}
+  Appellation:
+    pt: {text: "Designação", source: official, note: "E41_Appellation; el pt oficial elige «Designação», no un cognado de «Apelação»/«Apelativo» (así usado en es) -- se respeta la elección oficial pt tal cual"}
+  Identifier:
+    pt: {text: "Identificador", source: official, note: "E42_Identifier; la etiqueta oficial pt completa es «Identificador de Objeto» -- se usa esa forma completa cuando se cita el label de la clase, y la forma recortada «identificador» en el uso genérico recurrente en prosa (igual trato que Entity)"}
+  Time-Span:
+    pt: {text: "Período de Tempo", source: official, note: "E52_Time-Span"}
+  Place:
+    pt: {text: "Local", source: official, note: "E53_Place"}
+  Type:
+    pt: {text: "Tipo", source: official, note: "E55_Type"}
+  Dimension:
+    pt: {text: "Dimensão", source: official, note: "E54_Dimension"}
+  Language:
+    pt: {text: "Língua", source: official, note: "E56_Language"}
+  Material:
+    pt: {text: "Material", source: official, note: "E57_Material"}
+  Measurement Unit:
+    pt: {text: "Unidade de Medida", source: official, note: "E58_Measurement_Unit"}
+  Production:
+    pt: {text: "Produção", source: official, note: "E12_Production"}
+  Birth:
+    pt: {text: "Nascimento", source: official, note: "E67_Birth"}
+  Death:
+    pt: {text: "Morte", source: official, note: "E69_Death"}
+  Condition State:
+    pt: {text: "Estado Material", source: official, note: "E3_Condition_State; verificar contra el comentario EN completo antes de usar -- CIDOC lo define como el estado físico observable de una cosa material en un intervalo temporal, no necesariamente ligado a conservación patrimonial, igual advertencia que ya hace el crosswalk es"}
+
+  # --- Cadena LRMoo Work -> Item (ya anclada en documentation/pt/03-jerarquia-ejemplo.md, NO reinventar) ---
+  Work:
+    pt: {text: "obra", source: cao_crm_working, note: "ya usado de forma consistente en documentation/pt/01, /03, /04, /05, /10 (docenas de apariciones); coincide con la entidad «obra» de la traducción oficial portuguesa del IFLA-LRM"}
+  Expression:
+    pt: {text: "expressão", source: cao_crm_working, note: "ya usado en documentation/pt/03-jerarquia-ejemplo.md; cognado directo, coincide con IFLA-LRM pt"}
+  Manifestation:
+    pt: {text: "manifestação", source: cao_crm_working, note: "ya usado en documentation/pt/03-jerarquia-ejemplo.md; coincide con IFLA-LRM pt"}
+  Item:
+    pt: {text: "exemplar", source: cao_crm_working, note: "documentation/pt/03-jerarquia-ejemplo.md ya fija explícitamente «exemplar» para F5_Item (\"F5_Item designa um exemplar material particular\"), pese a que la traducción oficial brasileña del IFLA-LRM usa «item» -- se prioriza la consistencia interna ya establecida del proyecto (PT-PT) sobre la entidad IFLA-LRM homónima en pt-BR; paralelo a fr exemplaire / es ejemplar, evita el anglicismo «item»"}
+  Work Creation:
+    pt: {text: "criação da obra", source: cao_crm_working}
+  Expression Creation:
+    pt: {text: "criação da expressão", source: cao_crm_working}
+  Manifestation Creation:
+    pt: {text: "criação da manifestação", source: cao_crm_working}
+  Item Production Event:
+    pt: {text: "evento de produção do exemplar", source: cao_crm_working}
+
+  # --- CRMdig ---
+  Digital Object:
+    pt: {text: "objeto digital", source: cao_crm_working, note: "ya usado en documentation/pt/01, /02, /03, /04, /10 (D1_Digital_Object)"}
+  Data Object:
+    pt: {text: "objeto de dados", source: cao_crm_working}
+  Digitization Process:
+    pt: {text: "processo de digitalização", source: cao_crm_working, note: "ya usado en documentation/pt/02, /04, /10"}
+  Digital Machine Event:
+    pt: {text: "evento de máquina digital", source: cao_crm_working, note: "ya usado en documentation/pt/04"}
+  Digital Information Carrier:
+    pt: {text: "suporte de informação digital", source: cao_crm_working}
+
+# Convenciones de fraseo recurrente (no son "conceptos" con IRI propia, pero aparecen decenas de
+# veces en las definiciones EN oficiales -- fijar una sola vez la traducción de estas fórmulas
+# evita variación involuntaria entre entradas traducidas en sesiones distintas).
+phrasing_conventions:
+  "This class comprises":
+    pt: "Esta classe compreende"
+  "This property":
+    pt: "Esta propriedade"
+  "is documented":
+    pt: "é documentado(a)"
+  "instance(s) of":
+    pt: "instância(s) de"
+  "carrier":
+    pt: "suporte"
+  "realisation / realization":
+    pt: "realização"

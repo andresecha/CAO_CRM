@@ -1,0 +1,204 @@
+# Lote 8 (pt): propiedades CIDOC-CRM (segunda mitad alfabética). Los 24 términos ya tienen label
+# oficial pt (needs_label_pt=false en todos) -- solo se añade comment. Las 12 propiedades inversas
+# de este lote (P44i/P45i/P46i/P4i/P54i/P55i/P67i/P72i/P7i/P86i/P91i/P98i) no tienen comment_en
+# oficial (CIDOC-CRM no las documenta por separado) y ya tienen label oficial pt, así que no aportan
+# nada al overlay -- se omiten, igual que en el lote 7.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P44_has_condition"
+    local_name: P44_has_condition
+    comment:
+      pt: >-
+        Esta propriedade regista um E3 Estado Material para alguma instância de E18 Coisa Física.
+
+
+        Esta propriedade é um atalho do percurso mais desenvolvido, de E18 Coisa Física através de
+        P34i foi avaliado por, E14 Avaliação de Estado, P35 identificou, até E3 Estado Material.
+        Não fornece informação sobre como e quando o E3 Estado Material foi estabelecido, nem por
+        quem.
+
+
+        Uma instância de E3 Estado Material é específica de uma instância de E18 Coisa Física.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P45_consists_of"
+    local_name: P45_consists_of
+    comment:
+      pt: >-
+        Esta propriedade identifica as instâncias de E57 Materiais das quais é composta uma
+        instância de E18 Coisa Física.
+
+
+        Todas as coisas físicas consistem em materiais físicos. P45 consiste em (está incorporado
+        em) permite registar os diferentes materiais. P45 consiste em (está incorporado em)
+        refere-se aqui ao material observado, em contraste com a matéria-prima consumida.
+
+
+        Um material, como uma liga teórica, pode não ter nenhuma instância física.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of"
+    local_name: P46_is_composed_of
+    comment:
+      pt: >-
+        Esta propriedade associa uma instância de E18 Coisa Física a outra instância de Coisa
+        Física que faz parte dela. A extensão espacial da parte componente está incluída na
+        extensão espacial do todo.
+
+
+        Os elementos componentes, sendo eles próprios instâncias de E18 Coisa Física, podem ser
+        posteriormente analisados em subcomponentes, criando assim uma hierarquia de decomposição
+        em partes. Uma instância de E18 Coisa Física pode ser partilhada entre vários todos — por
+        exemplo, dois edifícios podem partilhar uma parede comum. Esta propriedade não especifica
+        quando nem durante quanto tempo um elemento componente esteve no respetivo todo. Se um
+        componente não faz parte de um todo desde o início da sua existência, ou até ao fim da
+        existência do todo, as classes E79 Adição de Parte e E90 Remoção de Parte podem ser usadas
+        para documentar quando um componente passou a fazer parte de um determinado todo e/ou
+        quando deixou de o ser. Durante o período em que faz parte do respetivo todo, o componente
+        está totalmente contido no espaço que o todo ocupa.
+
+
+        Esta propriedade destina-se a descrever componentes específicos que são documentados
+        individualmente, e não aspetos gerais. As descrições globais da estrutura de uma instância
+        de E18 Coisa Física são captadas pela propriedade P3 tem nota.
+
+
+        As instâncias de E57 Material das quais é composta uma instância de E18 Coisa Física devem
+        ser documentadas através de P45 consiste em (está incorporado em).
+
+
+        Esta propriedade é transitiva e assimétrica.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"
+    local_name: P4_has_time-span
+    comment:
+      pt: >-
+        Esta propriedade associa uma instância de E2 Entidade Temporal à instância de E52 Período
+        de Tempo durante a qual esteve em curso. A instância associada de E52 Período de Tempo
+        entende-se como o período de tempo real durante o qual estiveram ativos os fenómenos que
+        constituem a instância da entidade temporal. Mais do que uma instância de E2 Entidade
+        Temporal só pode partilhar uma instância comum de E52 Período de Tempo se ambas surgirem e
+        terminarem devido a declarações ou eventos idênticos.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location"
+    local_name: P54_has_current_permanent_location
+    comment:
+      pt: >-
+        Esta propriedade regista a localização permanente prevista de uma instância de E19 Objeto
+        Físico no momento de validade do registo ou base de dados que contém a afirmação que usa
+        esta propriedade.
+
+
+        P54 tem localização permanente atual (é localização permanente atual de) é semelhante a
+        P55 tem localização atual (atualmente detém). No entanto, indica o E53 Local atualmente
+        reservado para um objeto, como o local de armazenamento permanente ou um local de exposição
+        permanente. O objeto pode ser temporariamente retirado da localização permanente, por
+        exemplo quando é usado em exposições temporárias ou emprestado a outra instituição. O
+        objeto pode, na realidade, nunca chegar a estar localizado na sua localização permanente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location"
+    local_name: P55_has_current_location
+    comment:
+      pt: >-
+        Esta propriedade regista a localização de uma instância de E19 Objeto Físico no momento de
+        validade do registo ou base de dados que contém a afirmação que usa esta propriedade.
+
+
+        Esta propriedade é uma especialização de P53 tem localização anterior ou atual (é
+        localização anterior ou atual de). Indica que a instância de E53 Local associada à
+        instância de E19 Objeto Físico é a localização atual do objeto. A propriedade não permite
+        indicar durante quanto tempo o objeto esteve na localização atual.
+
+
+        Esta propriedade é um atalho. Uma representação mais detalhada pode recorrer ao percurso
+        totalmente desenvolvido (isto é, indireto), de E19 Objeto Físico, através de P25i foi
+        deslocado por, E9 Deslocação, P26 deslocado para, até E53 Local, se e somente se esta
+        Deslocação for a mais recente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+    local_name: P67_refers_to
+    comment:
+      pt: >-
+        Esta propriedade documenta que uma instância de E89 Objeto Proposicional faz uma afirmação
+        sobre uma instância de E1 Entidade CRM. P67 refere-se a (é referido por) tem a ligação
+        P67.1 tem tipo a uma instância de E55 Tipo. Isto destina-se a permitir uma descrição mais
+        detalhada do tipo de referência. Isto difere de P129 é sobre (é assunto de), que descreve o
+        assunto ou assuntos primários da instância de E89 Objeto Proposicional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P72_has_language"
+    local_name: P72_has_language
+    comment:
+      pt: >-
+        Esta propriedade associa uma ou mais instâncias de E33 Objeto Linguístico a uma instância
+        de E56 Língua na qual está, pelo menos parcialmente, expressa.
+
+
+        Os Objetos Linguísticos são compostos numa ou várias línguas humanas. Esta propriedade
+        permite documentar essas línguas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at"
+    local_name: P7_took_place_at
+    comment:
+      pt: >-
+        Esta propriedade descreve a localização espacial de uma instância de E4 Período.
+
+
+        A instância relacionada de E53 Local deve ser vista como uma aproximação mais ampla da
+        área geométrica dentro da qual ocorreram os fenómenos que caracterizam o período em
+        questão, ver abaixo. P7 teve lugar em (testemunhou) não transmite nenhum significado além
+        do posicionamento espacial (frequentemente na superfície da terra). Por exemplo, pode
+        dizer-se que o período «Revolução Francesa» teve lugar em «França em 1789»; o período
+        «vitoriano» pode dizer-se que teve lugar na «Grã-Bretanha entre 1837 e 1901» e nas suas
+        colónias, bem como noutras partes da Europa e da América do Norte. Uma instância de E4
+        Período pode ter lugar em vários locais não contíguos e não sobrepostos.
+
+
+        Qualquer local onde algo aconteceu inclui a projeção espacial do acontecimento, dada no
+        mesmo sistema de referência geométrico. Por exemplo, o HMS Victory, como local da morte de
+        Lord Nelson, inclui a localização do seu corpo em relação ao casco do HMS Victory no
+        momento da sua morte, como a localização mais precisa da sua morte. Pela definição de P161
+        tem projeção espacial, uma instância de E4 Período tem lugar em todas as suas projeções
+        espaciais para os respetivos sistemas de referência, isto é, instâncias de E53 Local. Por
+        conseguinte, esta propriedade implica o percurso mais desenvolvido, de E4 Período através
+        de P161 tem projeção espacial, E53 Local, P89 está contido em, até E53 Local, onde ambos
+        os locais são definidos no mesmo sistema de referência geométrico. A relação entre uma
+        instância de E53 Local e o seu sistema de referência pode ser convenientemente documentada
+        por meio da propriedade P157 está em repouso relativamente a (fornece espaço de referência
+        para).
+
+
+        Algo que aconteceu num determinado local também pode ser considerado como tendo acontecido
+        num local mais pequeno dentro dele: por exemplo, é razoável dizer que o assassinato de
+        César teve lugar em Roma, mas também no Fórum Romano, e mais precisamente na Cúria. É
+        característico que diferentes fontes históricas usem precisões variáveis nestas
+        afirmações, sem que isso implique contradição entre elas. Isto pode dever-se à falta de
+        conhecimento ou à relevância da precisão para a finalidade da afirmação. Na integração de
+        informação, a afirmação mais precisa melhora o conhecimento global.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within"
+    local_name: P86_falls_within
+    comment:
+      pt: >-
+        Esta propriedade descreve a relação de inclusão entre duas instâncias de E52 Período de
+        Tempo.
+
+
+        Esta propriedade sustenta a noção de que a extensão temporal de uma instância de E52
+        Período de Tempo se enquadra dentro da extensão temporal de outra instância de E52 Período
+        de Tempo. Trata apenas da contenção temporal, sem implicar nenhuma ligação contextual entre
+        as duas instâncias de E52 Período de Tempo. Esta propriedade é transitiva e reflexiva.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"
+    local_name: P91_has_unit
+    comment:
+      pt: "Esta propriedade indica o tipo de unidade em que foi expressa uma instância de E54 Dimensão."
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life"
+    local_name: P98_brought_into_life
+    comment:
+      pt: >-
+        Esta propriedade liga uma instância do evento E67 Nascimento a uma instância de E21 Pessoa
+        no papel de descendente.
+
+
+        Gémeos, trigémeos, etc., são trazidos à vida pela mesma instância de E67 Nascimento. Não se
+        destina a ser usada com material geral de história natural, apenas com pessoas. Não existe
+        um método explícito para modelar a conceção e a gestação, exceto através de extensões.

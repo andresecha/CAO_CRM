@@ -1,0 +1,418 @@
+# Lote 6 (pt): resto de clases CIDOC-CRM. 16 de 18 tienen label oficial pt (no se toca ni se
+# duplica); solo E89_Propositional_Object y E90_Symbolic_Object carecen de traducción oficial.
+
+terms:
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"
+    local_name: E41_Appellation
+    comment:
+      pt: >-
+        Esta classe compreende todos os signos, com ou sem significado, ou arranjos de signos
+        segundo uma sintaxe específica, que são ou podem ser usados para referir e identificar uma
+        instância específica de alguma classe num determinado contexto. As instâncias de E41
+        Designação não identificam as coisas pelo seu significado, mesmo que por acaso tenham um,
+        mas por convenção, tradição ou acordo. As instâncias de E41 Designação são construções
+        culturais; como tal, têm um contexto, uma história e um uso no tempo e no espaço por parte
+        de um determinado grupo de utilizadores. Uma dada instância de E41 Designação pode ter
+        formas alternativas, isto é, outras instâncias de E41 Designação consideradas
+        equivalentes, independentemente da coisa que denotam.
+
+
+        Línguas diferentes podem usar designações diferentes para a mesma coisa, como os nomes das
+        grandes cidades. Algumas designações podem ser formuladas usando um sintagma nominal
+        válido de uma língua particular. Nestes casos, as respetivas instâncias de E41 Designação
+        devem também ser declaradas como instâncias de E33 Objeto Linguístico. Pode então
+        declarar-se a língua que usa a designação por meio da propriedade P72 tem língua: E56
+        Língua.
+
+
+        As instâncias de E41 Designação podem ser usadas para identificar qualquer instância de E1
+        Entidade CRM, e são por vezes características de instâncias de subclasses mais específicas
+        de E1 Entidade CRM, como instâncias de E52 Período de Tempo (por exemplo, «datas»), E39
+        Agente, E53 Local ou E28 Objeto Concetual. Os endereços postais e os endereços de correio
+        eletrónico são exemplos característicos de identificadores usados por serviços que
+        transportam coisas entre clientes.
+
+
+        Mesmo identificadores expressos numericamente para extensões no espaço ou no tempo são
+        também considerados instâncias de E41 Designação, tais como datas gregorianas ou
+        coordenadas espaciais, ainda que estas permitam determinar um momento ou um local através
+        de um procedimento conhecido a partir de um ponto de referência, desempenhando por essa
+        razão um duplo papel como instâncias de E59 Valor Primitivo.
+
+
+        E41 Designação não deve ser confundida com o ato de dar nome a algo. Cf. E15 Atribuição de
+        Identificador.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier"
+    local_name: E42_Identifier
+    comment:
+      pt: >-
+        Esta classe compreende cadeias de caracteres ou códigos atribuídos a instâncias de E1
+        Entidade CRM com o objetivo de as identificar de forma única e permanente no contexto de
+        uma ou várias organizações. Estes códigos são frequentemente conhecidos como números de
+        inventário, códigos de registo, etc., e são tipicamente compostos por sequências
+        alfanuméricas. Endereços postais, números de telefone, URLs e endereços de correio
+        eletrónico são exemplos característicos de identificadores usados por serviços que
+        transportam coisas entre clientes.
+
+
+        A classe E42 Identificador de Objeto não é normalmente usada para identificadores gerados
+        automaticamente por máquina para processamento automatizado, a menos que também sejam
+        usados por agentes humanos.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E35_Title"
+    local_name: E35_Title
+    comment:
+      pt: >-
+        Esta classe compreende as cadeias de texto que, num contexto cultural, podem ser
+        claramente identificadas como títulos devido à sua forma. Sendo uma subclasse de E41
+        Designação, E35 Título só pode ser usada quando essa cadeia é efetivamente usada como
+        título de uma obra, como um texto, uma obra de arte ou uma peça musical.
+
+
+        Os títulos são sintagmas nominais ou verbais próprios, e não devem ser confundidos com
+        nomes genéricos de objetos, como «cadeira», «pintura» ou «livro» (estes últimos são
+        substantivos comuns que representam instâncias de E55 Tipo). Os títulos podem ser
+        atribuídos pelo próprio criador da obra, ou por um grupo social.
+
+
+        Esta classe compreende também as traduções de títulos usadas como substitutos dos títulos
+        originais em contextos sociais diferentes.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E55_Type"
+    local_name: E55_Type
+    comment:
+      pt: >-
+        Esta classe compreende conceitos denotados por termos de tesauros e vocabulários
+        controlados usados para caracterizar e classificar instâncias das classes do CIDOC CRM. As
+        instâncias de E55 Tipo representam conceitos, em contraste com as instâncias de E41
+        Designação, que são usadas para dar nome a instâncias das classes do CIDOC CRM.
+
+
+        E55 Tipo fornece uma interface para ontologias e tesauros específicos de domínio. Estes
+        podem ser representados no CIDOC CRM como subclasses de E55 Tipo, formando hierarquias de
+        termos, isto é, instâncias de E55 Tipo ligadas através de P127 tem termo mais genérico (tem
+        termo mais específico): E55 Tipo. Tais hierarquias podem ser alargadas com propriedades
+        adicionais.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension"
+    local_name: E54_Dimension
+    comment:
+      pt: >-
+        Esta classe compreende propriedades quantificáveis que podem ser medidas por algum meio
+        calibrado e que podem ser aproximadas por valores, isto é, pontos ou regiões num espaço
+        matemático ou concetual, tais como números naturais ou reais, valores RGB, etc.
+
+
+        Uma instância de E54 Dimensão representa a grandeza empírica ou teoricamente derivada,
+        incluindo as tolerâncias de precisão resultantes do método ou cálculo específico. A
+        identidade de uma instância de E54 Dimensão depende do método da sua determinação, porque
+        cada método pode produzir valores diferentes mesmo quando determina qualidades
+        comparáveis. Por exemplo, a envergadura de um pássaro vivo ou morto é uma dimensão
+        diferente. A datação por termoluminescência e a datação por reidroxilação [RHX] são
+        dimensões diferentes de distância temporal em relação ao presente, mesmo que ambas visem
+        datar o mesmo objeto. O método de determinação deve ser expresso por meio da propriedade
+        P2 tem tipo (é tipo de). Note-se que termos simples como «diâmetro» ou «comprimento» são
+        normalmente insuficientes para descrever inequivocamente uma dada dimensão. Em
+        contrapartida, «extensão linear máxima» pode ser suficiente.
+
+
+        As propriedades da classe E54 Dimensão permitem exprimir a aproximação numérica dos
+        valores das instâncias de E54 Dimensão, adequada à precisão do método de determinação
+        aplicado. Se a respetiva grandeza pertencer a um espaço não discreto segundo as leis da
+        física, como as distâncias espaciais, recomenda-se registá-las como aproximações por
+        intervalos ou regiões de indeterminação que englobem os valores verdadeiros presumidos.
+        Por exemplo, um comprimento de 5 cm pode ser registado como 4,5-5,5 cm, de acordo com a
+        precisão da respetiva observação. Note-se que a comparabilidade de valores descritos em
+        unidades diferentes depende de forma crítica da representação como regiões de valores.
+
+
+        As aproximações numéricas em instâncias arcaicas de E58 Unidade de Medida usadas em
+        registos históricos devem ser preservadas. Os equivalentes correspondentes ao conhecimento
+        atual devem ser registados como instâncias adicionais de E54 Dimensão, conforme
+        apropriado.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"
+    local_name: E58_Measurement_Unit
+    comment:
+      pt: >-
+        Esta classe é uma especialização de E55 Tipo e compreende os tipos de unidades de medida:
+        pés, polegadas, centímetros, litros, lúmenes, etc.
+
+
+        Este tipo é usado categoricamente no modelo, sem referência a instâncias dele, isto é, o
+        modelo não prevê a descrição de instâncias de instâncias de E58 Unidade de Medida, por
+        exemplo, «instâncias de cm».
+
+
+        Devem usar-se, sempre que possível, as unidades do Sistema Internacional (SI) ou termos
+        não-SI internacionalmente reconhecidos, tais como os definidos pela ISO80000:2009. As
+        unidades de medida arcaicas usadas em registos históricos devem ser preservadas.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E57_Material"
+    local_name: E57_Material
+    comment:
+      pt: >-
+        Esta classe é uma especialização de E55 Tipo e compreende os conceitos de materiais.
+
+
+        As instâncias de E57 Material podem denotar propriedades da matéria antes da sua
+        utilização, durante a sua utilização, e enquanto incorporada num objeto, tais como pó de
+        ultramarino, pasta de têmpera, betão armado. Peças discretas de matérias-primas conservadas
+        em museus, como tijolos, folhas de tecido, pedaços de metal, devem ser modeladas
+        individualmente da mesma forma que outros objetos. Peças discretas usadas ou processadas,
+        como as pedras do templo de Nefertiti, devem ser modeladas como partes (cf. P46 é composto
+        de (forma parte de): E18 Coisa Física).
+
+
+        Este tipo é usado categoricamente no modelo sem referência a instâncias dele, isto é, o
+        modelo não prevê a descrição de instâncias de instâncias de E57 Material, por exemplo,
+        «instâncias de ouro».
+
+
+        Recomenda-se o uso de códigos e terminologia acordados internacional ou nacionalmente.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E56_Language"
+    local_name: E56_Language
+    comment:
+      pt: >-
+        Esta classe é uma especialização de E55 Tipo e compreende as línguas naturais no sentido de
+        conceitos.
+
+
+        Este tipo é usado categoricamente no modelo sem referência a instâncias dele, isto é, o
+        modelo não prevê a descrição de instâncias de instâncias de E56 Língua, por exemplo,
+        «instâncias de mandarim».
+
+
+        Recomenda-se o uso de códigos e terminologia acordados internacional ou nacionalmente para
+        denotar instâncias de E56 Língua, tais como os definidos na ISO 639-3:2007 e versões
+        posteriores.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"
+    local_name: E33_Linguistic_Object
+    comment:
+      pt: >-
+        Esta classe compreende expressões identificáveis em língua ou línguas naturais.
+
+
+        As instâncias de E33 Objeto Linguístico podem ser expressas de muitas formas: por exemplo,
+        como textos escritos, discurso gravado ou língua gestual. No entanto, o CIDOC CRM trata as
+        instâncias de E33 Objeto Linguístico independentemente do meio ou método pelo qual são
+        expressas. As expressões em línguas formais, como código informático ou fórmulas
+        matemáticas, não são tratadas pelo CIDOC CRM como instâncias de E33 Objeto Linguístico.
+        Estas devem ser modeladas como instâncias de E73 Objeto de Informação.
+
+
+        Em geral, uma instância de E33 Objeto Linguístico pode também conter informação não
+        linguística, frequentemente de valor artístico ou estético. Apenas nos casos em que o
+        conteúdo de uma instância de E33 Objeto Linguístico pode ser inteiramente expresso por uma
+        série de símbolos codificados binariamente, o seu conteúdo pode ser documentado numa base
+        de conhecimento respetiva por meio da propriedade P190 tem conteúdo simbólico: E62 Cadeia
+        de Caracteres. Caso contrário, deve ser entendida apenas como um recurso digital
+        identificável, disponível independentemente da respetiva base de conhecimento.
+
+
+        Noutros casos, como páginas de um manuscrito iluminado ou gravações que contenham discurso
+        numa língua suportada por um sistema de escrita, a parte linguística do conteúdo de uma
+        instância de E33 Objeto Linguístico pode ser documentada numa base de conhecimento
+        respetiva numa nota através de P3 tem nota: E62 Cadeia de Caracteres. Caso contrário, pode
+        ser descrita por meio da propriedade P165 incorpora (está incorporado em): E73 Objeto de
+        Informação, como um objeto diferente com identidade própria.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State"
+    local_name: E3_Condition_State
+    comment:
+      pt: >-
+        Esta classe compreende os estados de objetos caracterizados por uma determinada condição ao
+        longo de um intervalo temporal.
+
+
+        Uma instância desta classe descreve a condição física predominante de qualquer objeto ou
+        característica material durante uma instância específica de E52 Período de Tempo. Em
+        geral, o período de tempo durante o qual se pode afirmar uma determinada condição pode ser
+        mais curto do que o período de tempo real em que essa condição se verificou.
+
+
+        A natureza dessa condição pode ser descrita através de P2 tem tipo. Por exemplo, a
+        instância de E3 Estado Material «condição do SS Great Britain entre 22 de setembro de 1846
+        e 27 de agosto de 1847» pode ser caracterizada como uma instância «naufragado» de E55 Tipo.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+    local_name: E53_Place
+    comment:
+      pt: >-
+        Esta classe compreende extensões no espaço natural onde as pessoas vivem, em particular na
+        superfície da Terra, no sentido puramente físico: independentemente de fenómenos temporais
+        e de matéria. Podem servir para descrever a localização física de coisas ou fenómenos, ou
+        outras áreas de interesse. Geometricamente, as instâncias de E53 Local constituem áreas
+        contíguas únicas ou uma agregação finita de áreas disjuntas no espaço, cada uma delas
+        individualmente contígua. Podem ter limites imprecisos.
+
+
+        As instâncias de E53 Local são geralmente determinadas por referência à posição de objetos
+        «imóveis», como edifícios, cidades, montanhas, rios, ou marcos geodésicos dedicados, mas
+        também podem ser determinadas por referência a objetos móveis. Um Local pode ser
+        determinado combinando um sistema de referência e uma localização em relação a esse
+        sistema.
+
+
+        Argumenta-se por vezes que as instâncias de E53 Local se identificam melhor através de
+        coordenadas globais ou sistemas de referência absolutos. Contudo, as referências relativas
+        são frequentemente mais relevantes no contexto da documentação cultural e tendem a ser
+        mais precisas. Em particular, as pessoas estão frequentemente interessadas na posição em
+        relação a objetos grandes e móveis, como navios. Por exemplo, o Local onde Nelson morreu é
+        conhecido por referência a um grande objeto móvel, isto é, o H.M.S. Victory. Determinar
+        esse Local em termos de coordenadas absolutas exigiria conhecer os movimentos do navio e a
+        hora precisa da morte, ambos passíveis de revisão, e o resultado careceria de relevância
+        histórica e cultural.
+
+
+        Qualquer instância de E18 Coisa Física pode servir de sistema de referência para uma
+        instância de E53 Local. Isto pode ser documentado por meio da propriedade P157 está em
+        repouso relativamente a (fornece espaço de referência para).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"
+    local_name: E52_Time-Span
+    comment:
+      pt: >-
+        Esta classe compreende extensões temporais abstratas, no sentido da física galileana, com
+        um início, um fim e uma duração.
+
+
+        As instâncias de E52 Período de Tempo não têm conotações semânticas sobre fenómenos que
+        ocorram dentro da extensão temporal que representam. Não transmitem nenhum significado
+        além de um posicionamento na «linha do tempo» cronológica. A extensão real de uma
+        instância de E52 Período de Tempo pode ser aproximada por propriedades de E52 Período de
+        Tempo que indicam limites interiores e exteriores sob a forma de datas (instâncias de E61
+        Primitivo Temporal). Comparar o conhecimento sobre períodos de tempo é fundamental para o
+        raciocínio cronológico.
+
+
+        Algumas instâncias de E52 Período de Tempo podem ser definidas como a extensão temporal
+        real, em princípio observável, de instâncias de E2 Entidade Temporal, por meio da
+        propriedade P4 tem período de tempo (é período de tempo de): E52 Período de Tempo. Estas
+        constituem períodos de tempo fenomenais, tal como definidos em CRMgeo (Doerr & Hiebel
+        2013). Uma vez que o nosso conhecimento da história é imperfeito e os fenómenos físicos
+        são, por natureza, imprecisos, a extensão dos períodos de tempo fenomenais só pode ser
+        descrita por aproximação. Um caso extremo de aproximação poderia, por exemplo, definir uma
+        instância de E52 Período de Tempo com início, fim e duração desconhecidos. Ainda assim,
+        pode ser associada a outras descrições através das quais se pode inferir conhecimento
+        sobre ela, como em cronologias relativas.
+
+
+        Algumas instâncias de E52 podem ser definidas com precisão como representando a declaração
+        de uma extensão temporal, como, por exemplo, num contrato comercial. Estas constituem
+        períodos de tempo declarativos, tal como definidos em CRMgeo (Doerr & Hiebel 2013), e
+        podem ser descritas por meio da propriedade E61 Primitivo Temporal P170 define o tempo (o
+        tempo é definido por): E52 Período de Tempo.
+
+
+        Quando usado como um E52 Período de Tempo comum para dois eventos, este descrevê-los-á,
+        ainda assim, como simultâneos, mesmo que nada mais seja conhecido.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E30_Right"
+    local_name: E30_Right
+    comment:
+      pt: >-
+        Esta classe compreende privilégios legais relativos a coisas materiais e imateriais ou aos
+        seus derivados.
+
+
+        Incluem-se aqui os direitos de reprodução e de propriedade.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
+    local_name: E89_Propositional_Object
+    label:
+      pt: "Objeto Proposicional"
+    comment:
+      pt: >-
+        Esta classe compreende itens imateriais, incluindo, entre outros, histórias, enredos,
+        prescrições processuais, algoritmos, leis da física ou imagens que são, ou representam
+        nalgum sentido, conjuntos de proposições sobre coisas reais ou imaginárias, e que são
+        documentados como unidades únicas ou servem de tema de discurso.
+
+
+        Esta classe compreende também itens que são «sobre» algo no sentido de um assunto. Em
+        sentido mais amplo, esta classe inclui expressões de valor psicológico, como arte não
+        figurativa e temas musicais. No entanto, itens concetuais como tipos e classes não são
+        instâncias de E89 Objeto Proposicional. Isto não deve ser confundido com a definição de um
+        tipo, que é, de facto, uma instância de E89 Objeto Proposicional.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object"
+    local_name: E90_Symbolic_Object
+    label:
+      pt: "Objeto Simbólico"
+    comment:
+      pt: >-
+        Esta classe compreende símbolos identificáveis e qualquer agregação de símbolos, tais como
+        caracteres, identificadores, sinais de trânsito, emblemas, textos, conjuntos de dados,
+        imagens, partituras musicais, objetos multimédia, código de programas informáticos ou
+        fórmulas matemáticas, que tenham uma estrutura objetivamente reconhecível e que sejam
+        documentados como unidades únicas.
+
+
+        Inclui conjuntos de signos de qualquer natureza, que podem servir para designar algo ou
+        para comunicar algum conteúdo proposicional. Uma instância de E90 Objeto Simbólico pode ou
+        não ter um significado específico — por exemplo, uma cadeia de caracteres arbitrária.
+
+
+        Nalguns casos, o conteúdo de uma instância de E90 Objeto Simbólico pode ser inteiramente
+        representado por um modelo de conteúdo digital serializado, tal como uma sequência de
+        caracteres codificados em ASCII, um documento XML ou HTML, ou uma imagem TIFF. A propriedade
+        P3 tem nota e a sua subpropriedade P190 tem conteúdo simbólico permitem descrever esse
+        modelo de conteúdo. Para desambiguar qual o nível simbólico que é o suporte do significado,
+        pode usar-se a propriedade P3.1 tem tipo para especificar a codificação (por exemplo,
+        «bit», «carácter latino», pixel RGB).
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E12_Production"
+    local_name: E12_Production
+    comment:
+      pt: >-
+        Esta classe compreende atividades concebidas para criar, e que efetivamente criam, um ou
+        mais itens novos.
+
+
+        Especializa a noção de modificação em produção. A decisão sobre se um objeto é ou não
+        considerado novo é sensível ao contexto. Normalmente, os itens são considerados «novos» se
+        não houver uma semelhança global evidente entre eles e os itens consumidos e o material
+        usado na sua produção. Noutros casos, um item é considerado «novo» porque se torna
+        relevante para a documentação através de uma modificação. Por exemplo, rabiscar um nome
+        num caco de cerâmica pode transformá-lo numa ficha de voto. O caco original pode não
+        justificar documentação, ao contrário do caco inscrito.
+
+
+        Esta entidade pode ser coletiva: a impressão de mil livros, por exemplo, seria normalmente
+        considerada um único evento.
+
+
+        Um evento deve também ser documentado por meio de uma instância de E81 Transformação se
+        resultar na destruição de um ou mais objetos e na produção simultânea de outros, usando
+        partes ou material dos originais. Neste caso, os novos itens têm identidades separadas e a
+        matéria é preservada, mas a identidade não.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E67_Birth"
+    local_name: E67_Birth
+    comment:
+      pt: >-
+        Esta classe compreende os nascimentos de seres humanos. E67 Nascimento é um evento biológico
+        centrado no contexto em que as pessoas vêm à vida. (E63 Início da Existência compreende a
+        vinda à vida de qualquer ser vivo.)
+
+
+        Gémeos, trigémeos, etc., são trazidos à vida pela mesma instância de E67 Nascimento. A
+        introdução do evento E67 Nascimento como elemento de documentação permite descrever uma
+        variedade de relações familiares num modelo simples. Extensões adequadas podem descrever
+        mais pormenores e a complexidade da maternidade desde o advento da medicina moderna. Neste
+        modelo, o pai biológico não é visto como um participante necessário no E67 Nascimento.
+
+  - iri: "http://www.cidoc-crm.org/cidoc-crm/E69_Death"
+    local_name: E69_Death
+    comment:
+      pt: >-
+        Esta classe compreende as mortes de seres humanos.
+
+
+        Se uma pessoa for morta, a sua morte deve ser instanciada tanto como E69 Morte quanto como
+        E7 Atividade. A morte ou o perecimento de outros seres vivos deve ser documentado como
+        instâncias de E64 Fim da Existência.

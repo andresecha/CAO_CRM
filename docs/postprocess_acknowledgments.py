@@ -29,6 +29,10 @@ ANCHORS = {
     # first fragment, and a mismatch makes this script exit with "anchor not
     # found" rather than fail silently.
     "ro": "Autorii doresc să îi mulțumească lui",
+    # Portuguese, likewise copied from a real `-lang pt` run: Widoco's pt bundle
+    # translates its own tool-credits paragraph, so this anchor is Portuguese and
+    # was never guessable from the English one.
+    "pt": "Os autores gostariam de agradecer a",
 }
 
 PARAGRAPHS = {
@@ -156,22 +160,21 @@ PARAGRAPHS = {
     ),
     "pt": (
         "O grupo de trabalho «Metadados» do Consórcio Huma-Num ARIANE deseja agradecer "
-        "calorosamente a Andrés Echavarría Peláez e a Mélanie Bouland pelo seu notável "
+        "sinceramente a Andrés Echavarría Peláez e a Mélanie Bouland pelo seu notável "
         "envolvimento na conceção, no acompanhamento e no desenvolvimento desta ontologia.",
-        "Agradece também à infraestrutura de investigação IR* Huma-Num pelo seu apoio, e "
-        "em particular a Fatiha Idmhand, Ioana Galleron e Sabine Loudcher, pelo seu "
-        "empenho como coordenadoras do Consórcio ARIANE de 2023 a 2026, bem como pelo seu "
-        "papel de responsáveis e membros ativas do grupo de trabalho.",
-        "Dirige ainda os seus sinceros agradecimentos a todas as pessoas envolvidas no "
-        "projeto AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni "
-        "Guizani, Roxana Patras, Amelia Sanz e Simone Rebora, cujo olhar atento, "
-        "comentários e trocas de ideias contribuíram para enriquecer este trabalho, "
-        "situado na interseção entre a modelação do conhecimento, as tecnologias da Web "
-        "semântica, as humanidades digitais e os estudos literários comparados.",
-        "O grupo de trabalho deseja também agradecer aos membros do consórcio Huma-Num "
-        "MASAPlus, e em particular a Florian Hivert e Olivier Marlet, pelos seus "
-        "conselhos avisados, recomendações e trocas de ideias ao longo da elaboração "
-        "desta ontologia.",
+        "Agradece também à infraestrutura de investigação IR* Huma-Num pelo seu apoio, e em "
+        "particular a Fatiha Idmhand, Ioana Galleron e Sabine Loudcher, pelo seu empenho como "
+        "coordenadoras do Consórcio ARIANE de 2023 a 2026, bem como pelo seu papel de "
+        "responsáveis e membros ativas do grupo de trabalho.",
+        "Dirige ainda os seus sinceros agradecimentos a todas as pessoas envolvidas no projeto "
+        "AMIS (Advanced Metadata Intelligent System), Ala Eddine Laouir, Ameni Guizani, Roxana "
+        "Patras, Amelia Sanz e Simone Rebora, cuja leitura atenta, comentários e discussões "
+        "contribuíram para enriquecer este trabalho, situado na interseção entre a modelação do "
+        "conhecimento, as tecnologias da Web Semântica, as humanidades digitais e os estudos "
+        "literários comparados.",
+        "O grupo de trabalho deseja também agradecer aos membros do consórcio Huma-Num MASAPlus, "
+        "e em particular a Florian Hivert e Olivier Marlet, pelos seus conselhos, recomendações e "
+        "discussões ao longo da elaboração desta ontologia.",
     ),
 }
 
