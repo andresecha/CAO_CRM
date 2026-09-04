@@ -72,19 +72,37 @@ parte no hay que volver a tocarla.**
 **Lo que falta y es el objeto de este documento:** las ~73 cadenas de interfaz, que no existían
 cuando ella revisó. Se le enviaron aparte como `docs/i18n/review/review-chrome-ro.md`.
 
-**Estado del árbol de trabajo:** todo el trabajo rumano está **escrito pero sin commitear**, a
-propósito, esperando justamente esta revisión. Antes de tocar nada, mirar `git status` y
-`git diff` para ver con qué se está trabajando. Debería haber, sin commitear:
+**Estado del árbol de trabajo:** el trabajo rumano está **escrito pero sin commitear**, a propósito,
+esperando justamente esta revisión. Antes de tocar nada, mirar `git status` y `git diff` para ver con
+qué se está trabajando. Debería haber, sin commitear:
 
 - `docs/i18n/chrome-ro.yaml` (nuevo) — las cadenas
 - `docs/postprocess_ro_chrome.py` (nuevo) — el script que las aplica
 - `docs/i18n/scripts/build_chrome_review_doc.py` (nuevo) — genera la hoja de revisión
-- `docs/build.sh`, `docs/postprocess_acknowledgments.py`, `docs/postprocess_i18n_marker.py`,
-  `docs/postprocess_titlepage.py` (modificados)
+- `docs/build.sh` (modificado) — el paso que invoca el script, y los comentarios que lo explican
 - `README.md`, `docs/README.md`, `docs/i18n/README.md` (modificados)
-- `docs/site/index-ro.html`, `docs/site/provenance/provenance-ro.html`,
-  `docs/site/CAO_CRM-1.0-ro.pdf`, `docs/site/index.html` (regenerados)
-- posiblemente también las páginas no rumanas, por una corrección de rutas ya aplicada
+
+**Lo que NO está en el árbol y hay que rehacer: los tres acoplamientos.** Llegaron a commitearse el
+2026-09-04 (`cd15c48`, `64b2a13`, `841d8ce`) y **se revirtieron el mismo día** en `692d38a`, porque
+sin el script que los alimenta dejaban `make docs` roto en un clon limpio: Widoco generaba la página
+rumana con marco inglés, `postprocess_acknowledgments.py` buscaba el ancla rumana, no la encontraba y
+abortaba el build entero. Al aplicar esta revisión hay que volver a ponerlos, ahora sí junto con el
+resto:
+
+| Archivo | Qué hay que volver a poner |
+|---|---|
+| `docs/postprocess_acknowledgments.py` | `ANCHORS["ro"]` = primer fragmento rumano de `ackText` (hoy vuelve a ser la frase inglesa) |
+| `docs/postprocess_i18n_marker.py` | `TOOLTIP["ro"]` en rumano (hoy en inglés) |
+| `docs/postprocess_titlepage.py` | `SUBTITLES["ro"]` en rumano (hoy la frase inglesa) |
+| `docs/build.sh` | el `<p class="subtitle">` de la entrada rumana de la landing page, hoy ausente |
+
+Los textos de los cuatro están en `i18n/chrome-ro.yaml`: los tres primeros en la entrada `ackText` y
+en `front_matter`, el cuarto es la misma frase que `SUBTITLES["ro"]`. Se pueden recuperar también con
+`git show cd15c48`, `git show 64b2a13` y `git show 841d8ce`, pero **conviene tomarlos de la versión
+revisada por Roxana, no de esos commits**, que llevan el borrador anterior.
+
+**La lección, para no repetirla:** esos cuatro cambios y el paso de `docs/build.sh` son una sola
+unidad. Commitear cualquiera de ellos sin los demás rompe el build. Van juntos o no van.
 
 Si el árbol estuviera limpio, significa que alguien ya commiteó ese trabajo: en ese caso, seguir
 igualmente los pasos de abajo, partiendo de lo que haya en `main`.
