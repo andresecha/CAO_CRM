@@ -56,6 +56,19 @@ SUBTITLES = {
         "Consor&#539;iului-HN ARIANE pentru a structura organizarea, descrierea &#537;i "
         "interoperabilitatea metadatelor care descriu corpusurile textuale"
     ),
+    # Portuguese: this sentence was NOT part of the review Ana Salgado returned
+    # (that covered the acknowledgments, the introduction, the abstract, the
+    # description and the glossary). It is composed here out of her own reviewed
+    # vocabulary -- "Cons&oacute;rcio", "corpora", "metadados", the «Metadados»
+    # working-group name -- so it does not clash with the rest of the page, but it
+    # has not itself been checked by a native speaker. Confirm it with her before
+    # treating the Portuguese cover page as final.
+    "pt": (
+        "Um quadro sem&acirc;ntico desenvolvido pelo grupo de trabalho "
+        "&laquo;Metadados&raquo; do Cons&oacute;rcio-HN ARIANE para estruturar a "
+        "organiza&ccedil;&atilde;o, a descri&ccedil;&atilde;o e a interoperabilidade dos "
+        "metadados que descrevem os corpora textuais"
+    ),
 }
 
 TITLE_PAGE_TEMPLATE = """<div class="cover-title-page">

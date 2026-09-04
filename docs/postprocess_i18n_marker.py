@@ -53,6 +53,11 @@ TOOLTIP = {
     # `overlay_marker_tooltip` entry of i18n/chrome-ro.yaml, where it goes out
     # for review alongside the interface strings.
     "ro": "Traducere realizată de echipa CAO_CRM, revizuită de un vorbitor nativ; nu există etichetă sau definiție oficială în limba română în sursele CIDOC-CRM/LRMoo/CRMdig.",
+    # Portuguese is the one language where part of the page is NOT ours: CIDOC-CRM
+    # publishes an official Portuguese label for 76 of the 130 terms, so the dagger
+    # marks only the 54 labels and the 89 definitions the overlay actually supplies.
+    # Like the subtitle, this string was not part of the review itself.
+    "pt": "Tradu&ccedil;&atilde;o da equipa CAO_CRM, com revis&atilde;o de falante nativo de portugu&ecirc;s; n&atilde;o existe equivalente oficial nas fontes CIDOC-CRM/LRMoo/CRMdig para esta entrada.",
 }
 
 MARKER_TEMPLATE = '<sup class="i18n-overlay-marker" title="{tooltip}">&#8224;</sup>'

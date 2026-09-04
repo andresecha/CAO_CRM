@@ -24,6 +24,10 @@ PLACEHOLDERS = {
     "fr": '<span class="markdown">\nAjoutez vos références ici. Il est recommandé de les avoir sous forme de liste.</span>',
     "en": '<span class="markdown">\nAdd your references here. It is recommended to have them as a list.</span>',
     "es": '<span class="markdown">Añade aquí tus referencias, a ser posible en una lista.</span>',
+    # Portuguese, copied verbatim from a real `-lang pt` run rather than guessed:
+    # Widoco ships a pt bundle, so this sentence comes out in Portuguese (and, unlike
+    # the fr/en ones, with no newline after the opening span).
+    "pt": '<span class="markdown">Adicione suas referências aqui. Recomenda-se a tê-los como uma lista.</span>',
 }
 
 

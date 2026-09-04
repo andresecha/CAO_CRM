@@ -89,7 +89,7 @@ fi
 # Widoco passes -- code prefixes, bibliography, acknowledgments, title page,
 # i18n daggers, PDF export, landing page -- iterates over this list, so a
 # language is wired in exactly once, here.
-LANGS="en fr es ro"
+LANGS="en fr es ro pt"
 
 # Separate Widoco passes, one per language, deliberately NOT combined into one
 # `-lang en-fr-es` call: each language has its own hand-authored
@@ -105,18 +105,23 @@ TMP_CONF="$(mktemp)"
 TMPFILES+=("$TMP_CONF")
 
 for lang in $LANGS; do
-  # Romanian is fed the Romanian overlay instead of the fr/es one.
+  # Romanian and Portuguese are each fed their own overlay instead of the fr/es
+  # one, in their own temp copy of the RDF. Deliberately not folded together:
+  # every language added this way leaves the passes already published receiving
+  # byte-for-byte the input they received before it existed.
   ont="$DOC_ONTFILE"
-  if [ "$lang" = ro ]; then
-    [ -f i18n/CAO_CRM-1.0-i18n-ro.ttl ] && [ -f config-ro.properties ] && [ -f intro-ro.html ] || {
-      echo "NOTE: Romanian inputs incomplete (need i18n/CAO_CRM-1.0-i18n-ro.ttl, config-ro.properties, intro-ro.html) -- skipping the ro pass."
-      continue
-    }
-    MERGED_RDF_RO="$(mktemp --suffix=.rdf)"
-    TMPFILES+=("$MERGED_RDF_RO")
-    merge_overlay i18n/CAO_CRM-1.0-i18n-ro.ttl "$MERGED_RDF_RO"
-    ont="$MERGED_RDF_RO"
-  fi
+  case "$lang" in
+    ro|pt)
+      [ -f "i18n/CAO_CRM-1.0-i18n-${lang}.ttl" ] && [ -f "config-${lang}.properties" ] && [ -f "intro-${lang}.html" ] || {
+        echo "NOTE: ${lang} inputs incomplete (need i18n/CAO_CRM-1.0-i18n-${lang}.ttl, config-${lang}.properties, intro-${lang}.html) -- skipping the ${lang} pass."
+        continue
+      }
+      MERGED_RDF_LANG="$(mktemp --suffix=.rdf)"
+      TMPFILES+=("$MERGED_RDF_LANG")
+      merge_overlay "i18n/CAO_CRM-1.0-i18n-${lang}.ttl" "$MERGED_RDF_LANG"
+      ont="$MERGED_RDF_LANG"
+      ;;
+  esac
 
   sed "s|^pathToIntro=.*|pathToIntro=$(pwd)/intro-${lang}.html|" "config-${lang}.properties" > "$TMP_CONF"
   if [ "$lang" = fr ]; then
@@ -254,7 +259,7 @@ done
 for lang in $LANGS; do
   f="site/index-${lang}.html"
   overlay="i18n/CAO_CRM-1.0-i18n.ttl"
-  [ "$lang" = ro ] && overlay="i18n/CAO_CRM-1.0-i18n-ro.ttl"
+  case "$lang" in ro|pt) overlay="i18n/CAO_CRM-1.0-i18n-${lang}.ttl" ;; esac
   [ -f "$f" ] && [ -f "$overlay" ] && python3 postprocess_i18n_marker.py "$f" "$lang" "$overlay"
 done
 
@@ -361,6 +366,10 @@ cat > site/index.html <<HTMLEOF
   </li>
   <li>
     <a class="lang" href="index-ro.html">🇷🇴 Română</a>
+  </li>
+  <li>
+    <p class="subtitle">Um quadro sem&acirc;ntico desenvolvido pelo grupo de trabalho &laquo;Metadados&raquo; do Cons&oacute;rcio-HN ARIANE para estruturar a organiza&ccedil;&atilde;o, a descri&ccedil;&atilde;o e a interoperabilidade dos metadados que descrevem os corpora textuais.</p>
+    <a class="lang" href="index-pt.html">🇵🇹 Português</a>
   </li>
 </ul>
 <p class="meta">Version PDF / PDF version / versión PDF :</p>
