@@ -44,11 +44,15 @@ TOOLTIP = {
     "es": "Traducción de trabajo del equipo CAO_CRM, ausente de las fuentes oficiales CIDOC-CRM/LRMoo/CRMdig.",
     "en": "Working translation by the CAO_CRM team, not present in the official CIDOC-CRM/LRMoo/CRMdig sources.",
     # Romanian: no CIDOC-CRM/LRMoo/CRMdig term carries an official ro label, so on
-    # that page every single term is marked. The tooltip stays in English to match
-    # the English chrome the ro page is built with (see docs/build.sh's ro pass);
-    # the wording also states the stronger fact that applies here -- the Romanian
-    # text was reviewed by a native speaker, but it is still not an official source.
-    "ro": "Translation by the CAO_CRM team, reviewed by a native speaker; no official Romanian label or definition exists in the CIDOC-CRM/LRMoo/CRMdig sources.",
+    # that page every single term is marked. The tooltip was written in English
+    # while the ro page carried Widoco's English chrome; it is Romanian now that
+    # postprocess_ro_chrome.py translates that chrome (docs/build.sh runs it
+    # earlier in the pipeline). The wording also states the stronger fact that
+    # applies here -- the Romanian text was reviewed by a native speaker, but it
+    # is still not an official source. Kept in sync with the
+    # `overlay_marker_tooltip` entry of i18n/chrome-ro.yaml, where it goes out
+    # for review alongside the interface strings.
+    "ro": "Traducere realizată de echipa CAO_CRM, revizuită de un vorbitor nativ; nu există etichetă sau definiție oficială în limba română în sursele CIDOC-CRM/LRMoo/CRMdig.",
 }
 
 MARKER_TEMPLATE = '<sup class="i18n-overlay-marker" title="{tooltip}">&#8224;</sup>'
