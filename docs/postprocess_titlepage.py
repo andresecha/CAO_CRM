@@ -43,18 +43,18 @@ SUBTITLES = {
         "organizaci&oacute;n, la descripci&oacute;n y la interoperabilidad de los "
         "metadatos que describen los corpus textuales"
     ),
-    # This subtitle was the one piece of front-matter prose left out of the
-    # Romanian review of 2026-09-01 (which covered the acknowledgments, the
-    # introduction, the abstract, the description and the 130 glossary terms), so
-    # it reused the English sentence for as long as the page carried Widoco's
-    # English chrome anyway. It goes out for review together with the interface
-    # strings, as the `subtitle` entry of i18n/chrome-ro.yaml -- keep the two in
-    # sync, along with the identical line in the ro entry of the landing page in
-    # docs/build.sh.
+    # Romanian deliberately reuses the English sentence. This subtitle was the one
+    # piece of front-matter prose left out of the Romanian review (which covered the
+    # acknowledgments, the introduction, the abstract, the description and the 130
+    # glossary terms), and the Romanian edition already carries Widoco's English
+    # chrome anyway -- so an unreviewed machine translation would be the only thing
+    # on the page nobody had checked. Replace this with the Romanian sentence, and
+    # add the matching subtitle line to the ro entry of the landing page in
+    # docs/build.sh, once it comes back reviewed.
     "ro": (
-        "Un cadru semantic dezvoltat de grupul de lucru &bdquo;Metadate&rdquo; al "
-        "Consor&#539;iului-HN ARIANE pentru a structura organizarea, descrierea &#537;i "
-        "interoperabilitatea metadatelor care descriu corpusurile textuale"
+        "A semantic framework developed by the &ldquo;Metadata&rdquo; working group of the "
+        "Consortium-HN ARIANE to structure the organization, description, and "
+        "interoperability of metadata describing textual corpora"
     ),
     # Portuguese: this sentence was NOT part of the review Ana Salgado returned
     # (that covered the acknowledgments, the introduction, the abstract, the

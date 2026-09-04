@@ -21,14 +21,11 @@ ANCHORS = {
     "fr": "Les auteurs voudraient remercier",
     "en": "The authors would like to thank",
     "es": "Los autores agradecen a",
-    # Romanian is anchored on the Romanian string even though Widoco 1.4.25 ships
-    # no ro bundle and emits this fixed tool-credits paragraph in English: by the
-    # time this script runs, postprocess_ro_chrome.py has already translated it
-    # (docs/build.sh runs that step earlier, see the ordering note there). Change
-    # both together -- this anchor is the `ackText` entry of i18n/chrome-ro.yaml,
-    # first fragment, and a mismatch makes this script exit with "anchor not
-    # found" rather than fail silently.
-    "ro": "Autorii doresc să îi mulțumească lui",
+    # Romanian is anchored on the English string on purpose: Widoco 1.4.25 has
+    # no ro language bundle, so the ro pass in docs/build.sh runs with Widoco's
+    # English chrome and this fixed tool-credits paragraph comes out in English.
+    # Verified against a real `-lang ro` run, not assumed.
+    "ro": "The authors would like to thank",
     # Portuguese, likewise copied from a real `-lang pt` run: Widoco's pt bundle
     # translates its own tool-credits paragraph, so this anchor is Portuguese and
     # was never guessable from the English one.
