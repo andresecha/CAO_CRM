@@ -19,7 +19,7 @@ bash docs/build.sh ontology/CAO_CRM-1.0.rdf
 ```
 (If invoking `build.sh` directly from inside `docs/` instead, drop the `docs/` prefix from both the script and the ontology path: `bash build.sh ontology/CAO_CRM-1.0.rdf` — `build.sh` resolves the ontology path relative to the repo root it computes from its own location, not from the caller's cwd.)
 
-**Pass criteria:** `site/index-{en,fr,es,ro}.html` all build without error and include non-empty, real (not just placeholder-template) content for classes, object properties, and datatype properties.
+**Pass criteria:** `site/index-{en,fr,es,ro,pt}.html` all build without error and include non-empty, real (not just placeholder-template) content for classes, object properties, and datatype properties.
 
 **Output:** `site/` — **not** gitignored (see `.gitignore`): it's committed as a ready-to-view artifact, so regenerate with the command above and commit the result whenever `ontology/CAO_CRM-1.0.rdf` changes. Five HTML entry points: `index.html` (a small hand-generated landing page linking the four languages — needed because this is what GitLab/GitHub Pages serves at the site root, and Widoco itself never produces a bare `index.html`) plus `index-{en,fr,es,ro}.html`, one per language, each a fully self-contained file — `build.sh` deliberately does NOT use Widoco's combined `-lang` multi-language call (see "Multi-language build" below for why).
 
@@ -54,18 +54,19 @@ passes.
 
 - **Division of responsibility:** `-confFile` supplies only content Widoco cannot source from the RDF (the Introduction, the per-language abstract/description/status) — never to override anything the RDF header already states. If a header value is wrong, fix it in `ontology/CAO_CRM-1.0.rdf` itself: every other consumer of the header (catalogs, FAIR harvesters) reads the same triples.
 
-## Multi-language build: en/fr/es/ro, four separate files, four custom introductions
+## Multi-language build: en/fr/es/ro/pt, five separate files, five custom introductions
 
-`build.sh` runs Widoco **four times**, not once with a combined `-lang` call. The language list lives in a single `LANGS` variable at the top of the Widoco section; every post-processing step downstream iterates over it, so a language is wired in exactly once.
+`build.sh` runs Widoco **five times**, not once with a combined `-lang` call. The language list lives in a single `LANGS` variable at the top of the Widoco section; every post-processing step downstream iterates over it, so a language is wired in exactly once.
 
 1. `-lang en` with `-confFile`/`pathToIntro=intro-en.html` (config: `config-en.properties`).
 2. `-lang fr` with `-confFile`/`pathToIntro=intro.html` (config: `config-fr.properties`) — the French intro keeps the bare filename `intro.html`.
 3. `-lang es` with `-confFile`/`pathToIntro=intro-es.html` (config: `config-es.properties`).
 4. `-lang ro` with `-confFile`/`pathToIntro=intro-ro.html` (config: `config-ro.properties`) — see "Romanian" below.
+5. `-lang pt` with `-confFile`/`pathToIntro=intro-pt.html` (config: `config-pt.properties`) — see "Portuguese" below.
 
 Each language has its own hand-written, hand-translated Introduction and its own translated `abstract`/`description`/`status` fields, all reflecting the model's published 1.0 state (41 classes, 84 object properties, 5 data properties). The four outputs are fully independent: each language's Introduction text appears only in its own file.
 
-**If the ontology header or any of these facts change**, all four `intro-*.html` and `config-*.properties` files need re-syncing by hand — there is no automated single source of truth for this prose, only the RDF's own header (which the `abstract`/`description` fields paraphrase, in each language) and `decisions/fr/*.md` (which the Design Rationale / Consistency sections summarize).
+**If the ontology header or any of these facts change**, all five `intro-*.html` and `config-*.properties` files need re-syncing by hand — there is no automated single source of truth for this prose, only the RDF's own header (which the `abstract`/`description` fields paraphrase, in each language) and `decisions/fr/*.md` (which the Design Rationale / Consistency sections summarize).
 
 ### Romanian: Romanian content in an English frame
 
@@ -80,6 +81,24 @@ Three consequences the build depends on, all verified against a real `-lang ro` 
 Romanian is fed its own overlay (`i18n/CAO_CRM-1.0-i18n-ro.ttl`) merged into its own temporary RDF copy, deliberately **not** folded into the fr/es merge: the en/fr/es passes keep receiving exactly the input they received before Romanian existed, so adding a language can never perturb the three pages already published. (Verified: after wiring Romanian in, `index-{en,fr,es}.html` came back byte-identical and the three PDFs differed only in their embedded creation timestamp.)
 
 One string is still pending: the one-sentence italic subtitle on the print cover page and the landing page. It was the only piece of front-matter prose left out of the Romanian review, so `SUBTITLES["ro"]` in `postprocess_titlepage.py` currently reuses the English sentence and the landing page's Romanian entry carries no subtitle at all. Fill both in once it comes back reviewed.
+
+### Portuguese: the one language the sources already speak
+
+Portuguese is the opposite case to Romanian, and the contrast is worth keeping in mind when reading
+the generated page. Widoco 1.4.25 **does** ship `widoco/pt.properties` and LODE **does** ship
+`lode/pt.xml`, so the section headings, cross-reference labels, navigation and legend come out in
+Portuguese from the tools themselves — `pt` needs no interface post-processing of its own, unlike
+Romanian, and none is provided. And CIDOC-CRM publishes an official Portuguese `rdfs:label` for **76 of the 130
+terms**, so `docs/i18n/CAO_CRM-1.0-i18n-pt.ttl` supplies only the remaining **54 labels**, plus the
+**89 definitions** (no source translates a `rdfs:comment` in any language, not even English-native
+terms). That is why `postprocess_i18n_marker.py` reports **105** marked entities on `index-pt.html`
+and not 130: the dagger marks only what the overlay actually contributed. Any statement of the form
+"no term has an official label in this language", true for Romanian and Italian, is false here.
+
+Two strings in the pt bundle are the tools' own and slightly off — Widoco writes "Data de criaçao"
+(missing the tilde) and LODE writes "tem sub classes" / "tem super classes" as two words. They are
+upstream text, not ours; left as they are rather than post-processed, since inventing a patch for
+another project's language pack is how the Romanian complexity started.
 
 **Known limitation of the source models themselves (not a build issue):** CIDOC-CRM's official RDFS release only provides labels in seven languages (German, Greek, English, French, Portuguese, Russian, Chinese) — **no Spanish label exists for any CIDOC-CRM/LRMoo/CRMdig term**, and no definition (`rdfs:comment`) is translated in any language, not even for CIDOC-CRM's own native terms. Left unaddressed, `index-es.html` and `index-fr.html` would show large stretches of untranslated English. Per `decisions/fr/ADR-002-idiomas-LRMoo-CRMdig.md`, adding an official-looking translation directly to `ontology/CAO_CRM-1.0.rdf` would be content CAO_CRM originates on its own, not something taken from an official source.
 

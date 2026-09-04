@@ -43,9 +43,21 @@ this overlay carries a small dagger (†) with a tooltip saying so.
   archived in `review/review2-ro.md`. She is credited as a co-author of the Nakala
   deposit of this layer for it.
 
-- `translations-it/`, `translations-pt/` -- Italian and Portuguese drafts, not
-  yet reviewed, not wired into `docs/build.sh`, gitignored.
-- `glossary_crosswalk.yaml`, `glossary_crosswalk-ro.yaml` -- the ~35 recurring
+- `translations-pt/*.yaml` -- the same terms in Portuguese. **Reviewed and
+  corrected on 2026-09-04 by Ana Salgado**, a native speaker of European
+  Portuguese: 20 definitions corrected, plus the acknowledgments, the
+  introduction and the abstract/description. No label changed, and
+  `check_consistency.py` reports no drift, so no crosswalk entry needed
+  overriding. The corrected document she returned is archived in
+  `review/review-pt.md`. She is credited as a co-author of the Nakala deposit of
+  this layer for it. Note this layer is smaller than the ro/it ones: CIDOC-CRM
+  publishes an official Portuguese label for 76 of the 130 terms, so the overlay
+  supplies only the remaining 54 labels, plus the 89 definitions (no source
+  translates those in any language).
+- `translations-it/` -- Italian draft, not yet reviewed, not wired into
+  `docs/build.sh`, gitignored. See `docs/prompts/RETOMAR-it-publicacion.md`.
+- `glossary_crosswalk.yaml`, `glossary_crosswalk-ro.yaml`,
+  `glossary_crosswalk-pt.yaml` -- the ~35 recurring
   CIDOC-CRM concept-words (Actor, Activity, Physical Thing...) with their
   translation fixed once per language, so every batch reuses the same word
   instead of drifting. Entries the native review overrode are marked

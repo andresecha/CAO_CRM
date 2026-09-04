@@ -24,6 +24,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
   <a href="https://www.cao-crm.eu/index-fr.html"><img src="https://img.shields.io/badge/Docs-FR-6a1b9a?style=plastic" alt="Documentation en français" /></a>
   <a href="https://www.cao-crm.eu/index-es.html"><img src="https://img.shields.io/badge/Docs-ES-ef6c00?style=plastic" alt="Documentación en español" /></a>
   <a href="https://www.cao-crm.eu/index-en.html"><img src="https://img.shields.io/badge/Docs-EN-00897b?style=plastic" alt="Documentation in English" /></a>
+  <a href="https://www.cao-crm.eu/index-pt.html"><img src="https://img.shields.io/badge/Docs-PT-00695c?style=plastic" alt="Documenta&ccedil;&atilde;o em portugu&ecirc;s" /></a>
 </p>
 <p align="center">
   <a href="https://github.com/andresecha/CAO_CRM/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/andresecha/CAO_CRM/validate.yml?style=plastic&label=validation%20pipeline" alt="Validation pipeline status" /></a>
@@ -60,8 +61,8 @@ Ce document est le point d'entrée. La documentation pédagogique existe **en fr
 | `documentation/fr/`, `documentation/es/`, `documentation/en/` | Dix sections rédigées pour un public **non expert** en ontologies — de « qu'est-ce que CAO_CRM » jusqu'au glossaire et aux notes d'application des propriétés `P14_has_*`/valeurs `E55_Type` — alignées sur l'état publié du modèle (1.0), dans les trois langues. |
 | `validation/` | Les huit catégories de tests de validation (syntaxe, cohérence logique, SHACL, qualité, métriques, conformité, métadonnées, FAIR) — chacune avec son propre `README.md`. |
 | `imports/` | Scripts pour récupérer les versions officielles exactes de CIDOC-CRM/LRMoo/CRMdig/SKOS (`fetch.sh`, avec sommes de contrôle dans `vendor/CHECKSUMS.txt`), les fusionner avec l'ontologie (`merge.sh`), et **`module-terms.txt`** — la liste exacte des 130 termes (IRI complètes) qui a servi à extraire ce module avec ROBOT. |
-| `docs/site/index-{en,fr,es,ro}.html` | Documentation HTML navigable générée par Widoco, dans les quatre langues, à partir du RDF canonique — en fusionnant à la volée la couche de traduction `docs/i18n/CAO_CRM-1.0-i18n.ttl` (fr/es) ou `docs/i18n/CAO_CRM-1.0-i18n-ro.ttl` (ro) pour les termes LRMoo/CRMdig et les définitions sans traduction officielle (marqués comme tels dans le HTML, voir `docs/i18n/README.md`), et avec une introduction propre à chaque langue (`docs/intro-en.html`, `docs/intro.html`, `docs/intro-es.html`, `docs/intro-ro.html`). Le roumain est rendu dans un habillage anglais — Widoco 1.4.25 ne fournit pas de paquet de langue `ro` — avec un contenu intégralement roumain. **Les corrections du roumain ont été réalisées par [Roxana Patras](https://dhl.uaic.ro/taqwa/elementor-page-2114/members-2/)** (Universitatea „Alexandru Ioan Cuza”, Iaşi, Roumanie), locutrice native ; voir `docs/README.md`. `docs/site/index.html` est la page d'accueil de choix de langue servie par GitHub Pages. |
-| `docs/site/CAO_CRM-1.0-{en,fr,es,ro}.pdf` | La même documentation, exportée en PDF (une par langue), générée automatiquement à partir du HTML final par `docs/build.sh` (Chrome/Chromium headless pour le rendu, WeasyPrint pour la compilation) — liens disponibles directement depuis `docs/site/index.html`. |
+| `docs/site/index-{en,fr,es,ro,pt}.html` | Documentation HTML navigable générée par Widoco, dans les cinq langues, à partir du RDF canonique — en fusionnant à la volée la couche de traduction `docs/i18n/CAO_CRM-1.0-i18n.ttl` (fr/es) ou `docs/i18n/CAO_CRM-1.0-i18n-ro.ttl` (ro) pour les termes LRMoo/CRMdig et les définitions sans traduction officielle (marqués comme tels dans le HTML, voir `docs/i18n/README.md`), et avec une introduction propre à chaque langue (`docs/intro-en.html`, `docs/intro.html`, `docs/intro-es.html`, `docs/intro-ro.html`). Le roumain est rendu dans un habillage anglais — Widoco 1.4.25 ne fournit pas de paquet de langue `ro` — avec un contenu intégralement roumain. **Les corrections du roumain ont été réalisées par [Roxana Patras](https://dhl.uaic.ro/taqwa/elementor-page-2114/members-2/)** (Universitatea „Alexandru Ioan Cuza”, Iaşi, Roumanie), locutrice native ; voir `docs/README.md`. Le portugais, lui, est la seule langue que les sources parlent déjà : CIDOC-CRM publie une étiquette officielle en portugais pour 76 des 130 termes, et Widoco comme LODE fournissent leur paquet `pt` — **les corrections du portugais ont été réalisées par Ana Salgado**, locutrice native de portugais européen. `docs/site/index.html` est la page d'accueil de choix de langue servie par GitHub Pages. |
+| `docs/site/CAO_CRM-1.0-{en,fr,es,ro,pt}.pdf` | La même documentation, exportée en PDF (une par langue), générée automatiquement à partir du HTML final par `docs/build.sh` (Chrome/Chromium headless pour le rendu, WeasyPrint pour la compilation) — liens disponibles directement depuis `docs/site/index.html`. |
 | `scripts/` | Scripts transversaux du dépôt : installation des outils (`install-tools.sh`), exécution des questions de compétence, vérification des en-têtes de licence, resérialisation de l'ontologie. |
 | `competency-questions/`, `sparql/`, `test-data/` | Le banc d'essai sur données réelles : un graphe d'instance vérifié et non synthétique (`test-data/stendhal-le-rouge-et-le-noir.ttl` — l'édition Martineau/Gallica et la traduction Scott Moncrieff/Internet Archive), 5 questions de compétence formelles et 2 vérifications de cardinalité (`competency-questions/CQ-001-a-005-stendhal.md`), traduites en requêtes SPARQL (`sparql/ask/`, `sparql/select/`) suivant la méthodologie W3C HCLS *Compiling to SPARQL*. Exécutées par `make cq`. |
 | `Makefile` | Point d'entrée unique : `make validate` exécute les huit catégories automatisées **plus `cq`** dans l'ordre (voir section 4 pour le détail de chacune). |
@@ -105,11 +106,11 @@ Les 177 fichiers suivis par Git, dossier par dossier (les fichiers ignorés — 
 ├── docs/
 │   ├── bibliography.html
 │   ├── build.sh
-│   ├── config-{en,es,fr,ro}.properties
+│   ├── config-{en,es,fr,ro,pt}.properties
 │   ├── i18n/
 │   │   ├── CAO_CRM-1.0-i18n.ttl        (couche fr/es)
 │   │   ├── CAO_CRM-1.0-i18n-ro.ttl     (couche ro)
-│   │   ├── glossary_crosswalk{,-ro}.yaml
+│   │   ├── glossary_crosswalk{,-ro,-pt}.yaml
 │   │   ├── README.md
 │   │   ├── scripts/
 │   │   │   ├── build_review_doc.py
@@ -119,8 +120,9 @@ Les 177 fichiers suivis par Git, dossier par dossier (les fichiers ignorés — 
 │   │   │   └── prepend_review_frontmatter.py
 │   │   ├── term_inventory.json
 │   │   ├── translations/               (8 lots thématiques .yaml, fr/es)
-│   │   └── translations-ro/            (les mêmes 8 lots, ro)
-│   ├── intro{-en,-es,-ro,}.html
+│   │   ├── translations-ro/            (les mêmes 8 lots, ro)
+│   │   └── translations-pt/            (les mêmes 8 lots, pt)
+│   ├── intro{-en,-es,-ro,-pt,}.html
 │   ├── logos/ARIANE{-dark,}.svg
 │   ├── postprocess_*.py                (6 scripts de post-traitement Widoco)
 │   ├── README.md
